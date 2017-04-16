@@ -38,6 +38,7 @@ import java.io.IOException;
  * Created by wintson on 3/25/17.
  */
 public class AegisMainWindowController {
+
     Stage targetSelection;
     TargetWindowController target = new TargetWindowController();
     boolean addCheck = true;
@@ -84,11 +85,12 @@ public class AegisMainWindowController {
                     @Override
                     public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                         TreeItem<String> selectedItem = (TreeItem<String>) newValue;
-                            if (selectedItem.getValue().equals("Add Scan")) {
+                            if (selectedItem.getValue().equals("   + Add Scan")) {
                                 addScan(selectedItem.getParent());
                             }
                     }
                 });
+
 
 
         newProject.setAccelerator(new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_DOWN));
@@ -109,9 +111,11 @@ public class AegisMainWindowController {
                 projectStage.setScene(new Scene(projectRoot, 406, 150));
                 projectStage.showAndWait();
                 projectController = projectLoader.getController();
+
+
                 if (projectController.getProjectText() != null) {
                     TreeItem temp = new TreeItem(projectController.getProjectText().getText());
-                    TreeItem add = new TreeItem("Add Scan");
+                    TreeItem add = new TreeItem("   + Add Scan");
                     leftRoot.getChildren().add(temp);
                     temp.getChildren().add(add);
                     temp.setExpanded(true);
@@ -120,31 +124,6 @@ public class AegisMainWindowController {
 
             }
         });
-
-
-
-        //Handling a new Scan. (Shortcut supported)
-        /*newScan.setOnAction(new javafx.event.EventHandler<javafx.event.ActionEvent>() {
-            @Override
-            public void handle(javafx.event.ActionEvent event) {
-                targetSelection = new Stage();
-                Parent root = null;
-                FXMLLoader loader = new FXMLLoader();
-                try {
-                    loader.setLocation(getClass().getResource("TargetWindow.fxml"));
-                    loader.load();
-                    root = loader.getRoot();
-                } catch (IOException exception) {
-                    System.out.println(exception);
-                }
-                targetSelection.setScene(new Scene(root, 385, 357));
-                targetSelection.showAndWait();
-                target = loader.getController();
-                    for (Object x : target.getIpList().getItems()) {
-                        leftRoot.getChildren().add(new TreeItem((String) x));
-                    }
-            }
-        });*/
 
 
     }
@@ -175,9 +154,12 @@ public class AegisMainWindowController {
                 targetSelection.setScene(new Scene(root, 385, 357));
                 targetSelection.showAndWait();
                 target = loader.getController();
+                    TreeItem temp = (TreeItem) item.getChildren().toArray()[item.getChildren().toArray().length-1];
+                    item.getChildren().remove(item.getChildren().toArray()[item.getChildren().toArray().length-1]);
                     for (Object x : target.getIpList().getItems()) {
                         item.getChildren().add(new TreeItem((String) x));
                     }
+                    item.getChildren().add(temp);
             }
 
     }
