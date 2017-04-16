@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.AegisMainWindowController">
+  <top>
+    <MenuBar>
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New Project" fx:id="newProject" />
+            <MenuItem mnemonicParsing="false" text="Save Scan" fx:id="saveScan" />
+            <MenuItem mnemonicParsing="false" text="Load Scan" fx:id="loadScan" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Tools">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#openSettings" text="Advanced Scan Settings" />
+            <MenuItem mnemonicParsing="false" text="Preferences" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>

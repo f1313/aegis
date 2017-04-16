@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="325.0" prefWidth="325.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.ServicesDetectionController">
+  <children>
+    <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <CheckBox fx:id="enableButton" mnemonicParsing="false" onAction="#enableServiceDetection" text="Enable" />
+        <VBox fx:id="serviceDetectionVBox" disable="true" VBox.margin="$x1">
+          <children>
+            <CheckBox fx:id="enableAllPortsButton" mnemonicParsing="false" text="Enable all Ports" />
+            <Label text="Detection Intensity">
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x1" />
+              </VBox.margin>
+            </Label>
+            <Slider id="" fx:id="intensitySlider" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="220.00009999999747">
+              <VBox.margin>
+                <Insets top="10.0" />
+              </VBox.margin>
+            </Slider>
+            <CheckBox fx:id="debugOutput" mnemonicParsing="false" onAction="#enableDebugging" text="Debugging Output" VBox.margin="$x1" />
+            <VBox fx:id="debugVBox" disable="true" prefHeight="200.0" prefWidth="100.0" VBox.margin="$x2">
+              <children>
+                <HBox>
+                  <children>
+                    <TextField prefWidth="200.0" promptText="File" text="" />
+                    <Button mnemonicParsing="false" text="..">
+                      <HBox.margin>
+                        <Insets left="7.0" />
+                      </HBox.margin>
+                    </Button>
+                  </children>
+                  <VBox.margin>
+                    <Insets left="20.0" top="5.0" />
+                  </VBox.margin>
+                </HBox>
+                <VBox>
+                  <children>
+                    <RadioButton mnemonicParsing="false" text="Level 1">
+                      <toggleGroup>
+                        <ToggleGroup fx:id="Level" />
+                      </toggleGroup>
+                    </RadioButton>
+                    <RadioButton mnemonicParsing="false" text="Level 2" toggleGroup="$Level">
+                      <VBox.margin>
+                        <Insets top="7.0" fx:id="x2" />
+                      </VBox.margin>
+                    </RadioButton>
+                  </children>
+                  <VBox.margin>
+                    <Insets left="21.0" top="12.0" />
+                  </VBox.margin>
+                </VBox>
+              </children>
+            </VBox>
+          </children>
+        </VBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

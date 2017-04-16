@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.FirewallController">
+  <children>
+    <VBox fx:id="mainVBox" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <CheckBox fx:id="enableCheck" mnemonicParsing="false" onAction="#enableController" text="Enable" />
+        <VBox fx:id="enableVBox" disable="true" VBox.margin="$x2">
+          <children>
+            <CheckBox mnemonicParsing="false" text="Fragment Packets **WARNING HERE" />
+            <HBox>
+              <children>
+                <CheckBox id="sourceIPCheck" fx:id="ttlCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ttlController" prefWidth="80.0" text="Set TTL">
+                  <HBox.margin>
+                    <Insets right="7.0" />
+                  </HBox.margin>
+                </CheckBox>
+                <TextField id="sourceIPText" fx:id="ttlText" disable="true" onAction="#ttlController" prefWidth="50.0" text="">
+                  <HBox.margin>
+                    <Insets left="15.0" />
+                  </HBox.margin>
+                </TextField>
+              </children>
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x2" />
+              </VBox.margin>
+            </HBox>
+            <CheckBox mnemonicParsing="false" text="Randomize Host in the Group">
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x2" />
+              </VBox.margin>
+            </CheckBox>
+            <HBox>
+              <children>
+                <CheckBox fx:id="sourceIPCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sourceIP" prefWidth="170.0" text="Provide Source IP">
+                  <HBox.margin>
+                    <Insets right="7.0" />
+                  </HBox.margin>
+                </CheckBox>
+                <TextField fx:id="sourceIPText" disable="true" prefWidth="139.00009999999747" text="">
+                  <HBox.margin>
+                    <Insets left="15.0" />
+                  </HBox.margin>
+                </TextField>
+              </children>
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x2" />
+              </VBox.margin>
+            </HBox>
+            <CheckBox fx:id="interfaceCheck" mnemonicParsing="false" onAction="#interfaceController" text="Specify Interfaces">
+              <VBox.margin>
+                <Insets top="16.0" />
+              </VBox.margin>
+            </CheckBox>
+            <HBox>
+              <children>
+                <CheckBox id="sourceIPCheck" fx:id="sourcePortCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#sourcePortController" prefWidth="170.0" text="Provide Source Port">
+                  <HBox.margin>
+                    <Insets right="7.0" />
+                  </HBox.margin>
+                </CheckBox>
+                <TextField id="sourceIPText" fx:id="sourcePortText" disable="true" prefWidth="139.00009999999747" text="">
+                  <HBox.margin>
+                    <Insets left="15.0" />
+                  </HBox.margin>
+                </TextField>
+              </children>
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x2" />
+              </VBox.margin>
+            </HBox>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="332.0">
+              <children>
+                <ListView fx:id="interfaceListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="148.0" prefWidth="157.0">
+                  <VBox.margin>
+                    <Insets top="10.0" fx:id="x1" />
+                  </VBox.margin>
+                </ListView>
+                <Label text="Active Interface" VBox.margin="$x1" />
+                <TextField editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="138.00009999999747">
+                  <VBox.margin>
+                    <Insets top="7.0" />
+                  </VBox.margin>
+                </TextField>
+              </children>
+              <VBox.margin>
+                <Insets top="5.0" />
+              </VBox.margin>
+            </VBox>
+          </children>
+        </VBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

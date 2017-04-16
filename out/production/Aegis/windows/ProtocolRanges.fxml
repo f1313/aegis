@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainBorderPane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="274.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.ProtocolRangesController">
+  <children>
+    <VBox prefWidth="274.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <Label maxWidth="-Infinity" minWidth="50.0" prefWidth="250.0" text="IP Protocol Name/Number">
+          <VBox.margin>
+            <Insets bottom="7.0" />
+          </VBox.margin>
+        </Label>
+        <ComboBox id="IpProtocolName" fx:id="IPProtocolBox" editable="true" prefWidth="170.0">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ComboBox>
+        <Label text="IP Protocols">
+          <VBox.margin>
+            <Insets top="10.0" />
+          </VBox.margin>
+        </Label>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <ListView fx:id="IPProtocolList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="170.0">
+              <HBox.margin>
+                <Insets top="7.0" />
+              </HBox.margin>
+            </ListView>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+              <children>
+                <Button fx:id="addButton" maxWidth="-Infinity" minHeight="-1.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#addItem" prefWidth="33.0" text="+" />
+                <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeItem" prefWidth="33.0" text="-">
+                  <VBox.margin>
+                    <Insets top="5.0" />
+                  </VBox.margin>
+                </Button>
+              </children>
+              <HBox.margin>
+                <Insets left="7.0" top="7.0" />
+              </HBox.margin>
+            </VBox>
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

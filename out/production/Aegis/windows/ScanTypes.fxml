@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="336.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.ScanTypesController">
+  <center>
+    <VBox id="AdvancedVbox">
+      <children>
+        <RadioButton fx:id="ListScanButton" mnemonicParsing="false" onAction="#listScanButton" selected="true" text="List Scan">
+          <toggleGroup>
+            <ToggleGroup fx:id="ScanType" />
+          </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="AdvancedScanButton" mnemonicParsing="false" onAction="#advancedScanButton" text="Advanced Scan" toggleGroup="$ScanType">
+          <VBox.margin>
+            <Insets top="20.0" fx:id="x4" />
+          </VBox.margin>
+        </RadioButton>
+        <VBox fx:id="AdvancedVbox" disable="true" visible="true">
+          <children>
+            <CheckBox fx:id="NoPortCheck" mnemonicParsing="false" onAction="#noPortScanButtonOn" text="No Port Scan">
+              <VBox.margin>
+                <Insets fx:id="x1" />
+              </VBox.margin>
+            </CheckBox>
+            <CheckBox id="NoPingCheck" mnemonicParsing="false" text="No Ping Scan">
+              <VBox.margin>
+                <Insets top="18.0" fx:id="x2" />
+              </VBox.margin>
+            </CheckBox>
+            <VBox id="AdvancedVbox" fx:id="noPortOff" disable="false">
+              <children>
+                <HBox>
+                  <children>
+                    <CheckBox fx:id="tcpCheckBox" minWidth="115.0" mnemonicParsing="false" onAction="#tcpCheckBoxController" text="TCP" />
+                    <Button id="TCPButton" fx:id="TCPPorts" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#tcpCheckBoxController" prefWidth="74.0" text="Ports">
+                      <HBox.margin>
+                        <Insets fx:id="x1" />
+                      </HBox.margin>
+                    </Button>
+                  </children>
+                  <VBox.margin>
+                    <Insets top="20.0" fx:id="x4" />
+                  </VBox.margin>
+                </HBox>
+                <VBox fx:id="tcpVBox" disable="true">
+                  <children>
+                    <HBox>
+                      <children>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" selected="true" text="SYN">
+                          <toggleGroup>
+                            <ToggleGroup fx:id="TCP" />
+                          </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="ACK" toggleGroup="$TCP" />
+                      </children>
+                    </HBox>
+                    <HBox>
+                      <children>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="XMAS" toggleGroup="$TCP" />
+                        <RadioButton mnemonicParsing="false" text="NULL" toggleGroup="$TCP" />
+                      </children>
+                      <VBox.margin>
+                        <Insets top="12.0" fx:id="x3" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox padding="$x1" VBox.margin="$x3">
+                      <children>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="CONNECT" toggleGroup="$TCP" />
+                        <RadioButton mnemonicParsing="false" text="FIN" toggleGroup="$TCP" />
+                      </children>
+                    </HBox>
+                    <HBox padding="$x1" VBox.margin="$x3">
+                      <children>
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="WINDOW" toggleGroup="$TCP" />
+                        <RadioButton mnemonicParsing="false" text="MAIMON" toggleGroup="$TCP" />
+                      </children>
+                    </HBox>
+                  </children>
+                  <VBox.margin>
+                    <Insets left="17.0" top="18.0" />
+                  </VBox.margin>
+                </VBox>
+                <HBox VBox.margin="$x4">
+                  <children>
+                    <CheckBox id="UDPButton" fx:id="UDPCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#udpCheckController" prefWidth="115.0" text="UDP" />
+                    <Button id="USPButton" fx:id="UDPPorts" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#udpPorts" prefWidth="74.0" text="Ports" />
+                    <Button fx:id="udpPayloadButton" disable="true" maxHeight="-1.0" maxWidth="-Infinity" minHeight="-1.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#udpPayload" prefHeight="-1.0" prefWidth="74.0" text="Payload">
+                      <HBox.margin>
+                        <Insets left="10.0" fx:id="x5" />
+                      </HBox.margin>
+                    </Button>
+                  </children>
+                </HBox>
+                <HBox VBox.margin="$x4">
+                  <children>
+                    <CheckBox fx:id="sctpCheck" minWidth="-Infinity" mnemonicParsing="false" onAction="#sctpCheckController" prefWidth="115.0" text="SCTP" />
+                    <Button id="SCTPButton" fx:id="SCTPPorts" disable="true" maxHeight="-1.0" maxWidth="-Infinity" minHeight="-1.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#sctpPorts" prefHeight="-1.0" prefWidth="74.0" text="Ports" />
+                    <Button fx:id="sctpPayloadButton" disable="true" maxHeight="-1.0" maxWidth="-Infinity" minHeight="-1.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#sctpPayload" prefHeight="-1.0" prefWidth="74.0" text="Payload" HBox.margin="$x5" />
+                  </children>
+                </HBox>
+                <VBox fx:id="SCTPVBox" disable="true">
+                  <children>
+                    <HBox>
+                      <children>
+                        <RadioButton minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" selected="true" text="INIT">
+                          <toggleGroup>
+                            <ToggleGroup fx:id="SCTP" />
+                          </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="ECHO" toggleGroup="$SCTP" />
+                      </children>
+                      <VBox.margin>
+                        <Insets top="20.0" fx:id="x4" />
+                      </VBox.margin>
+                    </HBox>
+                    <HBox>
+                      <children>
+                        <RadioButton mnemonicParsing="false" text="COOKIE" toggleGroup="$SCTP" />
+                      </children>
+                      <VBox.margin>
+                        <Insets top="7.0" />
+                      </VBox.margin>
+                    </HBox>
+                  </children>
+                  <VBox.margin>
+                    <Insets left="17.0" />
+                  </VBox.margin>
+                </VBox>
+                <HBox>
+                  <children>
+                    <CheckBox maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="190.0" text="IP Protocol Ranges Scan">
+                      <HBox.margin>
+                        <Insets right="12.0" />
+                      </HBox.margin>
+                    </CheckBox>
+                    <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="82.0" text="Protocols" />
+                  </children>
+                  <VBox.margin>
+                    <Insets top="20.0" fx:id="x4" />
+                  </VBox.margin>
+                </HBox>
+                <HBox>
+                  <children>
+                    <CheckBox maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="190.0" text="FTP Bounce Scan">
+                      <HBox.margin>
+                        <Insets right="12.0" />
+                      </HBox.margin>
+                    </CheckBox>
+                    <Button mnemonicParsing="false" prefWidth="82.0" text="Ports" />
+                  </children>
+                  <VBox.margin>
+                    <Insets top="20.0" fx:id="x4" />
+                  </VBox.margin>
+                </HBox>
+              </children>
+            </VBox>
+          </children>
+          <VBox.margin>
+            <Insets left="20.0" top="20.0" />
+          </VBox.margin>
+        </VBox>
+      </children>
+      <padding>
+        <Insets fx:id="x1" />
+      </padding>
+      <BorderPane.margin>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </BorderPane.margin>
+    </VBox>
+  </center>
+</BorderPane>
