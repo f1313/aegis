@@ -78,7 +78,8 @@ public class AegisMainWindowController {
                     @Override
                     public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                         TreeItem<String> selectedItem = (TreeItem<String>) newValue;
-                            if (selectedItem.toString().equals("   + Add Scan")) {
+                        System.out.println(selectedItem.toString());
+                            if (selectedItem.toString().equals("TreeItem [ value:    + Add Scan ]")) {
                                 addScan(selectedItem.getParent());
                             }
                     }
@@ -174,4 +175,5 @@ class temp extends TreeItem{
     public String toString() {
         return x1;
     }
+
 }
