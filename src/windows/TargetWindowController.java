@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.util.ArrayList;
 
 
 public class TargetWindowController {
@@ -36,8 +37,6 @@ public class TargetWindowController {
     Button startButton;
     @FXML
     TextField fileText;
-
-
 
     @FXML private void initialize(){
         editButton.setText("\u270E");

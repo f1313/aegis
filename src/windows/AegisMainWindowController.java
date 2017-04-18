@@ -1,37 +1,28 @@
 package windows;
 
-//jxbrowserimports
 
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
-import javafx.application.Application;
 
 ////
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.ObservableList;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
-import java.beans.EventHandler;
 import java.io.IOException;
 
 /**
@@ -41,8 +32,7 @@ public class AegisMainWindowController {
 
     Stage targetSelection;
     TargetWindowController target = new TargetWindowController();
-    boolean addCheck = true;
-
+    VBox leftVBox = new VBox();
     @FXML
     MenuItem newProject;
     @FXML
@@ -58,7 +48,9 @@ public class AegisMainWindowController {
     @FXML
     public void initialize() {
 
+        addBar();
 
+        leftVBox.getChildren().add(leftTree);
         Browser browser = new Browser();
         BrowserView view = new BrowserView(browser);
 
@@ -68,16 +60,17 @@ public class AegisMainWindowController {
         mainBorderPane.setCenter(view);
 
 
-        mainBorderPane.setLeft(leftTree);
+        mainBorderPane.setLeft(leftVBox);
 
         TreeItem<String> rightRoot = new TreeItem("Basic Options");
         TreeItem<String> ri1 = new TreeItem("Option 1");
+
         TreeItem<String> ri2 = new TreeItem("Option 2");
         rightRoot.getChildren().addAll(ri1, ri2);
         TreeView<String> righTree = new TreeView(rightRoot);
         leftRoot.setExpanded(true);
         mainBorderPane.setRight(righTree);
-
+        leftRoot.getChildren().add(new TreeItem<temp>(new temp("   + Add Scan","BB")));
         //Handling a new Project
 
         leftTree.getSelectionModel().selectedItemProperty()
@@ -85,7 +78,7 @@ public class AegisMainWindowController {
                     @Override
                     public void changed(ObservableValue observable, Object oldValue, Object newValue) {
                         TreeItem<String> selectedItem = (TreeItem<String>) newValue;
-                            if (selectedItem.getValue().equals("   + Add Scan")) {
+                            if (selectedItem.toString().equals("   + Add Scan")) {
                                 addScan(selectedItem.getParent());
                             }
                     }
@@ -162,5 +155,23 @@ public class AegisMainWindowController {
                     item.getChildren().add(temp);
             }
 
+            private void addBar(){
+
+            }
+
     }
 
+class temp extends TreeItem{
+    String x1;
+    String x2;
+
+    public temp(String x1, String x2) {
+        this.x1 = x1;
+        this.x2 = x2;
+    }
+
+    @Override
+    public String toString() {
+        return x1;
+    }
+}

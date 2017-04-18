@@ -26,6 +26,11 @@
             <MenuItem mnemonicParsing="false" text="Preferences" />
           </items>
         </Menu>
+        <Menu mnemonicParsing="false" text="Project">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#openSettings" text="Scan Groups" />
+          </items>
+        </Menu>
       </menus>
     </MenuBar>
   </top>
