@@ -20,7 +20,8 @@ import java.util.ArrayList;
 
 public class TargetWindowController {
 
-    public TargetWindowController(){}
+    public TargetWindowController() {
+    }
 
     TargetSpec TargetObject = new TargetSpec();
     DirectoryChooser dirChooser = new DirectoryChooser();
@@ -37,65 +38,66 @@ public class TargetWindowController {
     Button startButton;
     @FXML
     TextField fileText;
+    @FXML
+    TextField groupName;
 
-    @FXML private void initialize(){
+    @FXML
+    private void initialize() {
         editButton.setText("\u270E");
+
         ipText.setOnKeyPressed(new EventHandler<javafx.scene.input.KeyEvent>() {
             @Override
             public void handle(javafx.scene.input.KeyEvent event) {
+                ipText.setStyle("-fx-background-color: white;");
+                errorLabel.setText("");
                 if (event.getCode() == KeyCode.ENTER) {
                     addIP();
                 }
             }
         });
 
-       fileText.setText(System.getProperty("user.home"));
+        fileText.setText(System.getProperty("user.home"));
     }
 
     //Adding an ip to the list.
-    @FXML private void addIP(){
+    @FXML
+    private void addIP() {
         String toAdd = ipText.getText();
 
-        if (toAdd.length() <= 0){
+        if (toAdd.length() <= 0) {
             ipText.setStyle("-fx-background-color: #ff9494;");
             errorLabel.setText("Empty Target");
-            startButton.setDisable(true);
             return;
-        }
-        if (ipList.getItems().contains(toAdd)){
+        } else if (ipList.getItems().contains(toAdd)) {
             ipText.setStyle("-fx-background-color: #ff9494;");
             errorLabel.setText("Duplicate Target");
-            startButton.setDisable(true);
             return;
-        }
-        if (!TargetObject.validateHostString(toAdd)){
+        } else if (!TargetObject.validateHostString(toAdd)) {
             errorLabel.setText("Invalid Target Format");
             ipText.setStyle("-fx-background-color: #ff9494;");
-            startButton.setDisable(true);
             return;
+        } else {
+            ipList.getItems().add(toAdd);
+            ipText.setText("");
+            errorLabel.setText("");
+            ipText.setStyle("-fx-background-color: white;");
         }
-
-        startButton.setDisable(false);
-
-        ipList.getItems().add(toAdd);
-        ipText.setText("");
-        errorLabel.setText("");
-        ipText.setStyle("-fx-background-color: white;");
     }
 
     //Removing an ip from the list
     /*
      WARNING : Error when removing the first element from the list.
     */
-    @FXML private void removeButton(){
-        if (ipList.getSelectionModel().getSelectedIndex() != -1){
+    @FXML
+    private void removeButton() {
+        if (ipList.getSelectionModel().getSelectedIndex() != -1) {
             ipList.getItems().remove(ipList.getSelectionModel().getSelectedIndex());
         }
-        if (ipList.getItems().size() == 0) startButton.setDisable(true);
     }
 
-    @FXML private void edit(){
-        if (ipList.getSelectionModel().getSelectedIndex() != -1){
+    @FXML
+    private void edit() {
+        if (ipList.getSelectionModel().getSelectedIndex() != -1) {
             String temp = (String) ipList.getSelectionModel().getSelectedItem();
             ipText.setText(temp);
             ipList.getItems().remove(ipList.getSelectionModel().getSelectedIndex());
@@ -104,19 +106,26 @@ public class TargetWindowController {
     }
 
 
-    @FXML private void save(){
+    @FXML
+    private void save() {
         dirChooser.setTitle("Choose Location");
         File temp = dirChooser.showDialog(chooser);
-        if (temp != null && temp.getAbsoluteFile() != null && temp.getAbsolutePath().length()!=0){
+        if (temp != null && temp.getAbsoluteFile() != null && temp.getAbsolutePath().length() != 0) {
             fileText.setText(temp.getAbsolutePath());
         }
     }
 
-    @FXML private void start(){
-        Stage stage = (Stage) ipText.getScene().getWindow();
-        stage.close();
+    @FXML
+    private void start() {
+        if (ipList.getItems().size() == 0) {
+            errorLabel.setText("Group can't be empty");
+            ipText.setStyle("-fx-background-color: #ff9494;");
+        } else {
+            AegisMainWindowController.groupClosed = true;
+            Stage stage = (Stage) ipText.getScene().getWindow();
+            stage.close();
+        }
     }
-
 
 
     public TextField getFileText() {
@@ -129,6 +138,10 @@ public class TargetWindowController {
 
     public Button getStartButton() {
         return startButton;
+    }
+
+    public String getGroupName() {
+        return groupName.getText();
     }
 
 }

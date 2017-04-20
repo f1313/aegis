@@ -1,6 +1,9 @@
 package Util;
 
 import windows.*;
+import MiddleMan.*;
+
+import java.lang.annotation.Target;
 
 /**
  * Created by wintson on 4/18/17.
@@ -8,8 +11,8 @@ import windows.*;
 public class Group {
     String groupName;
     AdvancedSettingsController advancedScan;
-
-
+    TargetSpec targets = new TargetSpec();
+    PortSpec ports = new PortSpec();
 
     public Group(String groupName) {
         this.groupName = groupName;
@@ -24,6 +27,13 @@ public class Group {
         this.groupName = groupName;
     }
 
+    public TargetSpec getTargets() {
+        return targets;
+    }
+
+    public void setTargets(TargetSpec targets) {
+        this.targets = targets;
+    }
 
     @Override
     public String toString() {

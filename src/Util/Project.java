@@ -26,10 +26,24 @@ public class Project extends TreeItem{
         return false;
     }
 
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
     @Override
     public String toString() {
         return this.projectName;
     }
+
+    public void addGroup(Group g){
+        groupList.add(g);
+    }
+
 }
 
 

@@ -9,104 +9,110 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="289.0" prefHeight="352.0" prefWidth="380.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.TargetWindowController">
+<BorderPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="289.0" prefHeight="410.9999000000025" prefWidth="380.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.TargetWindowController">
   <bottom>
-    <VBox>
+    <VBox prefHeight="372.0">
       <children>
-        <Label text="IP Address (or range)">
+        <VBox prefHeight="397.9999000000025">
+          <children>
+            <Label text="Group Name">
+              <VBox.margin>
+                <Insets fx:id="" />
+              </VBox.margin>
+            </Label>
+            <TextField fx:id="groupName" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="300.0" text="">
+              <VBox.margin>
+                <Insets top="7.0" />
+              </VBox.margin>
+            </TextField>
+            <Label text="IP Address (or range)">
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x2" />
+              </VBox.margin>
+            </Label>
+            <HBox>
+              <children>
+                <TextField fx:id="ipText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="300.0" />
+              </children>
+              <VBox.margin>
+                <Insets top="5.0" />
+              </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <ListView fx:id="ipList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" />
+                <VBox>
+                  <children>
+                    <Button id="addIPButton" fx:id="addIpButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addIP" prefWidth="33.0" text="+">
+                      <VBox.margin>
+                        <Insets bottom="7.0" left="7.0" />
+                      </VBox.margin>
+                    </Button>
+                    <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeButton" prefWidth="33.0" text="-">
+                      <VBox.margin>
+                        <Insets left="7.0" />
+                      </VBox.margin>
+                    </Button>
+                    <Button id="removeButton" fx:id="editButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#edit" prefWidth="33.0" text="">
+                      <VBox.margin>
+                        <Insets left="7.0" top="7.0" />
+                      </VBox.margin>
+                    </Button>
+                  </children>
+                </VBox>
+              </children>
+              <VBox.margin>
+                <Insets top="7.0" />
+              </VBox.margin>
+            </HBox>
+            <Label text="Save Scan To">
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x2" />
+              </VBox.margin>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField fx:id="fileText" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="300.0" promptText="File">
+                  <HBox.margin>
+                    <Insets fx:id="label" />
+                  </HBox.margin>
+                </TextField>
+                <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#save" prefHeight="26.0" text="..">
+                  <HBox.margin>
+                    <Insets left="7.0" />
+                  </HBox.margin>
+                </Button>
+              </children>
+              <VBox.margin>
+                <Insets top="7.0" />
+              </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <Label fx:id="errorLabel" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="286.0" text="" textFill="#ff3333">
+                  <HBox.margin>
+                    <Insets fx:id="l1" />
+                  </HBox.margin>
+                </Label>
+                <Button fx:id="startButton" disable="false" mnemonicParsing="false" onAction="#start" text="Start">
+                  <HBox.margin>
+                    <Insets fx:id="x1" />
+                  </HBox.margin>
+                </Button>
+              </children>
+              <VBox.margin>
+                <Insets top="15.0" />
+              </VBox.margin>
+            </HBox>
+          </children>
           <VBox.margin>
             <Insets fx:id="label3" />
           </VBox.margin>
-        </Label>
-        <HBox>
-          <children>
-            <TextField fx:id="ipText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="300.0" />
-          </children>
-          <VBox.margin>
-            <Insets top="5.0" />
-          </VBox.margin>
-        </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
-          <children>
-            <ListView fx:id="ipList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" />
-            <VBox>
-              <children>
-                <Button id="addIPButton" fx:id="addIpButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addIP" prefWidth="33.0" text="+">
-                  <VBox.margin>
-                    <Insets bottom="7.0" left="7.0" />
-                  </VBox.margin>
-                </Button>
-                <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeButton" prefWidth="33.0" text="-">
-                  <VBox.margin>
-                    <Insets left="7.0" />
-                  </VBox.margin>
-                </Button>
-                <Button id="removeButton" fx:id="editButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#edit" prefWidth="33.0" text="">
-                  <VBox.margin>
-                    <Insets left="7.0" top="7.0" />
-                  </VBox.margin>
-                </Button>
-              </children>
-            </VBox>
-          </children>
-          <VBox.margin>
-            <Insets top="7.0" />
-          </VBox.margin>
-        </HBox>
-        <Label text="Save Scan To">
-          <VBox.margin>
-            <Insets top="20.0" />
-          </VBox.margin>
-        </Label>
-        <HBox prefHeight="100.0" prefWidth="200.0">
-          <children>
-            <TextField fx:id="fileText" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="300.0" promptText="File">
-              <HBox.margin>
-                <Insets fx:id="label" />
-              </HBox.margin>
-            </TextField>
-            <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#save" prefHeight="26.0" text="..">
-              <HBox.margin>
-                <Insets left="7.0" />
-              </HBox.margin>
-            </Button>
-          </children>
-          <VBox.margin>
-            <Insets top="7.0" />
-          </VBox.margin>
-        </HBox>
-        <HBox prefHeight="100.0" prefWidth="200.0">
-          <children>
-            <Label fx:id="errorLabel" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="286.0" text="" textFill="#ff3333">
-              <HBox.margin>
-                <Insets fx:id="x1" />
-              </HBox.margin>
-            </Label>
-            <Button fx:id="startButton" disable="true" mnemonicParsing="false" onAction="#start" text="Start">
-              <HBox.margin>
-                <Insets fx:id="x1" />
-              </HBox.margin>
-            </Button>
-          </children>
-          <VBox.margin>
-            <Insets top="15.0" />
-          </VBox.margin>
-        </HBox>
+        </VBox>
       </children>
       <BorderPane.margin>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
       </BorderPane.margin>
     </VBox>
   </bottom>
-  <top>
-    <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="380.0" BorderPane.margin="$label3">
-      <children>
-        <Label text="Target selection">
-          <HBox.margin>
-            <Insets bottom="10.0" left="10.0" top="10.0" />
-          </HBox.margin>
-        </Label>
-      </children>
-    </HBox>
-  </top>
 </BorderPane>
