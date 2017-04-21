@@ -28,7 +28,7 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Project">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#openSettings" text="Scan Groups" />
+            <MenuItem mnemonicParsing="false" onAction="#manageGroups" text="Scan Groups" />
           </items>
         </Menu>
       </menus>

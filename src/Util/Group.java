@@ -1,5 +1,8 @@
 package Util;
 
+import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import windows.*;
 import MiddleMan.*;
 
@@ -13,6 +16,7 @@ public class Group {
     AdvancedSettingsController advancedScan;
     TargetSpec targets = new TargetSpec();
     PortSpec ports = new PortSpec();
+    private final Node groupIcon = new ImageView(new Image(getClass().getResourceAsStream("/group.png")));
 
     public Group(String groupName) {
         this.groupName = groupName;
@@ -38,5 +42,9 @@ public class Group {
     @Override
     public String toString() {
         return this.groupName;
+    }
+
+    public Node getProjectIcon() {
+        return groupIcon;
     }
 }

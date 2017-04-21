@@ -1,6 +1,11 @@
 package MiddleMan;
 
+import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 public class TargetSpec {
+
 
     //included targets
     private boolean isIncudedTargetsConfigured;

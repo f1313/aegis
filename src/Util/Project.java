@@ -1,6 +1,9 @@
 package Util;
 
+import javafx.scene.Node;
 import javafx.scene.control.TreeItem;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import windows.*;
 import java.util.ArrayList;
 
@@ -11,7 +14,7 @@ public class Project extends TreeItem{
     char c = 'P';
     String projectName;
     ArrayList<Group> groupList;
-
+    private final Node projectIcon = new ImageView(new Image(getClass().getResourceAsStream("/project.png")));
     public Project(String projectName) {
         this.projectName = projectName;
         groupList = new ArrayList();
@@ -44,6 +47,9 @@ public class Project extends TreeItem{
         groupList.add(g);
     }
 
+    public Node getProjectIcon() {
+        return projectIcon;
+    }
 }
 
 
