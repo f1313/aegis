@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.PayloadController">
+  <children>
+    <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <CheckBox fx:id="dataCheck" mnemonicParsing="false" onAction="#dataController" text="Append Data to Protocols" />
+        <VBox fx:id="dataVBox" disable="true">
+          <children>
+            <HBox>
+              <children>
+                <RadioButton fx:id="hexRadio" mnemonicParsing="false" onAction="#hexCtontroller" selected="true" text="Hex">
+                  <toggleGroup>
+                    <ToggleGroup fx:id="data" />
+                  </toggleGroup>
+                </RadioButton>
+                <Label fx:id="hexError" text="">
+                  <textFill>
+                    <Color blue="0.400" green="0.400" red="1.000" fx:id="x5" />
+                  </textFill>
+                  <HBox.margin>
+                    <Insets left="20.0" fx:id="x3" />
+                  </HBox.margin>
+                </Label>
+              </children>
+            </HBox>
+            <TextArea fx:id="hexText" disable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" wrapText="true">
+              <VBox.margin>
+                <Insets top="7.0" fx:id="x1" />
+              </VBox.margin>
+            </TextArea>
+            <HBox>
+              <children>
+                <RadioButton fx:id="binaryRadio" mnemonicParsing="false" onAction="#binaryController" text="Binary" toggleGroup="$data" />
+                <Label fx:id="binaryError" text="" textFill="$x5" HBox.margin="$x3" />
+              </children>
+              <VBox.margin>
+                <Insets top="10.0" fx:id="x4" />
+              </VBox.margin>
+            </HBox>
+            <TextArea fx:id="binaryText" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" wrapText="true" VBox.margin="$x1" />
+            <HBox VBox.margin="$x4">
+              <children>
+                <RadioButton fx:id="asciiRadio" mnemonicParsing="false" onAction="#asciiController" text="ASCII" toggleGroup="$data" />
+                <Label fx:id="asciiError" text="" HBox.margin="$x3" />
+              </children>
+            </HBox>
+            <TextArea fx:id="asciiText" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" wrapText="true" VBox.margin="$x1" />
+            <HBox>
+              <children>
+                <RadioButton fx:id="randomRadio" mnemonicParsing="false" onAction="#randomController" text="Random Data" toggleGroup="$data" />
+                <TextField fx:id="randomText" disable="true" prefWidth="100.0" promptText="Data Length">
+                  <HBox.margin>
+                    <Insets left="10.0" />
+                  </HBox.margin>
+                </TextField>
+              </children>
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x2" />
+              </VBox.margin>
+            </HBox>
+            <HBox>
+              <children>
+                <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="365.0" visible="false" />
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#save" text="Save" textAlignment="LEFT" />
+              </children>
+            </HBox>
+          </children>
+          <VBox.margin>
+            <Insets left="20.0" top="20.0" />
+          </VBox.margin>
+        </VBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

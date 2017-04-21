@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.ScanOptionsController">
+  <children>
+    <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <RadioButton fx:id="basicScan" mnemonicParsing="false" onAction="#basicController" selected="true" text="Basic Ports Scan">
+          <toggleGroup>
+            <ToggleGroup fx:id="scans" />
+          </toggleGroup>
+        </RadioButton>
+        <VBox>
+          <children>
+            <RadioButton fx:id="fastScan" mnemonicParsing="false" onAction="#fastController" text="Fast Scan" toggleGroup="$scans">
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x1" />
+              </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="randomScan" mnemonicParsing="false" onAction="#randomController" text="Random Scan" toggleGroup="$scans" VBox.margin="$x1" />
+            <RadioButton fx:id="ratioScan" mnemonicParsing="false" onAction="#ratioController" text="Scan Higher Than Ratio" toggleGroup="$scans" VBox.margin="$x1" />
+            <VBox fx:id="ratioVBox" disable="true">
+              <children>
+                <HBox>
+                  <children>
+                    <Separator prefWidth="77.0" visible="false" />
+                    <Label text="Ratio" />
+                  </children>
+                </HBox>
+                <Slider maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="201.0">
+                  <VBox.margin>
+                    <Insets top="4.0" />
+                  </VBox.margin>
+                </Slider>
+                <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="41.0">
+                  <VBox.margin>
+                    <Insets left="77.0" top="4.0" />
+                  </VBox.margin>
+                </TextField>
+                <HBox>
+                  <children>
+                    <CheckBox fx:id="topPortsCheck" mnemonicParsing="false" onAction="#topRatio" text="Scan Top Ports In The Ratio">
+                      <HBox.margin>
+                        <Insets fx:id="x2" />
+                      </HBox.margin>
+                    </CheckBox>
+                    <TextField fx:id="topPortsText" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="70.0">
+                      <HBox.margin>
+                        <Insets left="13.0" />
+                      </HBox.margin>
+                    </TextField>
+                  </children>
+                  <VBox.margin>
+                    <Insets top="15.0" fx:id="x3" />
+                  </VBox.margin>
+                </HBox>
+              </children>
+              <VBox.margin>
+                <Insets left="30.0" top="10.0" />
+              </VBox.margin>
+            </VBox>
+            <RadioButton fx:id="customScan" mnemonicParsing="false" onAction="#customController" text="Custom Range" toggleGroup="$scans" VBox.margin="$x1" />
+            <VBox fx:id="customVBox" disable="true">
+              <children>
+                <HBox id="includeChecl" VBox.margin="$x3">
+                  <children>
+                    <CheckBox fx:id="includeCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#include" prefWidth="140.0" text="Include Range" HBox.margin="$x2" />
+                    <TextField fx:id="includeText" disable="true" prefWidth="80.0" />
+                  </children>
+                </HBox>
+                <HBox VBox.margin="$x3">
+                  <children>
+                    <CheckBox fx:id="excludeCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exclude" prefWidth="140.0" text="Exclude Range" HBox.margin="$x2" />
+                    <TextField fx:id="excludeText" disable="true" prefWidth="80.0" />
+                  </children>
+                </HBox>
+              </children>
+              <VBox.margin>
+                <Insets left="30.0" />
+              </VBox.margin>
+            </VBox>
+          </children>
+        </VBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

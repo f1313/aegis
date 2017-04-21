@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.SpoofingAndChecksumController">
+  <children>
+    <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <HBox prefHeight="21.0" prefWidth="412.0">
+          <children>
+            <CheckBox fx:id="macCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#macController" prefWidth="170.0" text="Spoof MAC Address" />
+            <TextField fx:id="macText" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="137.0" text="" />
+            <Button fx:id="macButton" disable="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="78.0" text="Random">
+              <HBox.margin>
+                <Insets left="7.0" fx:id="x1" />
+              </HBox.margin>
+            </Button>
+          </children>
+        </HBox>
+        <HBox>
+          <children>
+            <CheckBox fx:id="proxyCheck" mnemonicParsing="false" onAction="#proxyController" text="Proxy" />
+            <Button fx:id="proxyButton" disable="true" mnemonicParsing="false" text="Set Proxy" HBox.margin="$x1" />
+          </children>
+          <padding>
+            <Insets top="20.0" fx:id="x2" />
+          </padding>
+        </HBox>
+        <CheckBox mnemonicParsing="false" text="Intentionally Send Bad Checksum" VBox.margin="$x2" />
+        <CheckBox mnemonicParsing="false" text="Use Old adler32 As Checksum (for SCTP)" VBox.margin="$x2" />
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.newProjectController">
+  <children>
+    <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <HBox>
+          <children>
+            <Label prefWidth="120.0" text="Project Title:" />
+            <TextField fx:id="projectText" prefWidth="200.0">
+              <HBox.margin>
+                <Insets />
+              </HBox.margin>
+            </TextField>
+          </children>
+        </HBox>
+        <HBox>
+          <children>
+            <Label maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0" text="Project Location:" />
+            <TextField fx:id="locationText" prefWidth="200.0" />
+            <Button fx:id="locationButton" mnemonicParsing="false" onAction="#selectLocation" text="..">
+              <HBox.margin>
+                <Insets left="10.0" />
+              </HBox.margin>
+            </Button>
+          </children>
+          <VBox.margin>
+            <Insets top="20.0" />
+          </VBox.margin>
+        </HBox>
+        <HBox>
+          <children>
+            <Label fx:id="errorLabel" prefWidth="310.0" text="" textFill="#ff6666">
+              <HBox.margin>
+                <Insets />
+              </HBox.margin>
+            </Label>
+            <Button fx:id="newButton" mnemonicParsing="false" onAction="#create" text="New" />
+          </children>
+          <VBox.margin>
+            <Insets top="20.0" />
+          </VBox.margin>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>
