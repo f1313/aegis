@@ -16,7 +16,7 @@ public class Group {
     AdvancedSettingsController advancedScan;
     TargetSpec targets = new TargetSpec();
     PortSpec ports = new PortSpec();
-    private final Node groupIcon = new ImageView(new Image(getClass().getResourceAsStream("/group.png")));
+    private final Node groupIcon = new ImageView(new Image(getClass().getResourceAsStream("/img/group.png")));
 
     public Group(String groupName) {
         this.groupName = groupName;

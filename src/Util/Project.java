@@ -14,7 +14,7 @@ public class Project extends TreeItem{
     char c = 'P';
     String projectName;
     ArrayList<Group> groupList;
-    private final Node projectIcon = new ImageView(new Image(getClass().getResourceAsStream("/project.png")));
+    private final Node projectIcon = new ImageView(new Image(getClass().getResourceAsStream("/img/project.png")));
     public Project(String projectName) {
         this.projectName = projectName;
         groupList = new ArrayList();

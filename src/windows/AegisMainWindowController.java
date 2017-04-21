@@ -223,7 +223,8 @@ public class AegisMainWindowController {
             int counter = 0;
             for (Object x : target.getIpList().getItems()) {
                 g.getTargets().getIncludedTargetsList().add(x.toString());
-                newGroup.getChildren().add(new TreeItem<>(x,new ImageView(new Image(getClass().getResourceAsStream("/target.png")))));
+                newGroup.getChildren().add(new TreeItem<>(x,new ImageView(new Image
+                        (getClass().getResourceAsStream("/img/target.png")))));
                 counter++;
             }
 
