@@ -1,8 +1,12 @@
 package Util;
 
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import windows.*;
 import MiddleMan.*;
 
@@ -12,15 +16,44 @@ import java.lang.annotation.Target;
  * Created by wintson on 4/18/17.
  */
 public class Group {
+
+    Stage groupStage = new Stage();
+
     String groupName;
+
     AdvancedSettingsController advancedScan;
+
     TargetSpec targets = new TargetSpec();
+
+    FXMLLoader projectLoader = new FXMLLoader();
+
+    BorderPane settingsWindow = new BorderPane();
+
     PortSpec ports = new PortSpec();
+
     private final Node groupIcon = new ImageView(new Image(getClass().getResourceAsStream("/img/group.png")));
 
+
     public Group(String groupName) {
+
         this.groupName = groupName;
-        advancedScan = new AdvancedSettingsController();
+        try {
+            init();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void init() throws Exception {
+        try {
+            settingsWindow = FXMLLoader.load(getClass().getResource("/windows/AdvancedSettings.fxml"));
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        groupStage.setScene(new Scene(settingsWindow, 700, 580));
+        groupStage.setTitle(this.getGroupName()+"'s Settings" );
+        System.out.println();
     }
 
     public String getGroupName() {
@@ -47,4 +80,9 @@ public class Group {
     public Node getProjectIcon() {
         return groupIcon;
     }
+
+    public Stage getSettingsStage() {
+        return groupStage;
+    }
+
 }

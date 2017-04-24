@@ -50,6 +50,14 @@ public class Project extends TreeItem{
     public Node getProjectIcon() {
         return projectIcon;
     }
+
+    public ArrayList<Group> getGroupList() {
+        return groupList;
+    }
+
+    public void setGroupList(ArrayList<Group> groupList) {
+        this.groupList = groupList;
+    }
 }
 
 

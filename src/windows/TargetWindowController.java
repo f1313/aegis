@@ -14,6 +14,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.awt.event.KeyEvent;
@@ -28,7 +29,9 @@ public class TargetWindowController {
 
     TargetSpec TargetObject = new TargetSpec();
     DirectoryChooser dirChooser = new DirectoryChooser();
+    FileChooser fileLoader= new FileChooser();
     Stage chooser = new Stage();
+    Stage loader = new Stage();
     @FXML
     ListView ipList;
     @FXML
@@ -43,6 +46,8 @@ public class TargetWindowController {
     TextField fileText;
     @FXML
     TextField groupName;
+    @FXML
+    TextField loadText;
 
     @FXML
     private void initialize() {
@@ -79,7 +84,12 @@ public class TargetWindowController {
             errorLabel.setText("Invalid Target Format");
             ipText.setStyle("-fx-background-color: #ff9494;");
             return;
-        } else {
+        }
+        else if (toAdd.equals("+ Add Group")){
+            errorLabel.setText("Invalid Name");
+            ipText.setStyle("-fx-background-color: #ff9494;");
+        }
+        else {
             ipList.getItems().add(toAdd);
             ipText.setText("");
             errorLabel.setText("");
@@ -127,6 +137,16 @@ public class TargetWindowController {
             AegisMainWindowController.groupClosed = true;
             Stage stage = (Stage) ipText.getScene().getWindow();
             stage.close();
+        }
+    }
+
+    @FXML
+    private void load(){
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Target files (*.target)", "*.target");
+        fileLoader.getExtensionFilters().add(extFilter);
+        File temp = fileLoader.showOpenDialog(loader);
+        if (temp != null && temp.getAbsoluteFile() != null && temp.getAbsolutePath().length() != 0) {
+            loadText.setText(temp.getAbsolutePath());
         }
     }
 

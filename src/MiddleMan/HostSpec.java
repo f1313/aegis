@@ -213,7 +213,7 @@ public class HostSpec {
     }
 
     /**
-     * Validates all host specification strings in an arrayList. see doc for validateHostString() for more details.
+     * Validates all host specification strings in an arrayList. see doc for validateDNSString() for more details.
      * <p>
      * @param hostsStrings
      *                     <p>

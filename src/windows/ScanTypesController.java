@@ -124,7 +124,6 @@ public class ScanTypesController {
         }
     }
 
-
     @FXML
     private void listScanButton(){
         AdvancedVbox.setDisable(true);
@@ -170,16 +169,17 @@ public class ScanTypesController {
         if (udpPayload == null){
             udpPayload = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("Payload.fxml"));
-            udpPayload.setScene(new Scene(root,479,555));
+            udpPayload.setScene(new Scene(root,479,585));
         }
         udpPayload.show();
     }
+
     @FXML
     private void sctpPayload() throws IOException{
         if (sctpPayload == null){
             sctpPayload = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("Payload.fxml"));
-            sctpPayload.setScene(new Scene(root,479,555));
+            sctpPayload.setScene(new Scene(root,479,585));
         }
         sctpPayload.show();
     }
@@ -189,7 +189,7 @@ public class ScanTypesController {
         if (sctpPorts == null){
             sctpPorts = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("PortsSelectionWindow.fxml"));
-            sctpPorts.setScene(new Scene(root,328,328));
+            sctpPorts.setScene(new Scene(root,328,354));
         }
         sctpPorts.show();
     }
@@ -199,7 +199,7 @@ public class ScanTypesController {
         if (udpPorts == null){
             udpPorts = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("PortsSelectionWindow.fxml"));
-            udpPorts.setScene(new Scene(root,328,328));
+            udpPorts.setScene(new Scene(root,328,354));
         }
         udpPorts.show();
     }

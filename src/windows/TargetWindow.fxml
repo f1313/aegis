@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="289.0" prefHeight="410.9999000000025" prefWidth="380.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.TargetWindowController">
+<BorderPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="289.0" prefHeight="480.0" prefWidth="380.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.TargetWindowController">
   <bottom>
     <VBox prefHeight="372.0">
       <children>
@@ -60,6 +60,28 @@
                     </Button>
                   </children>
                 </VBox>
+              </children>
+              <VBox.margin>
+                <Insets top="7.0" />
+              </VBox.margin>
+            </HBox>
+            <Label text="Load Targets From a File">
+              <VBox.margin>
+                <Insets top="20.0" fx:id="x2" />
+              </VBox.margin>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <TextField id="fileText" fx:id="loadText" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="300.0" promptText="File">
+                  <HBox.margin>
+                    <Insets fx:id="" />
+                  </HBox.margin>
+                </TextField>
+                <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#load" prefHeight="26.0" text="..">
+                  <HBox.margin>
+                    <Insets left="7.0" />
+                  </HBox.margin>
+                </Button>
               </children>
               <VBox.margin>
                 <Insets top="7.0" />

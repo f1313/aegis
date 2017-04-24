@@ -24,7 +24,7 @@
                     <ToggleGroup fx:id="data" />
                   </toggleGroup>
                 </RadioButton>
-                <Label fx:id="hexError" text="">
+                <Label fx:id="hexError" prefWidth="215.0" text="">
                   <textFill>
                     <Color blue="0.400" green="0.400" red="1.000" fx:id="x5" />
                   </textFill>
@@ -42,7 +42,7 @@
             <HBox>
               <children>
                 <RadioButton fx:id="binaryRadio" mnemonicParsing="false" onAction="#binaryController" text="Binary" toggleGroup="$data" />
-                <Label fx:id="binaryError" text="" textFill="$x5" HBox.margin="$x3" />
+                <Label fx:id="binaryError" prefWidth="198.0" text="" textFill="$x5" HBox.margin="$x3" />
               </children>
               <VBox.margin>
                 <Insets top="10.0" fx:id="x4" />
@@ -68,6 +68,19 @@
               <VBox.margin>
                 <Insets top="20.0" fx:id="x2" />
               </VBox.margin>
+            </HBox>
+            <HBox>
+              <children>
+                <RadioButton id="loadButton" fx:id="loadRadio" mnemonicParsing="false" onAction="#loadController" text="Load Payload from File" toggleGroup="$data" />
+                <Button fx:id="loadButton" disable="true" mnemonicParsing="false" onAction="#loadButtonController" text="..">
+                  <HBox.margin>
+                    <Insets left="10.0" />
+                  </HBox.margin>
+                </Button>
+              </children>
+              <padding>
+                <Insets top="20.0" fx:id="x2" />
+              </padding>
             </HBox>
             <HBox>
               <children>

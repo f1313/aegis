@@ -8,9 +8,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Glow;
 import javafx.scene.layout.Background;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -20,6 +22,8 @@ import java.util.Collection;
  * Created by wintson on 3/14/17.
  */
 public class PortsSelectionWindowController {
+    Stage loader;
+    FileChooser fileLoader = new FileChooser();
 
     @FXML
     CheckBox portHelperButton;
@@ -27,6 +31,7 @@ public class PortsSelectionWindowController {
     TextField portTextField;
     @FXML
     ListView portsListView;
+
 
     private PortSpec portObject = new PortSpec();
 
@@ -71,6 +76,16 @@ public class PortsSelectionWindowController {
         portObject.setIsIncludedPortsLoadedFromFile(false);
         Stage stage = (Stage) portHelperButton.getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    private void load(){
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Ports files (*.port)", "*.port");
+        fileLoader.getExtensionFilters().add(extFilter);
+        File temp = fileLoader.showOpenDialog(loader);
+        if (temp != null && temp.getAbsoluteFile() != null && temp.getAbsolutePath().length() != 0) {
+
+        }
     }
 
     public PortSpec getPortObject() {

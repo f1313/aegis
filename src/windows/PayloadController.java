@@ -3,12 +3,18 @@ package windows;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 /**
  * Created by wintson on 4/8/17.
  */
 public class PayloadController {
+
+    FileChooser fileLoader = new FileChooser();
+    Stage loader = new Stage();
     @FXML
     CheckBox dataCheck;
     @FXML
@@ -21,6 +27,10 @@ public class PayloadController {
     TextArea binaryText;
     @FXML
     RadioButton asciiRadio;
+    @FXML
+    RadioButton loadRadio;
+    @FXML
+    Button loadButton;
     @FXML
     TextArea asciiText;
     @FXML
@@ -52,6 +62,7 @@ public class PayloadController {
             binaryText.setDisable(true);
             asciiText.setDisable(true);
             randomText.setDisable(true);
+            loadButton.setDisable(true);
         }else {
             hexText.setDisable(true);
         }
@@ -63,6 +74,7 @@ public class PayloadController {
             hexText.setDisable(true);
             asciiText.setDisable(true);
             randomText.setDisable(true);
+            loadButton.setDisable(true);
         }else {
             binaryText.setDisable(true);
         }
@@ -74,6 +86,7 @@ public class PayloadController {
             hexText.setDisable(true);
             binaryText.setDisable(true);
             randomText.setDisable(true);
+            loadButton.setDisable(true);
         }else {
             asciiText.setDisable(true);
         }
@@ -85,8 +98,31 @@ public class PayloadController {
             binaryText.setDisable(true);
             hexText.setDisable(true);
             asciiText.setDisable(true);
+            loadButton.setDisable(true);
         }else {
             randomText.setDisable(true);
+        }
+    }
+
+    @FXML private void loadController(){
+        if(loadRadio.isSelected()){
+            loadButton.setDisable(false);
+            randomText.setDisable(false);
+            binaryText.setDisable(true);
+            hexText.setDisable(true);
+            asciiText.setDisable(true);
+            randomText.setDisable(true);
+        }else {
+            loadButton.setDisable(true);
+        }
+    }
+
+    @FXML private void loadButtonController(){
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Payload files (*.payload)", "*.payload");
+        fileLoader.getExtensionFilters().add(extFilter);
+        File temp = fileLoader.showOpenDialog(loader);
+        if (temp != null && temp.getAbsoluteFile() != null && temp.getAbsolutePath().length() != 0) {
+
         }
     }
 
