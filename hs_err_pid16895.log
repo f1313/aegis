@@ -1,0 +1,1071 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xf6c9d17f, pid=16895, tid=0x9d952b40
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_121-b13) (build 1.8.0_121-b13)
+# Java VM: Java HotSpot(TM) Server VM (25.121-b13 mixed mode linux-x86 )
+# Problematic frame:
+# V  [libjvm.so+0x54217f]  jni_invoke_nonstatic(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)+0x2f
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x098d3400):  JavaThread "JavaFX Application Thread" [_thread_in_vm, id=16930, stack(0x9d902000,0x9d953000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x69746163
+
+Registers:
+EAX=0x69746163, EBX=0xf7137268, ECX=0xf7137268, EDX=0x9d950558
+ESP=0x9d9503e0, EBP=0x9d9504f8, ESI=0x9d95052c, EDI=0x098d3400
+EIP=0xf6c9d17f, EFLAGS=0x00010206, CR2=0x69746163
+
+Top of Stack: (sp=0x9d9503e0)
+0x9d9503e0:   098d37ac f712ede8 9d9504ac 9d950468
+0x9d9503f0:   a4276a98 9d950558 098d3538 f6cb9e20
+0x9d950400:   a4276a98 00050024 a6741080 a6741088
+0x9d950410:   a6741474 098d2ed8 000003ec 098d36d0
+0x9d950420:   a4276a98 9d950520 098995e0 a21225c8
+0x9d950430:   098995e0 0000000d 098d2f18 0000000e
+0x9d950440:   0000000c 098d2f18 0000000c 098d2f18
+0x9d950450:   0000000d 0000000b 098d2f18 a209f812 
+
+Instructions: (pc=0xf6c9d17f)
+0xf6c9d15f:   ff ff ff 8b 45 08 e8 00 00 00 00 5b 81 c3 fe a0
+0xf6c9d16f:   49 00 89 95 fc fe ff ff 85 c0 0f 84 99 09 00 00
+0xf6c9d17f:   8b 38 85 ff 0f 84 8f 09 00 00 8b 45 18 8b b0 c0
+0xf6c9d18f:   00 00 00 83 7e 0c fb 0f 87 04 07 00 00 8b 46 0c 
+
+Register to memory mapping:
+
+EAX=0x69746163 is an unknown value
+EBX=0xf7137268: <offset 0x9dc268> in /home/wintson/jdk1.8.0_121/jre/lib/i386/server/libjvm.so at 0xf675b000
+ECX=0xf7137268: <offset 0x9dc268> in /home/wintson/jdk1.8.0_121/jre/lib/i386/server/libjvm.so at 0xf675b000
+EDX=0x9d950558 is pointing into the stack for thread: 0x098d3400
+ESP=0x9d9503e0 is pointing into the stack for thread: 0x098d3400
+EBP=0x9d9504f8 is pointing into the stack for thread: 0x098d3400
+ESI=0x9d95052c is pointing into the stack for thread: 0x098d3400
+EDI=0x098d3400 is a thread
+
+
+Stack: [0x9d902000,0x9d953000],  sp=0x9d9503e0,  free space=312k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x54217f]  jni_invoke_nonstatic(JNIEnv_*, JavaValue*, _jobject*, JNICallType, _jmethodID*, JNI_ArgumentPusher*, Thread*)+0x2f
+V  [libjvm.so+0x544fc1]  jni_CallVoidMethodV+0xe1
+C  [libglass.so+0xf7ec]  JNIEnv_::CallVoidMethod(_jobject*, _jmethodID*, ...)+0x1c
+C  [libglass.so+0x1972c]  WindowContextBase::process_key(_GdkEventKey*)+0x1cc
+C  [libglass.so+0x1782a]  WindowContextBase::im_filter_keypress(_GdkEventKey*)+0x1aa
+C  [libglass.so+0x17902]  WindowContextBase::filterIME(_GdkEvent*)+0x52
+C  [libglass.so+0x1daac]  process_events(_GdkEvent*, void*)+0x21c
+C  [libgdk-x11-2.0.so.0+0x53fa9]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.sun.glass.ui.gtk.GtkApplication.enterNestedEventLoopImpl()V+0
+j  com.sun.glass.ui.gtk.GtkApplication._enterNestedEventLoop()Ljava/lang/Object;+15
+j  com.sun.glass.ui.Application.enterNestedEventLoop()Ljava/lang/Object;+14
+j  com.sun.glass.ui.EventLoop.enter()Ljava/lang/Object;+42
+j  com.sun.javafx.tk.quantum.QuantumToolkit.enterNestedEventLoop(Ljava/lang/Object;)Ljava/lang/Object;+107
+j  javafx.stage.Stage.showAndWait()V+93
+j  javafx.scene.control.HeavyweightDialog.showAndWait()V+22
+j  javafx.scene.control.Dialog.showAndWait()Ljava/util/Optional;+88
+j  windows.AegisMainWindowController.lambda$initQuick$3(Ljavafx/event/ActionEvent;)V+32
+j  windows.AegisMainWindowController$$Lambda$115.handle(Ljavafx/event/Event;)V+8
+j  com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(Ljavafx/event/Event;)V+51
+j  com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(Ljavafx/event/EventType;Ljavafx/event/Event;)Ljavafx/event/Event;+29
+j  com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(Ljavafx/event/Event;)Ljavafx/event/Event;+8
+j  com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Ljavafx/event/Event;Ljavafx/event/EventDispatchChain;)Ljavafx/event/Event;+29
+j  com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Ljavafx/event/Event;)Ljavafx/event/Event;+69
+j  com.sun.javafx.event.EventUtil.fireEventImpl(Ljavafx/event/EventDispatchChain;Ljavafx/event/EventTarget;Ljavafx/event/Event;)Ljavafx/event/Event;+10
+j  com.sun.javafx.event.EventUtil.fireEvent(Ljavafx/event/EventTarget;Ljavafx/event/Event;)Ljavafx/event/Event;+37
+j  javafx.event.Event.fireEvent(Ljavafx/event/EventTarget;Ljavafx/event/Event;)V+30
+j  javafx.scene.control.MenuItem.fire()V+10
+j  com.sun.javafx.scene.control.ControlAcceleratorSupport.lambda$doAcceleratorInstall$12(Ljavafx/scene/control/MenuItem;)V+120
+j  com.sun.javafx.scene.control.ControlAcceleratorSupport$$Lambda$166.run()V+4
+j  com.sun.javafx.scene.KeyboardShortcutsHandler.processAccelerators(Ljavafx/scene/input/KeyEvent;)V+85
+j  com.sun.javafx.scene.KeyboardShortcutsHandler.dispatchBubblingEvent(Ljavafx/event/Event;)Ljavafx/event/Event;+74
+j  com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(Ljavafx/event/Event;)Ljavafx/event/Event;+11
+j  com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Ljavafx/event/Event;Ljavafx/event/EventDispatchChain;)Ljavafx/event/Event;+29
+j  com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Ljavafx/event/Event;)Ljavafx/event/Event;+69
+j  com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(Ljavafx/event/Event;Ljavafx/event/EventDispatchChain;)Ljavafx/event/Event;+17
+j  com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(Ljavafx/event/Event;)Ljavafx/event/Event;+69
+j  com.sun.javafx.event.EventUtil.fireEventImpl(Ljavafx/event/EventDispatchChain;Ljavafx/event/EventTarget;Ljavafx/event/Event;)Ljavafx/event/Event;+10
+j  com.sun.javafx.event.EventUtil.fireEvent(Ljavafx/event/EventTarget;Ljavafx/event/Event;)Ljavafx/event/Event;+46
+j  javafx.event.Event.fireEvent(Ljavafx/event/EventTarget;Ljavafx/event/Event;)V+30
+j  com.teamdev.jxbrowser.chromium.javafx.internal.g.run()V+8
+j  com.sun.javafx.application.PlatformImpl.lambda$null$173(Ljava/lang/Runnable;)Ljava/lang/Void;+1
+j  com.sun.javafx.application.PlatformImpl$$Lambda$55.run()Ljava/lang/Object;+4
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  com.sun.javafx.application.PlatformImpl.lambda$runLater$174(Ljava/lang/Runnable;Ljava/security/AccessControlContext;)V+7
+j  com.sun.javafx.application.PlatformImpl$$Lambda$53.run()V+8
+j  com.sun.glass.ui.InvokeLaterDispatcher$Future.run()V+4
+v  ~StubRoutines::call_stub
+j  com.sun.glass.ui.gtk.GtkApplication._runLoop(Ljava/lang/Runnable;Z)V+0
+j  com.sun.glass.ui.gtk.GtkApplication.lambda$null$49(Ljava/lang/Runnable;Z)V+7
+j  com.sun.glass.ui.gtk.GtkApplication$$Lambda$43.run()V+12
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0xa6b1c800 JavaThread "IPC Sync Events Thread" [_thread_blocked, id=17008, stack(0x9a95e000,0x9a9af000)]
+  0x9ab60800 JavaThread "Prism Font Disposer" daemon [_thread_blocked, id=17003, stack(0x9a9af000,0x9aa00000)]
+  0x9cfa4400 JavaThread "pool-4-thread-2" [_thread_blocked, id=17002, stack(0x9ae44000,0x9ae95000)]
+  0x9cfa3400 JavaThread "pool-4-thread-1" [_thread_blocked, id=17001, stack(0x9ae95000,0x9aee6000)]
+  0x9daea800 JavaThread "Browser Events Thread" [_thread_blocked, id=16999, stack(0x9aee6000,0x9af37000)]
+  0x9cc3f400 JavaThread "IPC Sync Events Thread" [_thread_blocked, id=16998, stack(0x9af37000,0x9af88000)]
+  0x9cc3dc00 JavaThread "Memory Writer SocketInfo{cid=0, bid=0, channelType=Render}" [_thread_blocked, id=16997, stack(0x9af88000,0x9afd9000)]
+  0x9cc3c800 JavaThread "Socket Connection Checker SocketInfo{cid=0, bid=0, channelType=Render}" [_thread_in_native, id=16996, stack(0x9afd9000,0x9b02a000)]
+  0x9cc3b800 JavaThread "IPC Memory Reader Thread" [_thread_in_native, id=16994, stack(0x9b02a000,0x9b82b000)]
+  0xa6b1b000 JavaThread "IPC Async Events Thread" [_thread_blocked, id=16984, stack(0x9b849000,0x9b89a000)]
+  0xa6b19c00 JavaThread "Memory Writer SocketInfo{cid=0, bid=0, channelType=Browser}" [_thread_blocked, id=16981, stack(0x9b89a000,0x9b8eb000)]
+  0xa6b18800 JavaThread "Socket Connection Checker SocketInfo{cid=0, bid=0, channelType=Browser}" [_thread_in_native, id=16980, stack(0x9b8eb000,0x9b93c000)]
+  0xa6b17400 JavaThread "IPC Memory Reader Thread" [_thread_in_native, id=16978, stack(0x9b93c000,0x9c13d000)]
+  0xa39a5400 JavaThread "IPC Async Events Thread" [_thread_blocked, id=16971, stack(0x9c15b000,0x9c1ac000)]
+  0xa39a4000 JavaThread "Memory Writer SocketInfo{cid=0, bid=-1, channelType=Main}" [_thread_blocked, id=16970, stack(0x9c1ac000,0x9c1fd000)]
+  0xa39a1c00 JavaThread "Socket Connection Checker SocketInfo{cid=0, bid=-1, channelType=Main}" [_thread_in_native, id=16968, stack(0x9c1fd000,0x9c24e000)]
+  0xa39af400 JavaThread "IPC Memory Reader Thread" [_thread_in_native, id=16965, stack(0x9c34e000,0x9cb4f000)]
+  0xa31a3400 JavaThread "Chromium Process Logger" daemon [_thread_in_native, id=16943, stack(0x9cb5e000,0x9cbaf000)]
+  0xa31a1c00 JavaThread "process reaper" daemon [_thread_in_native, id=16942, stack(0x9d019000,0x9d032000)]
+  0x9cf7dc00 JavaThread "IPC Process Thread" daemon [_thread_blocked, id=16940, stack(0x9cbaf000,0x9cc00000)]
+  0x9cf8d400 JavaThread "IPC Server Thread" daemon [_thread_in_native, id=16939, stack(0x9d042000,0x9d093000)]
+  0x9cf6e800 JavaThread "Timer-0" daemon [_thread_blocked, id=16938, stack(0x9d093000,0x9d0e4000)]
+  0xa6784000 JavaThread "process reaper" daemon [_thread_in_native, id=16932, stack(0x9d6db000,0x9d6f4000)]
+=>0x098d3400 JavaThread "JavaFX Application Thread" [_thread_in_vm, id=16930, stack(0x9d902000,0x9d953000)]
+  0x098d0800 JavaThread "Thread-2" daemon [_thread_blocked, id=16929, stack(0x9d953000,0x9d9a4000)]
+  0x09878c00 JavaThread "QuantumRenderer-0" daemon [_thread_blocked, id=16927, stack(0xa2e08000,0xa2e59000)]
+  0xa319d000 JavaThread "JavaFX-Launcher" [_thread_blocked, id=16926, stack(0xa2e59000,0xa2eaa000)]
+  0xa313c400 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=16925, stack(0xa3228000,0xa3279000)]
+  0xa3bab000 JavaThread "Service Thread" daemon [_thread_blocked, id=16923, stack(0xa32fa000,0xa334b000)]
+  0xa3ba8000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=16922, stack(0xa334b000,0xa33cc000)]
+  0xa3ba6800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=16919, stack(0xa33cc000,0xa344d000)]
+  0xa3ba4800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=16918, stack(0xa344d000,0xa34ce000)]
+  0xa3ba3000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=16917, stack(0xa3a0d000,0xa3a5e000)]
+  0xa3b88400 JavaThread "Finalizer" daemon [_thread_blocked, id=16912, stack(0xa3a5e000,0xa3aaf000)]
+  0xa3b85800 JavaThread "Reference Handler" daemon [_thread_blocked, id=16909, stack(0xa3aaf000,0xa3b00000)]
+  0xf6508400 JavaThread "main" [_thread_blocked, id=16897, stack(0xf66b5000,0xf6706000)]
+
+Other Threads:
+  0xa3b81000 VMThread [stack: 0xa3c0b000,0xa3c8c000] [id=16907]
+  0xa3bae400 WatcherThread [stack: 0xa3279000,0xa32fa000] [id=16924]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 19200K, used 7464K [0xd1ac0000, 0xd4040000, 0xe7000000)
+  eden space 16640K, 29% used [0xd1ac0000,0xd1f8d048,0xd2b00000)
+  from space 2560K, 99% used [0xd2b00000,0xd2d7d100,0xd2d80000)
+  to   space 2560K, 0% used [0xd3dc0000,0xd3dc0000,0xd4040000)
+ ParOldGen       total 43776K, used 5963K [0xa7000000, 0xa9ac0000, 0xd1ac0000)
+  object space 43776K, 13% used [0xa7000000,0xa75d2de8,0xa9ac0000)
+ Metaspace       used 14489K, capacity 15110K, committed 15128K, reserved 15664K
+
+Card table byte_map: [0xa6dff000,0xa7000000] byte_map_base: 0xa68c7000
+
+Marking Bits: (ParMarkBitMap*) 0xf71678c0
+ Begin Bits: [0xa4700000, 0xa5700000)
+ End Bits:   [0xa5700000, 0xa6700000)
+
+Polling page: 0xf7783000
+
+CodeCache: size=245760Kb used=4909Kb max_used=4909Kb free=240850Kb
+ bounds [0xe7500000, 0xe79d0000, 0xf6500000]
+ total_blobs=2472 nmethods=2053 adapters=332
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 5,812 Thread 0xa3ba8000 2048       1       com.sun.prism.es2.ES2TextureData::isFiltered (5 bytes)
+Event: 5,812 Thread 0xa3ba8000 nmethod 2048 0xe79c9208 code [0xe79c9300, 0xe79c93a0]
+Event: 5,954 Thread 0xa3ba8000 2050       3       java.util.WeakHashMap$HashIterator::<init> (41 bytes)
+Event: 5,954 Thread 0xa3ba8000 nmethod 2050 0xe79c9408 code [0xe79c9540, 0xe79c98ec]
+Event: 6,066 Thread 0xa3ba8000 2051       3       javafx.scene.input.InputEvent::getEventType (5 bytes)
+Event: 6,066 Thread 0xa3ba8000 nmethod 2051 0xe79c9a48 code [0xe79c9b60, 0xe79c9c40]
+Event: 6,068 Thread 0xa3ba8000 2052       3       java.lang.invoke.MethodHandles$Lookup::linkMethodHandleConstant (185 bytes)
+Event: 6,071 Thread 0xa3ba8000 nmethod 2052 0xe79c9cc8 code [0xe79c9f40, 0xe79caf08]
+Event: 6,071 Thread 0xa3ba8000 2053       3       jdk.internal.org.objectweb.asm.MethodVisitor::visitInsn (16 bytes)
+Event: 6,071 Thread 0xa3ba8000 nmethod 2053 0xe79cb508 code [0xe79cb620, 0xe79cb7ac]
+
+GC Heap History (6 events):
+Event: 1,137 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 19200K, used 16640K [0xd1ac0000, 0xd3000000, 0xe7000000)
+  eden space 16640K, 100% used [0xd1ac0000,0xd2b00000,0xd2b00000)
+  from space 2560K, 0% used [0xd2d80000,0xd2d80000,0xd3000000)
+  to   space 2560K, 0% used [0xd2b00000,0xd2b00000,0xd2d80000)
+ ParOldGen       total 43776K, used 0K [0xa7000000, 0xa9ac0000, 0xd1ac0000)
+  object space 43776K, 0% used [0xa7000000,0xa7000000,0xa9ac0000)
+ Metaspace       used 6807K, capacity 7174K, committed 7192K, reserved 7472K
+Event: 1,147 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 19200K, used 2544K [0xd1ac0000, 0xd3000000, 0xe7000000)
+  eden space 16640K, 0% used [0xd1ac0000,0xd1ac0000,0xd2b00000)
+  from space 2560K, 99% used [0xd2b00000,0xd2d7c0d0,0xd2d80000)
+  to   space 2560K, 0% used [0xd2d80000,0xd2d80000,0xd3000000)
+ ParOldGen       total 43776K, used 307K [0xa7000000, 0xa9ac0000, 0xd1ac0000)
+  object space 43776K, 0% used [0xa7000000,0xa704cfd8,0xa9ac0000)
+ Metaspace       used 6807K, capacity 7174K, committed 7192K, reserved 7472K
+}
+Event: 2,180 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 19200K, used 19184K [0xd1ac0000, 0xd3000000, 0xe7000000)
+  eden space 16640K, 100% used [0xd1ac0000,0xd2b00000,0xd2b00000)
+  from space 2560K, 99% used [0xd2b00000,0xd2d7c0d0,0xd2d80000)
+  to   space 2560K, 0% used [0xd2d80000,0xd2d80000,0xd3000000)
+ ParOldGen       total 43776K, used 307K [0xa7000000, 0xa9ac0000, 0xd1ac0000)
+  object space 43776K, 0% used [0xa7000000,0xa704cfd8,0xa9ac0000)
+ Metaspace       used 10563K, capacity 10934K, committed 11032K, reserved 11568K
+Event: 2,194 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 19200K, used 2544K [0xd1ac0000, 0xd4040000, 0xe7000000)
+  eden space 16640K, 0% used [0xd1ac0000,0xd1ac0000,0xd2b00000)
+  from space 2560K, 99% used [0xd2d80000,0xd2ffc100,0xd3000000)
+  to   space 2560K, 0% used [0xd2b00000,0xd2b00000,0xd2d80000)
+ ParOldGen       total 43776K, used 3022K [0xa7000000, 0xa9ac0000, 0xd1ac0000)
+  object space 43776K, 6% used [0xa7000000,0xa72f3b28,0xa9ac0000)
+ Metaspace       used 10563K, capacity 10934K, committed 11032K, reserved 11568K
+}
+Event: 2,988 GC heap before
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 19200K, used 19184K [0xd1ac0000, 0xd4040000, 0xe7000000)
+  eden space 16640K, 100% used [0xd1ac0000,0xd2b00000,0xd2b00000)
+  from space 2560K, 99% used [0xd2d80000,0xd2ffc100,0xd3000000)
+  to   space 2560K, 0% used [0xd2b00000,0xd2b00000,0xd2d80000)
+ ParOldGen       total 43776K, used 3022K [0xa7000000, 0xa9ac0000, 0xd1ac0000)
+  object space 43776K, 6% used [0xa7000000,0xa72f3b28,0xa9ac0000)
+ Metaspace       used 13596K, capacity 14185K, committed 14232K, reserved 14640K
+Event: 3,002 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 19200K, used 2548K [0xd1ac0000, 0xd4040000, 0xe7000000)
+  eden space 16640K, 0% used [0xd1ac0000,0xd1ac0000,0xd2b00000)
+  from space 2560K, 99% used [0xd2b00000,0xd2d7d100,0xd2d80000)
+  to   space 2560K, 0% used [0xd3dc0000,0xd3dc0000,0xd4040000)
+ ParOldGen       total 43776K, used 5963K [0xa7000000, 0xa9ac0000, 0xd1ac0000)
+  object space 43776K, 13% used [0xa7000000,0xa75d2de8,0xa9ac0000)
+ Metaspace       used 13596K, capacity 14185K, committed 14232K, reserved 14640K
+}
+
+Deoptimization events (10 events):
+Event: 4,611 Thread 0x098d3400 Uncommon trap: reason=array_check action=maybe_recompile pc=0xe793c1fc method=com.sun.javafx.css.SimpleSelector.applies(Ljavafx/css/Styleable;[Ljava/util/Set;I)Z @ 37
+Event: 4,611 Thread 0x098d3400 Uncommon trap: reason=array_check action=maybe_recompile pc=0xe793c1fc method=com.sun.javafx.css.SimpleSelector.applies(Ljavafx/css/Styleable;[Ljava/util/Set;I)Z @ 37
+Event: 4,611 Thread 0x098d3400 Uncommon trap: reason=array_check action=maybe_recompile pc=0xe793c1fc method=com.sun.javafx.css.SimpleSelector.applies(Ljavafx/css/Styleable;[Ljava/util/Set;I)Z @ 37
+Event: 4,612 Thread 0x098d3400 Uncommon trap: reason=array_check action=maybe_recompile pc=0xe7911a14 method=com.sun.javafx.css.SimpleSelector.applies(Ljavafx/css/Styleable;[Ljava/util/Set;I)Z @ 37
+Event: 4,632 Thread 0x098d3400 Uncommon trap: reason=unstable_if action=reinterpret pc=0xe78e96c8 method=com.sun.javafx.css.SimpleSelector.applies(Ljavafx/css/Styleable;)Z @ 7
+Event: 4,642 Thread 0x098d3400 Uncommon trap: reason=unstable_if action=reinterpret pc=0xe78e6f00 method=javafx.scene.CssStyleHelper.lookup(Ljavafx/css/Styleable;Ljavafx/css/CssMetaData;Lcom/sun/javafx/css/StyleMap;Ljava/util/Set;Ljavafx/css/Styleable;Lcom/sun/javafx/css/CalculatedValu
+Event: 4,658 Thread 0x098d3400 Uncommon trap: reason=unstable_if action=reinterpret pc=0xe78409b0 method=java.io.ByteArrayInputStream.read()I @ 8
+Event: 4,724 Thread 0x098d3400 Uncommon trap: reason=unstable_if action=reinterpret pc=0xe78bfac0 method=com.sun.javafx.css.BitSet.addAll(Ljava/util/Collection;)Z @ 1
+Event: 4,734 Thread 0x098d3400 Uncommon trap: reason=unstable_if action=reinterpret pc=0xe795ac04 method=com.sun.javafx.css.SimpleSelector.applies(Ljavafx/css/Styleable;)Z @ 7
+Event: 4,805 Thread 0x098d3400 Uncommon trap: reason=unstable_if action=reinterpret pc=0xe76fce18 method=jdk.internal.org.objectweb.asm.Type.getArgumentsAndReturnSizes(Ljava/lang/String;)I @ 47
+
+Internal exceptions (10 events):
+Event: 0,304 Thread 0xa319d000 Exception <a 'java/security/PrivilegedActionException'> (0xd1dc63c0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u121/8372/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0,304 Thread 0xa319d000 Exception <a 'java/security/PrivilegedActionException'> (0xd1dc65c0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u121/8372/hotspot/src/share/vm/prims/jvm.cpp, line 1390]
+Event: 0,305 Thread 0xa319d000 Exception <a 'java/lang/NullPointerException'> (0xd1dc6b28) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u121/8372/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 1178]
+Event: 0,805 Thread 0x098d3400 Exception <a 'java/lang/NullPointerException'> (0xd26332e0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u121/8372/hotspot/src/share/vm/interpreter/linkResolver.cpp, line 1178]
+Event: 0,805 Thread 0x098d3400 Exception <a 'java/lang/NullPointerException'> (0xd26332e0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u121/8372/hotspot/src/share/vm/prims/jvm.cpp, line 1394]
+Event: 1,165 Thread 0x098d3400 Implicit null exception at 0xe76c137f to 0xe76c1505
+Event: 2,271 Thread 0x098d3400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 70> (0xd1e046e0) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u121/8372/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 2,271 Thread 0x098d3400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 18> (0xd1e052b8) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u121/8372/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 2,272 Thread 0x098d3400 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 86> (0xd1e06420) thrown at [/HUDSON/workspace/8-2-build-linux-i586/jdk8u121/8372/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 4,724 Thread 0x098d3400 Implicit null exception at 0xe78bf3d9 to 0xe78bfaad
+
+Events (10 events):
+Event: 6,068 loading class com/sun/javafx/tk/quantum/WindowStage
+Event: 6,068 loading class com/sun/javafx/tk/quantum/WindowStage done
+Event: 6,068 loading class com/sun/prism/GraphicsResource
+Event: 6,068 loading class com/sun/prism/GraphicsResource done
+Event: 6,068 loading class com/sun/prism/GraphicsResource
+Event: 6,068 loading class com/sun/prism/GraphicsResource done
+Event: 6,069 loading class com/sun/javafx/tk/quantum/ViewScene
+Event: 6,069 loading class com/sun/javafx/tk/quantum/ViewScene done
+Event: 6,070 loading class com/sun/javafx/tk/quantum/WindowStage
+Event: 6,070 loading class com/sun/javafx/tk/quantum/WindowStage done
+
+
+Dynamic libraries:
+08048000-08049000 r-xp 00000000 08:05 5399248                            /home/wintson/jdk1.8.0_121/bin/java
+08049000-0804a000 rw-p 00000000 08:05 5399248                            /home/wintson/jdk1.8.0_121/bin/java
+09841000-09947000 rw-p 00000000 00:00 0                                  [heap]
+99cad000-99f00000 rw-p 00000000 00:00 0 
+99f00000-99fa6000 rw-p 00000000 00:00 0 
+99fa6000-9a000000 ---p 00000000 00:00 0 
+9a000000-9a080000 rw-p 00000000 00:00 0 
+9a080000-9a100000 ---p 00000000 00:00 0 
+9a100000-9a1fb000 rw-p 00000000 00:00 0 
+9a1fb000-9a200000 ---p 00000000 00:00 0 
+9a200000-9a300000 rw-s 1311b2000 00:06 357                               /dev/dri/card0
+9a300000-9a400000 rw-p 00000000 00:00 0 
+9a400000-9a4eb000 rw-p 00000000 00:00 0 
+9a4eb000-9a500000 ---p 00000000 00:00 0 
+9a500000-9a600000 rw-s 132c45000 00:06 357                               /dev/dri/card0
+9a600000-9a6d7000 rw-p 00000000 00:00 0 
+9a6d7000-9a700000 ---p 00000000 00:00 0 
+9a700000-9a800000 rw-p 00000000 00:00 0 
+9a800000-9a8b5000 rw-p 00000000 00:00 0 
+9a8b5000-9a900000 ---p 00000000 00:00 0 
+9a95e000-9a961000 ---p 00000000 00:00 0 
+9a961000-9a9af000 rw-p 00000000 00:00 0 
+9a9af000-9a9b2000 ---p 00000000 00:00 0 
+9a9b2000-9ab00000 rw-p 00000000 00:00 0 
+9ab00000-9abfe000 rw-p 00000000 00:00 0 
+9abfe000-9ac00000 ---p 00000000 00:00 0 
+9ac2a000-9ac3a000 rw-s 1337f3000 00:06 357                               /dev/dri/card0
+9ac3c000-9acf5000 r--p 00000000 08:05 3810976                            /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+9acf5000-9acf9000 r-xp 00000000 08:05 5399449                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libjavafx_font_pango.so
+9acf9000-9acfa000 rw-p 00003000 08:05 5399449                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libjavafx_font_pango.so
+9acfa000-9ad36000 r-xp 00000000 08:05 2758433                            /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+9ad36000-9ad37000 r--p 0003b000 08:05 2758433                            /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+9ad37000-9ad38000 rw-p 0003c000 08:05 2758433                            /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libmurrine.so
+9ad38000-9ad42000 r-xp 00000000 08:05 2757955                            /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+9ad42000-9ad43000 r--p 00009000 08:05 2757955                            /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+9ad43000-9ad44000 rw-p 0000a000 08:05 2757955                            /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+9ad44000-9ae44000 rw-p 00000000 00:00 0 
+9ae44000-9ae47000 ---p 00000000 00:00 0 
+9ae47000-9ae95000 rw-p 00000000 00:00 0 
+9ae95000-9ae98000 ---p 00000000 00:00 0 
+9ae98000-9aee6000 rw-p 00000000 00:00 0 
+9aee6000-9aee9000 ---p 00000000 00:00 0 
+9aee9000-9af37000 rw-p 00000000 00:00 0 
+9af37000-9af3a000 ---p 00000000 00:00 0 
+9af3a000-9af88000 rw-p 00000000 00:00 0 
+9af88000-9af8b000 ---p 00000000 00:00 0 
+9af8b000-9afd9000 rw-p 00000000 00:00 0 
+9afd9000-9afdc000 ---p 00000000 00:00 0 
+9afdc000-9b02a000 rw-p 00000000 00:00 0 
+9b02a000-9b02d000 ---p 00000000 00:00 0 
+9b02d000-9b82b000 rw-p 00000000 00:00 0 
+9b82b000-9b83a000 rw-s 00000000 00:14 130                                /dev/shm/TDB3-16895_rb
+9b83a000-9b849000 rw-s 00000000 00:14 129                                /dev/shm/TDB3-16895_wb
+9b849000-9b84c000 ---p 00000000 00:00 0 
+9b84c000-9b89a000 rw-p 00000000 00:00 0 
+9b89a000-9b89d000 ---p 00000000 00:00 0 
+9b89d000-9b8eb000 rw-p 00000000 00:00 0 
+9b8eb000-9b8ee000 ---p 00000000 00:00 0 
+9b8ee000-9b93c000 rw-p 00000000 00:00 0 
+9b93c000-9b93f000 ---p 00000000 00:00 0 
+9b93f000-9c13d000 rw-p 00000000 00:00 0 
+9c13d000-9c14c000 rw-s 00000000 00:14 117                                /dev/shm/TDB2-16895_rb
+9c14c000-9c15b000 rw-s 00000000 00:14 116                                /dev/shm/TDB2-16895_wb
+9c15b000-9c15e000 ---p 00000000 00:00 0 
+9c15e000-9c1ac000 rw-p 00000000 00:00 0 
+9c1ac000-9c1af000 ---p 00000000 00:00 0 
+9c1af000-9c1fd000 rw-p 00000000 00:00 0 
+9c1fd000-9c200000 ---p 00000000 00:00 0 
+9c200000-9c34e000 rw-p 00000000 00:00 0 
+9c34e000-9c351000 ---p 00000000 00:00 0 
+9c351000-9cb4f000 rw-p 00000000 00:00 0 
+9cb4f000-9cb5e000 rw-s 00000000 00:14 99                                 /dev/shm/TDB1-16895_rb
+9cb5e000-9cb61000 ---p 00000000 00:00 0 
+9cb61000-9cbaf000 rw-p 00000000 00:00 0 
+9cbaf000-9cbb2000 ---p 00000000 00:00 0 
+9cbb2000-9cc00000 rw-p 00000000 00:00 0 
+9cc00000-9cced000 rw-p 00000000 00:00 0 
+9cced000-9cd00000 ---p 00000000 00:00 0 
+9cd00000-9ce00000 rw-p 00000000 00:00 0 
+9ce00000-9cf00000 rw-p 00000000 00:00 0 
+9cf00000-9cfff000 rw-p 00000000 00:00 0 
+9cfff000-9d000000 ---p 00000000 00:00 0 
+9d000000-9d005000 r--s 00084000 08:05 5399336                            /home/wintson/jdk1.8.0_121/jre/lib/jfr.jar
+9d005000-9d006000 rw-s 00000000 00:14 128                                /dev/shm/TDB3-16895_rc
+9d006000-9d007000 rw-s 00000000 00:14 127                                /dev/shm/TDB3-16895_wc
+9d007000-9d008000 rw-s 00000000 00:14 126                                /dev/shm/TDB3-16895_rr
+9d008000-9d009000 rw-s 00000000 00:14 119                                /dev/shm/TDB3-16895_wr
+9d009000-9d00a000 rw-s 00000000 00:14 110                                /dev/shm/TDB2-16895_rc
+9d00a000-9d019000 rw-s 00000000 00:14 98                                 /dev/shm/TDB1-16895_wb
+9d019000-9d01c000 ---p 00000000 00:00 0 
+9d01c000-9d032000 rw-p 00000000 00:00 0 
+9d032000-9d041000 r-xp 00000000 08:05 5399431                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libnio.so
+9d041000-9d042000 rw-p 0000e000 08:05 5399431                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libnio.so
+9d042000-9d045000 ---p 00000000 00:00 0 
+9d045000-9d093000 rw-p 00000000 00:00 0 
+9d093000-9d096000 ---p 00000000 00:00 0 
+9d096000-9d0e4000 rw-p 00000000 00:00 0 
+9d0e4000-9d100000 r--s 00393000 08:05 5399490                            /home/wintson/jdk1.8.0_121/jre/lib/ext/cldrdata.jar
+9d100000-9d200000 rw-p 00000000 00:00 0 
+9d200000-9d300000 rw-p 00000000 00:00 0 
+9d300000-9d400000 rw-p 00000000 00:00 0 
+9d400000-9d500000 rw-p 00000000 00:00 0 
+9d500000-9d5ff000 rw-p 00000000 00:00 0 
+9d5ff000-9d600000 ---p 00000000 00:00 0 
+9d600000-9d601000 rw-s 00000000 00:14 108                                /dev/shm/TDB2-16895_wc
+9d601000-9d602000 rw-s 00000000 00:14 101                                /dev/shm/TDB2-16895_rr
+9d602000-9d603000 rw-s 00000000 00:14 100                                /dev/shm/TDB2-16895_wr
+9d603000-9d604000 rw-s 00000000 00:14 92                                 /dev/shm/TDB1-16895_rc
+9d604000-9d605000 rw-s 00000000 00:14 48                                 /dev/shm/TDB1-16895_wc
+9d605000-9d606000 rw-s 00000000 00:14 47                                 /dev/shm/TDB1-16895_rr
+9d606000-9d607000 rw-s 00000000 00:14 46                                 /dev/shm/TDB1-16895_wr
+9d607000-9d60d000 r-xp 00000000 08:05 2898707                            /tmp/jxbrowser-chromium-55.0.2883.87.6.13/data/Temp/libjxbrowser-common32-94bbf647-e379-4960-b2c5-38deaeb67e29.so
+9d60d000-9d60e000 r--p 00005000 08:05 2898707                            /tmp/jxbrowser-chromium-55.0.2883.87.6.13/data/Temp/libjxbrowser-common32-94bbf647-e379-4960-b2c5-38deaeb67e29.so
+9d60e000-9d60f000 rw-p 00006000 08:05 2898707                            /tmp/jxbrowser-chromium-55.0.2883.87.6.13/data/Temp/libjxbrowser-common32-94bbf647-e379-4960-b2c5-38deaeb67e29.so
+9d60f000-9d614000 r--s 002f9000 08:05 5399488                            /home/wintson/jdk1.8.0_121/jre/lib/charsets.jar
+9d614000-9d618000 r--s 0009a000 08:05 5399524                            /home/wintson/jdk1.8.0_121/jre/lib/jsse.jar
+9d618000-9d622000 r--s 00116000 08:05 5399494                            /home/wintson/jdk1.8.0_121/jre/lib/ext/localedata.jar
+9d622000-9d62a000 r--s 00000000 08:05 5799422                            /home/wintson/.cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-6
+9d62a000-9d62c000 r--s 00000000 08:05 5799421                            /home/wintson/.cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-6
+9d62c000-9d630000 r--s 00000000 08:05 5799420                            /home/wintson/.cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le32d4.cache-6
+9d630000-9d631000 r--s 00000000 08:05 5799419                            /home/wintson/.cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-6
+9d631000-9d640000 r--s 00000000 08:05 5799418                            /home/wintson/.cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le32d4.cache-6
+9d640000-9d641000 r--s 00000000 08:05 5799417                            /home/wintson/.cache/fontconfig/1ac9eb803944fde146138c791f5cc56a-le32d4.cache-6
+9d641000-9d644000 r--s 00000000 08:05 5799416                            /home/wintson/.cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le32d4.cache-6
+9d644000-9d645000 r--s 00000000 08:05 5799415                            /home/wintson/.cache/fontconfig/dc05db6664285cc2f12bf69c139ae4c3-le32d4.cache-6
+9d645000-9d646000 r--s 00000000 08:05 5799414                            /home/wintson/.cache/fontconfig/14a5e22175779b556eaa434240950366-le32d4.cache-6
+9d646000-9d647000 r--s 00000000 08:05 5799413                            /home/wintson/.cache/fontconfig/660208299946a285a940457d1287da33-le32d4.cache-6
+9d647000-9d648000 r--s 00000000 08:05 5799412                            /home/wintson/.cache/fontconfig/4f3e3037c9980c83b53a9351efadef62-le32d4.cache-6
+9d648000-9d64a000 r--s 00000000 08:05 5799411                            /home/wintson/.cache/fontconfig/767a8244fc0220cfb567a839d0392e0b-le32d4.cache-6
+9d64a000-9d64b000 r--s 00000000 08:05 5799410                            /home/wintson/.cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-6
+9d64b000-9d67a000 r--s 00000000 08:05 5799409                            /home/wintson/.cache/fontconfig/0bd3dc0958fa2205aaaa8ebb13e2872b-le32d4.cache-6
+9d67a000-9d67e000 r--s 00000000 08:05 5799408                            /home/wintson/.cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le32d4.cache-6
+9d67e000-9d680000 r--s 00000000 08:05 5799407                            /home/wintson/.cache/fontconfig/a015930274ffcd967d2ca1b57da47cc7-le32d4.cache-6
+9d680000-9d681000 r--s 00000000 08:05 5799406                            /home/wintson/.cache/fontconfig/b872e6e592da6075ffa4ab0a1fcc0c75-le32d4.cache-6
+9d681000-9d682000 r--s 00000000 08:05 5799405                            /home/wintson/.cache/fontconfig/f6d4eedfaab2589bde49f7a3ff831d22-le32d4.cache-6
+9d682000-9d683000 r--s 00000000 08:05 5799404                            /home/wintson/.cache/fontconfig/589f83ef4c36d296ce6e1c846f468f08-le32d4.cache-6
+9d683000-9d684000 r--s 00000000 08:05 5799403                            /home/wintson/.cache/fontconfig/bab58bb527bb656aaa9f116d68a48d89-le32d4.cache-6
+9d684000-9d685000 r--s 00000000 08:05 5799402                            /home/wintson/.cache/fontconfig/2171a34dccabdb6bcbbc728186263178-le32d4.cache-6
+9d685000-9d686000 r--s 00000000 08:05 5799401                            /home/wintson/.cache/fontconfig/c5c45a61289222e0d30b1a26ef4effbe-le32d4.cache-6
+9d686000-9d687000 r--s 00000000 08:05 5799400                            /home/wintson/.cache/fontconfig/aec30016f93e1b46d1a973dce0d74068-le32d4.cache-6
+9d687000-9d688000 r--s 00000000 08:05 5799399                            /home/wintson/.cache/fontconfig/3f589640d34b7dc9042c8d453f7c8b9c-le32d4.cache-6
+9d688000-9d689000 r--s 00000000 08:05 5799398                            /home/wintson/.cache/fontconfig/16c2fda60d1b4b719f4b3d06fd951d25-le32d4.cache-6
+9d689000-9d68a000 r--s 00000000 08:05 5799397                            /home/wintson/.cache/fontconfig/a48eab177a16e4f3713381162db2f3e9-le32d4.cache-6
+9d68a000-9d68b000 r--s 00000000 08:05 5799396                            /home/wintson/.cache/fontconfig/564b2e68ac9bc4e36a6f7f6d6125ec1c-le32d4.cache-6
+9d68b000-9d690000 r--s 00000000 08:05 5799395                            /home/wintson/.cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le32d4.cache-6
+9d690000-9d691000 r--s 00000000 08:05 5799394                            /home/wintson/.cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le32d4.cache-6
+9d691000-9d692000 r--s 00000000 08:05 5799393                            /home/wintson/.cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le32d4.cache-6
+9d692000-9d696000 r--s 00000000 08:05 5799392                            /home/wintson/.cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le32d4.cache-6
+9d696000-9d6a6000 r--s 00000000 08:05 5799391                            /home/wintson/.cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-6
+9d6a6000-9d6a7000 r--s 00000000 08:05 5799390                            /home/wintson/.cache/fontconfig/370e5b74bf5dafc30834de68e24a87a4-le32d4.cache-6
+9d6a7000-9d6a8000 r--s 00000000 08:05 5799389                            /home/wintson/.cache/fontconfig/6b2c5944714ca7831b25bed9e85cb5c8-le32d4.cache-6
+9d6a8000-9d6a9000 r--s 00000000 08:05 5799388                            /home/wintson/.cache/fontconfig/d5178ab6d91b49bf20a416737dcea9e8-le32d4.cache-6
+9d6a9000-9d6aa000 r--s 00000000 08:05 5799387                            /home/wintson/.cache/fontconfig/551ecf3b0e8b0bca0f25c0944f561853-le32d4.cache-6
+9d6aa000-9d6ac000 r--s 00000000 08:05 5799386                            /home/wintson/.cache/fontconfig/f259c2cffa685e28062317905db73c4a-le32d4.cache-6
+9d6ac000-9d6ad000 r--s 00000000 08:05 5799385                            /home/wintson/.cache/fontconfig/550f3886151c940c12a5ed35f6a00586-le32d4.cache-6
+9d6ad000-9d6af000 r--s 00000000 08:05 5799384                            /home/wintson/.cache/fontconfig/674d1711f2d1d2a09646eb0bdcadee49-le32d4.cache-6
+9d6af000-9d6b8000 r--s 00000000 08:05 5799383                            /home/wintson/.cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le32d4.cache-6
+9d6b8000-9d6b9000 r--s 00000000 08:05 5799382                            /home/wintson/.cache/fontconfig/0c9eb80ebd1c36541ebe2852d3bb0c49-le32d4.cache-6
+9d6b9000-9d6c7000 r--s 00000000 08:05 5799375                            /home/wintson/.cache/fontconfig/9b89f8e3dae116d678bbf48e5f21f69b-le32d4.cache-6
+9d6c7000-9d6cd000 r--s 00000000 08:05 5799374                            /home/wintson/.cache/fontconfig/d0972c3d32f097851eb916381fc38920-le32d4.cache-6
+9d6cd000-9d6d1000 r--s 00000000 08:05 5799363                            /home/wintson/.cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-6
+9d6d1000-9d6d6000 r-xp 00000000 08:05 5399462                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libjavafx_font_freetype.so
+9d6d6000-9d6d7000 rw-p 00004000 08:05 5399462                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libjavafx_font_freetype.so
+9d6d7000-9d6da000 r-xp 00000000 08:05 5399417                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libjavafx_font.so
+9d6da000-9d6db000 rw-p 00002000 08:05 5399417                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libjavafx_font.so
+9d6db000-9d6de000 ---p 00000000 00:00 0 
+9d6de000-9d7f4000 rw-p 00000000 00:00 0 
+9d7f4000-9d800000 rw-s 130f08000 00:06 357                               /dev/dri/card0
+9d800000-9d900000 rw-p 00000000 00:00 0 
+9d900000-9d901000 r--s 00000000 08:05 5799381                            /home/wintson/.cache/fontconfig/22368d551a680bfe5a62c02760edf4ea-le32d4.cache-6
+9d901000-9d902000 r--s 00000000 08:05 5799380                            /home/wintson/.cache/fontconfig/4d9c95eba1cb85bbcf2878543262124a-le32d4.cache-6
+9d902000-9d905000 ---p 00000000 00:00 0 
+9d905000-9d953000 rw-p 00000000 00:00 0 
+9d953000-9d956000 ---p 00000000 00:00 0 
+9d956000-9d9a4000 rw-p 00000000 00:00 0 
+9d9a4000-9d9fe000 r-xp 00000000 08:05 2757976                            /usr/lib/i386-linux-gnu/gtk-2.0/modules/libgail.so
+9d9fe000-9d9ff000 r--p 00059000 08:05 2757976                            /usr/lib/i386-linux-gnu/gtk-2.0/modules/libgail.so
+9d9ff000-9da00000 rw-p 0005a000 08:05 2757976                            /usr/lib/i386-linux-gnu/gtk-2.0/modules/libgail.so
+9da00000-9db00000 rw-p 00000000 00:00 0 
+9db00000-9db01000 r--s 00000000 08:05 5799379                            /home/wintson/.cache/fontconfig/85e0a52ce643a7ba2ae53e5d6949cead-le32d4.cache-6
+9db01000-9db09000 r-xp 00000000 08:05 2633008                            /usr/lib/i386-linux-gnu/libgailutil.so.18.0.1
+9db09000-9db0a000 r--p 00007000 08:05 2633008                            /usr/lib/i386-linux-gnu/libgailutil.so.18.0.1
+9db0a000-9db0b000 rw-p 00008000 08:05 2633008                            /usr/lib/i386-linux-gnu/libgailutil.so.18.0.1
+9db0b000-9db40000 r-xp 00000000 08:05 2633296                            /usr/lib/i386-linux-gnu/libtxc_dxtn_s2tc.so.0.0.0
+9db40000-9db41000 r--p 00034000 08:05 2633296                            /usr/lib/i386-linux-gnu/libtxc_dxtn_s2tc.so.0.0.0
+9db41000-9db42000 rw-p 00035000 08:05 2633296                            /usr/lib/i386-linux-gnu/libtxc_dxtn_s2tc.so.0.0.0
+9db42000-9db43000 ---p 00000000 00:00 0 
+9db43000-9e343000 rw-p 00000000 00:00 0 
+9e343000-9e35d000 r-xp 00000000 08:05 5517096                            /lib/i386-linux-gnu/libbsd.so.0.8.2
+9e35d000-9e35e000 r--p 00019000 08:05 5517096                            /lib/i386-linux-gnu/libbsd.so.0.8.2
+9e35e000-9e35f000 rw-p 0001a000 08:05 5517096                            /lib/i386-linux-gnu/libbsd.so.0.8.2
+9e35f000-9e37f000 r-xp 00000000 08:05 5517175                            /lib/i386-linux-gnu/libtinfo.so.5.9
+9e37f000-9e381000 r--p 0001f000 08:05 5517175                            /lib/i386-linux-gnu/libtinfo.so.5.9
+9e381000-9e382000 rw-p 00021000 08:05 5517175                            /lib/i386-linux-gnu/libtinfo.so.5.9
+9e382000-9e3b4000 r-xp 00000000 08:05 2632984                            /usr/lib/i386-linux-gnu/libedit.so.2.0.53
+9e3b4000-9e3b5000 ---p 00032000 08:05 2632984                            /usr/lib/i386-linux-gnu/libedit.so.2.0.53
+9e3b5000-9e3b6000 r--p 00032000 08:05 2632984                            /usr/lib/i386-linux-gnu/libedit.so.2.0.53
+9e3b6000-9e3b7000 rw-p 00033000 08:05 2632984                            /usr/lib/i386-linux-gnu/libedit.so.2.0.53
+9e3b7000-9e3b9000 rw-p 00000000 00:00 0 
+9e3b9000-a0d02000 r-xp 00000000 08:05 2631228                            /usr/lib/i386-linux-gnu/libLLVM-3.8.so.1
+a0d02000-a0d03000 ---p 02949000 08:05 2631228                            /usr/lib/i386-linux-gnu/libLLVM-3.8.so.1
+a0d03000-a0ef0000 r--p 02949000 08:05 2631228                            /usr/lib/i386-linux-gnu/libLLVM-3.8.so.1
+a0ef0000-a0ef1000 rw-p 02b36000 08:05 2631228                            /usr/lib/i386-linux-gnu/libLLVM-3.8.so.1
+a0ef1000-a0f10000 rw-p 00000000 00:00 0 
+a0f10000-a0f2a000 r-xp 00000000 08:05 2632985                            /usr/lib/i386-linux-gnu/libelf-0.165.so
+a0f2a000-a0f2b000 r--p 00019000 08:05 2632985                            /usr/lib/i386-linux-gnu/libelf-0.165.so
+a0f2b000-a0f2c000 rw-p 0001a000 08:05 2632985                            /usr/lib/i386-linux-gnu/libelf-0.165.so
+a0f2c000-a0f35000 r-xp 00000000 08:05 2630920                            /usr/lib/i386-linux-gnu/libdrm_amdgpu.so.1.0.0
+a0f35000-a0f36000 r--p 00008000 08:05 2630920                            /usr/lib/i386-linux-gnu/libdrm_amdgpu.so.1.0.0
+a0f36000-a0f37000 rw-p 00009000 08:05 2630920                            /usr/lib/i386-linux-gnu/libdrm_amdgpu.so.1.0.0
+a0f37000-a0f43000 r-xp 00000000 08:05 2630932                            /usr/lib/i386-linux-gnu/libdrm_radeon.so.1.0.1
+a0f43000-a0f44000 r--p 0000b000 08:05 2630932                            /usr/lib/i386-linux-gnu/libdrm_radeon.so.1.0.1
+a0f44000-a0f45000 rw-p 0000c000 08:05 2630932                            /usr/lib/i386-linux-gnu/libdrm_radeon.so.1.0.1
+a0f45000-a0f4d000 r-xp 00000000 08:05 2630928                            /usr/lib/i386-linux-gnu/libdrm_nouveau.so.2.0.0
+a0f4d000-a0f4e000 r--p 00007000 08:05 2630928                            /usr/lib/i386-linux-gnu/libdrm_nouveau.so.2.0.0
+a0f4e000-a0f4f000 rw-p 00008000 08:05 2630928                            /usr/lib/i386-linux-gnu/libdrm_nouveau.so.2.0.0
+a0f4f000-a18bf000 r-xp 00000000 08:05 2626805                            /usr/lib/i386-linux-gnu/dri/r600_dri.so
+a18bf000-a1911000 r--p 0096f000 08:05 2626805                            /usr/lib/i386-linux-gnu/dri/r600_dri.so
+a1911000-a191b000 rw-p 009c1000 08:05 2626805                            /usr/lib/i386-linux-gnu/dri/r600_dri.so
+a191b000-a1b0f000 rw-p 00000000 00:00 0 
+a1b0f000-a1b2e000 r-xp 00000000 08:05 5515791                            /lib/i386-linux-gnu/libudev.so.1.6.4
+a1b2e000-a1b2f000 r--p 0001e000 08:05 5515791                            /lib/i386-linux-gnu/libudev.so.1.6.4
+a1b2f000-a1b30000 rw-p 0001f000 08:05 5515791                            /lib/i386-linux-gnu/libudev.so.1.6.4
+a1b30000-a1b37000 r-xp 00000000 08:05 2632968                            /usr/lib/i386-linux-gnu/libdatrie.so.1.3.3
+a1b37000-a1b38000 ---p 00007000 08:05 2632968                            /usr/lib/i386-linux-gnu/libdatrie.so.1.3.3
+a1b38000-a1b39000 r--p 00007000 08:05 2632968                            /usr/lib/i386-linux-gnu/libdatrie.so.1.3.3
+a1b39000-a1b3a000 rw-p 00008000 08:05 2632968                            /usr/lib/i386-linux-gnu/libdatrie.so.1.3.3
+a1b3a000-a1b3f000 r-xp 00000000 08:05 2632894                            /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+a1b3f000-a1b40000 r--p 00004000 08:05 2632894                            /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+a1b40000-a1b41000 rw-p 00005000 08:05 2632894                            /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+a1b41000-a1b43000 r-xp 00000000 08:05 2632881                            /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+a1b43000-a1b44000 r--p 00001000 08:05 2632881                            /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+a1b44000-a1b45000 rw-p 00002000 08:05 2632881                            /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+a1b45000-a1b69000 r-xp 00000000 08:05 2633048                            /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+a1b69000-a1b6a000 ---p 00024000 08:05 2633048                            /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+a1b6a000-a1b6b000 r--p 00024000 08:05 2633048                            /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+a1b6b000-a1b6c000 rw-p 00025000 08:05 2633048                            /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+a1b6c000-a1b7c000 r-xp 00000000 08:05 2627192                            /usr/lib/i386-linux-gnu/libdrm.so.2.4.0
+a1b7c000-a1b7d000 r--p 0000f000 08:05 2627192                            /usr/lib/i386-linux-gnu/libdrm.so.2.4.0
+a1b7d000-a1b7e000 rw-p 00010000 08:05 2627192                            /usr/lib/i386-linux-gnu/libdrm.so.2.4.0
+a1b7e000-a1b82000 r-xp 00000000 08:05 2633321                            /usr/lib/i386-linux-gnu/libxcb-dri2.so.0.0.0
+a1b82000-a1b83000 r--p 00003000 08:05 2633321                            /usr/lib/i386-linux-gnu/libxcb-dri2.so.0.0.0
+a1b83000-a1b84000 rw-p 00004000 08:05 2633321                            /usr/lib/i386-linux-gnu/libxcb-dri2.so.0.0.0
+a1b84000-a1b9c000 r-xp 00000000 08:05 2633325                            /usr/lib/i386-linux-gnu/libxcb-glx.so.0.0.0
+a1b9c000-a1b9d000 ---p 00018000 08:05 2633325                            /usr/lib/i386-linux-gnu/libxcb-glx.so.0.0.0
+a1b9d000-a1b9e000 r--p 00018000 08:05 2633325                            /usr/lib/i386-linux-gnu/libxcb-glx.so.0.0.0
+a1b9e000-a1b9f000 rw-p 00019000 08:05 2633325                            /usr/lib/i386-linux-gnu/libxcb-glx.so.0.0.0
+a1b9f000-a1ba0000 r-xp 00000000 08:05 2632877                            /usr/lib/i386-linux-gnu/libX11-xcb.so.1.0.0
+a1ba0000-a1ba1000 r--p 00000000 08:05 2632877                            /usr/lib/i386-linux-gnu/libX11-xcb.so.1.0.0
+a1ba1000-a1ba2000 rw-p 00001000 08:05 2632877                            /usr/lib/i386-linux-gnu/libX11-xcb.so.1.0.0
+a1ba2000-a1bb5000 r-xp 00000000 08:05 2631236                            /usr/lib/i386-linux-gnu/libglapi.so.0.0.0
+a1bb5000-a1bb6000 ---p 00013000 08:05 2631236                            /usr/lib/i386-linux-gnu/libglapi.so.0.0.0
+a1bb6000-a1bb8000 r--p 00013000 08:05 2631236                            /usr/lib/i386-linux-gnu/libglapi.so.0.0.0
+a1bb8000-a1bbe000 rwxp 00015000 08:05 2631236                            /usr/lib/i386-linux-gnu/libglapi.so.0.0.0
+a1bbe000-a1bbf000 r-xp 00000000 08:05 2633339                            /usr/lib/i386-linux-gnu/libxshmfence.so.1.0.0
+a1bbf000-a1bc0000 r--p 00000000 08:05 2633339                            /usr/lib/i386-linux-gnu/libxshmfence.so.1.0.0
+a1bc0000-a1bc1000 rw-p 00001000 08:05 2633339                            /usr/lib/i386-linux-gnu/libxshmfence.so.1.0.0
+a1bc1000-a1bc6000 r-xp 00000000 08:05 2633333                            /usr/lib/i386-linux-gnu/libxcb-sync.so.1.0.0
+a1bc6000-a1bc7000 ---p 00005000 08:05 2633333                            /usr/lib/i386-linux-gnu/libxcb-sync.so.1.0.0
+a1bc7000-a1bc8000 r--p 00005000 08:05 2633333                            /usr/lib/i386-linux-gnu/libxcb-sync.so.1.0.0
+a1bc8000-a1bc9000 rw-p 00006000 08:05 2633333                            /usr/lib/i386-linux-gnu/libxcb-sync.so.1.0.0
+a1bc9000-a1bcb000 r-xp 00000000 08:05 2633327                            /usr/lib/i386-linux-gnu/libxcb-present.so.0.0.0
+a1bcb000-a1bcc000 r--p 00001000 08:05 2633327                            /usr/lib/i386-linux-gnu/libxcb-present.so.0.0.0
+a1bcc000-a1bcd000 rw-p 00002000 08:05 2633327                            /usr/lib/i386-linux-gnu/libxcb-present.so.0.0.0
+a1bcd000-a1bcf000 r-xp 00000000 08:05 2633323                            /usr/lib/i386-linux-gnu/libxcb-dri3.so.0.0.0
+a1bcf000-a1bd0000 r--p 00001000 08:05 2633323                            /usr/lib/i386-linux-gnu/libxcb-dri3.so.0.0.0
+a1bd0000-a1bd1000 rw-p 00002000 08:05 2633323                            /usr/lib/i386-linux-gnu/libxcb-dri3.so.0.0.0
+a1bd1000-a1c44000 r-xp 00000000 08:05 5517155                            /lib/i386-linux-gnu/libpcre.so.3.13.2
+a1c44000-a1c45000 r--p 00072000 08:05 5517155                            /lib/i386-linux-gnu/libpcre.so.3.13.2
+a1c45000-a1c46000 rw-p 00073000 08:05 5517155                            /lib/i386-linux-gnu/libpcre.so.3.13.2
+a1c46000-a1c4d000 r-xp 00000000 08:05 2632996                            /usr/lib/i386-linux-gnu/libffi.so.6.0.4
+a1c4d000-a1c4e000 r--p 00006000 08:05 2632996                            /usr/lib/i386-linux-gnu/libffi.so.6.0.4
+a1c4e000-a1c4f000 rw-p 00007000 08:05 2632996                            /usr/lib/i386-linux-gnu/libffi.so.6.0.4
+a1c4f000-a1c75000 r-xp 00000000 08:05 5520344                            /lib/i386-linux-gnu/libexpat.so.1.6.0
+a1c75000-a1c76000 ---p 00026000 08:05 5520344                            /lib/i386-linux-gnu/libexpat.so.1.6.0
+a1c76000-a1c78000 r--p 00026000 08:05 5520344                            /lib/i386-linux-gnu/libexpat.so.1.6.0
+a1c78000-a1c79000 rw-p 00028000 08:05 5520344                            /lib/i386-linux-gnu/libexpat.so.1.6.0
+a1c79000-a1c82000 r-xp 00000000 08:05 2633283                            /usr/lib/i386-linux-gnu/libthai.so.0.2.4
+a1c82000-a1c83000 r--p 00008000 08:05 2633283                            /usr/lib/i386-linux-gnu/libthai.so.0.2.4
+a1c83000-a1c84000 rw-p 00009000 08:05 2633283                            /usr/lib/i386-linux-gnu/libthai.so.0.2.4
+a1c84000-a1ca8000 r-xp 00000000 08:05 2633335                            /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+a1ca8000-a1ca9000 r--p 00023000 08:05 2633335                            /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+a1ca9000-a1caa000 rw-p 00024000 08:05 2633335                            /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+a1caa000-a1cb3000 r-xp 00000000 08:05 2633329                            /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+a1cb3000-a1cb4000 r--p 00008000 08:05 2633329                            /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+a1cb4000-a1cb5000 rw-p 00009000 08:05 2633329                            /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+a1cb5000-a1cde000 r-xp 00000000 08:05 5517157                            /lib/i386-linux-gnu/libpng12.so.0.54.0
+a1cde000-a1cdf000 r--p 00028000 08:05 5517157                            /lib/i386-linux-gnu/libpng12.so.0.54.0
+a1cdf000-a1ce0000 rw-p 00029000 08:05 5517157                            /lib/i386-linux-gnu/libpng12.so.0.54.0
+a1ce0000-a1d89000 r-xp 00000000 08:05 2633231                            /usr/lib/i386-linux-gnu/libpixman-1.so.0.33.6
+a1d89000-a1d8f000 r--p 000a8000 08:05 2633231                            /usr/lib/i386-linux-gnu/libpixman-1.so.0.33.6
+a1d8f000-a1d90000 rw-p 000ae000 08:05 2633231                            /usr/lib/i386-linux-gnu/libpixman-1.so.0.33.6
+a1d90000-a1df2000 r-xp 00000000 08:05 2632609                            /usr/lib/i386-linux-gnu/libharfbuzz.so.0.10000.1
+a1df2000-a1df3000 r--p 00061000 08:05 2632609                            /usr/lib/i386-linux-gnu/libharfbuzz.so.0.10000.1
+a1df3000-a1df4000 rw-p 00062000 08:05 2632609                            /usr/lib/i386-linux-gnu/libharfbuzz.so.0.10000.1
+a1df4000-a1e08000 r-xp 00000000 08:05 5516581                            /lib/i386-linux-gnu/libresolv-2.23.so
+a1e08000-a1e09000 ---p 00014000 08:05 5516581                            /lib/i386-linux-gnu/libresolv-2.23.so
+a1e09000-a1e0a000 r--p 00014000 08:05 5516581                            /lib/i386-linux-gnu/libresolv-2.23.so
+a1e0a000-a1e0b000 rw-p 00015000 08:05 5516581                            /lib/i386-linux-gnu/libresolv-2.23.so
+a1e0b000-a1e0d000 rw-p 00000000 00:00 0 
+a1e0d000-a1e2f000 r-xp 00000000 08:05 5517166                            /lib/i386-linux-gnu/libselinux.so.1
+a1e2f000-a1e30000 ---p 00022000 08:05 5517166                            /lib/i386-linux-gnu/libselinux.so.1
+a1e30000-a1e31000 r--p 00022000 08:05 5517166                            /lib/i386-linux-gnu/libselinux.so.1
+a1e31000-a1e32000 rw-p 00023000 08:05 5517166                            /lib/i386-linux-gnu/libselinux.so.1
+a1e32000-a1e33000 rw-p 00000000 00:00 0 
+a1e33000-a1e4c000 r-xp 00000000 08:05 5517187                            /lib/i386-linux-gnu/libz.so.1.2.8
+a1e4c000-a1e4d000 r--p 00018000 08:05 5517187                            /lib/i386-linux-gnu/libz.so.1.2.8
+a1e4d000-a1e4e000 rw-p 00019000 08:05 5517187                            /lib/i386-linux-gnu/libz.so.1.2.8
+a1e4e000-a1e61000 r-xp 00000000 08:05 2632896                            /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+a1e61000-a1e62000 r--p 00012000 08:05 2632896                            /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+a1e62000-a1e63000 rw-p 00013000 08:05 2632896                            /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+a1e63000-a1e6c000 r-xp 00000000 08:05 2632890                            /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+a1e6c000-a1e6d000 r--p 00008000 08:05 2632890                            /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+a1e6d000-a1e6e000 rw-p 00009000 08:05 2632890                            /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+a1e6e000-a1e79000 r-xp 00000000 08:05 2632910                            /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+a1e79000-a1e7a000 r--p 0000a000 08:05 2632910                            /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+a1e7a000-a1e7b000 rw-p 0000b000 08:05 2632910                            /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+a1e7b000-a1e8c000 r-xp 00000000 08:05 2632902                            /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+a1e8c000-a1e8d000 r--p 00010000 08:05 2632902                            /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+a1e8d000-a1e8e000 rw-p 00011000 08:05 2632902                            /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+a1e8e000-a1e98000 r-xp 00000000 08:05 2632912                            /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+a1e98000-a1e99000 r--p 00009000 08:05 2632912                            /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+a1e99000-a1e9a000 rw-p 0000a000 08:05 2632912                            /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+a1e9a000-a1eb6000 r-xp 00000000 08:05 5517117                            /lib/i386-linux-gnu/libgcc_s.so.1
+a1eb6000-a1eb7000 rw-p 0001b000 08:05 5517117                            /lib/i386-linux-gnu/libgcc_s.so.1
+a1eb7000-a2024000 r-xp 00000000 08:05 2630939                            /usr/lib/i386-linux-gnu/libstdc++.so.6.0.21
+a2024000-a2025000 ---p 0016d000 08:05 2630939                            /usr/lib/i386-linux-gnu/libstdc++.so.6.0.21
+a2025000-a202a000 r--p 0016d000 08:05 2630939                            /usr/lib/i386-linux-gnu/libstdc++.so.6.0.21
+a202a000-a202b000 rw-p 00172000 08:05 2630939                            /usr/lib/i386-linux-gnu/libstdc++.so.6.0.21
+a202b000-a202e000 rw-p 00000000 00:00 0 
+a202e000-a2095000 r-xp 00000000 08:05 2758421                            /usr/lib/i386-linux-gnu/mesa/libGL.so.1.2.0
+a2095000-a2096000 ---p 00067000 08:05 2758421                            /usr/lib/i386-linux-gnu/mesa/libGL.so.1.2.0
+a2096000-a2098000 r--p 00067000 08:05 2758421                            /usr/lib/i386-linux-gnu/mesa/libGL.so.1.2.0
+a2098000-a209d000 rwxp 00069000 08:05 2758421                            /usr/lib/i386-linux-gnu/mesa/libGL.so.1.2.0
+a209d000-a21e3000 r-xp 00000000 08:05 2632879                            /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+a21e3000-a21e4000 ---p 00146000 08:05 2632879                            /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+a21e4000-a21e5000 r--p 00146000 08:05 2632879                            /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+a21e5000-a21e7000 rw-p 00147000 08:05 2632879                            /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+a21e7000-a21e8000 rw-p 00000000 00:00 0 
+a21e8000-a230f000 r-xp 00000000 08:05 5520370                            /lib/i386-linux-gnu/libglib-2.0.so.0.4800.1
+a230f000-a2310000 r--p 00126000 08:05 5520370                            /lib/i386-linux-gnu/libglib-2.0.so.0.4800.1
+a2310000-a2311000 rw-p 00127000 08:05 5520370                            /lib/i386-linux-gnu/libglib-2.0.so.0.4800.1
+a2311000-a236d000 r-xp 00000000 08:05 2632500                            /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.4800.1
+a236d000-a236e000 ---p 0005c000 08:05 2632500                            /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.4800.1
+a236e000-a236f000 r--p 0005c000 08:05 2632500                            /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.4800.1
+a236f000-a2370000 rw-p 0005d000 08:05 2632500                            /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.4800.1
+a2370000-a23b2000 r-xp 00000000 08:05 2627490                            /usr/lib/i386-linux-gnu/libfontconfig.so.1.9.0
+a23b2000-a23b3000 ---p 00042000 08:05 2627490                            /usr/lib/i386-linux-gnu/libfontconfig.so.1.9.0
+a23b3000-a23b4000 r--p 00042000 08:05 2627490                            /usr/lib/i386-linux-gnu/libfontconfig.so.1.9.0
+a23b4000-a23b9000 rw-p 00043000 08:05 2627490                            /usr/lib/i386-linux-gnu/libfontconfig.so.1.9.0
+a23b9000-a2464000 r-xp 00000000 08:05 2633006                            /usr/lib/i386-linux-gnu/libfreetype.so.6.12.1
+a2464000-a2468000 r--p 000aa000 08:05 2633006                            /usr/lib/i386-linux-gnu/libfreetype.so.6.12.1
+a2468000-a2469000 rw-p 000ae000 08:05 2633006                            /usr/lib/i386-linux-gnu/libfreetype.so.6.12.1
+a2469000-a24b7000 r-xp 00000000 08:05 2633217                            /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3800.1
+a24b7000-a24b8000 ---p 0004e000 08:05 2633217                            /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3800.1
+a24b8000-a24b9000 r--p 0004e000 08:05 2633217                            /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3800.1
+a24b9000-a24ba000 rw-p 0004f000 08:05 2633217                            /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3800.1
+a24ba000-a25f7000 r-xp 00000000 08:05 2632950                            /usr/lib/i386-linux-gnu/libcairo.so.2.11400.6
+a25f7000-a25f9000 r--p 0013c000 08:05 2632950                            /usr/lib/i386-linux-gnu/libcairo.so.2.11400.6
+a25f9000-a25fa000 rw-p 0013e000 08:05 2632950                            /usr/lib/i386-linux-gnu/libcairo.so.2.11400.6
+a25fa000-a25fb000 rw-p 00000000 00:00 0 
+a25fb000-a2622000 r-xp 00000000 08:05 2632354                            /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+a2622000-a2623000 r--p 00026000 08:05 2632354                            /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+a2623000-a2624000 rw-p 00027000 08:05 2632354                            /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.3200.2
+a2624000-a263a000 r-xp 00000000 08:05 2633221                            /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3800.1
+a263a000-a263b000 r--p 00015000 08:05 2633221                            /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3800.1
+a263b000-a263c000 rw-p 00016000 08:05 2633221                            /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3800.1
+a263c000-a2800000 r-xp 00000000 08:05 2632499                            /usr/lib/i386-linux-gnu/libgio-2.0.so.0.4800.1
+a2800000-a2801000 ---p 001c4000 08:05 2632499                            /usr/lib/i386-linux-gnu/libgio-2.0.so.0.4800.1
+a2801000-a2803000 r--p 001c4000 08:05 2632499                            /usr/lib/i386-linux-gnu/libgio-2.0.so.0.4800.1
+a2803000-a2804000 rw-p 001c6000 08:05 2632499                            /usr/lib/i386-linux-gnu/libgio-2.0.so.0.4800.1
+a2804000-a2805000 rw-p 00000000 00:00 0 
+a2805000-a2829000 r-xp 00000000 08:05 2632932                            /usr/lib/i386-linux-gnu/libatk-1.0.so.0.21809.1
+a2829000-a282b000 r--p 00023000 08:05 2632932                            /usr/lib/i386-linux-gnu/libatk-1.0.so.0.21809.1
+a282b000-a282c000 rw-p 00025000 08:05 2632932                            /usr/lib/i386-linux-gnu/libatk-1.0.so.0.21809.1
+a282c000-a28e9000 r-xp 00000000 08:05 2633022                            /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+a28e9000-a28eb000 r--p 000bc000 08:05 2633022                            /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+a28eb000-a28ec000 rw-p 000be000 08:05 2633022                            /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.30
+a28ec000-a2dd9000 r-xp 00000000 08:05 2633128                            /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+a2dd9000-a2dda000 ---p 004ed000 08:05 2633128                            /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+a2dda000-a2dde000 r--p 004ed000 08:05 2633128                            /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+a2dde000-a2de0000 rw-p 004f1000 08:05 2633128                            /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.30
+a2de0000-a2de2000 rw-p 00000000 00:00 0 
+a2de2000-a2e06000 r-xp 00000000 08:05 5399470                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libglass.so
+a2e06000-a2e08000 rw-p 00024000 08:05 5399470                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libglass.so
+a2e08000-a2e0b000 ---p 00000000 00:00 0 
+a2e0b000-a2e59000 rw-p 00000000 00:00 0 
+a2e59000-a2e5c000 ---p 00000000 00:00 0 
+a2e5c000-a306b000 rw-p 00000000 00:00 0 
+a306b000-a3100000 r--s 01109000 08:05 5399498                            /home/wintson/jdk1.8.0_121/jre/lib/ext/jfxrt.jar
+a3100000-a31ab000 rw-p 00000000 00:00 0 
+a31ab000-a3200000 ---p 00000000 00:00 0 
+a3200000-a3202000 r-xp 00000000 08:05 2633331                            /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+a3202000-a3203000 r--p 00001000 08:05 2633331                            /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+a3203000-a3204000 rw-p 00002000 08:05 2633331                            /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+a3204000-a3210000 r-xp 00000000 08:05 2633219                            /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3800.1
+a3210000-a3211000 r--p 0000b000 08:05 2633219                            /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3800.1
+a3211000-a3212000 rw-p 0000c000 08:05 2633219                            /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3800.1
+a3212000-a3227000 r-xp 00000000 08:05 5399474                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libnet.so
+a3227000-a3228000 rw-p 00015000 08:05 5399474                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libnet.so
+a3228000-a322b000 ---p 00000000 00:00 0 
+a322b000-a3279000 rw-p 00000000 00:00 0 
+a3279000-a327a000 ---p 00000000 00:00 0 
+a327a000-a32fa000 rw-p 00000000 00:00 0 
+a32fa000-a32fd000 ---p 00000000 00:00 0 
+a32fd000-a334b000 rw-p 00000000 00:00 0 
+a334b000-a334e000 ---p 00000000 00:00 0 
+a334e000-a33cc000 rw-p 00000000 00:00 0 
+a33cc000-a33cf000 ---p 00000000 00:00 0 
+a33cf000-a344d000 rw-p 00000000 00:00 0 
+a344d000-a3450000 ---p 00000000 00:00 0 
+a3450000-a34ce000 rw-p 00000000 00:00 0 
+a34ce000-a3600000 r--p 002d7000 08:05 2633915                            /usr/lib/locale/locale-archive
+a3600000-a3800000 r--p 00000000 08:05 2633915                            /usr/lib/locale/locale-archive
+a3800000-a3900000 rw-p 00000000 00:00 0 
+a3900000-a39fb000 rw-p 00000000 00:00 0 
+a39fb000-a3a00000 ---p 00000000 00:00 0 
+a3a00000-a3a01000 r--s 00000000 08:05 5799378                            /home/wintson/.cache/fontconfig/49f0de54bdd920fe4f0dfd4cbac43e6b-le32d4.cache-6
+a3a01000-a3a02000 r--s 00000000 08:05 5799377                            /home/wintson/.cache/fontconfig/f6e6e0a5c3d2f6ae0c0c2e0ecd42a997-le32d4.cache-6
+a3a02000-a3a04000 r-xp 00000000 08:05 2632892                            /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+a3a04000-a3a05000 r--p 00001000 08:05 2632892                            /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+a3a05000-a3a06000 rw-p 00002000 08:05 2632892                            /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+a3a06000-a3a0b000 r-xp 00000000 08:05 2632898                            /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+a3a0b000-a3a0c000 r--p 00004000 08:05 2632898                            /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+a3a0c000-a3a0d000 rw-p 00005000 08:05 2632898                            /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+a3a0d000-a3a10000 ---p 00000000 00:00 0 
+a3a10000-a3a5e000 rw-p 00000000 00:00 0 
+a3a5e000-a3a61000 ---p 00000000 00:00 0 
+a3a61000-a3aaf000 rw-p 00000000 00:00 0 
+a3aaf000-a3ab2000 ---p 00000000 00:00 0 
+a3ab2000-a3b00000 rw-p 00000000 00:00 0 
+a3b00000-a3bff000 rw-p 00000000 00:00 0 
+a3bff000-a3c00000 ---p 00000000 00:00 0 
+a3c00000-a3c02000 r-xp 00000000 08:05 2632888                            /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+a3c02000-a3c03000 r--p 00001000 08:05 2632888                            /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+a3c03000-a3c04000 rw-p 00002000 08:05 2632888                            /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+a3c04000-a3c09000 r-xp 00000000 08:05 2632922                            /usr/lib/i386-linux-gnu/libXxf86vm.so.1.0.0
+a3c09000-a3c0a000 r--p 00004000 08:05 2632922                            /usr/lib/i386-linux-gnu/libXxf86vm.so.1.0.0
+a3c0a000-a3c0b000 rw-p 00005000 08:05 2632922                            /usr/lib/i386-linux-gnu/libXxf86vm.so.1.0.0
+a3c0b000-a3c0c000 ---p 00000000 00:00 0 
+a3c0c000-a3cdb000 rw-p 00000000 00:00 0 
+a3cdb000-a3eb4000 r--s 03d3e000 08:05 5399520                            /home/wintson/jdk1.8.0_121/jre/lib/rt.jar
+a3eb4000-a42fa000 rw-p 00000000 00:00 0 
+a42fa000-a4300000 ---p 00000000 00:00 0 
+a4300000-a6700000 rw-p 00000000 00:00 0 
+a6700000-a6800000 rw-p 00000000 00:00 0 
+a6800000-a6802000 r--s 00000000 08:05 5799365                            /home/wintson/.cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-6
+a6802000-a6804000 r-xp 00000000 08:05 2632904                            /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+a6804000-a6805000 r--p 00001000 08:05 2632904                            /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+a6805000-a6806000 rw-p 00002000 08:05 2632904                            /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+a6806000-a6824000 r--s 000e8000 08:05 6304971                            /home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-6.13.jar
+a6824000-a687f000 rw-p 00000000 00:00 0 
+a687f000-a6880000 ---p 00000000 00:00 0 
+a6880000-a6900000 rw-p 00000000 00:00 0 
+a6900000-a6921000 rw-p 00000000 00:00 0 
+a6921000-a6a00000 ---p 00000000 00:00 0 
+a6a00000-a6b00000 rw-p 00000000 00:00 0 
+a6b00000-a6b2a000 rw-p 00000000 00:00 0 
+a6b2a000-a6c00000 ---p 00000000 00:00 0 
+a6c00000-a6c01000 r--s 00000000 08:05 5799376                            /home/wintson/.cache/fontconfig/4b2eda6bb976bda485cb2176619421d5-le32d4.cache-6
+a6c01000-a6c02000 r--s 00000000 08:05 5799359                            /home/wintson/.cache/fontconfig/a08924c8c8373104a34f76f6ac7b0938-le32d4.cache-6
+a6c02000-a6c07000 r-xp 00000000 08:05 2632918                            /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+a6c07000-a6c08000 r--p 00004000 08:05 2632918                            /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+a6c08000-a6c09000 rw-p 00005000 08:05 2632918                            /usr/lib/i386-linux-gnu/libXtst.so.6.1.0
+a6c09000-a6c14000 r-xp 00000000 08:05 5399433                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libprism_es2.so
+a6c14000-a6c15000 rw-p 0000a000 08:05 5399433                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libprism_es2.so
+a6c15000-a6c28000 r--s 00345000 08:05 5399514                            /home/wintson/jdk1.8.0_121/jre/lib/resources.jar
+a6c28000-a6c29000 ---p 00000000 00:00 0 
+a6c29000-a6cbf000 rw-p 00000000 00:00 0 
+a6cbf000-a6dff000 ---p 00000000 00:00 0 
+a6dff000-a6e15000 rw-p 00000000 00:00 0 
+a6e15000-a6f54000 ---p 00000000 00:00 0 
+a6f54000-a6f68000 rw-p 00000000 00:00 0 
+a6f68000-a6fff000 ---p 00000000 00:00 0 
+a6fff000-a9ac0000 rw-p 00000000 00:00 0 
+a9ac0000-d1ac0000 ---p 00000000 00:00 0 
+d1ac0000-d4040000 rw-p 00000000 00:00 0 
+d4040000-e7000000 ---p 00000000 00:00 0 
+e7000000-e7001000 r--p 00000000 00:00 0 
+e7001000-e7002000 r-xp 00000000 08:05 2632497                            /usr/lib/i386-linux-gnu/libgthread-2.0.so.0.4800.1
+e7002000-e7003000 r--p 00000000 08:05 2632497                            /usr/lib/i386-linux-gnu/libgthread-2.0.so.0.4800.1
+e7003000-e7004000 rw-p 00001000 08:05 2632497                            /usr/lib/i386-linux-gnu/libgthread-2.0.so.0.4800.1
+e7004000-e7007000 r-xp 00000000 08:05 2632498                            /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.4800.1
+e7007000-e7008000 r--p 00002000 08:05 2632498                            /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.4800.1
+e7008000-e7009000 rw-p 00003000 08:05 2632498                            /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.4800.1
+e7009000-e700a000 r-xp 00000000 08:05 5787185                            /home/wintson/idea-IC-163.12024.16/bin/libbreakgen.so
+e700a000-e700b000 rw-p 00000000 08:05 5787185                            /home/wintson/idea-IC-163.12024.16/bin/libbreakgen.so
+e700b000-e700d000 r--s 00019000 08:05 5786703                            /home/wintson/idea-IC-163.12024.16/lib/idea_rt.jar
+e700d000-e700e000 r--s 02bdc000 08:05 6307490                            /home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-linux64-6.13.jar
+e700e000-e700f000 r--s 02c33000 08:05 6307477                            /home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-linux32-6.13.jar
+e700f000-e7010000 r--s 0222b000 08:05 6307493                            /home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-win32-6.13.jar
+e7010000-e7011000 r--s 0571c000 08:05 6307492                            /home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-mac-6.13.jar
+e7011000-e7023000 r--s 000d6000 08:05 5399323                            /home/wintson/jdk1.8.0_121/jre/lib/plugin.jar
+e7023000-e703e000 r--s 00209000 08:05 5399327                            /home/wintson/jdk1.8.0_121/jre/lib/deploy.jar
+e703e000-e703f000 ---p 00000000 00:00 0 
+e703f000-e70bf000 rw-p 00000000 00:00 0 
+e70bf000-e70c0000 ---p 00000000 00:00 0 
+e70c0000-e7154000 rw-p 00000000 00:00 0 
+e7154000-e7500000 ---p 00000000 00:00 0 
+e7500000-e79d0000 rwxp 00000000 00:00 0 
+e79d0000-f6500000 ---p 00000000 00:00 0 
+f6500000-f65fc000 rw-p 00000000 00:00 0 
+f65fc000-f6600000 ---p 00000000 00:00 0 
+f6600000-f6601000 r--s 00000000 08:05 6307494                            /home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/licence.jar
+f6601000-f6605000 r--s 0009a000 08:05 5399524                            /home/wintson/jdk1.8.0_121/jre/lib/jsse.jar
+f6605000-f6607000 r--s 00007000 08:05 5399409                            /home/wintson/jdk1.8.0_121/jre/lib/jfxswt.jar
+f6607000-f660c000 r--s 00084000 08:05 5399336                            /home/wintson/jdk1.8.0_121/jre/lib/jfr.jar
+f660c000-f6616000 r--s 0006c000 08:05 5399483                            /home/wintson/jdk1.8.0_121/jre/lib/javaws.jar
+f6616000-f661b000 r--s 002f9000 08:05 5399488                            /home/wintson/jdk1.8.0_121/jre/lib/charsets.jar
+f661b000-f6633000 rw-p 00000000 00:00 0 
+f6633000-f663e000 r-xp 00000000 08:05 5516580                            /lib/i386-linux-gnu/libnss_files-2.23.so
+f663e000-f663f000 r--p 0000a000 08:05 5516580                            /lib/i386-linux-gnu/libnss_files-2.23.so
+f663f000-f6640000 rw-p 0000b000 08:05 5516580                            /lib/i386-linux-gnu/libnss_files-2.23.so
+f6640000-f6646000 rw-p 00000000 00:00 0 
+f6646000-f665d000 r-xp 00000000 08:05 5516573                            /lib/i386-linux-gnu/libnsl-2.23.so
+f665d000-f665e000 r--p 00016000 08:05 5516573                            /lib/i386-linux-gnu/libnsl-2.23.so
+f665e000-f665f000 rw-p 00017000 08:05 5516573                            /lib/i386-linux-gnu/libnsl-2.23.so
+f665f000-f6661000 rw-p 00000000 00:00 0 
+f6661000-f6662000 r--s 00000000 08:05 5399481                            /home/wintson/jdk1.8.0_121/jre/lib/management-agent.jar
+f6662000-f6665000 r--s 0001a000 08:05 5399480                            /home/wintson/jdk1.8.0_121/jre/lib/jce.jar
+f6665000-f667e000 r-xp 00000000 08:05 5399476                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libzip.so
+f667e000-f667f000 rw-p 00019000 08:05 5399476                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libzip.so
+f667f000-f6687000 rw-s 00000000 08:05 2898599                            /tmp/hsperfdata_wintson/16895
+f6687000-f66ab000 r-xp 00000000 08:05 5399471                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libjava.so
+f66ab000-f66ac000 rw-p 00024000 08:05 5399471                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libjava.so
+f66ac000-f66b3000 r-xp 00000000 08:05 5516551                            /lib/i386-linux-gnu/librt-2.23.so
+f66b3000-f66b4000 r--p 00006000 08:05 5516551                            /lib/i386-linux-gnu/librt-2.23.so
+f66b4000-f66b5000 rw-p 00007000 08:05 5516551                            /lib/i386-linux-gnu/librt-2.23.so
+f66b5000-f66b8000 ---p 00000000 00:00 0 
+f66b8000-f6706000 rw-p 00000000 00:00 0 
+f6706000-f6759000 r-xp 00000000 08:05 5516569                            /lib/i386-linux-gnu/libm-2.23.so
+f6759000-f675a000 r--p 00052000 08:05 5516569                            /lib/i386-linux-gnu/libm-2.23.so
+f675a000-f675b000 rw-p 00053000 08:05 5516569                            /lib/i386-linux-gnu/libm-2.23.so
+f675b000-f70e7000 r-xp 00000000 08:05 5399457                            /home/wintson/jdk1.8.0_121/jre/lib/i386/server/libjvm.so
+f70e7000-f7154000 rw-p 0098c000 08:05 5399457                            /home/wintson/jdk1.8.0_121/jre/lib/i386/server/libjvm.so
+f7154000-f757d000 rw-p 00000000 00:00 0 
+f757d000-f772c000 r-xp 00000000 08:05 5516559                            /lib/i386-linux-gnu/libc-2.23.so
+f772c000-f772d000 ---p 001af000 08:05 5516559                            /lib/i386-linux-gnu/libc-2.23.so
+f772d000-f772f000 r--p 001af000 08:05 5516559                            /lib/i386-linux-gnu/libc-2.23.so
+f772f000-f7730000 rw-p 001b1000 08:05 5516559                            /lib/i386-linux-gnu/libc-2.23.so
+f7730000-f7733000 rw-p 00000000 00:00 0 
+f7733000-f7736000 r-xp 00000000 08:05 5516557                            /lib/i386-linux-gnu/libdl-2.23.so
+f7736000-f7737000 r--p 00002000 08:05 5516557                            /lib/i386-linux-gnu/libdl-2.23.so
+f7737000-f7738000 rw-p 00003000 08:05 5516557                            /lib/i386-linux-gnu/libdl-2.23.so
+f7738000-f774c000 r-xp 00000000 08:05 5398041                            /home/wintson/jdk1.8.0_121/lib/i386/jli/libjli.so
+f774c000-f774d000 rw-p 00014000 08:05 5398041                            /home/wintson/jdk1.8.0_121/lib/i386/jli/libjli.so
+f774d000-f7766000 r-xp 00000000 08:05 5516571                            /lib/i386-linux-gnu/libpthread-2.23.so
+f7766000-f7767000 r--p 00018000 08:05 5516571                            /lib/i386-linux-gnu/libpthread-2.23.so
+f7767000-f7768000 rw-p 00019000 08:05 5516571                            /lib/i386-linux-gnu/libpthread-2.23.so
+f7768000-f776a000 rw-p 00000000 00:00 0 
+f776a000-f776b000 r--p 002d4000 08:05 2633915                            /usr/lib/locale/locale-archive
+f776b000-f7776000 r-xp 00000000 08:05 5516553                            /lib/i386-linux-gnu/libnss_nis-2.23.so
+f7776000-f7777000 r--p 0000a000 08:05 5516553                            /lib/i386-linux-gnu/libnss_nis-2.23.so
+f7777000-f7778000 rw-p 0000b000 08:05 5516553                            /lib/i386-linux-gnu/libnss_nis-2.23.so
+f7778000-f7780000 r-xp 00000000 08:05 5516575                            /lib/i386-linux-gnu/libnss_compat-2.23.so
+f7780000-f7781000 r--p 00007000 08:05 5516575                            /lib/i386-linux-gnu/libnss_compat-2.23.so
+f7781000-f7782000 rw-p 00008000 08:05 5516575                            /lib/i386-linux-gnu/libnss_compat-2.23.so
+f7782000-f7783000 rw-p 00000000 00:00 0 
+f7783000-f7784000 r--p 00000000 00:00 0 
+f7784000-f778f000 r-xp 00000000 08:05 5399423                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libverify.so
+f778f000-f7790000 rw-p 0000b000 08:05 5399423                            /home/wintson/jdk1.8.0_121/jre/lib/i386/libverify.so
+f7790000-f7792000 rw-p 00000000 00:00 0 
+f7792000-f7794000 r--p 00000000 00:00 0                                  [vvar]
+f7794000-f7795000 r-xp 00000000 00:00 0                                  [vdso]
+f7795000-f77b7000 r-xp 00000000 08:05 5516539                            /lib/i386-linux-gnu/ld-2.23.so
+f77b7000-f77b8000 rw-p 00000000 00:00 0 
+f77b8000-f77b9000 r--p 00022000 08:05 5516539                            /lib/i386-linux-gnu/ld-2.23.so
+f77b9000-f77ba000 rw-p 00023000 08:05 5516539                            /lib/i386-linux-gnu/ld-2.23.so
+ff88d000-ff88e000 rwxp 00000000 00:00 0 
+ff8c0000-ff8e1000 rw-p 00000000 00:00 0                                  [stack]
+
+VM Arguments:
+jvm_args: -Didea.launcher.port=7545 -Didea.launcher.bin.path=/home/wintson/idea-IC-163.12024.16/bin -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.execution.application.AppMain windows.Main
+java_class_path (initial): /home/wintson/jdk1.8.0_121/jre/lib/charsets.jar:/home/wintson/jdk1.8.0_121/jre/lib/deploy.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/cldrdata.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/dnsns.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/jaccess.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/jfxrt.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/localedata.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/nashorn.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/sunec.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/sunjce_provider.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/sunpkcs11.jar:/home/wintson/jdk1.8.0_121/jre/lib/ext/zipfs.jar:/home/wintson/jdk1.8.0_121/jre/lib/javaws.jar:/home/wintson/jdk1.8.0_121/jre/lib/jce.jar:/home/wintson/jdk1.8.0_121/jre/lib/jfr.jar:/home/wintson/jdk1.8.0_121/jre/lib/jfxswt.jar:/home/wintson/jdk1.8.0_121/jre/lib/jsse.jar:/home/wintson/jdk1.8.0_121/jre/lib/management-agent.jar:/home/wintson/jdk1.8.0_121/jre/lib/plugin.jar:/home/wintson/jdk1.8.0_121/jre/lib/resources.jar:/home/wintson/jdk1.8.0_121/jre/lib/rt.jar:/home/wintson/Desktop/Aegis/out/production/Aegis:/home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/licence.jar:/home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-6.13.jar:/home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-mac-6.13.jar:/home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-win32-6.13.jar:/home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-linux32-6.13.jar:/home/wintson/Desktop/Aegis/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-linux64-6.13.jar:/home/wintson/idea-IC-163.12024.16/lib/idea_rt.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+USERNAME=wintson
+LD_LIBRARY_PATH=/home/wintson/idea-IC-163.12024.16/bin:
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x8d74d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0x8d74d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x7542e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: SIG_IGN, sa_mask[0]=00000000000010000000000000000000, sa_flags=SA_RESTART
+SIGXFSZ: [libjvm.so+0x7542e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x7542e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x755b70], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x757020], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x757020], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x757020], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x757020], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=LinuxMint
+DISTRIB_RELEASE=18
+DISTRIB_CODENAME=sarah
+DISTRIB_DESCRIPTION="Linux Mint 18 Sarah"
+
+uname:Linux 4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016 x86_64
+libc:glibc 2.23 NPTL 2.23 
+rlimit: STACK 8192k, CORE 0k, NPROC 23156, NOFILE 65536, AS infinity
+load average:0,67 0,67 0,73
+
+/proc/meminfo:
+MemTotal:        5970564 kB
+MemFree:          865740 kB
+MemAvailable:    3124960 kB
+Buffers:          114156 kB
+Cached:          1998320 kB
+SwapCached:            0 kB
+Active:          3865452 kB
+Inactive:         854584 kB
+Active(anon):    2540664 kB
+Inactive(anon):   114656 kB
+Active(file):    1324788 kB
+Inactive(file):   739928 kB
+Unevictable:          16 kB
+Mlocked:              16 kB
+SwapTotal:      29295612 kB
+SwapFree:       29295612 kB
+Dirty:              6224 kB
+Writeback:             0 kB
+AnonPages:       2607644 kB
+Mapped:           435040 kB
+Shmem:             47712 kB
+Slab:             266596 kB
+SReclaimable:     230768 kB
+SUnreclaim:        35828 kB
+KernelStack:       10576 kB
+PageTables:        33264 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    32280892 kB
+Committed_AS:    6094384 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   1675264 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      234444 kB
+DirectMap2M:     5916672 kB
+
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 450  @ 2.40GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 1995.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm tpr_shadow vnmi flexpriority ept vpid dtherm ida arat
+bugs		:
+bogomips	: 4800.21
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 450  @ 2.40GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 1197.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 2
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm tpr_shadow vnmi flexpriority ept vpid dtherm ida arat
+bugs		:
+bogomips	: 4800.21
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 450  @ 2.40GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 2395.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm tpr_shadow vnmi flexpriority ept vpid dtherm ida arat
+bugs		:
+bogomips	: 4800.21
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 37
+model name	: Intel(R) Core(TM) i5 CPU       M 450  @ 2.40GHz
+stepping	: 5
+microcode	: 0x2
+cpu MHz		: 1197.000
+cache size	: 3072 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 2
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 11
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 popcnt lahf_lm tpr_shadow vnmi flexpriority ept vpid dtherm ida arat
+bugs		:
+bogomips	: 4800.21
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 5970564k(865740k free), swap 29295612k(29295612k free)
+
+vm_info: Java HotSpot(TM) Server VM (25.121-b13) for linux-x86 JRE (1.8.0_121-b13), built on Dec 12 2016 16:06:09 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Mon Apr 24 19:10:07 2017
+elapsed time: 6 seconds (0d 0h 0m 6s)
+

@@ -20,6 +20,8 @@
             <MenuItem mnemonicParsing="false" text="New Project" fx:id="newProject" />
             <MenuItem mnemonicParsing="false" text="Save Scan" fx:id="saveScan" />
             <MenuItem mnemonicParsing="false" text="Load Scan" fx:id="loadScan" />
+            <MenuItem mnemonicParsing="false" text="Quick Scan" fx:id="quickScan" />
+            <MenuItem mnemonicParsing="false" text="Exit" fx:id="exitItem" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Tools">

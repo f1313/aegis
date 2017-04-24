@@ -36,30 +36,35 @@ import sun.reflect.generics.tree.Tree;
 
 import java.awt.event.MouseEvent;
 import java.beans.EventHandler;
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Optional;
+import java.util.Scanner;
 
 /**
  * Created by wintson on 3/25/17.
  */
 public class AegisMainWindowController {
-    HBox projectsH = new HBox();
+
+    HBox projectsH = new HBox ( );
     static boolean projectClosed = false;
     static boolean groupClosed = false;
-    ArrayList<Hyperlink> hyperList = new ArrayList<>(30);
-    public static ArrayList<Project> projectsList = new ArrayList();
+    ArrayList < Hyperlink > hyperList = new ArrayList <> ( 30 );
+    public static ArrayList < Project > projectsList = new ArrayList ( );
     public static AegisMainWindowController aegisMainWindowController;
 
     //Popup error when nothing is selected
-    Alert NoSelectedAlert = new Alert(Alert.AlertType.ERROR);
+    Alert NoSelectedAlert = new Alert ( Alert.AlertType.ERROR );
 
     //Temp arrayList to store dummy objects that contain icons
-    ArrayList<TreeItem> list = new ArrayList<>();
+    ArrayList < TreeItem > list = new ArrayList <> ( );
 
     Stage targetSelection;
-    TargetWindowController target = new TargetWindowController();
+    TargetWindowController target = new TargetWindowController ( );
     //VBox leftVBox = new VBox();
     @FXML
     MenuItem newProject;
@@ -68,125 +73,131 @@ public class AegisMainWindowController {
     @FXML
     MenuItem saveScan;
     @FXML
+    MenuItem exitItem;
+    @FXML
+    MenuItem quickScan;
+    @FXML
     BorderPane mainBorderPane;
 
     Stage advancedSettingsStage;
-    TreeItem leftRoot = new TreeItem("Scans");
-    TreeView leftTree = new TreeView(leftRoot);
+    TreeItem leftRoot = new TreeItem ( "Scans" );
+    TreeView leftTree = new TreeView ( leftRoot );
 
+    Browser browser = new Browser ( );
+    BrowserView view = new BrowserView ( browser );
 
     @FXML
-    public void initialize() {
+    public void initialize ( ) {
 
-        Browser browser = new Browser();
-        BrowserView view = new BrowserView(browser);
-        browser.loadURL("file:///home/wintson/Desktop/myFile.html");
-        view.setPadding(new Insets(30, 30, 30, 10));
-        mainBorderPane.setCenter(view);
+
+        view.setPadding ( new Insets ( 30, 30, 30, 10 ) );
+        mainBorderPane.setCenter ( view );
         /// Projects Context Menu
 
         //Initializing the projects hbox in the advanced scan settings
 
-        initHB();
+        initQuick ( );
+
+        initHB ( );
 
         //Initializing the error popup when nothing is selected
-        initPopup();
+        initPopup ( );
 
-        ContextMenu rootContext = new ContextMenu();
-        MenuItem newProjectMenuItem = new MenuItem("New Project");
-        rootContext.getItems().add(0, newProjectMenuItem);
-        ContextMenu projectsContext = new ContextMenu();
-        MenuItem newGroupMenuItem = new MenuItem("New Group");
-        projectsContext.getItems().add(0, newGroupMenuItem);
+        ContextMenu rootContext = new ContextMenu ( );
+        MenuItem newProjectMenuItem = new MenuItem ( "New Project" );
+        rootContext.getItems ( ).add ( 0, newProjectMenuItem );
+        ContextMenu projectsContext = new ContextMenu ( );
+        MenuItem newGroupMenuItem = new MenuItem ( "New Group" );
+        projectsContext.getItems ( ).add ( 0, newGroupMenuItem );
         ///
         //Setting a handler for each context menu
-        newProjectMenuItem.setOnAction(event -> addProject());
-        newGroupMenuItem.setOnAction(event -> addGroup((TreeItem) leftTree.getSelectionModel().getSelectedItems().get(0)));
+        newProjectMenuItem.setOnAction ( event -> addProject ( ) );
+        newGroupMenuItem.setOnAction ( event -> addGroup ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItems ( ).get ( 0 ) ) );
         //Checking for right click
-        mainBorderPane.setLeft(leftTree);
-        leftTree.setOnMouseClicked(new javafx.event.EventHandler<javafx.scene.input.MouseEvent>() {
+        mainBorderPane.setLeft ( leftTree );
+        leftTree.setOnMouseClicked ( new javafx.event.EventHandler < javafx.scene.input.MouseEvent > ( ) {
             @Override
-            public void handle(javafx.scene.input.MouseEvent event) {
-                rootContext.hide();
-                projectsContext.hide();
-                if (event.getButton() == MouseButton.SECONDARY) {
-                    if (leftTree.getSelectionModel().getSelectedItem() != null) {
-                        if (isRoot((TreeItem) leftTree.getSelectionModel().getSelectedItem())) {
-                            rootContext.show(mainBorderPane, event.getScreenX(), event.getScreenY());
-                        } else if (isProject((TreeItem) leftTree.getSelectionModel().getSelectedItem())) {
-                            projectsContext.show(mainBorderPane, event.getScreenX(), event.getScreenY());
+            public void handle ( javafx.scene.input.MouseEvent event ) {
+                rootContext.hide ( );
+                projectsContext.hide ( );
+                if ( event.getButton ( ) == MouseButton.SECONDARY ) {
+                    if ( leftTree.getSelectionModel ( ).getSelectedItem ( ) != null ) {
+                        if ( isRoot ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItem ( ) ) ) {
+                            rootContext.show ( mainBorderPane, event.getScreenX ( ), event.getScreenY ( ) );
+                        } else if ( isProject ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItem ( ) ) ) {
+                            projectsContext.show ( mainBorderPane, event.getScreenX ( ), event.getScreenY ( ) );
                         }
                     }
                 } else {
-                    rootContext.hide();
+                    rootContext.hide ( );
                 }
             }
-        });
+        } );
 
-        TreeItem<String> rightRoot = new TreeItem("Basic Options");
-        TreeItem<String> ri1 = new TreeItem("Option 1");
+        TreeItem < String > rightRoot = new TreeItem ( "Basic Options" );
+        TreeItem < String > ri1 = new TreeItem ( "Option 1" );
 
-        TreeItem<String> ri2 = new TreeItem("Option 2");
-        rightRoot.getChildren().addAll(ri1, ri2);
-        TreeView<String> righTree = new TreeView(rightRoot);
+        TreeItem < String > ri2 = new TreeItem ( "Option 2" );
+        rightRoot.getChildren ( ).addAll ( ri1, ri2 );
+        TreeView < String > righTree = new TreeView ( rightRoot );
 
-        leftRoot.setExpanded(true);
-        mainBorderPane.setRight(righTree);
+        leftRoot.setExpanded ( true );
+        mainBorderPane.setRight ( righTree );
 
-        newProject.setAccelerator(new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_DOWN));
-        newProject.setOnAction(new javafx.event.EventHandler<javafx.event.ActionEvent>() {
+        newProject.setAccelerator ( new KeyCodeCombination ( KeyCode.N, KeyCombination.CONTROL_DOWN ) );
+        newProject.setOnAction ( new javafx.event.EventHandler < javafx.event.ActionEvent > ( ) {
             @Override
-            public void handle(javafx.event.ActionEvent event) {
-                addProject();
+            public void handle ( javafx.event.ActionEvent event ) {
+                addProject ( );
             }
-        });
+        } );
 
         aegisMainWindowController = this;
     }
 
 
     //Adds a new project to the tree
-    private void addProject() {
-        Stage projectStage = new Stage();
+    private void addProject ( ) {
+        Stage projectStage = new Stage ( );
         newProjectController projectController;
-        FXMLLoader projectLoader = new FXMLLoader();
-        projectLoader.setLocation(getClass().getResource("newProject.fxml"));
+        FXMLLoader projectLoader = new FXMLLoader ( );
+        projectLoader.setLocation ( getClass ( ).getResource ( "newProject.fxml" ) );
 
         try {
-            projectLoader.load();
-        } catch (IOException exception) {
-            System.out.println(exception);
+            projectLoader.load ( );
+        } catch ( IOException exception ) {
+            System.out.println ( exception );
         }
 
-        Parent projectRoot = projectLoader.getRoot();
-        projectStage.setScene(new Scene(projectRoot, 406, 150));
+        Parent projectRoot = projectLoader.getRoot ( );
+        projectStage.setScene ( new Scene ( projectRoot, 406, 150 ) );
 
-        projectStage.showAndWait();
-        projectController = projectLoader.getController();
-        Project p = new Project(projectController.getProjectText().getText());
+        projectStage.showAndWait ( );
+        projectController = projectLoader.getController ( );
+        Project p = new Project ( projectController.getProjectText ( ).getText ( ) );
 
-        if (p.getProjectName() != null && projectClosed) {
-            TreeItem temp = new TreeItem(projectController.getProjectText().getText(), p.getProjectIcon());
-            leftRoot.getChildren().add(temp);
+        if ( p.getProjectName ( ) != null && projectClosed ) {
+            TreeItem temp = new TreeItem ( projectController.getProjectText ( ).getText ( ), p.getProjectIcon ( ) );
+            leftRoot.getChildren ( ).add ( temp );
 
 
-            Hyperlink adder = new Hyperlink("+ Add Group");
-            temp.getChildren().add(new TreeItem<Hyperlink>(adder));
-            adder.setOnAction(event -> {
-                addGroup(temp);
-                adder.setVisited(false);
-            });
+            Hyperlink adder = new Hyperlink ( "+ Add Group" );
+            temp.getChildren ( ).add ( new TreeItem < Hyperlink > ( adder ) );
+            adder.setOnAction ( event -> {
+                addGroup ( temp );
+                adder.setVisited ( false );
+            } );
 
-            projectsList.add(p);
-            temp.setExpanded(true);
+            projectsList.add ( p );
+            temp.setExpanded ( true );
             projectClosed = false;
         }
     }
 
 
     @FXML
-    private void openSettings() throws IOException {
-        advancedSettingsStage = new Stage();
+    private void openSettings ( ) throws IOException {
+        advancedSettingsStage = new Stage ( );
         //If nothing is selected
 //        if (leftTree.getSelectionModel().getSelectedItem() == null) {
 //            advancedSettingsStage = new Stage();
@@ -206,133 +217,131 @@ public class AegisMainWindowController {
 //            }
 //        }
 
-        if (isGroup((TreeItem) (leftTree.getSelectionModel().getSelectedItem()))) {
-            findGroup((TreeItem) (leftTree.getSelectionModel().getSelectedItem())).getSettingsStage()
-                    .show();
-        }else {
-            NoSelectedAlert.show();
+        if ( isGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) ) ) {
+            findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) ).getSettingsStage ( )
+                    .show ( );
+        } else {
+            NoSelectedAlert.show ( );
         }
     }
-
 
 
     @FXML
-    private void manageGroups() {
+    private void manageGroups ( ) {
 
     }
 
-    public void addGroup(TreeItem parent) {
-        Parent root = new BorderPane();
-        targetSelection = new Stage();
-        FXMLLoader loader = new FXMLLoader();
+    public void addGroup ( TreeItem parent ) {
+        Parent root = new BorderPane ( );
+        targetSelection = new Stage ( );
+        FXMLLoader loader = new FXMLLoader ( );
         try {
-            loader.setLocation(getClass().getResource("TargetWindow.fxml"));
-            loader.load();
-            root = loader.getRoot();
-        } catch (IOException exception) {
-            System.out.println(exception);
+            loader.setLocation ( getClass ( ).getResource ( "TargetWindow.fxml" ) );
+            loader.load ( );
+            root = loader.getRoot ( );
+        } catch ( IOException exception ) {
+            System.out.println ( exception );
         }
 
 
-        targetSelection.setScene(new Scene(root, 385, 485));
-        targetSelection.showAndWait();
+        targetSelection.setScene ( new Scene ( root, 385, 485 ) );
+        targetSelection.showAndWait ( );
 
-        if (groupClosed) {
-            target = loader.getController();
-            String temp = target.getGroupName();
-            Group g = new Group(temp);
+        if ( groupClosed ) {
+            target = loader.getController ( );
+            String temp = target.getGroupName ( );
+            Group g = new Group ( temp );
 
             TreeItem toAdd;
-            if (parent.getChildren().size() == 0) {
-                toAdd = (TreeItem) parent.getChildren().remove(0);
+            if ( parent.getChildren ( ).size ( ) == 0 ) {
+                toAdd = ( TreeItem ) parent.getChildren ( ).remove ( 0 );
             } else {
-                toAdd = (TreeItem) parent.getChildren().remove(parent.getChildren().size() - 1);
+                toAdd = ( TreeItem ) parent.getChildren ( ).remove ( parent.getChildren ( ).size ( ) - 1 );
             }
 
-            TreeItem newGroup = new TreeItem<>(g.getGroupName(), g.getProjectIcon());
-            parent.getChildren().add(newGroup);
-            parent.getChildren().add(toAdd);
-            target = loader.getController();
+            TreeItem newGroup = new TreeItem <> ( g.getGroupName ( ), g.getProjectIcon ( ) );
+            parent.getChildren ( ).add ( newGroup );
+            parent.getChildren ( ).add ( toAdd );
+            target = loader.getController ( );
             int counter = 0;
-            for (Object x : target.getIpList().getItems()) {
-                g.getTargets().getIncludedTargetsList().add(x.toString());
-                newGroup.getChildren().add(new TreeItem<>(x, new ImageView(new Image
-                        (getClass().getResourceAsStream("/img/target.png")))));
+            for ( Object x : target.getIpList ( ).getItems ( ) ) {
+                g.getTargets ( ).getIncludedTargetsList ( ).add ( x.toString ( ) );
+                newGroup.getChildren ( ).add ( new TreeItem <> ( x, new ImageView ( new Image
+                        ( getClass ( ).getResourceAsStream ( "/img/target.png" ) ) ) ) );
                 counter++;
             }
 
-            newGroup.setExpanded(true);
-            projectsList.get(findProject(parent)).addGroup(g);
+            newGroup.setExpanded ( true );
+            projectsList.get ( findProject ( parent ) ).addGroup ( g );
         }
         groupClosed = false;
 
     }
 
-    public static boolean proExists(String p) {
-        for (Project x : projectsList) {
-            if (p.equals(x.getProjectName())) {
+    public static boolean proExists ( String p ) {
+        for ( Project x : projectsList ) {
+            if ( p.equals ( x.getProjectName ( ) ) ) {
                 return true;
             }
         }
         return false;
     }
 
-    public int findProject(TreeItem parent) {
+    public int findProject ( TreeItem parent ) {
         int counter = 0;
         //TreeItem [ value: alpha ]
-        System.out.println(parent.toString());
-        for (Project x : projectsList) {
-            if (("TreeItem [ value: " + x.getProjectName() + " ]").equals(parent.toString())) {
+        System.out.println ( parent.toString ( ) );
+        for ( Project x : projectsList ) {
+            if ( ( "TreeItem [ value: " + x.getProjectName ( ) + " ]" ).equals ( parent.toString ( ) ) ) {
                 return counter;
             }
             counter++;
         }
-        return -1;
+        return - 1;
     }
 
-    public boolean isRoot(TreeItem item) {
+    public boolean isRoot ( TreeItem item ) {
         try {
-            item.getParent();
-        }
-        catch (Exception e){
+            item.getParent ( );
+        } catch ( Exception e ) {
             return true;
         }
         return false;
     }
 
-    public boolean isProject(TreeItem item) {
-        if (!isRoot(item)){
+    public boolean isProject ( TreeItem item ) {
+        if ( ! isRoot ( item ) ) {
             try {
-                item.getParent().getParent().getParent();
-            }catch (Exception e){
+                item.getParent ( ).getParent ( ).getParent ( );
+            } catch ( Exception e ) {
                 return true;
             }
         }
         return false;
     }
 
-    public boolean isGroup(TreeItem item) {
-        if (item.toString().contains("+ Add Group")) return false;
-        if (!isRoot(item) && !isProject(item)){
+    public boolean isGroup ( TreeItem item ) {
+        if ( item.toString ( ).contains ( "+ Add Group" ) ) return false;
+        if ( ! isRoot ( item ) && ! isProject ( item ) ) {
             try {
-                item.getParent().getParent().getParent().getParent();
-            }catch (Exception e){
+                item.getParent ( ).getParent ( ).getParent ( ).getParent ( );
+            } catch ( Exception e ) {
                 return true;
             }
         }
         return false;
     }
 
-    private void initHB() {
-        Label l = new Label("Project: ");
-        ChoiceBox pc = new ChoiceBox();
-        pc.getItems().addAll(leftRoot.getChildren());
-        projectsH.getChildren().addAll(l, pc);
+    private void initHB ( ) {
+        Label l = new Label ( "Project: " );
+        ChoiceBox pc = new ChoiceBox ( );
+        pc.getItems ( ).addAll ( leftRoot.getChildren ( ) );
+        projectsH.getChildren ( ).addAll ( l, pc );
     }
 
-    public Project getSelectedProject(TreeItem item) {
-        for (Project x : projectsList) {
-            if (("TreeItem [ value: " + x.getProjectName() + " ]").equals(item.toString())) {
+    public Project getSelectedProject ( TreeItem item ) {
+        for ( Project x : projectsList ) {
+            if ( ( "TreeItem [ value: " + x.getProjectName ( ) + " ]" ).equals ( item.toString ( ) ) ) {
                 return x;
             }
         }
@@ -340,11 +349,11 @@ public class AegisMainWindowController {
     }
 
 
-    private void initPopup() {
+    private void initPopup ( ) {
 
-        NoSelectedAlert.setTitle("Error");
-        NoSelectedAlert.setHeaderText("No Group Selected");
-        NoSelectedAlert.setContentText("Select a group from the scans tree!");
+        NoSelectedAlert.setTitle ( "Error" );
+        NoSelectedAlert.setHeaderText ( "No Group Selected" );
+        NoSelectedAlert.setContentText ( "Select a group from the scans tree!" );
 
         /*Button ok = new Button("Ok");
         ok.setMinSize(50.0, 23.0);
@@ -359,11 +368,74 @@ public class AegisMainWindowController {
 
     }
 
-    public Group findGroup(TreeItem item){
-        for (Group x : getSelectedProject(item.getParent()).getGroupList()){
-            if (x.getGroupName().equals((String)item.getValue())) return x;
+    public Group findGroup ( TreeItem item ) {
+        for ( Group x : getSelectedProject ( item.getParent ( ) ).getGroupList ( ) ) {
+            if ( x.getGroupName ( ).equals ( item.getValue ( ) ) ) return x;
         }
         return null;
     }
+
+    private void initQuick ( ) {
+        quickScan.setAccelerator ( new KeyCodeCombination ( KeyCode.Q, KeyCombination.CONTROL_DOWN ) );
+        quickScan.setOnAction ( event -> {
+            String temp = "";
+            do {
+                TextInputDialog dialog = new TextInputDialog ( "8.8.8.8" );
+                dialog.setTitle ( "Text Input Dialog" );
+                dialog.setHeaderText ( "Look, a Text Input Dialog" );
+                dialog.setContentText ( "Please enter your name:" );
+
+                Optional < String > result = dialog.showAndWait ( );
+                if ( result.isPresent ( ) )
+                    temp = result.get ( );
+                System.out.println ( "Going to scan : " + temp );
+                doQuickScan ( temp );
+            } while ( ! new MiddleMan.TargetSpec ( ).validateHostString ( temp ) );
+
+        } );
+
+        // The Java 8 way to get the response value (with lambda expression).
+//        result.ifPresent(name -> System.out.println("Your name: " + name));
+    }
+
+    private void doQuickScan ( String target ) {
+//What used to be wrong: took us 2 hours to go from this to what is below that works
+//        String command = "cd /home/wintson/Desktop/quickScan\n" +
+//                "rm quickFile*\n" +
+//                "nmap " + target + " -oX /home/wintson/Desktop/quickScan/quickFile.xml" +
+//                "\nxsltproc quickFile.xml -o quickFile.html" +
+//                "\nmv quickFile.html quickFiles.html\n";
+//        System.out.println("Thecommand is :" + command);
+
+        try {
+            new File ( "/home/wintson/Desktop/quickScan/quickFile.xml" ).delete ( );
+            new File ( "/home/wintson/Desktop/quickScan/quickFile.html" ).delete ( );
+            Process p = Runtime.getRuntime ( ).exec ( "nmap " + target + " -oX /home/wintson/Desktop/quickScan/quickFile.xml" );
+            p.waitFor ( );
+            System.setIn ( p.getInputStream ( ) );
+            Scanner input = new Scanner ( System.in );
+            while ( input.hasNextLine ( ) ) {
+                System.out.println ( input.nextLine ( ) );
+            }
+            p = Runtime.getRuntime ( ).exec ( "xsltproc /home/wintson/Desktop/quickScan/quickFile.xml" +
+                    " -o /home/wintson/Desktop/quickScan/quickFile.html" );
+            p.waitFor ( );
+            System.setIn ( p.getInputStream ( ) );
+            input = new Scanner ( System.in );
+            while ( input.hasNextLine ( ) ) {
+                System.out.println ( input.nextLine ( ) );
+            }
+            //Turns out we don't need this any more
+//            Thread.currentThread ( ).join ( 700 );
+        } catch ( IOException | InterruptedException ex ) {
+            System.out.println ( ex );
+        }
+
+        browser.loadURL ( "file:///home/wintson/Desktop/quickScan/quickFile.html" );
+
+        mainBorderPane.setCenter ( view );
+
+    }
+
 
 }

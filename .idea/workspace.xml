@@ -2,757 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Initial Version">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/jxbrowserdemo.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/back-selected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/close-pressed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/close.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/forward-selected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/forward.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/gear.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/go.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/home-selected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/home.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/jxbrowser16x16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/jxbrowser32x32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/new-tab.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/refresh-selected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/stop-selected.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/stop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/JxBrowser  6.x - King Abdulaziz University - Academic Licence - exp 2018-03-01.rename_to_zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-6.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-linux32-6.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-linux64-6.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-mac-6.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/jxbrowser-win32-6.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/lib/licence.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/GNU LESSER GENERAL PUBLIC LICENSE - Version 2.1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/GNU LIBRARY GENERAL PUBLIC LICENSE - Version 2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/License agreement.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/Readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/Requirements.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/jxbrowserdemo.bat" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/jxbrowserdemo.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/AboutDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/CommandMenuItem.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/JSConsole.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/JxBrowserDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/Tab.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/TabButton.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/TabCaption.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/TabCaptions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/TabContent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/TabFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/TabbedPane.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/ToolBar.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/demo/src/com/teamdev/jxbrowser/chromium/demo/resources/Resources.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/allclasses-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/allclasses-noframe.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/AuthRequiredParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/AutoDetectProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BeforeRedirectParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BeforeSendHeadersParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BeforeSendProxyHeadersParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BeforeURLRequestParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/Browser.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserContext.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserContextParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserCore.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserKeyEvent.KeyCode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserKeyEvent.KeyEventType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserKeyEvent.KeyModifiers.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserKeyEvent.KeyModifiersBuilder.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserKeyEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserMouseEvent.BrowserMouseEventBuilder.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserMouseEvent.MouseButtonType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserMouseEvent.MouseEventType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserMouseEvent.MouseScrollType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserMouseEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserPreferences.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BrowserType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/BytesData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CacheStorage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/Callback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/Certificate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CertificateErrorParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CertificateVerifier.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CertificateVerifyFlag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CertificateVerifyParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CertificateVerifyResult.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CertificatesDialogParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CloseStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ColorChooserParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ColorModel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ContextMenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ContextMenuHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ContextMenuItem.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ContextMenuItemType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ContextMenuParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/Cookie.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CookieStorage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/CustomProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/DataReceivedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/DefaultLoadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/DialogHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/DialogParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/DirectProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/DownloadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/DownloadItem.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/DuplexMode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/EditorCommand.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ExtendedKeyUsage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/FileChooserMode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/FileChooserParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/FormData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/FullScreenHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/HeadersReceivedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/HostPortPair.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/HttpHeaders.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/HttpHeadersEx.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/HttpStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/InputEventsHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSAccessible.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSArray.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSBoolean.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSBooleanObject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSContext.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSFunction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSFunctionCallback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSFunctionException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSNumber.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSNumberObject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSONString.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSObject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSPrimitive.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSString.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSStringObject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSUndefined.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/JSValue.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/KeyUsage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/LoadDataParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/LoadHTMLParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/LoadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/LoadParams.LoadPolicy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/LoadParams.LoadType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/LoadParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/LoadURLParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/LoggerProvider.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/MediaStreamDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/MediaStreamDeviceManager.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/MediaStreamDeviceProvider.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/MediaStreamDeviceRequest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/MediaStreamType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/MediaType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/MultipartFormData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/NavigationEntry.PageType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/NavigationEntry.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/NetworkDelegate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/NetworkService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/Notification.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/NotificationHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/NotificationService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/NotificationType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PACScriptErrorParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PageMargins.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PageRange.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PaperSize.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PermissionHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PermissionRequest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PermissionStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PermissionType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PluginFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PluginInfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PluginManager.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PluginType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PopupContainer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PopupHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PopupParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/Principal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PrintHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PrintJob.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PrintSettings.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PrintStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ProductInfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/PromptDialogParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ProtocolHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ProtocolService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ProxyType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/RawData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ReloadPostDataParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/RenderProcessInfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/RequestCompletedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/RequestParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/RequestStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ResourceHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ResourceParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ResourceType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ResponseStartedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SavePageType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SearchParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SearchResult.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SendHeadersParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SpellCheckCompletedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SpellCheckListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SpellCheckResult.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SpellCheckerService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/StatusLine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/StopFindAction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/StorageType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SubjectAlternativeName.Type.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/SubjectAlternativeName.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/TerminationStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/TextData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/URLProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/URLRequest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/URLResponse.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/UnloadDialogParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/UploadData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/UploadDataType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/WebRTCIPHandlingPolicy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/WebStorage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/XPathIterator.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/XPathIteratorItem.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/XPathResult.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/XPathResultType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/ZoomService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/AuthRequiredParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/AutoDetectProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BeforeRedirectParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BeforeSendHeadersParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BeforeSendProxyHeadersParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BeforeURLRequestParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/Browser.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserContext.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserContextParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserCore.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserKeyEvent.KeyCode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserKeyEvent.KeyEventType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserKeyEvent.KeyModifiers.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserKeyEvent.KeyModifiersBuilder.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserKeyEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserMouseEvent.BrowserMouseEventBuilder.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserMouseEvent.MouseButtonType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserMouseEvent.MouseEventType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserMouseEvent.MouseScrollType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserMouseEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserPreferences.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BrowserType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/BytesData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CacheStorage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/Callback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/Certificate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CertificateErrorParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CertificateVerifier.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CertificateVerifyFlag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CertificateVerifyParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CertificateVerifyResult.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CertificatesDialogParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CloseStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ColorChooserParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ColorModel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ContextMenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ContextMenuHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ContextMenuItem.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ContextMenuItemType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ContextMenuParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/Cookie.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CookieStorage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/CustomProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/DataReceivedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/DefaultLoadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/DialogHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/DialogParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/DirectProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/DownloadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/DownloadItem.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/DuplexMode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/EditorCommand.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ExtendedKeyUsage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/FileChooserMode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/FileChooserParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/FormData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/FullScreenHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/HeadersReceivedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/HostPortPair.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/HttpHeaders.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/HttpHeadersEx.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/HttpStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/InputEventsHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSAccessible.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSArray.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSBoolean.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSBooleanObject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSContext.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSFunction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSFunctionCallback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSFunctionException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSNumber.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSNumberObject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSONString.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSObject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSPrimitive.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSString.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSStringObject.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSUndefined.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/JSValue.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/KeyUsage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/LoadDataParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/LoadHTMLParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/LoadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/LoadParams.LoadPolicy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/LoadParams.LoadType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/LoadParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/LoadURLParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/LoggerProvider.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/MediaStreamDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/MediaStreamDeviceManager.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/MediaStreamDeviceProvider.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/MediaStreamDeviceRequest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/MediaStreamType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/MediaType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/MultipartFormData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/NavigationEntry.PageType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/NavigationEntry.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/NetworkDelegate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/NetworkService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/Notification.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/NotificationHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/NotificationService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/NotificationType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PACScriptErrorParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PageMargins.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PageRange.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PaperSize.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PermissionHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PermissionRequest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PermissionStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PermissionType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PluginFilter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PluginInfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PluginManager.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PluginType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PopupContainer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PopupHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PopupParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/Principal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PrintHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PrintJob.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PrintSettings.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PrintStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ProductInfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/PromptDialogParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ProtocolHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ProtocolService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ProxyType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/RawData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ReloadPostDataParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/RenderProcessInfo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/RequestCompletedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/RequestParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/RequestStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ResourceHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ResourceParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ResourceType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ResponseStartedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SavePageType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SearchParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SearchResult.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SendHeadersParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SpellCheckCompletedParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SpellCheckListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SpellCheckResult.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SpellCheckerService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/StatusLine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/StopFindAction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/StorageType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SubjectAlternativeName.Type.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/SubjectAlternativeName.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/TerminationStatus.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/TextData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/URLProxyConfig.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/URLRequest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/URLResponse.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/UnloadDialogParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/UploadData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/UploadDataType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/WebRTCIPHandlingPolicy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/WebStorage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/XPathIterator.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/XPathIteratorItem.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/XPathResult.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/XPathResultType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/class-use/ZoomService.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/By.Type.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/By.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMDocument.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMFormControlElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMFormElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMInputElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMNode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMNodeAtPoint.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMNodeType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMOptionElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMSelectElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/DOMTextAreaElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/SearchContext.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/By.Type.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/By.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMDocument.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMException.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMFormControlElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMFormElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMInputElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMNode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMNodeAtPoint.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMNodeType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMOptionElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMSelectElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/DOMTextAreaElement.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/class-use/SearchContext.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMEventListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMEventParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMEventPhase.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMEventTarget.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMEventType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMKeyEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMKeyEventParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMMouseEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMMouseEventParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMUIEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMUIEventModifier.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMUIEventModifierParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/DOMUIEventParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMEventListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMEventParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMEventPhase.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMEventTarget.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMEventType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMKeyEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMKeyEventParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMMouseEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMMouseEventParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMUIEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMUIEventModifier.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMUIEventModifierParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/class-use/DOMUIEventParams.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/events/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/dom/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/BrowserEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/BrowserListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/Callback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/ConsoleEvent.Level.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/ConsoleEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/ConsoleListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/DisposeEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/DisposeListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/DownloadEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/DownloadListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/FailLoadingEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/FinishLoadingEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/FrameLoadEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/GestureDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/GestureEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/GestureType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/LoadAdapter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/LoadEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/LoadListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/NetError.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/NotificationEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/NotificationListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/PrintJobEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/PrintJobListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/ProvisionalLoadingEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/RenderAdapter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/RenderEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/RenderListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/ScriptContextAdapter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/ScriptContextEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/ScriptContextListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/StartLoadingEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/StatusEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/StatusListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/TitleEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/TitleListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/ZoomEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/ZoomListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/BrowserEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/BrowserListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/Callback.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/ConsoleEvent.Level.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/ConsoleEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/ConsoleListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/DisposeEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/DisposeListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/DownloadEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/DownloadListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/FailLoadingEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/FinishLoadingEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/FrameLoadEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/GestureDevice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/GestureEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/GestureType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/LoadAdapter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/LoadEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/LoadListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/NetError.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/NotificationEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/NotificationListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/PrintJobEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/PrintJobListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/ProvisionalLoadingEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/RenderAdapter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/RenderEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/RenderListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/ScriptContextAdapter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/ScriptContextEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/ScriptContextListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/StartLoadingEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/StatusEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/StatusListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/TitleEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/TitleListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/ZoomEvent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/class-use/ZoomListener.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/events/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/BrowserView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/DefaultContextMenuHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/DefaultDialogHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/DefaultDownloadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/DefaultNetworkDelegate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/DefaultPopupHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/DefaultPrintHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/class-use/BrowserView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/class-use/DefaultContextMenuHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/class-use/DefaultDialogHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/class-use/DefaultDownloadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/class-use/DefaultNetworkDelegate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/class-use/DefaultPopupHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/class-use/DefaultPrintHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/javafx/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/BrowserView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/DefaultContextMenuHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/DefaultDialogHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/DefaultDownloadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/DefaultNetworkDelegate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/DefaultPopupHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/DefaultPrintHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/class-use/BrowserView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/class-use/DefaultContextMenuHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/class-use/DefaultDialogHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/class-use/DefaultDownloadHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/class-use/DefaultNetworkDelegate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/class-use/DefaultPopupHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/class-use/DefaultPrintHandler.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/package-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/package-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/package-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/com/teamdev/jxbrowser/chromium/swing/package-use.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/constant-values.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/deprecated-list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/help-doc.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/index-all.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/overview-frame.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/overview-summary.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/overview-tree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/package-list" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/serialized-form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/doc/javadoc/stylesheet.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/AuthenticationSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/BeforeUnloadSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/BrowserContextSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/BrowserPIDSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/BrowserPreferencesSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/BrowserSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/BrowserViewControl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/CertificateErrorSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/CertificateVerifierSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ClearCacheSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ClearHistorySample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ColorChooserSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ConsoleListenerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ContextMenuSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/CookieFilterSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/CookieSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/CustomCursorSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMCreateElementSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMEventsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMFormFileSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMFormSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMGetAttributesSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMGetDocumentSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMGetElementsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMQuerySelectorSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMSelectCheckBoxSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMSelectOptionSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMSetNodeValueSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMSimulateClickSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DOMTextAreaTextSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DefaultMediaStreamDeviceSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DisableBackspaceNavigationSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DisableDragAndDropSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DisableZoomSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DisposeBrowserSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/DownloadSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ExecuteCommandSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/FXMLSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/FileUploadSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/FindTextSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/FlashSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ForwardKeyEventsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ForwardMouseEventsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/FullScreenSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/GeolocationSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/GetFrameIDsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/GetHTMLSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/GetNodeAtPointSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/GetProductVersionSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/GetSelectedHTMLSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/GetSelectedTextSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/GoogleMapsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/HTMLToImageSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/HTMLUISample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/HTTPResponseDataSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/HelloWorld.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/HistorySample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/IncognitoModeSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JFXPanelSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JInternalFrameSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JQuerySample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JSFunctionAsyncInvokeSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXContextMenuSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXDisableDnDSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXFileUploadSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXFullScreenSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXHTMLToImageSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXKeyEventsHandlerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXMouseEventsHandlerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXNotificationsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXScrollEventsHandlerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaFXTabPaneSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaScriptDialogsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaScriptJavaFormSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaScriptJavaSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaScriptJavaSecuritySample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaScriptObjectsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/JavaScriptSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/KeyEventsHandlerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/KeyListenerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/LoadHTMLSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/LoadHandlerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/LoadListenerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/LoadLocalFilesSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/LoginFacebookSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/MouseEventsHandlerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/MouseListenerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/MuteAudioSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/NavigatorLanguageSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/NetworkDelegateSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/NotificationSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/PDFViewerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/POSTDataSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/PUTDataSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/PluginManagerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/PopupSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/PrintFrameSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/PrintSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/PrintToPDFSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ProtocolHandlerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ProxySample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/RemoteDebuggingSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ResourceHandlerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/RestoreBrowserSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/SaveWebPageSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ScriptContextListenerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ScrollDocumentSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/SelectSSLCertificateSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ServerWhiteListSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/SpeechSynthesisSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/SpellCheckerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/StatusListenerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/TabbedPanePopupsSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/TabbedPaneSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/TitleListenerSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/TransparentPageSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/UserAgentSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/VoiceRecognitionSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/WebSocketSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/WebStorageSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/XPathSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/ZoomSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/browser-view-control.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/dialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/jquery.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/jsfunction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/map.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jxbrowser-6.13-cross-desktop-win_mac_linux/samples/notifications.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MiddleMan/DNSSpecs.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MiddleMan/DynamicInput.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MiddleMan/Group.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MiddleMan/PortByName.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MiddleMan/PortByNumber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MiddleMan/PortHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MiddleMan/Project.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MiddleMan/Scan.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindowController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindowController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/Main.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/PortsSelectionWindowController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/PortsSelectionWindowController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/ScanTypesController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/ScanTypesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindowController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindowController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindow.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/DNSOptionsController.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/DNSOptionsController.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/PortsSelectionWindow.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/PortsSelectionWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindow.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindow.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MiddleMan/Constants.java" afterPath="$PROJECT_DIR$/src/MiddleMan/Constants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MiddleMan/HostSpec.java" afterPath="$PROJECT_DIR$/src/MiddleMan/HostSpec.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MiddleMan/PortSpec.java" afterPath="$PROJECT_DIR$/src/MiddleMan/PortSpec.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MiddleMan/ScanOptions.java" afterPath="$PROJECT_DIR$/src/MiddleMan/ScanOptions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MiddleMan/TargetSpec.java" afterPath="$PROJECT_DIR$/src/MiddleMan/TargetSpec.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MiddleMan/notmain.java" afterPath="$PROJECT_DIR$/src/MiddleMan/notmain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Util/Group.java" afterPath="$PROJECT_DIR$/src/Util/Group.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Util/Project.java" afterPath="$PROJECT_DIR$/src/Util/Project.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AegisMainWindow.fxml" afterPath="$PROJECT_DIR$/src/windows/AegisMainWindow.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" afterPath="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/DNSOptionsController.fxml" afterPath="$PROJECT_DIR$/src/windows/DNSOptionsController.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/Main.java" afterPath="$PROJECT_DIR$/src/windows/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/Payload.fxml" afterPath="$PROJECT_DIR$/src/windows/Payload.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/PayloadController.java" afterPath="$PROJECT_DIR$/src/windows/PayloadController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/PortsSelectionWindow.fxml" afterPath="$PROJECT_DIR$/src/windows/PortsSelectionWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/PortsSelectionWindowController.java" afterPath="$PROJECT_DIR$/src/windows/PortsSelectionWindowController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ScanTypesController.java" afterPath="$PROJECT_DIR$/src/windows/ScanTypesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/TargetWindow.fxml" afterPath="$PROJECT_DIR$/src/windows/TargetWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/TargetWindowController.java" afterPath="$PROJECT_DIR$/src/windows/TargetWindowController.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -819,16 +79,16 @@
       <file leaf-file-name="AegisMainWindowController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+            <state relative-caret-position="3110">
+              <caret line="412" column="75" lean-forward="false" selection-start-line="412" selection-start-column="75" selection-end-line="412" selection-end-column="75" />
               <folding>
                 <element signature="docComment;class#AegisMainWindowController#0" expanded="false" />
-                <element signature="e#2453#2478#0" expanded="false" />
-                <element signature="class#3382:4325" expanded="false" />
-                <element signature="method#handle#0;class#3382:4325" expanded="false" />
-                <element signature="class#4838:5034" expanded="false" />
+                <element signature="e#2594#2619#0" expanded="false" />
+                <element signature="class#3596:4599" expanded="false" />
+                <element signature="method#handle#0;class#3596:4599" expanded="false" />
+                <element signature="class#5156:5362" expanded="false" />
                 <element signature="method#addProject#0;class#AegisMainWindowController#0" expanded="false" />
-                <element signature="e#6530#6554#0" expanded="false" />
+                <element signature="e#6950#6974#0" expanded="false" />
                 <element signature="method#manageGroups#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#addGroup#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#proExists#0;class#AegisMainWindowController#0" expanded="false" />
@@ -855,8 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>addG</find>
-      <find>groupName</find>
       <find>leftTree</find>
       <find>Group</find>
       <find>new</find>
@@ -885,6 +143,8 @@
       <find>TreeItem [</find>
       <find>context Menu</find>
       <find>image_</find>
+      <find>KeyCode</find>
+      <find>localho</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -982,7 +242,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -997,7 +256,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1069,46 +328,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiddleMan" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aegis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aegis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aegis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aegis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Aegis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1144,6 +363,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1161,7 +381,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
     <property name="last.edited.regexp" value="" />
   </component>
   <component name="RecentsManager">
@@ -1498,7 +718,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492788888598</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Initial Version">
+      <created>1493040806983</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1493040806983</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1511,13 +738,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21974522" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21974522" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22929937" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22929937" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1538,6 +765,7 @@
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="97" y="100" width="1172" height="538" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1554,7 +782,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="46" />
+      <option name="time" value="52" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1851,14 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettingsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="26" column="94" lean-forward="false" selection-start-line="26" selection-start-column="94" selection-end-line="26" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettings.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2061,22 +1281,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettingsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="26" column="94" lean-forward="false" selection-start-line="26" selection-start-column="94" selection-end-line="26" selection-end-column="94" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+        <state relative-caret-position="3110">
+          <caret line="412" column="75" lean-forward="false" selection-start-line="412" selection-start-column="75" selection-end-line="412" selection-end-column="75" />
           <folding>
             <element signature="docComment;class#AegisMainWindowController#0" expanded="false" />
-            <element signature="e#2453#2478#0" expanded="false" />
-            <element signature="class#3382:4325" expanded="false" />
-            <element signature="method#handle#0;class#3382:4325" expanded="false" />
-            <element signature="class#4838:5034" expanded="false" />
+            <element signature="e#2594#2619#0" expanded="false" />
+            <element signature="class#3596:4599" expanded="false" />
+            <element signature="method#handle#0;class#3596:4599" expanded="false" />
+            <element signature="class#5156:5362" expanded="false" />
             <element signature="method#addProject#0;class#AegisMainWindowController#0" expanded="false" />
-            <element signature="e#6530#6554#0" expanded="false" />
+            <element signature="e#6950#6974#0" expanded="false" />
             <element signature="method#manageGroups#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#addGroup#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#proExists#0;class#AegisMainWindowController#0" expanded="false" />

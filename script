@@ -1,0 +1,5 @@
+cd /home/wintson/Desktop/quickScan
+rm quickFile*
+nmap localhost -oX /home/wintson/Desktop/quickScan/quickFile.xml
+xsltproc quickFile.xml -o quickFile.html
+mv quickFile.html quickFiles.html
