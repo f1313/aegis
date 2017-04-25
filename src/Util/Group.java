@@ -8,9 +8,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import windows.*;
-import MiddleMan.*;
-
-import java.lang.annotation.Target;
+import Specs.*;
 
 /**
  * Created by wintson on 4/18/17.

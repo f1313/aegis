@@ -1,4 +1,4 @@
-package MiddleMan;
+package Specs;
 
 public class ScanOptions {
 

@@ -1,10 +1,9 @@
-package MiddleMan;
+package Specs;
 
-public class PortByName {
+public class PortByNumber {
 
     private int num;
     private String name, description, type;
-
 
     /**
      * @return
@@ -43,9 +42,9 @@ public class PortByName {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PortByName that = (PortByName) o;
+        PortByNumber that = (PortByNumber) o;
 
-        return name.equals(that.name);
+        return num == that.num;
     }
 
     /**
@@ -53,8 +52,7 @@ public class PortByName {
      */
     @Override
     public int hashCode() {
-        return name.hashCode();
+        return num;
     }
 
 }
-

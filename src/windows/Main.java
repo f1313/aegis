@@ -6,12 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.*;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        String command = "bash";
-        Runtime.getRuntime().exec(command);
+
         Parent root = FXMLLoader.load(getClass().getResource("AegisMainWindow.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.setMaximized(true);

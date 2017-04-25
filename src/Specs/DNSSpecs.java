@@ -1,4 +1,4 @@
-package MiddleMan;
+package Specs;
 
 import java.util.ArrayList;
 

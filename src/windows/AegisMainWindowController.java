@@ -9,11 +9,10 @@ import Util.*;
 
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -23,25 +22,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.MouseButton;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
-import javafx.stage.PopupWindow;
 import javafx.stage.Stage;
-import sun.reflect.generics.tree.Tree;
 
-import java.awt.event.MouseEvent;
-import java.beans.EventHandler;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -49,7 +36,6 @@ import java.util.Scanner;
  * Created by wintson on 3/25/17.
  */
 public class AegisMainWindowController {
-
     HBox projectsH = new HBox ( );
     static boolean projectClosed = false;
     static boolean groupClosed = false;
@@ -88,7 +74,6 @@ public class AegisMainWindowController {
 
     @FXML
     public void initialize ( ) {
-
 
         view.setPadding ( new Insets ( 30, 30, 30, 10 ) );
         mainBorderPane.setCenter ( view );
@@ -142,9 +127,14 @@ public class AegisMainWindowController {
         TreeView < String > righTree = new TreeView ( rightRoot );
 
         leftRoot.setExpanded ( true );
+        ProgressBar temp = new ProgressBar ( 0 );
+        ProgressIndicator temp1 = new ProgressIndicator ( 0 );
         mainBorderPane.setRight ( righTree );
 
         newProject.setAccelerator ( new KeyCodeCombination ( KeyCode.N, KeyCombination.CONTROL_DOWN ) );
+        quickScan.setAccelerator ( new KeyCodeCombination ( KeyCode.Q, KeyCombination.CONTROL_DOWN ) );
+        //Too dangerous
+        //exitItem.setAccelerator ( new KeyCodeCombination ( KeyCode.O, KeyCombination.CONTROL_DOWN ) );
         newProject.setOnAction ( new javafx.event.EventHandler < javafx.event.ActionEvent > ( ) {
             @Override
             public void handle ( javafx.event.ActionEvent event ) {
@@ -229,6 +219,11 @@ public class AegisMainWindowController {
     @FXML
     private void manageGroups ( ) {
 
+    }
+
+    @FXML
+    private void exitProc ( ) {
+        System.exit ( 0 );
     }
 
     public void addGroup ( TreeItem parent ) {
@@ -376,21 +371,21 @@ public class AegisMainWindowController {
     }
 
     private void initQuick ( ) {
-        quickScan.setAccelerator ( new KeyCodeCombination ( KeyCode.Q, KeyCombination.CONTROL_DOWN ) );
+
         quickScan.setOnAction ( event -> {
             String temp = "";
             do {
                 TextInputDialog dialog = new TextInputDialog ( "8.8.8.8" );
-                dialog.setTitle ( "Text Input Dialog" );
-                dialog.setHeaderText ( "Look, a Text Input Dialog" );
-                dialog.setContentText ( "Please enter your name:" );
+                dialog.setTitle ( "َQuick Scan" );
+                dialog.setHeaderText ( "A quick default nmap scan" );
+                dialog.setContentText ( "Enter ip or hostname (Masks are accepted): " );
 
                 Optional < String > result = dialog.showAndWait ( );
-                if ( result.isPresent ( ) )
+                if ( result.isPresent ( ) ) {
                     temp = result.get ( );
-                System.out.println ( "Going to scan : " + temp );
-                doQuickScan ( temp );
-            } while ( ! new MiddleMan.TargetSpec ( ).validateHostString ( temp ) );
+                    doQuickScan ( temp );
+                }
+            } while ( ! new Specs.TargetSpec ( ).validateHostString ( temp ) );
 
         } );
 
@@ -399,6 +394,11 @@ public class AegisMainWindowController {
     }
 
     private void doQuickScan ( String target ) {
+        /*new Thread*/
+        new Thread ( new Runnable ( ) {
+            @Override
+            public void run ( ) {
+                System.out.println ( "My dir is :" + System.getProperty ( "user.dir" ) );
 //What used to be wrong: took us 2 hours to go from this to what is below that works
 //        String command = "cd /home/wintson/Desktop/quickScan\n" +
 //                "rm quickFile*\n" +
@@ -406,36 +406,39 @@ public class AegisMainWindowController {
 //                "\nxsltproc quickFile.xml -o quickFile.html" +
 //                "\nmv quickFile.html quickFiles.html\n";
 //        System.out.println("Thecommand is :" + command);
+                try {
+                    new File ( "quickScan/quickFile.xml" ).delete ( );
+                    new File ( "quickScan/quickFile.html" ).delete ( );
+                    Process p = Runtime.getRuntime ( ).exec ( "sudo nmap -O " + target + " -oX " + System.getProperty ( "user.dir" ) + "/quickScan/quickFile.xml --stats-every 100ms" );
+                    browser.loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
+                    Percentage percentage = new Percentage ( p );
+                    percentage.setMainBorderPane ( mainBorderPane );
+                    percentage.work ( );
+                    p.waitFor ( );
+                    System.setIn ( p.getInputStream ( ) );
 
-        try {
-            new File ( "/home/wintson/Desktop/quickScan/quickFile.xml" ).delete ( );
-            new File ( "/home/wintson/Desktop/quickScan/quickFile.html" ).delete ( );
-            Process p = Runtime.getRuntime ( ).exec ( "nmap " + target + " -oX /home/wintson/Desktop/quickScan/quickFile.xml" );
-            p.waitFor ( );
-            System.setIn ( p.getInputStream ( ) );
-            Scanner input = new Scanner ( System.in );
-            while ( input.hasNextLine ( ) ) {
-                System.out.println ( input.nextLine ( ) );
-            }
-            p = Runtime.getRuntime ( ).exec ( "xsltproc /home/wintson/Desktop/quickScan/quickFile.xml" +
-                    " -o /home/wintson/Desktop/quickScan/quickFile.html" );
-            p.waitFor ( );
-            System.setIn ( p.getInputStream ( ) );
-            input = new Scanner ( System.in );
-            while ( input.hasNextLine ( ) ) {
-                System.out.println ( input.nextLine ( ) );
-            }
-            //Turns out we don't need this any more
+                    Scanner input = new Scanner ( System.in );
+                    while ( input.hasNextLine ( ) ) {
+                        System.out.println ( input.nextLine ( ) );
+                    }
+                    p = Runtime.getRuntime ( ).exec ( "xsltproc " + System.getProperty ( "user.dir" ) + "/quickScan/quickFile.xml" +
+                            " -o " + System.getProperty ( "user.dir" ) + "/quickScan/quickFile.html" );
+                    System.out.println ( "Command should be executed here" );
+                    p.waitFor ( );
+
+                    System.setIn ( p.getInputStream ( ) );
+                    input = new Scanner ( System.in );
+                    while ( input.hasNextLine ( ) ) {
+                        System.out.println ( input.nextLine ( ) );
+                    }
+                    //Turns out we don't need this any more
 //            Thread.currentThread ( ).join ( 700 );
-        } catch ( IOException | InterruptedException ex ) {
-            System.out.println ( ex );
-        }
-
-        browser.loadURL ( "file:///home/wintson/Desktop/quickScan/quickFile.html" );
-
-        mainBorderPane.setCenter ( view );
-
+                } catch ( IOException | InterruptedException ex ) {
+                    System.out.println ( ex );
+                }
+                browser.loadURL ( "file://" + System.getProperty ( "user.dir" ) + "/quickScan/quickFile.html" );
+            }
+        } ).start ( );
     }
-
 
 }

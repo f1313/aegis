@@ -21,7 +21,7 @@
             <MenuItem mnemonicParsing="false" text="Save Scan" fx:id="saveScan" />
             <MenuItem mnemonicParsing="false" text="Load Scan" fx:id="loadScan" />
             <MenuItem mnemonicParsing="false" text="Quick Scan" fx:id="quickScan" />
-            <MenuItem mnemonicParsing="false" text="Exit" fx:id="exitItem" />
+            <MenuItem mnemonicParsing="false" onAction="#exitProc" text="Exit" fx:id="exitItem" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Tools">

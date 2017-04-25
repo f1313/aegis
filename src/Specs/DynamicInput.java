@@ -1,4 +1,4 @@
-package MiddleMan;
+package Specs;
 
 // <editor-fold defaultstate="collapsed" desc="Dynamic Input class">
 public class DynamicInput {
