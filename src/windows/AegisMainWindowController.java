@@ -514,7 +514,7 @@ public class AegisMainWindowController {
 
     private int tabPaneContains ( String tabName ) {
         for ( int i = 0 ; i < tp.getTabs ( ).size ( ) ; i++ ) {
-            if ( tp.getTabs ( ).get ( i ).equals ( "TreeItem [ value: " + tabName+" ]") ) return i;
+            if ( tp.getTabs ( ).get ( i ).getText ().equals ( tabName) ) return i;
         }
 
         return - 1;

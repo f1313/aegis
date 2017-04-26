@@ -2,84 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Diagrams/Class.png" afterPath="$PROJECT_DIR$/Diagrams/Class.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/abc" afterPath="$PROJECT_DIR$/abc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindowController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindowController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_files/codenarc-logo.png" afterPath="$PROJECT_DIR$/sample_files/codenarc-logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Aegis_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Aegis_jar.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="$PROJECT_DIR$/.idea/description.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aegis.iml" afterPath="$PROJECT_DIR$/Aegis.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Diagrams/Class.graphml" afterPath="$PROJECT_DIR$/Diagrams/Class.graphml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Diagrams/DFD.graphml" afterPath="$PROJECT_DIR$/Diagrams/DFD.graphml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hs_err_pid11661.log" afterPath="$PROJECT_DIR$/hs_err_pid11661.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hs_err_pid12493.log" afterPath="$PROJECT_DIR$/hs_err_pid12493.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hs_err_pid16895.log" afterPath="$PROJECT_DIR$/hs_err_pid16895.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hs_err_pid18046.log" afterPath="$PROJECT_DIR$/hs_err_pid18046.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hs_err_pid26247.log" afterPath="$PROJECT_DIR$/hs_err_pid26247.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AdvancedSettings.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AdvancedSettings.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindow.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/DNSOptionsController.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/DNSOptionsController.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/HostDiscovery.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/HostDiscovery.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/OSDetection.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/OSDetection.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/PortsSelectionWindow.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/PortsSelectionWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/ProtocolRanges.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/ProtocolRanges.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/ScanTypes.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/ScanTypes.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/ServicesDetection.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/ServicesDetection.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindow.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample.html" afterPath="$PROJECT_DIR$/sample.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script" afterPath="$PROJECT_DIR$/script" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Util/Group.java" afterPath="$PROJECT_DIR$/src/Util/Group.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Util/Percentage.java" afterPath="$PROJECT_DIR$/src/Util/Percentage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Util/Project.java" afterPath="$PROJECT_DIR$/src/Util/Project.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AdvancedSettings.fxml" afterPath="$PROJECT_DIR$/src/windows/AdvancedSettings.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" afterPath="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AegisMainWindow.fxml" afterPath="$PROJECT_DIR$/src/windows/AegisMainWindow.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" afterPath="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/DNSOptionsController.fxml" afterPath="$PROJECT_DIR$/src/windows/DNSOptionsController.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/DNSOptionsController.java" afterPath="$PROJECT_DIR$/src/windows/DNSOptionsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/Decoys.fxml" afterPath="$PROJECT_DIR$/src/windows/Decoys.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/DecoysController.java" afterPath="$PROJECT_DIR$/src/windows/DecoysController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/Firewall.fxml" afterPath="$PROJECT_DIR$/src/windows/Firewall.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/FirewallController.java" afterPath="$PROJECT_DIR$/src/windows/FirewallController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/HostDiscovery.fxml" afterPath="$PROJECT_DIR$/src/windows/HostDiscovery.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/HostDiscoveryController.java" afterPath="$PROJECT_DIR$/src/windows/HostDiscoveryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/Main.java" afterPath="$PROJECT_DIR$/src/windows/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/OSDetection.fxml" afterPath="$PROJECT_DIR$/src/windows/OSDetection.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/OSDetectionController.java" afterPath="$PROJECT_DIR$/src/windows/OSDetectionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/Payload.fxml" afterPath="$PROJECT_DIR$/src/windows/Payload.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/PayloadController.java" afterPath="$PROJECT_DIR$/src/windows/PayloadController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/PortsSelectionWindow.fxml" afterPath="$PROJECT_DIR$/src/windows/PortsSelectionWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/PortsSelectionWindowController.java" afterPath="$PROJECT_DIR$/src/windows/PortsSelectionWindowController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ProtocolRanges.fxml" afterPath="$PROJECT_DIR$/src/windows/ProtocolRanges.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ProtocolRangesController.java" afterPath="$PROJECT_DIR$/src/windows/ProtocolRangesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ScanOptions.fxml" afterPath="$PROJECT_DIR$/src/windows/ScanOptions.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ScanOptionsController.java" afterPath="$PROJECT_DIR$/src/windows/ScanOptionsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ScanTypes.fxml" afterPath="$PROJECT_DIR$/src/windows/ScanTypes.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ScanTypesController.java" afterPath="$PROJECT_DIR$/src/windows/ScanTypesController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ServicesDetection.fxml" afterPath="$PROJECT_DIR$/src/windows/ServicesDetection.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ServicesDetectionController.java" afterPath="$PROJECT_DIR$/src/windows/ServicesDetectionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/SpoofingAndChecksum.fxml" afterPath="$PROJECT_DIR$/src/windows/SpoofingAndChecksum.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/SpoofingAndChecksumController.java" afterPath="$PROJECT_DIR$/src/windows/SpoofingAndChecksumController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/TargetWindow.fxml" afterPath="$PROJECT_DIR$/src/windows/TargetWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/TargetWindowController.java" afterPath="$PROJECT_DIR$/src/windows/TargetWindowController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/manageGroups.fxml" afterPath="$PROJECT_DIR$/src/windows/manageGroups.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/manageGroupsController.java" afterPath="$PROJECT_DIR$/src/windows/manageGroupsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/newProject.fxml" afterPath="$PROJECT_DIR$/src/windows/newProject.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/newProjectController.java" afterPath="$PROJECT_DIR$/src/windows/newProjectController.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -165,8 +90,8 @@
       <file leaf-file-name="AegisMainWindowController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="515" column="0" lean-forward="false" selection-start-line="515" selection-start-column="0" selection-end-line="515" selection-end-column="0" />
+            <state relative-caret-position="232">
+              <caret line="479" column="41" lean-forward="false" selection-start-line="479" selection-start-column="41" selection-end-line="479" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#AegisMainWindowController#0" expanded="false" />
@@ -933,7 +858,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493145297111</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Initial Version">
+      <created>1493226470623</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1493226470623</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -955,12 +887,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21974522" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19904459" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14012739" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -981,7 +914,6 @@
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21974522" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="104" y="230" width="1172" height="538" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -1003,14 +935,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java</url>
-          <line>515</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="61" />
     </breakpoint-manager>
     <watches-manager />
@@ -1507,8 +1431,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="515" column="0" lean-forward="false" selection-start-line="515" selection-start-column="0" selection-end-line="515" selection-end-column="0" />
+        <state relative-caret-position="232">
+          <caret line="479" column="41" lean-forward="false" selection-start-line="479" selection-start-column="41" selection-end-line="479" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#AegisMainWindowController#0" expanded="false" />
