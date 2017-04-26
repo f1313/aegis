@@ -19,6 +19,8 @@ public class Group {
 
     String groupName;
 
+    String outputLocationFilename;
+
     AdvancedSettingsController advancedScan;
 
     TargetSpec targets = new TargetSpec();
@@ -70,11 +72,6 @@ public class Group {
         this.targets = targets;
     }
 
-    @Override
-    public String toString() {
-        return this.groupName;
-    }
-
     public Node getProjectIcon() {
         return groupIcon;
     }
@@ -82,5 +79,19 @@ public class Group {
     public Stage getSettingsStage() {
         return groupStage;
     }
+
+    public String getOutputLocationFilename ( ) {
+        return outputLocationFilename;
+    }
+
+    public void setOutputLocationFilename ( String outputLocationFilename ) {
+        this.outputLocationFilename = outputLocationFilename;
+    }
+
+    @Override
+    public String toString() {
+        return this.groupName;
+    }
+
 
 }

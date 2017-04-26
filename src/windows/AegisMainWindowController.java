@@ -9,6 +9,9 @@ import Util.*;
 
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,26 +25,28 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.MouseButton;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by wintson on 3/25/17.
  */
 public class AegisMainWindowController {
     HBox projectsH = new HBox ( );
+    HBox bottomHbox = new HBox ( );
     static boolean projectClosed = false;
     static boolean groupClosed = false;
     ArrayList < Hyperlink > hyperList = new ArrayList <> ( 30 );
     public static ArrayList < Project > projectsList = new ArrayList ( );
     public static AegisMainWindowController aegisMainWindowController;
+    public static Label progressLabel = new Label ( );
+    public static ProgressBar progressBar = new ProgressBar ( 0 );
+
+    HashSet < String > runningScans = new HashSet ( 100 );
 
     //Popup error when nothing is selected
     Alert NoSelectedAlert = new Alert ( Alert.AlertType.ERROR );
@@ -64,6 +69,7 @@ public class AegisMainWindowController {
     MenuItem quickScan;
     @FXML
     BorderPane mainBorderPane;
+    TabPane tp = new TabPane ( );
 
     Stage advancedSettingsStage;
     TreeItem leftRoot = new TreeItem ( "Scans" );
@@ -74,13 +80,59 @@ public class AegisMainWindowController {
 
     @FXML
     public void initialize ( ) {
-
-        view.setPadding ( new Insets ( 30, 30, 30, 10 ) );
-        mainBorderPane.setCenter ( view );
+        tp.getTabs ( ).add ( new Tab ( "Test" ) );
+        tp.getTabs ( ).get ( 0 ).setContent ( view );
+        view.setPadding ( new Insets ( 10, 10, 10, 10 ) );
+        mainBorderPane.setCenter ( tp );
+        bottomHbox.setStyle ( "-fx-border-color: #c8c8c8" );
         /// Projects Context Menu
 
-        //Initializing the projects hbox in the advanced scan settings
 
+        //Here we check if a group is selected so we can display the report
+
+        leftTree.getSelectionModel ( ).selectedItemProperty ( ).addListener ( new ChangeListener ( ) {
+            @Override
+            public void changed ( ObservableValue observable, Object oldValue,
+                                  Object newValue ) {
+
+                TreeItem < String > selectedItem = ( TreeItem < String > ) newValue;
+                if ( isGroup ( selectedItem ) ) {
+                    Group g = findGroup ( selectedItem );
+                    File checker = new File ( g.getGroupName ( ) + ".html" );
+                    int loc = tabPaneContains ( g.getGroupName ( ) );
+                    System.out.println ("Location is: "+loc );
+                    if ( checker.exists ( ) ) {
+                        if ( loc != - 1 ) {
+                            tp.getSelectionModel ( ).select ( loc );
+                            tp.getSelectionModel ().getSelectedItem ().setContent ( view );
+                        } else {
+                            tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
+                            tp.getSelectionModel ( ).select ( loc );
+                            tp.getSelectionModel ().getSelectedItem ().setContent ( view );
+                            browser.loadURL ( g.getOutputLocationFilename ( ) + ".html" );
+                        }
+                    } else {
+                        if ( loc != - 1 ) {
+                            tp.getSelectionModel ( ).select ( loc );
+                            tp.getSelectionModel ().getSelectedItem ().setContent ( view );
+                        } else {
+                            tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
+                            tp.getSelectionModel ( ).select ( loc );
+                            tp.getSelectionModel ().getSelectedItem ().setContent ( view );
+                            browser.loadURL ( "notStarted.html" );
+                        }
+                    }
+                }
+            }
+
+        } );
+
+
+        bottomHbox.getChildren ( ).addAll ( progressBar, progressLabel );
+        progressBar.setPadding ( new Insets ( 7, 7, 7, 10 ) );
+        progressBar.setMinWidth ( 252 );
+
+        mainBorderPane.setBottom ( bottomHbox );
         initQuick ( );
 
         initHB ( );
@@ -127,8 +179,6 @@ public class AegisMainWindowController {
         TreeView < String > righTree = new TreeView ( rightRoot );
 
         leftRoot.setExpanded ( true );
-        ProgressBar temp = new ProgressBar ( 0 );
-        ProgressIndicator temp1 = new ProgressIndicator ( 0 );
         mainBorderPane.setRight ( righTree );
 
         newProject.setAccelerator ( new KeyCodeCombination ( KeyCode.N, KeyCombination.CONTROL_DOWN ) );
@@ -259,6 +309,7 @@ public class AegisMainWindowController {
             parent.getChildren ( ).add ( toAdd );
             target = loader.getController ( );
             int counter = 0;
+            g.setOutputLocationFilename ( target.getFileText ( ) + "/" + target.getGroupName ( ) );
             for ( Object x : target.getIpList ( ).getItems ( ) ) {
                 g.getTargets ( ).getIncludedTargetsList ( ).add ( x.toString ( ) );
                 newGroup.getChildren ( ).add ( new TreeItem <> ( x, new ImageView ( new Image
@@ -383,7 +434,7 @@ public class AegisMainWindowController {
                 Optional < String > result = dialog.showAndWait ( );
                 if ( result.isPresent ( ) ) {
                     temp = result.get ( );
-                    doQuickScan ( temp );
+                    doQuickScan ( "/home/wintson/Desktop/scanThis/meh", "nmap " + temp + " -O ", "" );
                 }
             } while ( ! new Specs.TargetSpec ( ).validateHostString ( temp ) );
 
@@ -393,9 +444,9 @@ public class AegisMainWindowController {
 //        result.ifPresent(name -> System.out.println("Your name: " + name));
     }
 
-    private void doQuickScan ( String target ) {
-        /*new Thread*/
-        new Thread ( new Runnable ( ) {
+    private void doQuickScan ( String target, String command, String groupName ) {
+        /*This is an old bad code*/
+        /*new Thread ( new Runnable ( ) {
             @Override
             public void run ( ) {
                 System.out.println ( "My dir is :" + System.getProperty ( "user.dir" ) );
@@ -406,39 +457,67 @@ public class AegisMainWindowController {
 //                "\nxsltproc quickFile.xml -o quickFile.html" +
 //                "\nmv quickFile.html quickFiles.html\n";
 //        System.out.println("Thecommand is :" + command);
-                try {
-                    new File ( "quickScan/quickFile.xml" ).delete ( );
-                    new File ( "quickScan/quickFile.html" ).delete ( );
-                    Process p = Runtime.getRuntime ( ).exec ( "sudo nmap -O " + target + " -oX " + System.getProperty ( "user.dir" ) + "/quickScan/quickFile.xml --stats-every 100ms" );
-                    browser.loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
-                    Percentage percentage = new Percentage ( p );
-                    percentage.setMainBorderPane ( mainBorderPane );
-                    percentage.work ( );
-                    p.waitFor ( );
-                    System.setIn ( p.getInputStream ( ) );
 
-                    Scanner input = new Scanner ( System.in );
-                    while ( input.hasNextLine ( ) ) {
-                        System.out.println ( input.nextLine ( ) );
-                    }
-                    p = Runtime.getRuntime ( ).exec ( "xsltproc " + System.getProperty ( "user.dir" ) + "/quickScan/quickFile.xml" +
-                            " -o " + System.getProperty ( "user.dir" ) + "/quickScan/quickFile.html" );
-                    System.out.println ( "Command should be executed here" );
-                    p.waitFor ( );
-
-                    System.setIn ( p.getInputStream ( ) );
-                    input = new Scanner ( System.in );
-                    while ( input.hasNextLine ( ) ) {
-                        System.out.println ( input.nextLine ( ) );
-                    }
-                    //Turns out we don't need this any more
-//            Thread.currentThread ( ).join ( 700 );
-                } catch ( IOException | InterruptedException ex ) {
-                    System.out.println ( ex );
-                }
-                browser.loadURL ( "file://" + System.getProperty ( "user.dir" ) + "/quickScan/quickFile.html" );
             }
-        } ).start ( );
+        } ).start ( );*/
+
+        final Service < Integer > thread = new Service < Integer > ( ) {
+            @Override
+            public Task createTask ( ) {
+                return new Task < Integer > ( ) {
+                    @Override
+                    protected Integer call ( ) throws Exception {
+                        //Code
+
+                        try {
+
+                            new File ( target + ".xml" ).delete ( );
+                            new File ( target + ".html" ).delete ( );
+                            //System.out.println ("sudo "+command+ " -oX " + target+".xml --stats-every 100ms"  );
+                            Process p = Runtime.getRuntime ( ).exec ( "sudo " + command + " -oX " + target + ".xml --stats-every 100ms" );
+                            browser.loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
+                            Percentage percentage = new Percentage ( p );
+                            percentage.setMainBorderPane ( mainBorderPane );
+                            percentage.work ( );
+                            p.waitFor ( );
+                            System.setIn ( p.getInputStream ( ) );
+
+                            Scanner input = new Scanner ( System.in );
+                            while ( input.hasNextLine ( ) ) {
+                                System.out.println ( input.nextLine ( ) );
+                            }
+                            p = Runtime.getRuntime ( ).exec ( "xsltproc " + target + ".xml" +
+                                    " -o " + target + ".html" );
+                            p.waitFor ( );
+                            System.setIn ( p.getInputStream ( ) );
+                            input = new Scanner ( System.in );
+                            while ( input.hasNextLine ( ) ) {
+                                System.out.println ( input.nextLine ( ) );
+                            }
+                            //Turns out we don't need this any more
+//                        Thread.currentThread ( ).join ( 700 );
+                        } catch ( IOException | InterruptedException ex ) {
+                            System.out.println ( ex );
+                        }
+                        browser.loadURL ( "file://" + target + ".html" );
+                        progressBar.setProgress ( 0 );
+                        //End Code
+                        return null;
+                    }
+                };
+            }
+        };
+
+        thread.start ( );
+
+    }
+
+    private int tabPaneContains ( String tabName ) {
+        for ( int i = 0 ; i < tp.getTabs ( ).size ( ) ; i++ ) {
+            if ( tp.getTabs ( ).get ( i ).equals ( "TreeItem [ value: " + tabName+" ]") ) return i;
+        }
+
+        return - 1;
     }
 
 }

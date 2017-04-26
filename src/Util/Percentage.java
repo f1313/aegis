@@ -1,10 +1,9 @@
 package Util;
 
 import Specs.Constants;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.BorderPane;
+import windows.AegisMainWindowController;
 
-import java.io.*;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -76,6 +75,7 @@ public class Percentage  {
                     line = secondHalfPatter.matcher ( line ).replaceAll ( "" );
                     percentage = line;
                     System.out.println (line );
+                    AegisMainWindowController.progressBar.setProgress ( (Double.parseDouble ( line )/100.0) );
                 } else if ( donePattern.matcher ( line ).matches ( ) ) {
                     break;
                 }
