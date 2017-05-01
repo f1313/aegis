@@ -15,7 +15,7 @@ public class Percentage  {
     private Pattern donePattern = Constants.getEndLinePattern ( );
     private Pattern firstHalfPattern = Constants.getFirstHalfReplacer ( );
     private Pattern secondHalfPatter = Constants.getSecondHalfReplacer ( );
-    BorderPane mainBorderPane;
+
 
     public Percentage ( Process p ) {
         this.p = p;
@@ -86,11 +86,4 @@ public class Percentage  {
         }
     }
 
-    public BorderPane getMainBorderPane ( ) {
-        return mainBorderPane;
-    }
-
-    public void setMainBorderPane ( BorderPane mainBorderPane ) {
-        this.mainBorderPane = mainBorderPane;
-    }
 }

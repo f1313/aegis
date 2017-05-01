@@ -28,6 +28,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -90,43 +91,6 @@ public class AegisMainWindowController {
 
         //Here we check if a group is selected so we can display the report
 
-        leftTree.getSelectionModel ( ).selectedItemProperty ( ).addListener ( new ChangeListener ( ) {
-            @Override
-            public void changed ( ObservableValue observable, Object oldValue,
-                                  Object newValue ) {
-
-                TreeItem < String > selectedItem = ( TreeItem < String > ) newValue;
-                if ( isGroup ( selectedItem ) ) {
-                    Group g = findGroup ( selectedItem );
-                    File checker = new File ( g.getGroupName ( ) + ".html" );
-                    int loc = tabPaneContains ( g.getGroupName ( ) );
-                    System.out.println ("Location is: "+loc );
-                    if ( checker.exists ( ) ) {
-                        if ( loc != - 1 ) {
-                            tp.getSelectionModel ( ).select ( loc );
-                            tp.getSelectionModel ().getSelectedItem ().setContent ( view );
-                        } else {
-                            tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
-                            tp.getSelectionModel ( ).select ( loc );
-                            tp.getSelectionModel ().getSelectedItem ().setContent ( view );
-                            browser.loadURL ( g.getOutputLocationFilename ( ) + ".html" );
-                        }
-                    } else {
-                        if ( loc != - 1 ) {
-                            tp.getSelectionModel ( ).select ( loc );
-                            tp.getSelectionModel ().getSelectedItem ().setContent ( view );
-                        } else {
-                            tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
-                            tp.getSelectionModel ( ).select ( loc );
-                            tp.getSelectionModel ().getSelectedItem ().setContent ( view );
-                            browser.loadURL ( "notStarted.html" );
-                        }
-                    }
-                }
-            }
-
-        } );
-
 
         bottomHbox.getChildren ( ).addAll ( progressBar, progressLabel );
         progressBar.setPadding ( new Insets ( 7, 7, 7, 10 ) );
@@ -152,9 +116,14 @@ public class AegisMainWindowController {
         newGroupMenuItem.setOnAction ( event -> addGroup ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItems ( ).get ( 0 ) ) );
         //Checking for right click
         mainBorderPane.setLeft ( leftTree );
+
+        //Handling clicking left tree element
+        //When a right click is made
         leftTree.setOnMouseClicked ( new javafx.event.EventHandler < javafx.scene.input.MouseEvent > ( ) {
             @Override
             public void handle ( javafx.scene.input.MouseEvent event ) {
+
+                //A right click !!!
                 rootContext.hide ( );
                 projectsContext.hide ( );
                 if ( event.getButton ( ) == MouseButton.SECONDARY ) {
@@ -166,9 +135,54 @@ public class AegisMainWindowController {
                         }
                     }
                 } else {
-                    rootContext.hide ( );
+
+                    //A left click !!
+                    TreeItem < String > selectedItem = ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) );
+                    if ( isGroup ( selectedItem ) ) {
+                        Group g = findGroup ( selectedItem );
+                        File checker = new File ( g.getGroupName ( ) + ".html" );
+                        int loc = tabPaneContains ( g.getGroupName ( ) );
+                        System.out.println ( "Location is: " + loc );
+                        //If the scan is done
+                        if ( checker.exists ( ) ) {
+                            //If the tab is never opened
+                            if ( loc != - 1 ) {
+                                tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
+                                tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
+                                tp.getTabs ( ).get ( tp.getTabs ( ).size ( ) - 1 ).setContent ( g.getView ( ) );
+                            } else {
+                                tp.getSelectionModel ( ).select ( loc );
+                                g.getBrowser ( ).loadURL ( g.getOutputLocationFilename ( ) + ".html" );
+                                tp.getTabs ( ).get ( loc ).setContent ( g.getView ( ) );
+                            }
+                        } else {
+                            if ( loc != - 1 ) {
+                                tp.getSelectionModel ( ).select ( loc );
+                                g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/notStarted.html" );
+                                tp.getTabs ( ).get ( loc ).setContent ( g.getView ( ) );
+                            } else {
+                                tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
+                                tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
+                                g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/notStarted.html" );
+                                tp.getTabs ( ).get ( tp.getTabs ( ).size ( ) - 1 ).setContent ( g.getView ( ) );
+
+                            }
+                        }
+                    }
+
+
                 }
             }
+        } );
+        //When a left click is made
+        leftTree.getSelectionModel ( ).selectedItemProperty ( ).addListener ( new ChangeListener ( ) {
+            @Override
+            public void changed ( ObservableValue observable, Object oldValue,
+                                  Object newValue ) {
+
+
+            }
+
         } );
 
         TreeItem < String > rightRoot = new TreeItem ( "Basic Options" );
@@ -234,7 +248,6 @@ public class AegisMainWindowController {
         }
     }
 
-
     @FXML
     private void openSettings ( ) throws IOException {
         advancedSettingsStage = new Stage ( );
@@ -264,7 +277,6 @@ public class AegisMainWindowController {
             NoSelectedAlert.show ( );
         }
     }
-
 
     @FXML
     private void manageGroups ( ) {
@@ -425,26 +437,35 @@ public class AegisMainWindowController {
 
         quickScan.setOnAction ( event -> {
             String temp = "";
-            do {
-                TextInputDialog dialog = new TextInputDialog ( "8.8.8.8" );
-                dialog.setTitle ( "َQuick Scan" );
-                dialog.setHeaderText ( "A quick default nmap scan" );
-                dialog.setContentText ( "Enter ip or hostname (Masks are accepted): " );
-
-                Optional < String > result = dialog.showAndWait ( );
-                if ( result.isPresent ( ) ) {
-                    temp = result.get ( );
-                    doQuickScan ( "/home/wintson/Desktop/scanThis/meh", "nmap " + temp + " -O ", "" );
+            //new Specs.TargetSpec ( ).validateHostString ( temp )
+            TextInputDialog dialog = new TextInputDialog ( "8.8.8.8" );
+            dialog.setTitle ( "َQuick Scan" );
+            dialog.setHeaderText ( "A quick default nmap scan" );
+            dialog.setContentText ( "Enter ip or hostname (Masks are accepted): " );
+            dialog.setOnCloseRequest ( e -> System.out.println ( "Closed!!" ) );
+            Optional < String > result = dialog.showAndWait ( );
+            if ( result.isPresent ( ) ) {
+                    System.out.println (".get is "+result.get ( )  );
+                if ( Specs.HostSpec.validateHostString ( result.get ( ) ) ) {
+                    tp.getTabs ( ).add ( new Tab ( "Quick Scan" ) );
+                    tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
+                    Group toSend = new Group ( "Quick" );
+                    scan ( "/home/wintson/Desktop/scanThis/meh", "nmap -O " + result.get ( ), toSend );
+                }else {
+                    Alert alert = new Alert( Alert.AlertType.ERROR);
+                    alert.setTitle("Invalid String");
+                    alert.setHeaderText("Wrong IP/Hostname");
+                    alert.setContentText("Re-enter a valid IP/Hostname");
+                    alert.showAndWait();
                 }
-            } while ( ! new Specs.TargetSpec ( ).validateHostString ( temp ) );
-
+            }
         } );
 
         // The Java 8 way to get the response value (with lambda expression).
 //        result.ifPresent(name -> System.out.println("Your name: " + name));
     }
 
-    private void doQuickScan ( String target, String command, String groupName ) {
+    private void scan ( String target, String command, Group group ) {
         /*This is an old bad code*/
         /*new Thread ( new Runnable ( ) {
             @Override
@@ -475,9 +496,9 @@ public class AegisMainWindowController {
                             new File ( target + ".html" ).delete ( );
                             //System.out.println ("sudo "+command+ " -oX " + target+".xml --stats-every 100ms"  );
                             Process p = Runtime.getRuntime ( ).exec ( "sudo " + command + " -oX " + target + ".xml --stats-every 100ms" );
-                            browser.loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
+
+                            group.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
                             Percentage percentage = new Percentage ( p );
-                            percentage.setMainBorderPane ( mainBorderPane );
                             percentage.work ( );
                             p.waitFor ( );
                             System.setIn ( p.getInputStream ( ) );
@@ -499,8 +520,9 @@ public class AegisMainWindowController {
                         } catch ( IOException | InterruptedException ex ) {
                             System.out.println ( ex );
                         }
-                        browser.loadURL ( "file://" + target + ".html" );
+                        group.getBrowser ( ).loadURL ( "file://" + target + ".html" );
                         progressBar.setProgress ( 0 );
+
                         //End Code
                         return null;
                     }
@@ -509,13 +531,14 @@ public class AegisMainWindowController {
         };
 
         thread.start ( );
-
+        tp.getSelectionModel ( ).getSelectedItem ( ).setContent ( group.getView ( ) );
     }
 
     private int tabPaneContains ( String tabName ) {
         for ( int i = 0 ; i < tp.getTabs ( ).size ( ) ; i++ ) {
-            if ( tp.getTabs ( ).get ( i ).getText ().equals ( tabName) ) return i;
+            if ( tp.getTabs ( ).get ( i ).getText ( ).equals ( tabName ) ) return i;
         }
+
 
         return - 1;
     }

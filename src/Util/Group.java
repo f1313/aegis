@@ -1,6 +1,9 @@
 package Util;
 
+import com.teamdev.jxbrowser.chromium.Browser;
+import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -14,6 +17,9 @@ import Specs.*;
  * Created by wintson on 4/18/17.
  */
 public class Group {
+
+    Browser browser = new Browser ( );
+    BrowserView view = new BrowserView ( browser );
 
     Stage groupStage = new Stage();
 
@@ -35,7 +41,7 @@ public class Group {
 
 
     public Group(String groupName) {
-
+        view.setPadding ( new Insets ( 10,10,10,10 ) );
         this.groupName = groupName;
         try {
             init();
@@ -86,6 +92,22 @@ public class Group {
 
     public void setOutputLocationFilename ( String outputLocationFilename ) {
         this.outputLocationFilename = outputLocationFilename;
+    }
+
+    public BrowserView getView ( ) {
+        return view;
+    }
+
+    public void setView ( BrowserView view ) {
+        this.view = view;
+    }
+
+    public Browser getBrowser ( ) {
+        return browser;
+    }
+
+    public void setBrowser ( Browser browser ) {
+        this.browser = browser;
     }
 
     @Override

@@ -241,7 +241,7 @@ public class HostSpec {
      * <p>
      * @return
      */
-    public boolean validateHostString ( String hostString ) {
+    static public boolean validateHostString ( String hostString ) {
         try {
             if ( hostString.matches ( "(d{1,3}\\.d{1,3}\\.d{1,3}\\.d{1,3})|(d{1,3}\\.d{1,3}\\.d{1,3}\\.d{1,3}/d{1,2})" ) ) {
                 
