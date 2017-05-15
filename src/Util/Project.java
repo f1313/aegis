@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 public class Project extends TreeItem{
     char c = 'P';
+    String filePath;
     String projectName;
     ArrayList<Group> groupList;
     private final Node projectIcon = new ImageView(new Image(getClass().getResourceAsStream("/img/project.png")));
@@ -57,6 +58,14 @@ public class Project extends TreeItem{
 
     public void setGroupList(ArrayList<Group> groupList) {
         this.groupList = groupList;
+    }
+
+    public String getFilePath ( ) {
+        return filePath;
+    }
+
+    public void setFilePath ( String filePath ) {
+        this.filePath = filePath;
     }
 }
 

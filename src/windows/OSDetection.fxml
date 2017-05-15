@@ -16,21 +16,14 @@
         <CheckBox id="enableButton" fx:id="enableCheck" mnemonicParsing="false" onAction="#enableCheckController" text="Enable" />
         <VBox fx:id="OSVBox" disable="true" VBox.margin="$x1">
           <children>
-            <CheckBox mnemonicParsing="false" text="Limit to Promising Hosts Only" />
-            <CheckBox mnemonicParsing="false" text="Enable Guessing">
+            <CheckBox fx:id="osLimit" mnemonicParsing="false" text="Limit to Promising Hosts Only" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+              <children>
+                <CheckBox id="maxTriesCheck" fx:id="aggressiveScanCheck" mnemonicParsing="false" text="Aggressive Guess" />
+              </children>
               <VBox.margin>
                 <Insets top="20.0" fx:id="x1" />
               </VBox.margin>
-            </CheckBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" VBox.margin="$x1">
-              <children>
-                <CheckBox fx:id="maxTriesCheck" mnemonicParsing="false" onAction="#enableMaxTries" text="Max Number of Tries" />
-                <TextField fx:id="maxNum" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="30.0">
-                  <HBox.margin>
-                    <Insets left="12.0" />
-                  </HBox.margin>
-                </TextField>
-              </children>
             </HBox>
           </children>
         </VBox>

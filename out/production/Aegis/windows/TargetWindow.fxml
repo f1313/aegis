@@ -94,16 +94,11 @@
             </Label>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="fileText" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="300.0" promptText="File">
+                <TextField fx:id="fileText" disable="true" editable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="300.0" promptText="File">
                   <HBox.margin>
                     <Insets fx:id="label" />
                   </HBox.margin>
                 </TextField>
-                <Button maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#save" prefHeight="26.0" text="..">
-                  <HBox.margin>
-                    <Insets left="7.0" />
-                  </HBox.margin>
-                </Button>
               </children>
               <VBox.margin>
                 <Insets top="7.0" />

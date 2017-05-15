@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Initial Version">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/windows/commandManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AdvancedSettingsController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AdvancedSettingsController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindowController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindowController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/OSDetectionController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/OSDetectionController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindowController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindowController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Specs/HostSpec.java" afterPath="$PROJECT_DIR$/src/Specs/HostSpec.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/OSDetection.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/OSDetection.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindow.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/TargetWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Specs/PortSpec.java" afterPath="$PROJECT_DIR$/src/Specs/PortSpec.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Specs/TargetSpec.java" afterPath="$PROJECT_DIR$/src/Specs/TargetSpec.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Util/Group.java" afterPath="$PROJECT_DIR$/src/Util/Group.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Util/Percentage.java" afterPath="$PROJECT_DIR$/src/Util/Percentage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Util/Project.java" afterPath="$PROJECT_DIR$/src/Util/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" afterPath="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" afterPath="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/OSDetection.fxml" afterPath="$PROJECT_DIR$/src/windows/OSDetection.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/OSDetectionController.java" afterPath="$PROJECT_DIR$/src/windows/OSDetectionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ServicesDetectionController.java" afterPath="$PROJECT_DIR$/src/windows/ServicesDetectionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/TargetWindow.fxml" afterPath="$PROJECT_DIR$/src/windows/TargetWindow.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,42 +95,29 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/windows/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HostSpec.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Specs/HostSpec.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="762">
-              <caret line="242" column="7" lean-forward="true" selection-start-line="242" selection-start-column="7" selection-end-line="242" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AegisMainWindowController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AegisMainWindowController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="448" column="46" lean-forward="false" selection-start-line="448" selection-start-column="46" selection-end-line="448" selection-end-column="46" />
+            <state relative-caret-position="95">
+              <caret line="129" column="48" lean-forward="true" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
               <folding>
                 <element signature="docComment;class#AegisMainWindowController#0" expanded="false" />
-                <element signature="e#2632#2657#0" expanded="false" />
-                <element signature="e#3487#3490#0" expanded="false" />
-                <element signature="e#3837#3874#0" expanded="false" />
-                <element signature="class#3953:7263" expanded="false" />
-                <element signature="method#handle#0;class#3953:7263" expanded="false" />
-                <element signature="class#7385:7587" expanded="false" />
-                <element signature="method#changed#0;class#7385:7587" expanded="false" />
-                <element signature="e#8219#8234#0" expanded="false" />
-                <element signature="class#8377:8583" expanded="false" />
+                <element signature="e#2660#2685#0" expanded="false" />
+                <element signature="e#3781#3784#0" expanded="false" />
+                <element signature="e#4886#4923#0" expanded="false" />
+                <element signature="class#8420:8620" expanded="false" />
+                <element signature="method#changed#0;class#8420:8620" expanded="false" />
+                <element signature="e#9252#9267#0" expanded="false" />
                 <element signature="method#addProject#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#openSettings#0;class#AegisMainWindowController#0" expanded="false" />
-                <element signature="e#10170#10194#0" expanded="false" />
+                <element signature="e#11687#11711#0" expanded="false" />
                 <element signature="method#manageGroups#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#addGroup#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#proExists#0;class#AegisMainWindowController#0" expanded="false" />
@@ -130,183 +129,52 @@
                 <element signature="method#getSelectedProject#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#initPopup#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#findGroup#0;class#AegisMainWindowController#0" expanded="false" />
-                <element signature="e#17965#18034#0" expanded="false" />
+                <element signature="method#initQuick#0;class#AegisMainWindowController#0" expanded="false" />
+                <element signature="e#19880#19949#0" expanded="false" />
                 <element signature="method#scan#0;class#AegisMainWindowController#0" expanded="false" />
-                <element signature="e#20824#20863#0" expanded="false" />
+                <element signature="e#22738#22777#0" expanded="false" />
                 <element signature="method#tabPaneContains#0;class#AegisMainWindowController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Util/Project.java">
+      <file leaf-file-name="commandManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/windows/commandManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
-              <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Group.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Util/Group.java">
+      <file leaf-file-name="ServicesDetectionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/windows/ServicesDetectionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="43" column="50" lean-forward="false" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-              <folding>
-                <element signature="docComment;class#Group#0" expanded="false" />
-                <element signature="method#init#0;class#Group#0" expanded="false" />
-                <element signature="e#2387#2388#0" expanded="true" />
-                <element signature="e#2414#2415#0" expanded="true" />
-                <element signature="e#2462#2463#0" expanded="true" />
-                <element signature="e#2494#2495#0" expanded="true" />
-                <element signature="e#2531#2532#0" expanded="true" />
-                <element signature="e#2561#2562#0" expanded="true" />
-                <element signature="e#2611#2612#0" expanded="true" />
-                <element signature="e#2649#2650#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="325">
+              <caret line="60" column="30" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Percentage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Util/Percentage.java">
+      <file leaf-file-name="AdvancedSettingsController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettingsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;method#getPercentage#0;class#Percentage#0" expanded="false" />
-                <element signature="docComment;method#setPercentage#0;class#Percentage#0" expanded="false" />
-                <element signature="docComment;method#getP#0;class#Percentage#0" expanded="false" />
-                <element signature="docComment;method#setP#0;class#Percentage#0" expanded="false" />
-                <element signature="docComment;method#getOutput#0;class#Percentage#0" expanded="false" />
-                <element signature="docComment;method#setOutput#0;class#Percentage#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="311">
+              <caret line="119" column="1" lean-forward="true" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PortSpec.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Specs/PortSpec.java">
+      <file leaf-file-name="OSDetectionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/windows/OSDetectionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="394" column="7" lean-forward="false" selection-start-line="394" selection-start-column="7" selection-end-line="394" selection-end-column="7" />
-              <folding>
-                <element signature="docComment;method#PortSpec#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#PortSpec#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isIncludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setIncludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setIncludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isExcludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setExcludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setExcludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#getDefaultExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setDefaultExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setDefaultExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#getDefaultIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setDefaultIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setDefaultIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#getExcludedPortsFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setExcludedPortsFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#getExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#getIncludedPortsFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setIncludedPortsFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#getIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isIsExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setIsExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setIsExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isIsExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setIsExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setIsExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isIsIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setIsIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setIsIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#isIsIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#setIsIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#setIsIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#validatePortString#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#validatePortString#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#validateAllPortStrings#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#validateAllPortStrings#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#writeIncludedPortsToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#writeIncludedPortsToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#writeExcludedPortsToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#writeExcludedPortsToFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#readIncludedPortsFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#readIncludedPortsFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#readExcludedPortsFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#readExcludedPortsFromFile#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#getPortHelperByNumber#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#getPortHelperByNumber#0;class#PortSpec#0" expanded="false" />
-                <element signature="docComment;method#getPortHelperByName#0;class#PortSpec#0" expanded="false" />
-                <element signature="method#getPortHelperByName#0;class#PortSpec#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Specs/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="docComment;method#getFirstHalfReplacer#0;class#Constants#0" expanded="false" />
-                <element signature="e#1772#1773#0" expanded="false" />
-                <element signature="e#1812#1813#0" expanded="false" />
-                <element signature="docComment;method#getSecondHalfReplacer#0;class#Constants#0" expanded="false" />
-                <element signature="e#1905#1906#0" expanded="false" />
-                <element signature="e#1946#1947#0" expanded="false" />
-                <element signature="docComment;method#getEndLinePattern#0;class#Constants#0" expanded="false" />
-                <element signature="e#2028#2029#0" expanded="false" />
-                <element signature="e#2065#2066#0" expanded="false" />
-                <element signature="docComment;method#Constants#0;class#Constants#0" expanded="false" />
-                <element signature="method#Constants#0;class#Constants#0" expanded="false" />
-                <element signature="docComment;method#getPercentageLinePattern#0;class#Constants#0" expanded="false" />
-                <element signature="e#2212#2213#0" expanded="false" />
-                <element signature="e#2256#2257#0" expanded="false" />
-                <element signature="docComment;method#getPortsByNumberMap#0;class#Constants#0" expanded="false" />
-                <element signature="e#2363#2364#0" expanded="false" />
-                <element signature="e#2402#2403#0" expanded="false" />
-                <element signature="docComment;method#getPortsByNameMap#0;class#Constants#0" expanded="false" />
-                <element signature="e#2507#2508#0" expanded="false" />
-                <element signature="e#2544#2545#0" expanded="false" />
-                <element signature="docComment;method#getHostIPPattern#0;class#Constants#0" expanded="false" />
-                <element signature="e#2641#2642#0" expanded="false" />
-                <element signature="e#2677#2678#0" expanded="false" />
-                <element signature="docComment;method#getHostNamePattern#0;class#Constants#0" expanded="false" />
-                <element signature="e#2776#2777#0" expanded="false" />
-                <element signature="e#2814#2815#0" expanded="false" />
-                <element signature="docComment;method#getPortPattern#0;class#Constants#0" expanded="false" />
-                <element signature="e#2909#2910#0" expanded="false" />
-                <element signature="e#2943#2944#0" expanded="false" />
-                <element signature="docComment;method#readPortLists#0;class#Constants#0" expanded="false" />
-                <element signature="method#readPortLists#0;class#Constants#0" expanded="false" />
-                <element signature="docComment;method#getPortsByNumberSet#0;class#Constants#0" expanded="false" />
-                <element signature="e#4773#4774#0" expanded="false" />
-                <element signature="e#4812#4813#0" expanded="false" />
-                <element signature="docComment;method#getPortsByNameSet#0;class#Constants#0" expanded="false" />
-                <element signature="e#4917#4918#0" expanded="false" />
-                <element signature="e#4954#4955#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="181">
+              <caret line="43" column="46" lean-forward="true" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -323,13 +191,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hyper</find>
-      <find>mouse</find>
-      <find>seconda</find>
-      <find>Inclu</find>
-      <find>advan</find>
-      <find>poea</find>
-      <find>getController</find>
       <find>projectsH</find>
       <find>isProj</find>
       <find>&quot;+</find>
@@ -349,10 +210,17 @@
       <find>Browser</find>
       <find>addGr</find>
       <find>set</find>
-      <find>context</find>
       <find>findTap</find>
       <find>setPadding</find>
       <find>validate</find>
+      <find>write</find>
+      <find>Project</find>
+      <find>ContextMe</find>
+      <find>context</find>
+      <find>option</find>
+      <find>sca</find>
+      <find>setOu</find>
+      <find>command +=</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -371,9 +239,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/windows/AdvancedSettings.fxml" />
-        <option value="$PROJECT_DIR$/src/windows/AdvancedSettings/ProtocolRangesController.fxml" />
-        <option value="$PROJECT_DIR$/src/windows/AdvancedSettings/ProtocolRanges.fxml" />
         <option value="$PROJECT_DIR$/src/windows/AdvancedSettings/ProtocolRangesController.java" />
         <option value="$PROJECT_DIR$/src/windows/AdvancedSettings/AdvancedSettingsController.java" />
         <option value="$PROJECT_DIR$/src/windows/AdvancedSettings/AdvancedSettings.fxml" />
@@ -386,9 +251,7 @@
         <option value="$PROJECT_DIR$/src/windows/ServicesAndOSOptions.fxml" />
         <option value="$PROJECT_DIR$/src/windows/ServicesAndOSOptionsController.java" />
         <option value="$PROJECT_DIR$/src/windows/ServicesDetection.fxml" />
-        <option value="$PROJECT_DIR$/src/windows/ServicesDetectionController.java" />
         <option value="$PROJECT_DIR$/src/windows/OSDetection.fxml" />
-        <option value="$PROJECT_DIR$/src/windows/OSDetectionController.java" />
         <option value="$PROJECT_DIR$/src/windows/Decoys.fxml" />
         <option value="$PROJECT_DIR$/src/windows/DecoysController.java" />
         <option value="$PROJECT_DIR$/src/windows/Firewall.fxml" />
@@ -399,7 +262,6 @@
         <option value="$PROJECT_DIR$/src/windows/DNSOptionsController.fxml" />
         <option value="$PROJECT_DIR$/src/windows/PortsSelectionWindow.fxml" />
         <option value="$PROJECT_DIR$/src/windows/ScanOptions.fxml" />
-        <option value="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" />
         <option value="$PROJECT_DIR$/src/windows/ScanOptionsController.java" />
         <option value="$PROJECT_DIR$/src/MiddleMan/Constants.java" />
         <option value="$PROJECT_DIR$/src/MiddleMan/ScanOptions.java" />
@@ -412,15 +274,21 @@
         <option value="$PROJECT_DIR$/src/windows/PayloadController.java" />
         <option value="$PROJECT_DIR$/src/windows/PortsSelectionWindowController.java" />
         <option value="$PROJECT_DIR$/src/windows/ScanTypesController.java" />
-        <option value="$PROJECT_DIR$/src/Util/Project.java" />
         <option value="$PROJECT_DIR$/src/windows/TargetWindowController.java" />
         <option value="$PROJECT_DIR$/src/MiddleMan/PortSpec.java" />
         <option value="$PROJECT_DIR$/src/windows/AegisMainWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/windows/Main.java" />
         <option value="$PROJECT_DIR$/src/Specs/Constants.java" />
         <option value="$PROJECT_DIR$/src/Util/Percentage.java" />
-        <option value="$PROJECT_DIR$/src/Util/Group.java" />
         <option value="$PROJECT_DIR$/src/Specs/HostSpec.java" />
+        <option value="$PROJECT_DIR$/src/Util/Project.java" />
+        <option value="$PROJECT_DIR$/src/Specs/TargetSpec.java" />
+        <option value="$PROJECT_DIR$/src/Specs/PortSpec.java" />
+        <option value="$PROJECT_DIR$/src/windows/OSDetectionController.java" />
+        <option value="$PROJECT_DIR$/src/Util/Group.java" />
+        <option value="$PROJECT_DIR$/src/windows/Main.java" />
+        <option value="$PROJECT_DIR$/src/windows/ServicesDetectionController.java" />
+        <option value="$PROJECT_DIR$/src/windows/commandManager.java" />
+        <option value="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" />
         <option value="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" />
       </list>
     </option>
@@ -430,6 +298,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -456,9 +327,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -484,6 +352,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="windows" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -499,12 +371,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Specs" />
+              <option name="myItemId" value="Util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aegis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Aegis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -923,7 +812,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493228577047</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Initial Version">
+      <created>1493651710517</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1493651710517</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -950,19 +846,19 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4269103" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952815" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18106312" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15449011" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19330288" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961948" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4717608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1031,15 +927,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java</url>
-          <line>446</line>
-          <properties />
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="64" />
+      <option name="time" value="82" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1048,30 +936,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/windows/ScanOptionsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/ScanOptions.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/ProtocolRangesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Specs/ScanOptions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1231,23 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettings.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Specs/TargetSpec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/scene/control/MenuItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1255,38 +1102,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="3764" column="0" lean-forward="false" selection-start-line="3764" selection-start-column="0" selection-end-line="3764" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/event/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3528">
           <caret line="1770" column="75" lean-forward="true" selection-start-line="1770" selection-start-column="75" selection-end-line="1770" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/scene/control/TreeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="546" column="0" lean-forward="false" selection-start-line="546" selection-start-column="0" selection-end-line="546" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/scene/control/SelectionModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="119" column="38" lean-forward="false" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1321,14 +1140,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettingsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-746">
-          <caret line="26" column="94" lean-forward="false" selection-start-line="26" selection-start-column="94" selection-end-line="26" selection-end-column="94" />
         </state>
       </provider>
     </entry>
@@ -1378,41 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
           <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;method#getPercentage#0;class#Percentage#0" expanded="false" />
-            <element signature="docComment;method#setPercentage#0;class#Percentage#0" expanded="false" />
-            <element signature="docComment;method#getP#0;class#Percentage#0" expanded="false" />
-            <element signature="docComment;method#setP#0;class#Percentage#0" expanded="false" />
-            <element signature="docComment;method#getOutput#0;class#Percentage#0" expanded="false" />
-            <element signature="docComment;method#setOutput#0;class#Percentage#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Util/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="43" column="50" lean-forward="false" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-          <folding>
-            <element signature="docComment;class#Group#0" expanded="false" />
-            <element signature="method#init#0;class#Group#0" expanded="false" />
-            <element signature="e#2387#2388#0" expanded="true" />
-            <element signature="e#2414#2415#0" expanded="true" />
-            <element signature="e#2462#2463#0" expanded="true" />
-            <element signature="e#2494#2495#0" expanded="true" />
-            <element signature="e#2531#2532#0" expanded="true" />
-            <element signature="e#2561#2562#0" expanded="true" />
-            <element signature="e#2611#2612#0" expanded="true" />
-            <element signature="e#2649#2650#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Util/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,148 +1196,145 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;method#getFirstHalfReplacer#0;class#Constants#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-            <element signature="e#1812#1813#0" expanded="false" />
-            <element signature="docComment;method#getSecondHalfReplacer#0;class#Constants#0" expanded="false" />
-            <element signature="e#1905#1906#0" expanded="false" />
-            <element signature="e#1946#1947#0" expanded="false" />
-            <element signature="docComment;method#getEndLinePattern#0;class#Constants#0" expanded="false" />
-            <element signature="e#2028#2029#0" expanded="false" />
-            <element signature="e#2065#2066#0" expanded="false" />
-            <element signature="docComment;method#Constants#0;class#Constants#0" expanded="false" />
-            <element signature="method#Constants#0;class#Constants#0" expanded="false" />
-            <element signature="docComment;method#getPercentageLinePattern#0;class#Constants#0" expanded="false" />
-            <element signature="e#2212#2213#0" expanded="false" />
-            <element signature="e#2256#2257#0" expanded="false" />
-            <element signature="docComment;method#getPortsByNumberMap#0;class#Constants#0" expanded="false" />
-            <element signature="e#2363#2364#0" expanded="false" />
-            <element signature="e#2402#2403#0" expanded="false" />
-            <element signature="docComment;method#getPortsByNameMap#0;class#Constants#0" expanded="false" />
-            <element signature="e#2507#2508#0" expanded="false" />
-            <element signature="e#2544#2545#0" expanded="false" />
-            <element signature="docComment;method#getHostIPPattern#0;class#Constants#0" expanded="false" />
-            <element signature="e#2641#2642#0" expanded="false" />
-            <element signature="e#2677#2678#0" expanded="false" />
-            <element signature="docComment;method#getHostNamePattern#0;class#Constants#0" expanded="false" />
-            <element signature="e#2776#2777#0" expanded="false" />
-            <element signature="e#2814#2815#0" expanded="false" />
-            <element signature="docComment;method#getPortPattern#0;class#Constants#0" expanded="false" />
-            <element signature="e#2909#2910#0" expanded="false" />
-            <element signature="e#2943#2944#0" expanded="false" />
-            <element signature="docComment;method#readPortLists#0;class#Constants#0" expanded="false" />
-            <element signature="method#readPortLists#0;class#Constants#0" expanded="false" />
-            <element signature="docComment;method#getPortsByNumberSet#0;class#Constants#0" expanded="false" />
-            <element signature="e#4773#4774#0" expanded="false" />
-            <element signature="e#4812#4813#0" expanded="false" />
-            <element signature="docComment;method#getPortsByNameSet#0;class#Constants#0" expanded="false" />
-            <element signature="e#4917#4918#0" expanded="false" />
-            <element signature="e#4954#4955#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Util/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="368">
+          <caret line="62" column="35" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Specs/HostSpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="242" column="7" lean-forward="true" selection-start-line="242" selection-start-column="7" selection-end-line="242" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Specs/PortSpec.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="394" column="7" lean-forward="false" selection-start-line="394" selection-start-column="7" selection-end-line="394" selection-end-column="7" />
+        <state relative-caret-position="2286">
+          <caret line="332" column="64" lean-forward="false" selection-start-line="332" selection-start-column="64" selection-end-line="332" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Specs/TargetSpec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="57" column="7" lean-forward="true" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/scene/Scene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="3472" column="0" lean-forward="false" selection-start-line="3472" selection-start-column="0" selection-end-line="3472" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/event/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/scene/control/SelectionModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="119" column="38" lean-forward="false" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="38" />
           <folding>
-            <element signature="docComment;method#PortSpec#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#PortSpec#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isIncludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setIncludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setIncludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isExcludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setExcludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setExcludedPortsWrittenToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#getDefaultExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setDefaultExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setDefaultExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#getDefaultIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setDefaultIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setDefaultIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#getExcludedPortsFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setExcludedPortsFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#getExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setExcludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#getIncludedPortsFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setIncludedPortsFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#getIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setIncludedPortsList#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isIsExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setIsExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setIsExcludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isIsExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setIsExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setIsExcludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isIsIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setIsIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setIsIncludedPortsConfigured#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#isIsIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#setIsIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#setIsIncludedPortsLoadedFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#validatePortString#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#validatePortString#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#validateAllPortStrings#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#validateAllPortStrings#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#writeIncludedPortsToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#writeIncludedPortsToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#writeExcludedPortsToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#writeExcludedPortsToFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#readIncludedPortsFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#readIncludedPortsFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#readExcludedPortsFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#readExcludedPortsFromFile#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#getPortHelperByNumber#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#getPortHelperByNumber#0;class#PortSpec#0" expanded="false" />
-            <element signature="docComment;method#getPortHelperByName#0;class#PortSpec#0" expanded="false" />
-            <element signature="method#getPortHelperByName#0;class#PortSpec#0" expanded="false" />
+            <element signature="e#0#11320#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/scene/control/TreeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8262">
+          <caret line="546" column="0" lean-forward="false" selection-start-line="546" selection-start-column="0" selection-end-line="546" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettings.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/OSDetectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="43" column="46" lean-forward="true" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/ServicesDetectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="60" column="30" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/commandManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Util/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Group#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettingsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="119" column="1" lean-forward="true" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="448" column="46" lean-forward="false" selection-start-line="448" selection-start-column="46" selection-end-line="448" selection-end-column="46" />
+        <state relative-caret-position="95">
+          <caret line="129" column="48" lean-forward="true" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
           <folding>
             <element signature="docComment;class#AegisMainWindowController#0" expanded="false" />
-            <element signature="e#2632#2657#0" expanded="false" />
-            <element signature="e#3487#3490#0" expanded="false" />
-            <element signature="e#3837#3874#0" expanded="false" />
-            <element signature="class#3953:7263" expanded="false" />
-            <element signature="method#handle#0;class#3953:7263" expanded="false" />
-            <element signature="class#7385:7587" expanded="false" />
-            <element signature="method#changed#0;class#7385:7587" expanded="false" />
-            <element signature="e#8219#8234#0" expanded="false" />
-            <element signature="class#8377:8583" expanded="false" />
+            <element signature="e#2660#2685#0" expanded="false" />
+            <element signature="e#3781#3784#0" expanded="false" />
+            <element signature="e#4886#4923#0" expanded="false" />
+            <element signature="class#8420:8620" expanded="false" />
+            <element signature="method#changed#0;class#8420:8620" expanded="false" />
+            <element signature="e#9252#9267#0" expanded="false" />
             <element signature="method#addProject#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#openSettings#0;class#AegisMainWindowController#0" expanded="false" />
-            <element signature="e#10170#10194#0" expanded="false" />
+            <element signature="e#11687#11711#0" expanded="false" />
             <element signature="method#manageGroups#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#addGroup#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#proExists#0;class#AegisMainWindowController#0" expanded="false" />
@@ -1573,19 +1346,12 @@
             <element signature="method#getSelectedProject#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#initPopup#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#findGroup#0;class#AegisMainWindowController#0" expanded="false" />
-            <element signature="e#17965#18034#0" expanded="false" />
+            <element signature="method#initQuick#0;class#AegisMainWindowController#0" expanded="false" />
+            <element signature="e#19880#19949#0" expanded="false" />
             <element signature="method#scan#0;class#AegisMainWindowController#0" expanded="false" />
-            <element signature="e#20824#20863#0" expanded="false" />
+            <element signature="e#22738#22777#0" expanded="false" />
             <element signature="method#tabPaneContains#0;class#AegisMainWindowController#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Specs/HostSpec.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="242" column="7" lean-forward="true" selection-start-line="242" selection-start-column="7" selection-end-line="242" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>

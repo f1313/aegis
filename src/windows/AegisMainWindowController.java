@@ -31,6 +31,7 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 /**
@@ -109,13 +110,39 @@ public class AegisMainWindowController {
         rootContext.getItems ( ).add ( 0, newProjectMenuItem );
         ContextMenu projectsContext = new ContextMenu ( );
         MenuItem newGroupMenuItem = new MenuItem ( "New Group" );
+        ContextMenu startScan = new ContextMenu ( );
+        MenuItem scan = new MenuItem ( "Start Scan" );
+        MenuItem advancedOptionsMenuItem = new MenuItem ( "Advanced Scan Options" );
+        startScan.getItems ( ).addAll ( scan, advancedOptionsMenuItem );
         projectsContext.getItems ( ).add ( 0, newGroupMenuItem );
         ///
         //Setting a handler for each context menu
-        newProjectMenuItem.setOnAction ( event -> addProject ( ) );
-        newGroupMenuItem.setOnAction ( event -> addGroup ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItems ( ).get ( 0 ) ) );
+        newProjectMenuItem.setOnAction ( event -> {
+            addProject ( );
+        } );
+        newGroupMenuItem.setOnAction ( event -> {
+            addGroup ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItems ( ).get ( 0 ) );
+        } );
         //Checking for right click
         mainBorderPane.setLeft ( leftTree );
+
+
+        //Listening for when the scan is started
+        scan.setOnAction ( event -> {
+            Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
+            String command = "nmap "+g.getHostsString ()+" ";
+            command += g.getAdvancedScan ().getOs ().getCommand ();
+            command += g.getAdvancedScan ().getSd ().getCommand ();
+            scan(g.getOutputLocationFilename ()+ "/"+g.getGroupName (),command, g);
+        } );
+
+        advancedOptionsMenuItem.setOnAction ( event -> {
+            try {
+                openSettings ( );
+            } catch ( IOException e ) {
+                e.printStackTrace ( );
+            }
+        } );
 
         //Handling clicking left tree element
         //When a right click is made
@@ -125,13 +152,14 @@ public class AegisMainWindowController {
 
                 //A right click !!!
                 rootContext.hide ( );
-                projectsContext.hide ( );
+                startScan.hide ( );
                 if ( event.getButton ( ) == MouseButton.SECONDARY ) {
                     if ( leftTree.getSelectionModel ( ).getSelectedItem ( ) != null ) {
                         if ( isRoot ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItem ( ) ) ) {
                             rootContext.show ( mainBorderPane, event.getScreenX ( ), event.getScreenY ( ) );
-                        } else if ( isProject ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItem ( ) ) ) {
-                            projectsContext.show ( mainBorderPane, event.getScreenX ( ), event.getScreenY ( ) );
+                        } else if ( isGroup ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItem ( ) ) ) {
+                            startScan.show ( mainBorderPane, event.getScreenX ( ), event.getScreenY ( ) );
+
                         }
                     }
                 } else {
@@ -170,7 +198,6 @@ public class AegisMainWindowController {
                         }
                     }
 
-
                 }
             }
         } );
@@ -180,9 +207,7 @@ public class AegisMainWindowController {
             public void changed ( ObservableValue observable, Object oldValue,
                                   Object newValue ) {
 
-
             }
-
         } );
 
         TreeItem < String > rightRoot = new TreeItem ( "Basic Options" );
@@ -242,7 +267,20 @@ public class AegisMainWindowController {
                 adder.setVisited ( false );
             } );
 
+            String path = projectController.getLocationText ( ).getText ( );
+            if ( path.isEmpty ( ) ) {
+                path = "/" + p.getProjectName ( );
+            } else {
+                path += "/" + p.getProjectName ( );
+            }
+            p.setFilePath ( path );
             projectsList.add ( p );
+            File pj = new File ( p.getFilePath ( ) );
+            try {
+                pj.mkdir ( );
+            } catch ( Exception ex ) {
+                ex.printStackTrace ( );
+            }
             temp.setExpanded ( true );
             projectClosed = false;
         }
@@ -320,17 +358,19 @@ public class AegisMainWindowController {
             parent.getChildren ( ).add ( newGroup );
             parent.getChildren ( ).add ( toAdd );
             target = loader.getController ( );
-            int counter = 0;
             g.setOutputLocationFilename ( target.getFileText ( ) + "/" + target.getGroupName ( ) );
             for ( Object x : target.getIpList ( ).getItems ( ) ) {
                 g.getTargets ( ).getIncludedTargetsList ( ).add ( x.toString ( ) );
                 newGroup.getChildren ( ).add ( new TreeItem <> ( x, new ImageView ( new Image
                         ( getClass ( ).getResourceAsStream ( "/img/target.png" ) ) ) ) );
-                counter++;
-            }
 
+            }
+            g.setOutputLocationFilename ( getSelectedProject ( parent ).getFilePath ( ) + "/" + g.getGroupName ( ) );
+            new File ( g.getOutputLocationFilename ( ) ).mkdir ( );
             newGroup.setExpanded ( true );
+            g.initHostString ( );
             projectsList.get ( findProject ( parent ) ).addGroup ( g );
+            g.getTargets ( ).writeIncludedTargetsToFile ( g.getOutputLocationFilename ( ) + "/targets.targets" );
         }
         groupClosed = false;
 
@@ -370,7 +410,9 @@ public class AegisMainWindowController {
     public boolean isProject ( TreeItem item ) {
         if ( ! isRoot ( item ) ) {
             try {
-                item.getParent ( ).getParent ( ).getParent ( );
+                if ( item.getParent ( ).getParent ( ) == null ) {
+                    return true;
+                }
             } catch ( Exception e ) {
                 return true;
             }
@@ -382,7 +424,9 @@ public class AegisMainWindowController {
         if ( item.toString ( ).contains ( "+ Add Group" ) ) return false;
         if ( ! isRoot ( item ) && ! isProject ( item ) ) {
             try {
-                item.getParent ( ).getParent ( ).getParent ( ).getParent ( );
+                if ( item.getParent ( ).getParent ( ).getParent ( ) == null ) {
+                    return true;
+                }
             } catch ( Exception e ) {
                 return true;
             }
@@ -445,18 +489,18 @@ public class AegisMainWindowController {
             dialog.setOnCloseRequest ( e -> System.out.println ( "Closed!!" ) );
             Optional < String > result = dialog.showAndWait ( );
             if ( result.isPresent ( ) ) {
-                    System.out.println (".get is "+result.get ( )  );
-                if ( Specs.HostSpec.validateHostString ( result.get ( ) ) ) {
+                System.out.println ( ".get is " + result.get ( ) );
+                if ( Specs.TargetSpec.validateHostString ( result.get ( ) ) ) {
                     tp.getTabs ( ).add ( new Tab ( "Quick Scan" ) );
                     tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
                     Group toSend = new Group ( "Quick" );
                     scan ( "/home/wintson/Desktop/scanThis/meh", "nmap -O " + result.get ( ), toSend );
-                }else {
-                    Alert alert = new Alert( Alert.AlertType.ERROR);
-                    alert.setTitle("Invalid String");
-                    alert.setHeaderText("Wrong IP/Hostname");
-                    alert.setContentText("Re-enter a valid IP/Hostname");
-                    alert.showAndWait();
+                } else {
+                    Alert alert = new Alert ( Alert.AlertType.ERROR );
+                    alert.setTitle ( "Invalid String" );
+                    alert.setHeaderText ( "Wrong IP/Hostname" );
+                    alert.setContentText ( "Re-enter a valid IP/Hostname" );
+                    alert.showAndWait ( );
                 }
             }
         } );
@@ -496,7 +540,6 @@ public class AegisMainWindowController {
                             new File ( target + ".html" ).delete ( );
                             //System.out.println ("sudo "+command+ " -oX " + target+".xml --stats-every 100ms"  );
                             Process p = Runtime.getRuntime ( ).exec ( "sudo " + command + " -oX " + target + ".xml --stats-every 100ms" );
-
                             group.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
                             Percentage percentage = new Percentage ( p );
                             percentage.work ( );

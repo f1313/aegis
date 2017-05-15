@@ -19,70 +19,77 @@ import Specs.*;
 public class Group {
 
     Browser browser = new Browser ( );
+
     BrowserView view = new BrowserView ( browser );
 
-    Stage groupStage = new Stage();
+    String hostsString = "";
+
+    Stage groupStage = new Stage ( );
 
     String groupName;
 
     String outputLocationFilename;
 
-    AdvancedSettingsController advancedScan;
+    AdvancedSettingsController advancedScan = new AdvancedSettingsController ( );
 
-    TargetSpec targets = new TargetSpec();
+    TargetSpec targets = new TargetSpec ( );
 
-    FXMLLoader projectLoader = new FXMLLoader();
+    FXMLLoader projectLoader = new FXMLLoader ( );
 
-    BorderPane settingsWindow = new BorderPane();
+    BorderPane settingsWindow = new BorderPane ( );
 
-    PortSpec ports = new PortSpec();
+    PortSpec ports = new PortSpec ( );
 
-    private final Node groupIcon = new ImageView(new Image(getClass().getResourceAsStream("/img/group.png")));
+    private final Node groupIcon = new ImageView ( new Image ( getClass ( ).getResourceAsStream ( "/img/group.png" ) ) );
 
 
-    public Group(String groupName) {
-        view.setPadding ( new Insets ( 10,10,10,10 ) );
+    public Group ( String groupName ) {
+
+        view.setPadding ( new Insets ( 10, 10, 10, 10 ) );
         this.groupName = groupName;
         try {
-            init();
-        } catch (Exception e) {
-            System.out.println(e);
+            init ( );
+        } catch ( Exception e ) {
+            System.out.println ( e );
         }
+
     }
 
-    public void init() throws Exception {
+    public void init ( ) throws Exception {
         try {
-            settingsWindow = FXMLLoader.load(getClass().getResource("/windows/AdvancedSettings.fxml"));
+            FXMLLoader loader = new FXMLLoader ( getClass ( ).getResource ( "/windows/AdvancedSettings.fxml" ) );
+            settingsWindow = loader.load ( );
+            advancedScan = loader.getController ( );
 
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch ( Exception e ) {
+            System.out.println ( e );
         }
-        groupStage.setScene(new Scene(settingsWindow, 700, 580));
-        groupStage.setTitle(this.getGroupName()+"'s Settings" );
-        System.out.println();
+        groupStage.setScene ( new Scene ( settingsWindow, 700, 580 ) );
+        groupStage.setTitle ( this.getGroupName ( ) + "'s Settings" );
+        System.out.println ( );
     }
 
-    public String getGroupName() {
+    public String getGroupName ( ) {
         return groupName;
     }
 
-    public void setGroupName(String groupName) {
+    public void setGroupName ( String groupName ) {
         this.groupName = groupName;
     }
 
-    public TargetSpec getTargets() {
+    public TargetSpec getTargets ( ) {
         return targets;
     }
 
-    public void setTargets(TargetSpec targets) {
+    public void setTargets ( TargetSpec targets ) {
         this.targets = targets;
     }
 
-    public Node getProjectIcon() {
+    public Node getProjectIcon ( ) {
         return groupIcon;
     }
 
-    public Stage getSettingsStage() {
+    public Stage getSettingsStage ( ) {
         return groupStage;
     }
 
@@ -110,8 +117,27 @@ public class Group {
         this.browser = browser;
     }
 
+    public void initHostString ( ) {
+        for ( String x : targets.getIncludedTargetsList ( ) ) {
+            hostsString += " " + x + " ";
+        }
+    }
+
+    public String getHostsString ( ) {
+        return hostsString;
+    }
+
+    public void setHostsString ( String hostsString ) {
+        this.hostsString = hostsString;
+    }
+
+    public AdvancedSettingsController getAdvancedScan ( ) {
+        return advancedScan;
+    }
+
+
     @Override
-    public String toString() {
+    public String toString ( ) {
         return this.groupName;
     }
 

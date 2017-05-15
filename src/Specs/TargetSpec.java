@@ -251,7 +251,7 @@ public class TargetSpec {
      *                   <p>
      * @return
      */
-    public boolean validateHostString ( String hostString ) {
+    public static boolean validateHostString ( String hostString ) {
         try {
             java.util.regex.Matcher hostMatcher = Constants.getHostNamePattern ( ).matcher ( hostString ),
                     ipMatcher = Constants.getHostIPPattern ( ).matcher ( hostString );
@@ -296,12 +296,12 @@ public class TargetSpec {
         }
     }
 
-    private boolean maskChecker ( String mask ) {
+    private static boolean maskChecker ( String mask ) {
         int num = Integer.parseInt ( mask );
         return num >= 0 && num <= 32;
     }
 
-    private boolean octetChecker ( String octet ) {
+    private static boolean octetChecker ( String octet ) {
         if ( octet.contains ( "-" ) ) {
             return octetRangeChecker ( octet );
         } else {
@@ -309,7 +309,7 @@ public class TargetSpec {
         }
     }
 
-    private boolean octetRangeChecker ( String octetRange ) {
+    private static boolean octetRangeChecker ( String octetRange ) {
         String[] components = octetRange.split ( "-" );
         int num1 = Integer.parseInt ( components[ 0 ] ),
                 num2 = Integer.parseInt ( components[ 1 ] );
@@ -319,9 +319,90 @@ public class TargetSpec {
         return 0 <= num1 && num1 < num2 && num2 <= 255;
     }
 
-    private boolean singleOctetChecker ( String octet ) {
+    private static boolean singleOctetChecker ( String octet ) {
         int num = Integer.parseInt ( octet );
         return num >= 0 && num <= 255;
+    }
+
+
+    /**
+     * @param fileName
+     * @return
+     */
+    public boolean writeIncludedTargetsToFile ( String fileName ) {
+        try {
+            includedTargetsFile = new java.io.File ( fileName );
+            java.io.PrintWriter pr = new java.io.PrintWriter ( includedTargetsFile );
+            for ( String s : includedTargetsList ) {
+                pr.println ( s );
+            }
+            pr.close ();
+        } catch ( Exception ex ) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @param fileName
+     * @return
+     */
+    public boolean writeExcludedTargetsToFile ( String fileName ) {
+        try {
+            excludedTargetsFile = new java.io.File ( fileName );
+            java.io.PrintWriter pr = new java.io.PrintWriter ( excludedTargetsFile );
+            for ( String s : excludedTargetsList ) {
+                pr.println ( s );
+            }
+            pr.close ();
+        } catch ( Exception ex ) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @param fileName
+     * @return
+     */
+    public boolean readIncludedTargetsFromFile ( String fileName ) {
+        try {
+            new java.io.PrintWriter ( new java.io.FileOutputStream ( fileName, true ), true ).println ( "ENDENDEND" );
+            DynamicInput input = new DynamicInput ( );
+            input.init ( new java.io.FileInputStream ( fileName ) );
+            String portNumberString;
+            while ( ! ( portNumberString = input.reader.readLine ( ) ).equals ( "ENDENDEND" ) ) {
+                if ( ! validateHostString ( portNumberString ) ) {
+                    return false;
+                }
+                includedTargetsList.add ( portNumberString );
+            }
+        } catch ( Exception ex ) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * @param fileName
+     * @return
+     */
+    public boolean readExcludedTargetsFromFile ( String fileName ) {
+        try {
+            new java.io.PrintWriter ( new java.io.FileOutputStream ( fileName, true ), true ).println ( "ENDENDEND" );
+            DynamicInput input = new DynamicInput ( );
+            input.init ( new java.io.FileInputStream ( fileName ) );
+            String portNumberString;
+            while ( ! ( portNumberString = input.reader.readLine ( ) ).equals ( "ENDENDEND" ) ) {
+                if ( ! validateHostString ( portNumberString ) ) {
+                    return false;
+                }
+                excludedTargetsList.add ( portNumberString );
+            }
+        } catch ( Exception ex ) {
+            return false;
+        }
+        return true;
     }
 
 }

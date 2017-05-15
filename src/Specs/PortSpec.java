@@ -318,6 +318,7 @@ public class PortSpec {
             for ( String s : includedPortsList ) {
                 pr.println ( s );
             }
+            pr.close ();
         } catch ( Exception ex ) {
             return false;
         }
@@ -336,6 +337,7 @@ public class PortSpec {
             for ( String s : excludedPortsList ) {
                 pr.println ( s );
             }
+            pr.close ();
         } catch ( Exception ex ) {
             return false;
         }

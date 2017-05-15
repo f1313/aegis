@@ -9,6 +9,9 @@ import javafx.scene.layout.VBox;
  * Created by wintson on 3/31/17.
  */
 public class ServicesDetectionController {
+
+    String enable = " -sV -T4 -F ";
+
     @FXML
     CheckBox enableButton;
     @FXML
@@ -46,5 +49,15 @@ public class ServicesDetectionController {
         }else {
             debugVBox.setDisable(true);
         }
+    }
+
+    String getCommand(){
+        StringBuilder sb = new StringBuilder ( 200 );
+        if (enableButton.isSelected ()){
+            sb.append ( enable );
+        }
+
+
+        return sb.toString ();
     }
 }
