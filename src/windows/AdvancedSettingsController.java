@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by wintson on 3/26/17.
@@ -18,23 +19,26 @@ public class AdvancedSettingsController {
     @FXML
     BorderPane mainBorderPane;
 
+    ArrayList < FXMLLoader > loaderList = new ArrayList <> ( 200 );
+
     private OSDetectionController os = new OSDetectionController ( );
-    private ServicesDetectionController sd = new ServicesDetectionController ();
+    private ServicesDetectionController sd = new ServicesDetectionController ( );
+
     public void initialize ( ) throws IOException {
-        FXMLLoader loader;
         //Protocol Ranges window
         AnchorPane ProtocolRanges = FXMLLoader.load ( getClass ( ).getResource ( "ProtocolRanges.fxml" ) );
         AnchorPane DNSOptions = FXMLLoader.load ( getClass ( ).getResource ( "DNSOptionsController.fxml" ) );
         BorderPane AdvancedTarget = FXMLLoader.load ( getClass ( ).getResource ( "ScanTypes.fxml" ) );
 
         //Service Detection
-        loader = new FXMLLoader ( getClass ( ).getResource ( "ServicesDetection.fxml" ) );
-        AnchorPane ServiceDetection = FXMLLoader.load ( getClass ( ).getResource ( "ServicesDetection.fxml" ) );
-        sd = loader.getController ();
+        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "ServicesDetection.fxml" )  ) );
+        AnchorPane ServiceDetection = loaderList.get ( loaderList.size ()-1 ).load ();
+        sd = loaderList.get ( loaderList.size ()-1 ).getController ( );
+
         //OS Detection
-        loader = new FXMLLoader ( getClass ( ).getResource ( "OSDetection.fxml" ) );
-        AnchorPane OSDetection = loader.load ( );
-        os = loader.getController ();
+        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "OSDetection.fxml" )  ) );
+        AnchorPane OSDetection = loaderList.get ( loaderList.size ()-1 ).load ();
+        os = loaderList.get ( loaderList.size ()-1 ).getController ( );
 
         AnchorPane FireWall = FXMLLoader.load ( getClass ( ).getResource ( "Firewall.fxml" ) );
         AnchorPane Decoys = FXMLLoader.load ( getClass ( ).getResource ( "Decoys.fxml" ) );
@@ -115,6 +119,9 @@ public class AdvancedSettingsController {
     public OSDetectionController getOs ( ) {
         return os;
     }
-    public  ServicesDetectionController getSd(){return sd;}
+
+    public ServicesDetectionController getSd ( ) {
+        return sd;
+    }
 
 }

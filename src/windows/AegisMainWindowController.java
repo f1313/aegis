@@ -28,10 +28,8 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.*;
 
 /**
@@ -82,16 +80,18 @@ public class AegisMainWindowController {
 
     @FXML
     public void initialize ( ) {
+        CVEdetails cveDetailsItem = new CVEdetails ( );
         tp.getTabs ( ).add ( new Tab ( "Test" ) );
         tp.getTabs ( ).get ( 0 ).setContent ( view );
         view.setPadding ( new Insets ( 10, 10, 10, 10 ) );
         mainBorderPane.setCenter ( tp );
         bottomHbox.setStyle ( "-fx-border-color: #c8c8c8" );
+
+        //Adding ListView to the right
+
         /// Projects Context Menu
 
-
         //Here we check if a group is selected so we can display the report
-
 
         bottomHbox.getChildren ( ).addAll ( progressBar, progressLabel );
         progressBar.setPadding ( new Insets ( 7, 7, 7, 10 ) );
@@ -112,8 +112,9 @@ public class AegisMainWindowController {
         MenuItem newGroupMenuItem = new MenuItem ( "New Group" );
         ContextMenu startScan = new ContextMenu ( );
         MenuItem scan = new MenuItem ( "Start Scan" );
+        MenuItem CVEItem = new MenuItem ( "CVEDetails Report" );
         MenuItem advancedOptionsMenuItem = new MenuItem ( "Advanced Scan Options" );
-        startScan.getItems ( ).addAll ( scan, advancedOptionsMenuItem );
+        startScan.getItems ( ).addAll ( scan, advancedOptionsMenuItem, CVEItem );
         projectsContext.getItems ( ).add ( 0, newGroupMenuItem );
         ///
         //Setting a handler for each context menu
@@ -123,6 +124,34 @@ public class AegisMainWindowController {
         newGroupMenuItem.setOnAction ( event -> {
             addGroup ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItems ( ).get ( 0 ) );
         } );
+        CVEItem.setOnAction ( event -> {
+            Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
+            if ( g.getAdvancedScan ( ).getSd ( ).isCVESelected ( ) ) {
+                System.out.println ("We are in" );
+                final Service thread2 = new Service < Integer > ( ) {
+                    @Override
+                    public Task createTask ( ) {
+                        return new Task < Integer > ( ) {
+                            @Override
+                            protected Integer call ( ) throws Exception {
+                                System.out.println ("Call Done" );
+                                cveDetailsItem.init ( g );
+                                cveDetailsItem.stage.show ( );
+
+                                return null;
+                            }
+                        };
+                    }
+                };
+                thread2.start ();
+            } else {
+                Alert alert = new Alert ( Alert.AlertType.ERROR );
+                alert.setTitle ( "Scan Not Performed" );
+                alert.setHeaderText ( "No scan started or CVEDetails option not selected." );
+                alert.setContentText ( "Check the 'CVEDetails' option in advanced scan options and start the scan" );
+                alert.showAndWait ( );
+            }
+        } );
         //Checking for right click
         mainBorderPane.setLeft ( leftTree );
 
@@ -130,10 +159,11 @@ public class AegisMainWindowController {
         //Listening for when the scan is started
         scan.setOnAction ( event -> {
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
-            String command = "nmap "+g.getHostsString ()+" ";
-            command += g.getAdvancedScan ().getOs ().getCommand ();
-            command += g.getAdvancedScan ().getSd ().getCommand ();
-            scan(g.getOutputLocationFilename ()+ "/"+g.getGroupName (),command, g);
+            String command = "nmap " + g.getHostsString ( ) + " ";
+
+            command += g.getAdvancedScan ( ).getOs ( ).getCommand ( );
+            command += g.getAdvancedScan ( ).getSd ( ).getCommand ( );
+            scan ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ), command, g );
         } );
 
         advancedOptionsMenuItem.setOnAction ( event -> {
@@ -202,23 +232,10 @@ public class AegisMainWindowController {
             }
         } );
         //When a left click is made
-        leftTree.getSelectionModel ( ).selectedItemProperty ( ).addListener ( new ChangeListener ( ) {
-            @Override
-            public void changed ( ObservableValue observable, Object oldValue,
-                                  Object newValue ) {
 
-            }
-        } );
 
-        TreeItem < String > rightRoot = new TreeItem ( "Basic Options" );
-        TreeItem < String > ri1 = new TreeItem ( "Option 1" );
-
-        TreeItem < String > ri2 = new TreeItem ( "Option 2" );
-        rightRoot.getChildren ( ).addAll ( ri1, ri2 );
-        TreeView < String > righTree = new TreeView ( rightRoot );
 
         leftRoot.setExpanded ( true );
-        mainBorderPane.setRight ( righTree );
 
         newProject.setAccelerator ( new KeyCodeCombination ( KeyCode.N, KeyCombination.CONTROL_DOWN ) );
         quickScan.setAccelerator ( new KeyCodeCombination ( KeyCode.Q, KeyCombination.CONTROL_DOWN ) );
@@ -421,7 +438,7 @@ public class AegisMainWindowController {
     }
 
     public boolean isGroup ( TreeItem item ) {
-        if ( item.toString ( ).contains ( "+ Add Group" ) ) return false;
+        if ( item == null || item.toString ( ).contains ( "+ Add Group" ) ) return false;
         if ( ! isRoot ( item ) && ! isProject ( item ) ) {
             try {
                 if ( item.getParent ( ).getParent ( ).getParent ( ) == null ) {
@@ -525,6 +542,7 @@ public class AegisMainWindowController {
 
             }
         } ).start ( );*/
+
 
         final Service < Integer > thread = new Service < Integer > ( ) {
             @Override

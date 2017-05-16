@@ -24,6 +24,8 @@ public class ServicesDetectionController {
     VBox debugVBox;
     @FXML
     Slider intensitySlider;
+    @FXML
+    CheckBox CVECheck;
 
     @FXML
     private void initialize(){
@@ -59,5 +61,10 @@ public class ServicesDetectionController {
 
 
         return sb.toString ();
+    }
+
+
+    public boolean isCVESelected(){
+        return CVECheck.isSelected ();
     }
 }
