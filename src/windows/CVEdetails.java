@@ -2,25 +2,19 @@ package windows;
 
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import Util.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -31,37 +25,53 @@ import org.jsoup.select.Elements;
  * Created by wintson on 5/15/17.
  */
 public class CVEdetails {
-    public BorderPane mainBorderPane = new BorderPane ( );
+    TreeView < VBox > tree;
+    TreeItem < VBox > root = new TreeItem ( "Services" );
+    public BorderPane serviceBorderPane = new BorderPane ( );
     Stage stage = new Stage ( );
     ListView leftList = new ListView <> ( );
     Group g = null;
 
     Browser browser = new Browser ( );
     BrowserView view = new BrowserView ( browser );
+    VBox vb = new VBox ( );
 
-    public void init ( Group g ) {
-        System.out.println ("Init" );
-        this.g = g;
-        stage.setScene ( new Scene ( mainBorderPane ) );
+    public CVEdetails ( ) {
+        tree = new TreeView ( root );
+        this.stage.setScene ( new Scene ( this.serviceBorderPane ) );
         Label l = new Label ( "CVE Details Scan" );
-        VBox vb = new VBox ( );
-        vb.getChildren ( ).add ( l );
-        mainBorderPane.setTop ( vb );
-        mainBorderPane.setLeft ( leftList );
         l.setPadding ( new Insets ( 10, 10, 10, 10 ) );
-        mainBorderPane.setMinSize ( 500, 500 );
-        mainBorderPane.setCenter ( view );
-        l.setAlignment ( Pos.CENTER );
-        System.out.println ("Calling Parser" );
+        vb.getChildren ( ).add ( l );
+        serviceBorderPane.setTop ( vb );
+        serviceBorderPane.setLeft ( tree );
+        serviceBorderPane.setMinSize ( 500, 500 );
+        serviceBorderPane.setCenter ( view );
+    }
+
+    public void pre ( Group g ) {
+        System.out.println ( "Pre" );
+        this.g = g;
+        System.out.println ( "Calling Parser" );
         setUpParser ( );
+//        leftList.setOnMouseClicked ( event -> {
+//            String selected = ( String ) ( leftList.getSelectionModel ( ).getSelectedItem ( ) );
+//            int index = leftList.getSelectionModel ( ).getSelectedIndex ( );
+//            System.out.println ( "Finding " + ( g.getOutputLocationFilename ( ) + "Files/" + ( index + 1 ) + ".html" ) );
+//            browser.loadURL ( "file:///" + g.getOutputLocationFilename ( ) + "Files/" + ( index + 1 ) + ".html" );
+//        } );
 
+        tree.setOnMouseClicked ( event -> {
+            TreeItem < VBox > temp = tree.getSelectionModel ( ).getSelectedItem ( );
+            try {
+                String fileName = ( ( Label ) ( temp.getValue ( ).getChildren ( ).get ( 0 ) ) ).getText ( );
+                System.out.println ( "File name is : " + fileName );
+                if ( fileName.contains ( "CVE-" ) ) {
+                    browser.loadURL ( "file:///" + g.getOutputLocationFilename ( ) + "Files/" + fileName + ".html" );
+                }
+            } catch ( ClassCastException e ) {
 
-        leftList.setOnMouseClicked ( event -> {
-            String selected = ( String ) ( leftList.getSelectionModel ( ).getSelectedItem ( ) );
-            int index = leftList.getSelectionModel ( ).getSelectedIndex ( );
-            browser.loadURL ( g.getOutputLocationFilename ( ) + "Files/" + ( index + 1 ) + ".html" );
+            }
         } );
-
 
     }
 
@@ -72,8 +82,9 @@ public class CVEdetails {
         for ( String s : list ) {
             ArrayList < String > links = getLink ( s, 0.0, 10.0 );
             if ( links != null && links.size ( ) != 0 ) {
-                leftList.getItems ( ).add ( s );
-                saveHTML ( links );
+                TreeItem < VBox > temp = new TreeItem ( s );
+                root.getChildren ( ).add ( temp );
+                saveHTML ( links, temp );
             }
         }
 
@@ -83,7 +94,7 @@ public class CVEdetails {
 
 
     public static ArrayList < String > parseHTML ( String path ) {
-        System.out.println ("Parsing" );
+        System.out.println ( "Parsing" );
         System.out.println ( );
         ArrayList < String > list = new ArrayList ( );
         System.out.println ( path );
@@ -105,14 +116,14 @@ public class CVEdetails {
                 list.add ( res );
             }
         }
-        System.out.println ("Done Parsing" );
+        System.out.println ( "Done Parsing" );
         return list;
     }
 
     public static ArrayList < String > startVulns ( String q, double min, double max ) {
-        System.out.println ("Starting Vulns" );
+        System.out.println ( "Starting Vulns" );
         ArrayList < String > res = getLink ( q, min, max );
-        System.out.println ("Done Vulns" );
+        System.out.println ( "Done Vulns" );
         if ( res == null || res.size ( ) == 0 ) {
             return null;
         } else {
@@ -121,7 +132,7 @@ public class CVEdetails {
     }
 
     public static ArrayList getLink ( String service, double min, double max ) {
-        System.out.println ("Getting Link" );
+        System.out.println ( "Getting Link" );
         String res = "";
         String u = "http://www.cvedetails.com/google-search-results.php?q=";
         service = service.replaceAll ( " ", "+" );
@@ -139,7 +150,7 @@ public class CVEdetails {
                 Document doc = Jsoup
                         .connect ( "https://www.google.com/search?q=cvedetails " + service )
                         .userAgent ( "Mozilla/5.0" )
-                        .timeout ( 5000 ).get ( );
+                        .timeout ( 20000 ).get ( );
                 Elements links = doc.getElementsByAttributeValueContaining ( "href", "https://www.cvedetails.com/vulnerability-list" );
                 Elements links2 = doc.getElementsByAttributeValueContaining ( "href", "cve/CVE" );
 
@@ -160,14 +171,14 @@ public class CVEdetails {
             }
         }
 
-        System.out.println ("Done Getting Link" );
+        System.out.println ( "Done Getting Link" );
         ///---------Got link---------///
         return listVulns ( res, min, max );
 
     }
 
     public static ArrayList listVulns ( String link, double min, double max ) {
-        System.out.println ("Listing Vulns" );
+        System.out.println ( "Listing Vulns" );
         ArrayList < String > result = new ArrayList ( );
         try {
             Document doc = Jsoup.connect ( link ).get ( );
@@ -183,30 +194,81 @@ public class CVEdetails {
         } catch ( IOException ex ) {
             ex.printStackTrace ( );
         }
-        System.out.println ("Done Listing Vulns" );
+        System.out.println ( "Done Listing Vulns" );
         return result;
     }
 
-    public void saveHTML ( ArrayList < String > list ) {
-        System.out.println ("Saving HTML" );
+    public void saveHTML ( ArrayList < String > list, TreeItem < VBox > item ) {
         for ( int i = 0 ; i < list.size ( ) ; i++ ) {
+
+            System.out.println ( "Saving HTML" );
+            Document doc = null;
             try {
-                Document doc = Jsoup
+                doc = Jsoup
                         .connect ( list.get ( i ) )
                         .userAgent ( "Mozilla/5.0" )
-                        .timeout ( 5000 ).get ( );
-
-                File h = new File ( g.getOutputLocationFilename ( ) + "Files/" + i + ".html" );
+                        .timeout ( 20000 ).get ( );
+                String cveTitle = list.get ( i ).split ( "/" )[ 4 ];
+                new File ( g.getOutputLocationFilename ( ) + "Files" ).mkdir ( );
+                new File ( g.getOutputLocationFilename ( ) + "Files/" + cveTitle + ".html" ).createNewFile ( );
+                File h = new File ( g.getOutputLocationFilename ( ) + "Files/" + cveTitle + ".html" );
                 PrintWriter writer = new PrintWriter ( h );
                 writer.write ( doc.toString ( ) );
                 writer.close ( );
-
-            } catch ( IOException ex ) {
-                ex.printStackTrace ( );
+                VBox vb = new VBox ( );
+                Label l = new Label ( cveTitle );
+                vb.getChildren ( ).add ( l );
+                setColor ( vb,5.8 );
+                l.setPadding ( new Insets ( 4, 4, 4, 4 ) );
+                item.getChildren ( ).add ( new TreeItem ( vb ) );
+            } catch ( Exception e ) {
+                System.out.println ( "Timed out on : " + list.get ( i ) );
+                continue;
             }
+
+
         }
-        System.out.println ("Done Saving HTML" );
+        System.out.println ( "Done Saving HTML" );
     }
 
+    public boolean isCVE ( TreeItem < String > item ) {
+        try {
+            if ( item.getParent ( ) != null ) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch ( NullPointerException e ) {
+            return false;
+        }
+    }
+
+    public void setColor ( VBox vb, double score ) {
+        //-fx-background-color: red
+        String color = "";
+        if ( score >= 0 && score <= 0.99 ) {
+            color = "#00C400";
+        }
+        else if ( score >= 1 && score <= 2.99 ) {
+            color = "#00E020";
+        }
+        else if ( score >= 3 && score <= 3.99 ) {
+            color = "#CDFA00";
+        }else if ( score >= 4 && score <= 4.99 ) {
+            color = "#F5D700";
+        }else if ( score >= 5 && score <= 5.99 ) {
+            color = "#EFBF00";
+        }else if ( score >= 6 && score <= 6.99 ) {
+            color = "#EFB00F";
+        }else if ( score >= 7 && score <= 7.99 ) {
+            color = "#F7971F";
+        }else if ( score >= 8 && score <= 8.99 ) {
+            color = "#FC7E00";
+        }else if ( score >= 9 && score <= 10 ) {
+            color = "#F70000";
+        }
+
+        vb.setStyle ( "-fx-background-color: "+color );
+    }
 
 }

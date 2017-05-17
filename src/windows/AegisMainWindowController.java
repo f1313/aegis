@@ -80,7 +80,7 @@ public class AegisMainWindowController {
 
     @FXML
     public void initialize ( ) {
-        CVEdetails cveDetailsItem = new CVEdetails ( );
+
         tp.getTabs ( ).add ( new Tab ( "Test" ) );
         tp.getTabs ( ).get ( 0 ).setContent ( view );
         view.setPadding ( new Insets ( 10, 10, 10, 10 ) );
@@ -127,23 +127,25 @@ public class AegisMainWindowController {
         CVEItem.setOnAction ( event -> {
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
             if ( g.getAdvancedScan ( ).getSd ( ).isCVESelected ( ) ) {
-                System.out.println ("We are in" );
+
                 final Service thread2 = new Service < Integer > ( ) {
                     @Override
                     public Task createTask ( ) {
                         return new Task < Integer > ( ) {
                             @Override
                             protected Integer call ( ) throws Exception {
-                                System.out.println ("Call Done" );
-                                cveDetailsItem.init ( g );
-                                cveDetailsItem.stage.show ( );
-
+                                g.getCveDetailsItem ( ).pre ( g );
                                 return null;
                             }
                         };
                     }
                 };
-                thread2.start ();
+                if ( !g.isCveDetailsItemCheck ( ) ) {
+                    thread2.start ( );
+                    g.setCveDetailsItemCheck ( true );
+                }
+                g.getCveDetailsItem ( ).stage.show ( );
+
             } else {
                 Alert alert = new Alert ( Alert.AlertType.ERROR );
                 alert.setTitle ( "Scan Not Performed" );
@@ -232,7 +234,6 @@ public class AegisMainWindowController {
             }
         } );
         //When a left click is made
-
 
 
         leftRoot.setExpanded ( true );

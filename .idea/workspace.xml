@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/windows/CVEdetails.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/windows/commandManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/windows/manageGroups.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/windows/manageGroupsController.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AdvancedSettingsController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AdvancedSettingsController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/windows/CVErecord.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindowController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindowController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/ServicesDetectionController.class" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/ServicesDetectionController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aegis.iml" afterPath="$PROJECT_DIR$/Aegis.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindow.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/AegisMainWindow.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" afterPath="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AegisMainWindow.fxml" afterPath="$PROJECT_DIR$/src/windows/AegisMainWindow.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Aegis/windows/ServicesDetection.fxml" afterPath="$PROJECT_DIR$/out/production/Aegis/windows/ServicesDetection.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Util/Group.java" afterPath="$PROJECT_DIR$/src/Util/Group.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" afterPath="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ServicesDetection.fxml" afterPath="$PROJECT_DIR$/src/windows/ServicesDetection.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/ServicesDetectionController.java" afterPath="$PROJECT_DIR$/src/windows/ServicesDetectionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/windows/CVEdetails.java" afterPath="$PROJECT_DIR$/src/windows/CVEdetails.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,9 +84,13 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/windows/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
+            <state relative-caret-position="162">
               <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#565#566#0" expanded="false" />
+                <element signature="e#593#594#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,24 +98,21 @@
       <file leaf-file-name="AegisMainWindowController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="137" column="53" lean-forward="false" selection-start-line="137" selection-start-column="53" selection-end-line="137" selection-end-column="53" />
+            <state relative-caret-position="342">
+              <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
               <folding>
                 <element signature="docComment;class#AegisMainWindowController#0" expanded="false" />
-                <element signature="e#2667#2697#0" expanded="false" />
-                <element signature="e#3900#3903#0" expanded="false" />
-                <element signature="e#4519#5129#0" expanded="true" />
-                <element signature="e#4659#5088#0" expanded="true" />
-                <element signature="e#5087#5088#0" expanded="true" />
-                <element signature="e#5128#5129#0" expanded="true" />
-                <element signature="e#6403#6440#0" expanded="false" />
-                <element signature="class#6519:9815" expanded="false" />
-                <element signature="method#handle#0;class#6519:9815" expanded="false" />
-                <element signature="e#10115#10130#0" expanded="false" />
-                <element signature="class#10273:10479" expanded="false" />
+                <element signature="method#initialize#0;class#AegisMainWindowController#0" expanded="false" />
+                <element signature="e#2612#2642#0" expanded="false" />
+                <element signature="e#3845#3848#0" expanded="false" />
+                <element signature="e#6364#6401#0" expanded="false" />
+                <element signature="class#6480:9776" expanded="false" />
+                <element signature="method#handle#0;class#6480:9776" expanded="false" />
+                <element signature="e#10075#10090#0" expanded="false" />
+                <element signature="class#10233:10439" expanded="false" />
                 <element signature="method#addProject#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#openSettings#0;class#AegisMainWindowController#0" expanded="false" />
-                <element signature="e#12550#12574#0" expanded="false" />
+                <element signature="e#12510#12534#0" expanded="false" />
                 <element signature="method#manageGroups#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#addGroup#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#proExists#0;class#AegisMainWindowController#0" expanded="false" />
@@ -132,81 +125,56 @@
                 <element signature="method#initPopup#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#findGroup#0;class#AegisMainWindowController#0" expanded="false" />
                 <element signature="method#initQuick#0;class#AegisMainWindowController#0" expanded="false" />
-                <element signature="e#20759#20828#0" expanded="false" />
-                <element signature="e#23618#23657#0" expanded="false" />
+                <element signature="e#20719#20788#0" expanded="false" />
+                <element signature="method#scan#0;class#AegisMainWindowController#0" expanded="false" />
+                <element signature="e#23578#23617#0" expanded="false" />
                 <element signature="method#tabPaneContains#0;class#AegisMainWindowController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CVEdetails.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Group.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Util/Group.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#Group#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CVEdetails.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/windows/CVEdetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="35" column="51" lean-forward="true" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
               <folding>
                 <element signature="docComment;class#CVEdetails#0" expanded="false" />
+                <element signature="e#1657#1706#0" expanded="false" />
+                <element signature="method#parseHTML#0;class#CVEdetails#0" expanded="false" />
+                <element signature="method#startVulns#0;class#CVEdetails#0" expanded="false" />
+                <element signature="method#isCVE#0;class#CVEdetails#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/concurrent/Task.java">
+      <file leaf-file-name="CVErecord.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/windows/CVErecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="1462" column="0" lean-forward="false" selection-start-line="1462" selection-start-column="0" selection-end-line="1462" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Service.java" pinned="false" current-in-tab="true">
-        <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/concurrent/Service.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="724" column="27" lean-forward="true" selection-start-line="724" selection-start-column="27" selection-end-line="724" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Decoys.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/windows/Decoys.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="29" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdvancedSettingsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettingsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="34" column="83" lean-forward="false" selection-start-line="34" selection-start-column="83" selection-end-line="34" selection-end-column="83" />
+            <state relative-caret-position="108">
+              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#5596#5597#0" expanded="false" />
-                <element signature="e#5621#5622#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServicesDetectionController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/windows/ServicesDetectionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding>
-                <element signature="e#1455#1456#0" expanded="true" />
-                <element signature="e#1500#1501#0" expanded="true" />
+                <element signature="e#178#179#0" expanded="true" />
+                <element signature="e#221#222#0" expanded="true" />
+                <element signature="e#253#254#0" expanded="true" />
+                <element signature="e#287#288#0" expanded="true" />
+                <element signature="e#315#316#0" expanded="true" />
+                <element signature="e#360#361#0" expanded="true" />
+                <element signature="e#394#395#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -224,23 +192,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sc</find>
-      <find>nmap</find>
-      <find>firs</find>
-      <find>mainBorderPane.set</find>
-      <find>mainBorderPane.setC</find>
-      <find>Progress</find>
-      <find>Quick</find>
-      <find>Invalu</find>
-      <find>addGr</find>
-      <find>set</find>
-      <find>findTap</find>
-      <find>setPadding</find>
-      <find>validate</find>
-      <find>write</find>
-      <find>Project</find>
-      <find>ContextMe</find>
-      <find>context</find>
       <find>option</find>
       <find>sca</find>
       <find>setOu</find>
@@ -254,6 +205,23 @@
       <find>Browser</find>
       <find>onVl</find>
       <find>Service</find>
+      <find>INIT</find>
+      <find>Done Setting</find>
+      <find>Call De</find>
+      <find>Done Sett</find>
+      <find>CVEDeta</find>
+      <find>file:///</find>
+      <find>0.0</find>
+      <find>Listing Vuln</find>
+      <find>Getting Link</find>
+      <find>save</find>
+      <find>add</find>
+      <find>root</find>
+      <find>TreeIte</find>
+      <find>TreeItem &lt;&gt;</find>
+      <find>score</find>
+      <find>sc9re</find>
+      <find>Double</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -272,7 +240,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/windows/ProtocolRanges.fxml" />
         <option value="$PROJECT_DIR$/src/windows/DNSOptions.fxml" />
         <option value="$PROJECT_DIR$/src/windows/DNSOptionsController.java" />
         <option value="$PROJECT_DIR$/src/windows/ProtocolRangesController.java" />
@@ -314,14 +281,15 @@
         <option value="$PROJECT_DIR$/src/Specs/TargetSpec.java" />
         <option value="$PROJECT_DIR$/src/Specs/PortSpec.java" />
         <option value="$PROJECT_DIR$/src/windows/OSDetectionController.java" />
-        <option value="$PROJECT_DIR$/src/Util/Group.java" />
         <option value="$PROJECT_DIR$/src/windows/Main.java" />
         <option value="$PROJECT_DIR$/src/windows/commandManager.java" />
-        <option value="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" />
         <option value="$PROJECT_DIR$/src/windows/CVEdetails.fxml" />
         <option value="$PROJECT_DIR$/src/windows/CVEdetailsController.java" />
         <option value="$PROJECT_DIR$/src/windows/ServicesDetectionController.java" />
+        <option value="$PROJECT_DIR$/src/windows/AdvancedSettingsController.java" />
+        <option value="$PROJECT_DIR$/src/Util/Group.java" />
         <option value="$PROJECT_DIR$/src/windows/AegisMainWindowController.java" />
+        <option value="$PROJECT_DIR$/src/windows/CVErecord.java" />
         <option value="$PROJECT_DIR$/src/windows/CVEdetails.java" />
       </list>
     </option>
@@ -360,7 +328,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -425,7 +393,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -859,7 +827,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494855071518</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Initial Version">
+      <created>1494963401406</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1494963401406</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -879,27 +854,27 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21974522" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7209302" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="15" y="101" width="1172" height="538" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952815" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31229237" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23920266" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20091324" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21613394" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961948" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32724252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724252" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -909,8 +884,8 @@
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" x="15" y="101" width="1172" height="538" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -967,15 +942,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/windows/CVEdetails.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="86" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="90" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -984,37 +954,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/windows/Firewall.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="69" column="27" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/TargetWindowCreator.java" />
-    <entry file="file://$PROJECT_DIR$/src/windows/OSDetection.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/TargetWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2590">
@@ -1044,13 +983,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/newProject.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/PayloadController.java">
@@ -1124,13 +1063,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/DNSOptionsController.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="90" column="38" lean-forward="false" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/com/sun/javafx/css/StyleManager.java">
@@ -1240,13 +1179,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettings.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/OSDetectionController.java">
@@ -1257,45 +1196,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Util/Group.java">
+    <entry file="file://$PROJECT_DIR$/src/windows/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="162">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Group#0" expanded="false" />
-            <element signature="e#3295#3296#0" expanded="false" />
-            <element signature="e#3330#3331#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#565#566#0" expanded="false" />
+            <element signature="e#593#594#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/manageGroupsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="35" lean-forward="false" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/manageGroups.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/manageGroupsController.java" />
+    <entry file="file://$PROJECT_DIR$/src/windows/manageGroups.fxml" />
     <entry file="file://$PROJECT_DIR$/src/windows/DecoysController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1305,81 +1219,154 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/Decoys.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
           <caret line="29" column="28" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/CVEdetails.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="174" lean-forward="true" selection-start-line="11" selection-start-column="174" selection-end-line="11" selection-end-column="174" />
-          <folding />
-        </state>
-      </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/CVEdetails.fxml" />
     <entry file="file://$PROJECT_DIR$/src/windows/AegisMainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
           <caret line="37" column="8" lean-forward="false" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettingsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="34" column="83" lean-forward="false" selection-start-line="34" selection-start-column="83" selection-end-line="34" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5596#5597#0" expanded="false" />
-            <element signature="e#5621#5622#0" expanded="false" />
-          </folding>
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/ServicesDetectionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
+        <state relative-caret-position="1098">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="e#1455#1456#0" expanded="true" />
-            <element signature="e#1500#1501#0" expanded="true" />
+            <element signature="e#1455#1456#0" expanded="false" />
+            <element signature="e#1500#1501#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/concurrent/Service.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12042">
+          <caret line="727" column="0" lean-forward="false" selection-start-line="727" selection-start-column="0" selection-end-line="727" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/concurrent/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25002">
+          <caret line="1450" column="0" lean-forward="false" selection-start-line="1450" selection-start-column="0" selection-end-line="1450" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_121/src.zip!/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17460">
+          <caret line="1011" column="0" lean-forward="false" selection-start-line="1011" selection-start-column="0" selection-end-line="1011" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#95358#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#8262#8263#0" expanded="false" />
+            <element signature="e#8297#8298#0" expanded="false" />
+            <element signature="e#21135#21136#0" expanded="false" />
+            <element signature="e#21162#21163#0" expanded="false" />
+            <element signature="e#21752#21753#0" expanded="false" />
+            <element signature="e#21794#21795#0" expanded="false" />
+            <element signature="e#23018#23019#0" expanded="false" />
+            <element signature="e#23057#23058#0" expanded="false" />
+            <element signature="e#64751#64752#0" expanded="false" />
+            <element signature="e#64801#64802#0" expanded="false" />
+            <element signature="e#68391#68392#0" expanded="false" />
+            <element signature="e#68441#68442#0" expanded="false" />
+            <element signature="e#72099#72100#0" expanded="false" />
+            <element signature="e#72153#72154#0" expanded="false" />
+            <element signature="e#75713#75714#0" expanded="false" />
+            <element signature="e#75750#75751#0" expanded="false" />
+            <element signature="e#80745#80746#0" expanded="false" />
+            <element signature="e#80782#80783#0" expanded="false" />
+            <element signature="e#89537#89538#0" expanded="false" />
+            <element signature="e#89586#89587#0" expanded="false" />
+            <element signature="e#91257#91258#0" expanded="false" />
+            <element signature="e#91297#91298#0" expanded="false" />
+            <element signature="e#91558#91559#0" expanded="false" />
+            <element signature="e#91590#91591#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_121/src.zip!/java/net/SocketInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/AdvancedSettingsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="34" column="83" lean-forward="false" selection-start-line="34" selection-start-column="83" selection-end-line="34" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Util/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Group#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/util/Callback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/windows/CVErecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/AegisMainWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="137" column="53" lean-forward="false" selection-start-line="137" selection-start-column="53" selection-end-line="137" selection-end-column="53" />
+        <state relative-caret-position="342">
+          <caret line="81" column="31" lean-forward="false" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
           <folding>
             <element signature="docComment;class#AegisMainWindowController#0" expanded="false" />
-            <element signature="e#2667#2697#0" expanded="false" />
-            <element signature="e#3900#3903#0" expanded="false" />
-            <element signature="e#4519#5129#0" expanded="true" />
-            <element signature="e#4659#5088#0" expanded="true" />
-            <element signature="e#5087#5088#0" expanded="true" />
-            <element signature="e#5128#5129#0" expanded="true" />
-            <element signature="e#6403#6440#0" expanded="false" />
-            <element signature="class#6519:9815" expanded="false" />
-            <element signature="method#handle#0;class#6519:9815" expanded="false" />
-            <element signature="e#10115#10130#0" expanded="false" />
-            <element signature="class#10273:10479" expanded="false" />
+            <element signature="method#initialize#0;class#AegisMainWindowController#0" expanded="false" />
+            <element signature="e#2612#2642#0" expanded="false" />
+            <element signature="e#3845#3848#0" expanded="false" />
+            <element signature="e#6364#6401#0" expanded="false" />
+            <element signature="class#6480:9776" expanded="false" />
+            <element signature="method#handle#0;class#6480:9776" expanded="false" />
+            <element signature="e#10075#10090#0" expanded="false" />
+            <element signature="class#10233:10439" expanded="false" />
             <element signature="method#addProject#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#openSettings#0;class#AegisMainWindowController#0" expanded="false" />
-            <element signature="e#12550#12574#0" expanded="false" />
+            <element signature="e#12510#12534#0" expanded="false" />
             <element signature="method#manageGroups#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#addGroup#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#proExists#0;class#AegisMainWindowController#0" expanded="false" />
@@ -1392,8 +1379,9 @@
             <element signature="method#initPopup#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#findGroup#0;class#AegisMainWindowController#0" expanded="false" />
             <element signature="method#initQuick#0;class#AegisMainWindowController#0" expanded="false" />
-            <element signature="e#20759#20828#0" expanded="false" />
-            <element signature="e#23618#23657#0" expanded="false" />
+            <element signature="e#20719#20788#0" expanded="false" />
+            <element signature="method#scan#0;class#AegisMainWindowController#0" expanded="false" />
+            <element signature="e#23578#23617#0" expanded="false" />
             <element signature="method#tabPaneContains#0;class#AegisMainWindowController#0" expanded="false" />
           </folding>
         </state>
@@ -1401,27 +1389,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/windows/CVEdetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="35" column="51" lean-forward="true" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
           <folding>
             <element signature="docComment;class#CVEdetails#0" expanded="false" />
+            <element signature="e#1657#1706#0" expanded="false" />
+            <element signature="method#parseHTML#0;class#CVEdetails#0" expanded="false" />
+            <element signature="method#startVulns#0;class#CVEdetails#0" expanded="false" />
+            <element signature="method#isCVE#0;class#CVEdetails#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/concurrent/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="1462" column="0" lean-forward="false" selection-start-line="1462" selection-start-column="0" selection-end-line="1462" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/jdk1.8.0_121/javafx-src.zip!/javafx/concurrent/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="724" column="27" lean-forward="true" selection-start-line="724" selection-start-column="27" selection-end-line="724" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>

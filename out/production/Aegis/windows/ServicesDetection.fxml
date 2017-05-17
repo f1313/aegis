@@ -64,6 +64,7 @@
             </VBox>
           </children>
         </VBox>
+        <CheckBox id="cveCheck" fx:id="CVECheck" mnemonicParsing="false" text="Display CVEs from CVEDetails.com" />
       </children>
     </VBox>
   </children>

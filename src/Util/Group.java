@@ -28,6 +28,10 @@ public class Group {
 
     String groupName;
 
+    CVEdetails cveDetailsItem = new CVEdetails ( );
+
+    boolean cveDetailsItemCheck = false;
+
     String outputLocationFilename;
 
     AdvancedSettingsController advancedScan = new AdvancedSettingsController ( );
@@ -135,6 +139,22 @@ public class Group {
         return advancedScan;
     }
 
+
+    public boolean isCveDetailsItemCheck ( ) {
+        return cveDetailsItemCheck;
+    }
+
+    public void setCveDetailsItemCheck ( boolean cveDetailsItemCheck ) {
+        this.cveDetailsItemCheck = cveDetailsItemCheck;
+    }
+
+    public CVEdetails getCveDetailsItem ( ) {
+        return cveDetailsItem;
+    }
+
+    public void setCveDetailsItem ( CVEdetails cveDetailsItem ) {
+        this.cveDetailsItem = cveDetailsItem;
+    }
 
     @Override
     public String toString ( ) {
