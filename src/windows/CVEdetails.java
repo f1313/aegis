@@ -1,7 +1,11 @@
 package windows;
 
+import com.sun.javafx.tk.Toolkit;
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
+import javafx.application.Platform;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -35,6 +39,8 @@ public class CVEdetails {
     Browser browser = new Browser ( );
     BrowserView view = new BrowserView ( browser );
     VBox vb = new VBox ( );
+    VBox bottom = new VBox ( );
+    Label status = new Label ( );
 
     public CVEdetails ( ) {
         tree = new TreeView ( root );
@@ -46,29 +52,36 @@ public class CVEdetails {
         serviceBorderPane.setLeft ( tree );
         serviceBorderPane.setMinSize ( 500, 500 );
         serviceBorderPane.setCenter ( view );
+        bottom.getChildren ( ).add ( status );
+        status.setPadding ( new Insets ( 4, 4, 4, 4 ) );
+        serviceBorderPane.setBottom ( bottom );
     }
 
     public void pre ( Group g ) {
-        System.out.println ( "Pre" );
         this.g = g;
-        System.out.println ( "Calling Parser" );
-        setUpParser ( );
-//        leftList.setOnMouseClicked ( event -> {
-//            String selected = ( String ) ( leftList.getSelectionModel ( ).getSelectedItem ( ) );
-//            int index = leftList.getSelectionModel ( ).getSelectedIndex ( );
-//            System.out.println ( "Finding " + ( g.getOutputLocationFilename ( ) + "Files/" + ( index + 1 ) + ".html" ) );
-//            browser.loadURL ( "file:///" + g.getOutputLocationFilename ( ) + "Files/" + ( index + 1 ) + ".html" );
-//        } );
+        final Service thread = new Service < Integer > ( ) {
+            @Override
+            public Task createTask ( ) {
+                return new Task < Integer > ( ) {
+                    @Override
+                    protected Integer call ( ) throws Exception {
+                        setUpParser ( );
+                        return null;
+                    }
+                };
+            }
+        };
+        thread.start ( );
 
         tree.setOnMouseClicked ( event -> {
             TreeItem < VBox > temp = tree.getSelectionModel ( ).getSelectedItem ( );
             try {
                 String fileName = ( ( Label ) ( temp.getValue ( ).getChildren ( ).get ( 0 ) ) ).getText ( );
-                System.out.println ( "File name is : " + fileName );
+//                System.out.println ( "File name is : " + fileName );
                 if ( fileName.contains ( "CVE-" ) ) {
                     browser.loadURL ( "file:///" + g.getOutputLocationFilename ( ) + "Files/" + fileName + ".html" );
                 }
-            } catch ( ClassCastException e ) {
+            } catch ( Exception e ) {
 
             }
         } );
@@ -77,10 +90,11 @@ public class CVEdetails {
 
 
     public void setUpParser ( ) {
-        System.out.println ( "Setting Up" );
+
+
         ArrayList < String > list = parseHTML ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
         for ( String s : list ) {
-            ArrayList < String > links = getLink ( s, 0.0, 10.0 );
+            ArrayList < CVErecord > links = getLink ( s, 0.0, 10.0 );
             if ( links != null && links.size ( ) != 0 ) {
                 TreeItem < VBox > temp = new TreeItem ( s );
                 root.getChildren ( ).add ( temp );
@@ -88,16 +102,16 @@ public class CVEdetails {
             }
         }
 
-        System.out.println ( "Done Setting Up" );
 
     }
 
 
-    public static ArrayList < String > parseHTML ( String path ) {
-        System.out.println ( "Parsing" );
-        System.out.println ( );
+    public ArrayList < String > parseHTML ( String path ) {
+
+
+//        System.out.println ( );
         ArrayList < String > list = new ArrayList ( );
-        System.out.println ( path );
+//        System.out.println ( path );
         File in = new File ( path );
         Document d = null;
         try {
@@ -116,14 +130,12 @@ public class CVEdetails {
                 list.add ( res );
             }
         }
-        System.out.println ( "Done Parsing" );
         return list;
     }
 
-    public static ArrayList < String > startVulns ( String q, double min, double max ) {
-        System.out.println ( "Starting Vulns" );
+    public ArrayList < String > startVulns ( String q, double min, double max ) {
+
         ArrayList < String > res = getLink ( q, min, max );
-        System.out.println ( "Done Vulns" );
         if ( res == null || res.size ( ) == 0 ) {
             return null;
         } else {
@@ -131,8 +143,9 @@ public class CVEdetails {
         }
     }
 
-    public static ArrayList getLink ( String service, double min, double max ) {
-        System.out.println ( "Getting Link" );
+    public ArrayList getLink ( String service, double min, double max ) {
+
+
         String res = "";
         String u = "http://www.cvedetails.com/google-search-results.php?q=";
         service = service.replaceAll ( " ", "+" );
@@ -171,15 +184,14 @@ public class CVEdetails {
             }
         }
 
-        System.out.println ( "Done Getting Link" );
         ///---------Got link---------///
         return listVulns ( res, min, max );
 
     }
 
-    public static ArrayList listVulns ( String link, double min, double max ) {
-        System.out.println ( "Listing Vulns" );
-        ArrayList < String > result = new ArrayList ( );
+    public ArrayList listVulns ( String link, double min, double max ) {
+
+        ArrayList < CVErecord > result = new ArrayList ( );
         try {
             Document doc = Jsoup.connect ( link ).get ( );
             Elements e = doc.getElementsByClass ( "srrowns" );
@@ -188,27 +200,25 @@ public class CVEdetails {
                 String href = "http://www.cvedetails.com" + i.getElementsByAttribute ( "href" ).attr ( "href" );
                 double score = Double.parseDouble ( i.getElementsByClass ( "cvssbox" ).text ( ) );
                 if ( score >= min && score <= max ) {
-                    result.add ( href );
+                    result.add ( new CVErecord ( href, score ) );
                 }
             }
         } catch ( IOException ex ) {
             ex.printStackTrace ( );
         }
-        System.out.println ( "Done Listing Vulns" );
         return result;
     }
 
-    public void saveHTML ( ArrayList < String > list, TreeItem < VBox > item ) {
-        for ( int i = 0 ; i < list.size ( ) ; i++ ) {
+    public void saveHTML ( ArrayList < CVErecord > list, TreeItem < VBox > item ) {
 
-            System.out.println ( "Saving HTML" );
+        for ( int i = 0 ; i < list.size ( ) ; i++ ) {
             Document doc = null;
             try {
                 doc = Jsoup
-                        .connect ( list.get ( i ) )
+                        .connect ( list.get ( i ).getLink ( ) )
                         .userAgent ( "Mozilla/5.0" )
                         .timeout ( 20000 ).get ( );
-                String cveTitle = list.get ( i ).split ( "/" )[ 4 ];
+                String cveTitle = list.get ( i ).getLink ( ).split ( "/" )[ 4 ];
                 new File ( g.getOutputLocationFilename ( ) + "Files" ).mkdir ( );
                 new File ( g.getOutputLocationFilename ( ) + "Files/" + cveTitle + ".html" ).createNewFile ( );
                 File h = new File ( g.getOutputLocationFilename ( ) + "Files/" + cveTitle + ".html" );
@@ -218,17 +228,17 @@ public class CVEdetails {
                 VBox vb = new VBox ( );
                 Label l = new Label ( cveTitle );
                 vb.getChildren ( ).add ( l );
-                setColor ( vb,5.8 );
+                vb.setMaxWidth ( 150 );
+                setColor ( vb, list.get ( i ).score );
                 l.setPadding ( new Insets ( 4, 4, 4, 4 ) );
                 item.getChildren ( ).add ( new TreeItem ( vb ) );
             } catch ( Exception e ) {
-                System.out.println ( "Timed out on : " + list.get ( i ) );
+                e.printStackTrace ( );
                 continue;
             }
 
 
         }
-        System.out.println ( "Done Saving HTML" );
     }
 
     public boolean isCVE ( TreeItem < String > item ) {
@@ -248,27 +258,25 @@ public class CVEdetails {
         String color = "";
         if ( score >= 0 && score <= 0.99 ) {
             color = "#00C400";
-        }
-        else if ( score >= 1 && score <= 2.99 ) {
+        } else if ( score >= 1 && score <= 2.99 ) {
             color = "#00E020";
-        }
-        else if ( score >= 3 && score <= 3.99 ) {
+        } else if ( score >= 3 && score <= 3.99 ) {
             color = "#CDFA00";
-        }else if ( score >= 4 && score <= 4.99 ) {
+        } else if ( score >= 4 && score <= 4.99 ) {
             color = "#F5D700";
-        }else if ( score >= 5 && score <= 5.99 ) {
+        } else if ( score >= 5 && score <= 5.99 ) {
             color = "#EFBF00";
-        }else if ( score >= 6 && score <= 6.99 ) {
+        } else if ( score >= 6 && score <= 6.99 ) {
             color = "#EFB00F";
-        }else if ( score >= 7 && score <= 7.99 ) {
+        } else if ( score >= 7 && score <= 7.99 ) {
             color = "#F7971F";
-        }else if ( score >= 8 && score <= 8.99 ) {
+        } else if ( score >= 8 && score <= 8.99 ) {
             color = "#FC7E00";
-        }else if ( score >= 9 && score <= 10 ) {
+        } else if ( score >= 9 && score <= 10 ) {
             color = "#F70000";
         }
 
-        vb.setStyle ( "-fx-background-color: "+color );
+        vb.setStyle ( "-fx-background-color: " + color );
     }
 
 }

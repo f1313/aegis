@@ -7,6 +7,11 @@ public class CVErecord {
     String link;
     double score;
 
+    public CVErecord ( String link, double score ) {
+        this.link = link;
+        this.score = score;
+    }
+
     public String getLink ( ) {
         return link;
     }
