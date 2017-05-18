@@ -7,11 +7,13 @@ import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import Util.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -19,6 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -35,26 +38,57 @@ public class CVEdetails {
     Stage stage = new Stage ( );
     ListView leftList = new ListView <> ( );
     Group g = null;
-
+    TextField min = new TextField ( );
+    TextField max = new TextField ( );
     Browser browser = new Browser ( );
     BrowserView view = new BrowserView ( browser );
-    VBox vb = new VBox ( );
+    HBox hb = new HBox ( );
     VBox bottom = new VBox ( );
-    Label status = new Label ( );
+    ProgressIndicator pi = new ProgressIndicator ( );
+    Button start = new Button ( "Start" );
 
     public CVEdetails ( ) {
         tree = new TreeView ( root );
         this.stage.setScene ( new Scene ( this.serviceBorderPane ) );
-        Label l = new Label ( "CVE Details Scan" );
-        l.setPadding ( new Insets ( 10, 10, 10, 10 ) );
-        vb.getChildren ( ).add ( l );
-        serviceBorderPane.setTop ( vb );
+        setupHB ( );
+        serviceBorderPane.setTop ( hb );
         serviceBorderPane.setLeft ( tree );
-        serviceBorderPane.setMinSize ( 500, 500 );
+        serviceBorderPane.setMinSize ( 900, 600 );
         serviceBorderPane.setCenter ( view );
-        bottom.getChildren ( ).add ( status );
-        status.setPadding ( new Insets ( 4, 4, 4, 4 ) );
-        serviceBorderPane.setBottom ( bottom );
+        System.out.println ( "Out of here" );
+    }
+
+    public void setupHB ( ) {
+        Label l = new Label ( "CVE Details Scan" );
+        hb.setPadding ( new Insets ( 10, 10, 10, 10 ) );
+        hb.getChildren ( ).add ( l );
+        Label l1 = new Label ( "Min Score" );
+        l1.setPadding ( new Insets ( 0, 7, 0, 50 ) );
+        hb.getChildren ( ).add ( l1 );
+        min.setText ( "0.0" );
+        min.setMaxWidth ( 50 );
+        hb.getChildren ( ).add ( min );
+        Label l2 = new Label ( "Max Score" );
+        l2.setPadding ( new Insets ( 0, 7, 0, 20 ) );
+        max.setMaxWidth ( 50 );
+        max.setText ( "10.0" );
+        Separator separator = new Separator ( );
+        separator.setOrientation ( Orientation.HORIZONTAL );
+        separator.setMinWidth ( 20 );
+        separator.setVisible ( false );
+        hb.getChildren ( ).add ( l2 );
+        hb.getChildren ( ).add ( max );
+        hb.getChildren ( ).add ( separator );
+        hb.getChildren ( ).add ( start );
+        pi.setProgress ( ProgressIndicator.INDETERMINATE_PROGRESS );
+        pi.setMaxSize ( 26, 26 );
+        Separator sep = new Separator (  );
+        sep.setOrientation ( Orientation.HORIZONTAL );
+        sep.setMinWidth ( 15 );
+        sep.setVisible ( false );
+        hb.getChildren ().add ( sep );
+        hb.getChildren ( ).add ( pi );
+        pi.setVisible ( false );
     }
 
     public void pre ( Group g ) {
@@ -65,13 +99,20 @@ public class CVEdetails {
                 return new Task < Integer > ( ) {
                     @Override
                     protected Integer call ( ) throws Exception {
-                        setUpParser ( );
+                        pi.setVisible ( true );
+                        setUpParser ( Double.parseDouble ( min.getText ( ) ),
+                                Double.parseDouble ( max.getText ( ) ) );
+                        pi.setVisible ( false );
                         return null;
                     }
                 };
             }
         };
-        thread.start ( );
+
+
+        start.setOnMouseClicked ( event -> {
+            thread.start ( );
+        } );
 
         tree.setOnMouseClicked ( event -> {
             TreeItem < VBox > temp = tree.getSelectionModel ( ).getSelectedItem ( );
@@ -88,13 +129,12 @@ public class CVEdetails {
 
     }
 
+    public void setUpParser ( double min, double max ) {
 
-    public void setUpParser ( ) {
-
-
+        System.out.println ( "Parser Set up" );
         ArrayList < String > list = parseHTML ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
         for ( String s : list ) {
-            ArrayList < CVErecord > links = getLink ( s, 0.0, 10.0 );
+            ArrayList < CVErecord > links = getLink ( s, min, max );
             if ( links != null && links.size ( ) != 0 ) {
                 TreeItem < VBox > temp = new TreeItem ( s );
                 root.getChildren ( ).add ( temp );
@@ -102,6 +142,7 @@ public class CVEdetails {
             }
         }
 
+        System.out.println ( "Parser Done Setting up" );
 
     }
 
@@ -109,9 +150,8 @@ public class CVEdetails {
     public ArrayList < String > parseHTML ( String path ) {
 
 
-//        System.out.println ( );
+        System.out.println ( "Parsing starting" );
         ArrayList < String > list = new ArrayList ( );
-//        System.out.println ( path );
         File in = new File ( path );
         Document d = null;
         try {
@@ -130,13 +170,15 @@ public class CVEdetails {
                 list.add ( res );
             }
         }
+        System.out.println ( "Outa Here" );
         return list;
     }
 
     public ArrayList < String > startVulns ( String q, double min, double max ) {
-
+        System.out.println ( "Vulns starting " );
         ArrayList < String > res = getLink ( q, min, max );
         if ( res == null || res.size ( ) == 0 ) {
+            System.out.println ( "Vulns done" );
             return null;
         } else {
             return res;
@@ -151,7 +193,7 @@ public class CVEdetails {
         service = service.replaceAll ( " ", "+" );
         String complete = u + service;
         service = service.replaceAll ( " ", "+" );
-
+        System.out.println ( "Got link " );
         try {
             Thread.sleep ( 5000 );
         } catch ( InterruptedException ex ) {
@@ -160,6 +202,7 @@ public class CVEdetails {
 
         for ( int i = 0 ; i < 2 ; i++ ) {
             try {
+                Thread.currentThread ( ).join ( ThreadLocalRandom.current ( ).nextInt ( 5000, 10000 ) );
                 Document doc = Jsoup
                         .connect ( "https://www.google.com/search?q=cvedetails " + service )
                         .userAgent ( "Mozilla/5.0" )
@@ -179,18 +222,18 @@ public class CVEdetails {
                     //Returns null if no result is found.
                     return null;
                 }
-            } catch ( IOException ex ) {
+            } catch ( IOException | InterruptedException ex ) {
                 ex.printStackTrace ( );
             }
         }
-
+        System.out.println ( "Outta link !" );
         ///---------Got link---------///
         return listVulns ( res, min, max );
 
     }
 
     public ArrayList listVulns ( String link, double min, double max ) {
-
+        System.out.println ( "Listing vulns 2" );
         ArrayList < CVErecord > result = new ArrayList ( );
         try {
             Document doc = Jsoup.connect ( link ).get ( );
@@ -206,6 +249,7 @@ public class CVEdetails {
         } catch ( IOException ex ) {
             ex.printStackTrace ( );
         }
+        System.out.println ( "Listing vulns Done 2" );
         return result;
     }
 

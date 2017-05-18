@@ -80,7 +80,8 @@ public class AegisMainWindowController {
 
     @FXML
     public void initialize ( ) {
-
+        CVEdetails ccc = new CVEdetails ( );
+        ccc.stage.show ();
         tp.getTabs ( ).add ( new Tab ( "Test" ) );
         tp.getTabs ( ).get ( 0 ).setContent ( view );
         view.setPadding ( new Insets ( 10, 10, 10, 10 ) );
@@ -140,7 +141,7 @@ public class AegisMainWindowController {
                         };
                     }
                 };
-                if ( !g.isCveDetailsItemCheck ( ) ) {
+                if ( ! g.isCveDetailsItemCheck ( ) ) {
                     thread2.start ( );
                     g.setCveDetailsItemCheck ( true );
                 }
