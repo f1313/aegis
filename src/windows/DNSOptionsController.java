@@ -112,6 +112,7 @@ public class DNSOptionsController {
                         for ( Object x : DNSListView.getItems ( ) ) {
                             sb.append ( x + "," );
                         }
+                        sb.replace ( sb.length ()-1 , sb.length () , "" );
                         sb.append ( " " );
                     }
                 } else {
