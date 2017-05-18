@@ -4,12 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import Specs.TargetSpec;
 
 /**
  * Created by wintson on 3/27/17.
  */
 public class DNSOptionsController {
 
+    TargetSpec TargetObject = new TargetSpec ( );
     @FXML
     RadioButton enableDNSButton;
     @FXML
@@ -36,13 +38,25 @@ public class DNSOptionsController {
     TextField DNSText;
     @FXML
     VBox DNSServerList;
+    @FXML
+    Label errorLabel;
+
+    public void init(){
+        DNSText.setOnMouseClicked ( e -> DNSText.setStyle ( "-fx-background-color: white;" ) );
+    }
 
     @FXML
     private void addItem ( ) {
         String toAdd = DNSText.getText ( );
-        if ( toAdd.length ( ) > 0 && ! DNSListView.getItems ( ).contains ( toAdd ) ) {
-            DNSListView.getItems ( ).add ( toAdd );
-            DNSText.setText ( "" );
+        if ( ! TargetObject.validateHostString ( toAdd ) ) {
+            errorLabel.setText ( "Invalid Service Format" );
+            DNSText.setStyle ( "-fx-background-color: #ff9494;" );
+            return;
+        } else {
+            if ( toAdd.length ( ) > 0 && ! DNSListView.getItems ( ).contains ( toAdd ) ) {
+                DNSListView.getItems ( ).add ( toAdd );
+                DNSText.setText ( "" );
+            }
         }
     }
 
@@ -90,13 +104,23 @@ public class DNSOptionsController {
             if ( traceRouteCheck.isSelected ( ) ) {
                 sb.append ( " --traceroute " );
             }
-            if ( DNSServerCheck.isSelected ()){
+            if ( DNSServerCheck.isSelected ( ) ) {
                 sb.append ( " -R " );
-
-            }else {
+                if ( ownDNSRadioButton.isSelected ( ) ) {
+                    if ( ! DNSListView.getItems ( ).isEmpty ( ) ) {
+                        sb.append ( " --dns-servers " );
+                        for ( Object x : DNSListView.getItems ( ) ) {
+                            sb.append ( x + "," );
+                        }
+                        sb.append ( " " );
+                    }
+                } else {
+                    sb.append ( " --system-dns " );
+                }
+            } else {
                 sb.append ( " -n " );
             }
-                return sb.toString ( );
+            return sb.toString ( );
         } else {
             return " ";
         }

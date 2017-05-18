@@ -1,6 +1,5 @@
 package windows;
 
-import Specs.ScanOptions;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Hyperlink;
@@ -20,28 +19,17 @@ public class AdvancedSettingsController {
     @FXML
     BorderPane mainBorderPane;
 
-    ArrayList < FXMLLoader > loaderList = new ArrayList <> ( 200 );
+    ArrayList< FXMLLoader > loaderList = new ArrayList <> ( 200 );
 
     private OSDetectionController os = new OSDetectionController ( );
     private ServicesDetectionController sd = new ServicesDetectionController ( );
-    private DNSOptionsController dns = new DNSOptionsController ( );
-    private FirewallController firewall = new FirewallController ( );
-    private DecoysController decoys = new DecoysController ( );
-    private SpoofingAndChecksumController spoofing = new SpoofingAndChecksumController ( );
-    private ScanOptions scanOptions = new ScanOptions ( );
-    private ProtocolRangesController ranges = new ProtocolRangesController ( );
-    private ScanTypesController scanTypes = new ScanTypesController ( );
+    private DNSOptionsController dns = new DNSOptionsController ();
 
     public void initialize ( ) throws IOException {
         //Protocol Ranges window
-        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "ProtocolRanges.fxml" ) ) );
-        AnchorPane ProtocolRanges = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
-        ranges = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
-
-        //Scan Types
-        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "ScanTypes.fxml" ) ) );
-        BorderPane AdvancedTarget = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
-        scanTypes = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
+        AnchorPane ProtocolRanges = FXMLLoader.load ( getClass ( ).getResource ( "ProtocolRanges.fxml" ) );
+        AnchorPane DNSOptions = FXMLLoader.load ( getClass ( ).getResource ( "DNSOptionsController.fxml" ) );
+        BorderPane AdvancedTarget = FXMLLoader.load ( getClass ( ).getResource ( "ScanTypes.fxml" ) );
 
         //Service Detection
         loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "ServicesDetection.fxml" ) ) );
@@ -53,30 +41,10 @@ public class AdvancedSettingsController {
         AnchorPane OSDetection = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
         os = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
 
-        //DNS OPTIONS
-        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "DNSOptionsController.fxml" ) ) );
-        AnchorPane DNSOptions = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
-        dns = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
-
-        //FIREWALL Options
-        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "Firewall.fxml" ) ) );
-        AnchorPane FireWall = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
-        firewall = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
-
-        //Decoys Options
-        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "Decoys.fxml" ) ) );
-        AnchorPane Decoys = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
-
-        //SpoofAndChecksum
-        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "SpoofingAndChecksum.fxml" ) ) );
-        AnchorPane SpoofAndChecksum = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
-        spoofing = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
-
-        //scanOptions
-        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "ScanOptions.fxml" ) ) );
-        AnchorPane ScanOptions = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
-        scanOptions = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
-
+        AnchorPane FireWall = FXMLLoader.load ( getClass ( ).getResource ( "Firewall.fxml" ) );
+        AnchorPane Decoys = FXMLLoader.load ( getClass ( ).getResource ( "Decoys.fxml" ) );
+        AnchorPane SpoofAndChecksum = FXMLLoader.load ( getClass ( ).getResource ( "SpoofingAndChecksum.fxml" ) );
+        AnchorPane ScanOptions = FXMLLoader.load ( getClass ( ).getResource ( "ScanOptions.fxml" ) );
         //Creating the tree
         TreeItem < Hyperlink > root = new TreeItem ( "Settings" );
         root.setExpanded ( true );
@@ -155,33 +123,5 @@ public class AdvancedSettingsController {
 
     public ServicesDetectionController getSd ( ) {
         return sd;
-    }
-
-    public DNSOptionsController getDns ( ) {
-        return dns;
-    }
-
-    public FirewallController getFirewall ( ) {
-        return firewall;
-    }
-
-    public DecoysController getDecoys ( ) {
-        return decoys;
-    }
-
-    public SpoofingAndChecksumController getSpoofing ( ) {
-        return spoofing;
-    }
-
-    public ScanOptions getScanOptions ( ) {
-        return scanOptions;
-    }
-
-    public ProtocolRangesController getRanges ( ) {
-        return ranges;
-    }
-
-    public ScanTypesController getScanTypes ( ) {
-        return scanTypes;
     }
 }
