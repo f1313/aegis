@@ -17,9 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -27,6 +25,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import Util.*;
 
 /**
  * Created by wintson on 5/15/17.
@@ -82,11 +81,11 @@ public class CVEdetails {
         hb.getChildren ( ).add ( start );
         pi.setProgress ( ProgressIndicator.INDETERMINATE_PROGRESS );
         pi.setMaxSize ( 26, 26 );
-        Separator sep = new Separator (  );
+        Separator sep = new Separator ( );
         sep.setOrientation ( Orientation.HORIZONTAL );
         sep.setMinWidth ( 15 );
         sep.setVisible ( false );
-        hb.getChildren ().add ( sep );
+        hb.getChildren ( ).add ( sep );
         hb.getChildren ( ).add ( pi );
         pi.setVisible ( false );
     }
@@ -269,6 +268,7 @@ public class CVEdetails {
                 PrintWriter writer = new PrintWriter ( h );
                 writer.write ( doc.toString ( ) );
                 writer.close ( );
+                prune ( g.getOutputLocationFilename ( ) + "Files/" ,cveTitle + ".html"  );
                 VBox vb = new VBox ( );
                 Label l = new Label ( cveTitle );
                 vb.getChildren ( ).add ( l );
@@ -321,6 +321,52 @@ public class CVEdetails {
         }
 
         vb.setStyle ( "-fx-background-color: " + color );
+    }
+
+    public static void prune ( String path, String file ) throws Exception {
+        java.io.File inFile = new java.io.File ( path + file );
+        java.io.File outFile = new java.io.File ( path + "modified-" + file );
+        java.io.PrintWriter output = new java.io.PrintWriter ( new java.io.FileOutputStream ( outFile, true ), true );
+        Document doc = Jsoup.parse ( inFile, null );
+        output.println ( "<html>" );
+        output.println ( doc.getElementsByTag ( "head" )/*.toString ().replaceAll ( "/cvedetails\\.css" ,"cvedetails.css")*/ );
+        output.println ( "<body>" );
+        output.println ( doc.getElementById ( "contentdiv" ) );
+        output.println ( "</body>" );
+        output.println ( "</html>" );
+        output.flush ( );
+        output.close ( );
+        inFile.delete ( );
+        java.io.PrintWriter t = new java.io.PrintWriter ( new java.io.FileOutputStream ( outFile, true ), true );
+        t.println ( "ENDENDEND" );
+        t.flush ( );
+        t.close ( );
+        output = new java.io.PrintWriter ( new java.io.FileOutputStream ( inFile, true ), true );
+        String line;
+        input.init ( new java.io.FileInputStream ( outFile ) );
+        while ( ! ( line = input.reader.readLine ( ) ).equals ( "ENDENDEND" ) ) {
+            output.println ( line );
+        }
+        output.flush ( );
+        output.close ( );
+        outFile.delete ( );
+    }
+
+    private static void copyFileUsingStream(File source, File dest) throws IOException {
+        InputStream is = null;
+        OutputStream os = null;
+        try {
+            is = new FileInputStream(source);
+            os = new FileOutputStream(dest);
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = is.read(buffer)) > 0) {
+                os.write(buffer, 0, length);
+            }
+        } finally {
+            is.close();
+            os.close();
+        }
     }
 
 }
