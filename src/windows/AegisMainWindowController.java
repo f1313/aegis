@@ -334,11 +334,6 @@ public class AegisMainWindowController {
     }
 
     @FXML
-    private void manageGroups ( ) {
-
-    }
-
-    @FXML
     private void exitProc ( ) {
         System.exit ( 0 );
     }
@@ -466,7 +461,6 @@ public class AegisMainWindowController {
         }
         return null;
     }
-
 
     private void initPopup ( ) {
 

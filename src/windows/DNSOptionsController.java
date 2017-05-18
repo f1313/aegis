@@ -17,6 +17,8 @@ public class DNSOptionsController {
     @FXML
     CheckBox DNSServerCheck;
     @FXML
+    CheckBox traceRouteCheck;
+    @FXML
     RadioButton ownDNSRadioButton;
     @FXML
     Button addButton;
@@ -35,41 +37,68 @@ public class DNSOptionsController {
     @FXML
     VBox DNSServerList;
 
-    @FXML private void addItem(){
-        String toAdd = DNSText.getText();
-        if (toAdd.length() > 0 && !DNSListView.getItems().contains(toAdd)){
-            DNSListView.getItems().add(toAdd);
-            DNSText.setText("");
+    @FXML
+    private void addItem ( ) {
+        String toAdd = DNSText.getText ( );
+        if ( toAdd.length ( ) > 0 && ! DNSListView.getItems ( ).contains ( toAdd ) ) {
+            DNSListView.getItems ( ).add ( toAdd );
+            DNSText.setText ( "" );
         }
     }
-    @FXML private void removeItem(){
-        if (DNSListView.getSelectionModel().getSelectedIndex() != -1){
-            DNSListView.getItems().remove(DNSListView.getSelectionModel().getSelectedIndex());
+
+    @FXML
+    private void removeItem ( ) {
+        if ( DNSListView.getSelectionModel ( ).getSelectedIndex ( ) != - 1 ) {
+            DNSListView.getItems ( ).remove ( DNSListView.getSelectionModel ( ).getSelectedIndex ( ) );
         }
     }
-    @FXML private void ControlDNS(){
-        if (enableDNSButton.isSelected()){
-            DNSOptionsVBox.setDisable(false);
-        }else {
-            DNSOptionsVBox.setDisable(true);
+
+    @FXML
+    private void ControlDNS ( ) {
+        if ( enableDNSButton.isSelected ( ) ) {
+            DNSOptionsVBox.setDisable ( false );
+        } else {
+            DNSOptionsVBox.setDisable ( true );
         }
     }
-    @FXML private void ControlDNSServer(){
-        if(DNSServerCheck.isSelected()){
-            DoDNSVBox.setDisable(false);
-            if (ownDNSRadioButton.isSelected()){
-                DNSServerList.setDisable(false);
+
+    @FXML
+    private void ControlDNSServer ( ) {
+        if ( DNSServerCheck.isSelected ( ) ) {
+            DoDNSVBox.setDisable ( false );
+            if ( ownDNSRadioButton.isSelected ( ) ) {
+                DNSServerList.setDisable ( false );
             }
-        }else {
-            DoDNSVBox.setDisable(true);
-            DNSServerList.setDisable(true);
+        } else {
+            DoDNSVBox.setDisable ( true );
+            DNSServerList.setDisable ( true );
         }
     }
-    @FXML private void OwnDNS(){
-        if(ownDNSRadioButton.isSelected()){
-            DNSServerList.setDisable(false);
-        }else {
-            DNSServerList.setDisable(true);
+
+    @FXML
+    private void OwnDNS ( ) {
+        if ( ownDNSRadioButton.isSelected ( ) ) {
+            DNSServerList.setDisable ( false );
+        } else {
+            DNSServerList.setDisable ( true );
+        }
+    }
+
+    public String getCommand ( ) {
+        StringBuilder sb = new StringBuilder ( 200 );
+        if ( enableDNSButton.isSelected ( ) ) {
+            if ( traceRouteCheck.isSelected ( ) ) {
+                sb.append ( " --traceroute " );
+            }
+            if ( DNSServerCheck.isSelected ()){
+                sb.append ( " -R " );
+
+            }else {
+                sb.append ( " -n " );
+            }
+                return sb.toString ( );
+        } else {
+            return " ";
         }
     }
 

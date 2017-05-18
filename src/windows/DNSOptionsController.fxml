@@ -37,7 +37,7 @@
         </VBox>
         <VBox id="DNSOptionsVBOX" fx:id="DNSOptionsVBox" disable="true">
           <children>
-            <CheckBox mnemonicParsing="false" text="Do Traceroute">
+            <CheckBox fx:id="traceRouteCheck" mnemonicParsing="false" text="Do Traceroute">
               <tooltip>
                 <Tooltip text="Does Trace Routin'" />
               </tooltip>
@@ -50,20 +50,19 @@
               <children>
                 <VBox fx:id="DoDNSVBox" disable="true">
                   <children>
+                    <Label text="DNS Servers to Use">
+                      <VBox.margin>
+                        <Insets top="15.0" fx:id="x1" />
+                      </VBox.margin>
+                    </Label>
                     <HBox>
                       <children>
-                        <RadioButton maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#OwnDNS" prefWidth="130.0" text="For All">
+                        <RadioButton maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#OwnDNS" prefWidth="130.0" selected="true" text="System DNS">
                           <toggleGroup>
-                            <ToggleGroup fx:id="DODNS" />
+                            <ToggleGroup fx:id="SERVERS" />
                           </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" onAction="#OwnDNS" text="Alive Only" toggleGroup="$DODNS" />
-                      </children>
-                    </HBox>
-                    <HBox>
-                      <children>
-                        <RadioButton maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#OwnDNS" prefWidth="130.0" selected="true" text="System DNS" toggleGroup="$DODNS" />
-                        <RadioButton id="ownDNSRafioButton" fx:id="ownDNSRadioButton" mnemonicParsing="false" onAction="#OwnDNS" text="Own DNS" toggleGroup="$DODNS" />
+                        <RadioButton id="ownDNSRafioButton" fx:id="ownDNSRadioButton" mnemonicParsing="false" onAction="#OwnDNS" text="Own DNS" toggleGroup="$SERVERS" />
                       </children>
                       <padding>
                         <Insets top="7.0" fx:id="x2" />
@@ -71,7 +70,7 @@
                     </HBox>
                   </children>
                   <VBox.margin>
-                    <Insets left="20.0" top="12.0" />
+                    <Insets left="20.0" top="7.0" />
                   </VBox.margin>
                 </VBox>
                 <VBox fx:id="DNSServerList" disable="true">
