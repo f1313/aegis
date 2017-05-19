@@ -56,14 +56,12 @@ public class CVEdetails {
         serviceBorderPane.setLeft ( tree );
         serviceBorderPane.setMinSize ( 900, 600 );
         serviceBorderPane.setCenter ( view );
+
         System.out.println ( "Out of here" );
     }
 
     public void setupHB ( ) {
         Label l = new Label ( "CVE Details Scan" );
-        l.setMaxWidth ( Double.MAX_VALUE );
-        l.setMaxHeight ( Double.MAX_VALUE );
-        l.setAlignment ( Pos.CENTER );
         hb.setPadding ( new Insets ( 10, 10, 10, 10 ) );
         hb.getChildren ( ).add ( l );
         Label l1 = new Label ( "Min Score" );
@@ -116,8 +114,10 @@ public class CVEdetails {
 
         start.setOnMouseClicked ( event -> {
             try {
+                browser.loadURL ( "file:///" + System.getProperty ( "user.dir" ) +
+                        "/out/production/Aegis/styles/loadingAnimation.html" );
                 thread.start ( );
-            }catch ( Exception e ){
+            } catch ( Exception e ) {
 
             }
         } );

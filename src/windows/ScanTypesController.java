@@ -30,35 +30,9 @@ public class ScanTypesController {
     @FXML
     CheckBox NoPingCheck;
     @FXML
-    CheckBox SYNCheck;
-    @FXML
-    CheckBox ACKCheck;
-    @FXML
     CheckBox UDPCheck;
     @FXML
-    TextField SYNText;
-    @FXML
-    TextField ACKText;
-    @FXML
-    TextField UDPText;
-    @FXML
-    TextField SCTPText;
-    @FXML
     VBox AdvancedVbox;
-    @FXML
-    VBox pingTypesBox;
-    @FXML
-    RadioButton EchoButton;
-    @FXML
-    RadioButton TimeStampButton;
-    @FXML
-    RadioButton MaskButton;
-    @FXML
-    Button protocolButton;
-    @FXML
-    Button rangesButton;
-    @FXML
-    CheckBox IPpingButton;
     @FXML
     VBox noPortOff;
     @FXML
@@ -75,10 +49,6 @@ public class ScanTypesController {
     Button UDPPorts;
     @FXML
     Button SCTPPorts;
-    @FXML
-    Button udpPayloadButton;
-    @FXML
-    Button sctpPayloadButton;
     @FXML
     RadioButton syn;
     @FXML
@@ -141,11 +111,9 @@ public class ScanTypesController {
     private void udpCheckController ( ) {
         if ( UDPCheck.isSelected ( ) ) {
             UDPPorts.setDisable ( false );
-            udpPayloadButton.setDisable ( false );
 
         } else {
             UDPPorts.setDisable ( true );
-            udpPayloadButton.setDisable ( true );
         }
     }
 
@@ -154,11 +122,9 @@ public class ScanTypesController {
         if ( sctpCheck.isSelected ( ) ) {
             SCTPPorts.setDisable ( false );
             SCTPVBox.setDisable ( false );
-            sctpPayloadButton.setDisable ( false );
         } else {
             SCTPPorts.setDisable ( true );
             SCTPVBox.setDisable ( true );
-            sctpPayloadButton.setDisable ( true );
         }
     }
 
@@ -184,22 +150,10 @@ public class ScanTypesController {
     @FXML
     private void noPingScanButton ( ) {
         if ( NoPingCheck.isSelected ( ) ) {
-            pingTypesBox.setDisable ( true );
         } else {
-            pingTypesBox.setDisable ( false );
         }
     }
 
-    @FXML
-    private void IPpingButtonController ( ) {
-        if ( IPpingButton.isSelected ( ) ) {
-            rangesButton.setDisable ( false );
-            protocolButton.setDisable ( false );
-        } else {
-            rangesButton.setDisable ( true );
-            protocolButton.setDisable ( true );
-        }
-    }
 
     @FXML
     private void tcpPorts ( ) throws IOException {
