@@ -85,123 +85,167 @@ public class ScanTypesController {
     Stage sctpPayload;
     Stage udpPorts;
     Stage sctpPorts;
+    Stage tcpPorts;
 
+    PortsSelectionWindowController tcpPortsController = new PortsSelectionWindowController ( );
+    PortsSelectionWindowController udpPortsController = new PortsSelectionWindowController ( );
+    PortsSelectionWindowController sctpPortsController = new PortsSelectionWindowController ( );
 
     @FXML
-    private void tcpCheckBoxController(){
-        if (tcpCheckBox.isSelected()){
-            tcpVBox.setDisable(false);
-            TCPPorts.setDisable(false);
+    private void tcpCheckBoxController ( ) {
+        if ( tcpCheckBox.isSelected ( ) ) {
+            tcpVBox.setDisable ( false );
+            TCPPorts.setDisable ( false );
 
-        }else {
-            tcpVBox.setDisable(true);
-            TCPPorts.setDisable(true);
+        } else {
+            tcpVBox.setDisable ( true );
+            TCPPorts.setDisable ( true );
         }
     }
 
     @FXML
-    private void udpCheckController(){
-        if (UDPCheck.isSelected()){
-            UDPPorts.setDisable(false);
-            udpPayloadButton.setDisable(false);
+    private void udpCheckController ( ) {
+        if ( UDPCheck.isSelected ( ) ) {
+            UDPPorts.setDisable ( false );
+            udpPayloadButton.setDisable ( false );
 
-        }else {
-            UDPPorts.setDisable(true);
-            udpPayloadButton.setDisable(true);
+        } else {
+            UDPPorts.setDisable ( true );
+            udpPayloadButton.setDisable ( true );
         }
     }
 
     @FXML
-    private void sctpCheckController(){
-        if (sctpCheck.isSelected()){
-            SCTPPorts.setDisable(false);
-            SCTPVBox.setDisable(false);
-            sctpPayloadButton.setDisable(false);
-        }else {
-            SCTPPorts.setDisable(true);
-            SCTPVBox.setDisable(true);
-            sctpPayloadButton.setDisable(true);
+    private void sctpCheckController ( ) {
+        if ( sctpCheck.isSelected ( ) ) {
+            SCTPPorts.setDisable ( false );
+            SCTPVBox.setDisable ( false );
+            sctpPayloadButton.setDisable ( false );
+        } else {
+            SCTPPorts.setDisable ( true );
+            SCTPVBox.setDisable ( true );
+            sctpPayloadButton.setDisable ( true );
         }
     }
 
     @FXML
-    private void listScanButton(){
-        AdvancedVbox.setDisable(true);
+    private void listScanButton ( ) {
+        AdvancedVbox.setDisable ( true );
     }
 
     @FXML
-    private void advancedScanButton(){
-        AdvancedVbox.setDisable(false);
+    private void advancedScanButton ( ) {
+        AdvancedVbox.setDisable ( false );
     }
 
     @FXML
-    private void noPortScanButtonOn(){
-        if (NoPortCheck.isSelected()){
-            noPortOff.setDisable(true);
-        }
-        else{
-            noPortOff.setDisable(false);
-        }
-    }
-
-    @FXML
-    private void noPingScanButton(){
-        if (NoPingCheck.isSelected()){
-            pingTypesBox.setDisable(true);
-        }else {
-            pingTypesBox.setDisable(false);
+    private void noPortScanButtonOn ( ) {
+        if ( NoPortCheck.isSelected ( ) ) {
+            noPortOff.setDisable ( true );
+        } else {
+            noPortOff.setDisable ( false );
         }
     }
 
     @FXML
-    private void IPpingButtonController(){
-        if(IPpingButton.isSelected()){
-            rangesButton.setDisable(false);
-            protocolButton.setDisable(false);
-        }else {
-            rangesButton.setDisable(true);
-            protocolButton.setDisable(true);
+    private void noPingScanButton ( ) {
+        if ( NoPingCheck.isSelected ( ) ) {
+            pingTypesBox.setDisable ( true );
+        } else {
+            pingTypesBox.setDisable ( false );
         }
     }
 
     @FXML
-    private void udpPayload() throws IOException {
-        if (udpPayload == null){
-            udpPayload = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("Payload.fxml"));
-            udpPayload.setScene(new Scene(root,479,585));
+    private void IPpingButtonController ( ) {
+        if ( IPpingButton.isSelected ( ) ) {
+            rangesButton.setDisable ( false );
+            protocolButton.setDisable ( false );
+        } else {
+            rangesButton.setDisable ( true );
+            protocolButton.setDisable ( true );
         }
-        udpPayload.show();
     }
 
     @FXML
-    private void sctpPayload() throws IOException{
-        if (sctpPayload == null){
-            sctpPayload = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("Payload.fxml"));
-            sctpPayload.setScene(new Scene(root,479,585));
+    private void tcpPorts ( ) throws IOException {
+        if ( tcpPorts == null ) {
+            tcpPorts = new Stage ( );
+            tcpPorts.setMaxWidth ( 325 );
+            tcpPorts.setMaxHeight ( 380 );
+            FXMLLoader loader = new FXMLLoader ( getClass ( ).getResource ( "PortsSelectionWindow.fxml" ) );
+            Parent root = loader.load ( );
+            tcpPortsController = loader.getController ( );
+            tcpPorts.setScene ( new Scene ( root, 479, 585 ) );
         }
-        sctpPayload.show();
+        tcpPorts.show ( );
     }
 
     @FXML
-    private void sctpPorts() throws IOException{
-        if (sctpPorts == null){
-            sctpPorts = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("PortsSelectionWindow.fxml"));
-            sctpPorts.setScene(new Scene(root,328,354));
+    private void udpPayload ( ) throws IOException {
+        if ( udpPayload == null ) {
+            udpPayload = new Stage ( );
+            Parent root = FXMLLoader.load ( getClass ( ).getResource ( "Payload.fxml" ) );
+            udpPayload.setScene ( new Scene ( root, 479, 585 ) );
         }
-        sctpPorts.show();
+        udpPayload.showAndWait ( );
     }
 
     @FXML
-    private void udpPorts() throws IOException{
-        if (udpPorts == null){
-            udpPorts = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("PortsSelectionWindow.fxml"));
-            udpPorts.setScene(new Scene(root,328,354));
+    private void sctpPayload ( ) throws IOException {
+        if ( sctpPayload == null ) {
+            sctpPayload = new Stage ( );
+            Parent root = FXMLLoader.load ( getClass ( ).getResource ( "Payload.fxml" ) );
+            sctpPayload.setScene ( new Scene ( root, 479, 585 ) );
         }
-        udpPorts.show();
+        sctpPayload.showAndWait ( );
+    }
+
+    @FXML
+    private void sctpPorts ( ) throws IOException {
+        if ( sctpPorts == null ) {
+            sctpPorts = new Stage ( );
+            FXMLLoader loader = new FXMLLoader ( getClass ( ).getResource ( "PortsSelectionWindow.fxml" ) );
+            Parent root = loader.load ( );
+            sctpPortsController = loader.getController ( );
+            sctpPorts.setScene ( new Scene ( root, 328, 354 ) );
+        }
+        sctpPorts.showAndWait ( );
+    }
+
+    @FXML
+    private void udpPorts ( ) throws IOException {
+        if ( udpPorts == null ) {
+            FXMLLoader loader = new FXMLLoader (
+                    getClass ( ).getResource (
+                            "PortsSelectionWindow.fxml"
+                    )
+            );
+            udpPorts = new Stage ( );
+            Parent root = loader.load ( );
+            udpPortsController = loader.getController ( );
+            udpPorts.setScene ( new Scene ( root, 328, 354 ) );
+        }
+        udpPorts.showAndWait ( );
+    }
+
+
+    public String getCommand ( ) {
+        StringBuilder sb = new StringBuilder ( 200 );
+        if ( ListScanButton.isSelected ( ) ) {
+            sb.append ( " -sL " );
+        } else {
+            if ( NoPortCheck.isSelected ( ) ) {
+                sb.append ( " -sn " );
+            }
+            if ( NoPingCheck.isSelected ( ) ) {
+                sb.append ( " -Pn " );
+            }
+            if ( tcpCheckBox.isSelected ( ) ) {
+
+            }
+        }
+        return sb.toString ( );
     }
 
 }

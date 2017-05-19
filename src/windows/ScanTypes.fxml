@@ -40,14 +40,14 @@
                 <HBox>
                   <children>
                     <CheckBox fx:id="tcpCheckBox" minWidth="115.0" mnemonicParsing="false" onAction="#tcpCheckBoxController" text="TCP" />
-                    <Button id="TCPButton" fx:id="TCPPorts" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#tcpCheckBoxController" prefWidth="74.0" text="Ports">
+                    <Button id="TCPButton" fx:id="TCPPorts" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#tcpPorts" prefWidth="74.0" text="Ports">
                       <HBox.margin>
-                        <Insets fx:id="x1" />
+                        <Insets fx:id="z5" />
                       </HBox.margin>
                     </Button>
                   </children>
                   <VBox.margin>
-                    <Insets top="20.0" fx:id="x4" />
+                    <Insets top="20.0" fx:id="z4" />
                   </VBox.margin>
                 </HBox>
                 <VBox fx:id="tcpVBox" disable="true">
@@ -56,16 +56,16 @@
                       <children>
                         <RadioButton minWidth="100.0" mnemonicParsing="false" selected="true" text="SYN">
                           <toggleGroup>
-                            <ToggleGroup fx:id="TCP" />
+                            <ToggleGroup fx:id="TCP_x0" />
                           </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="ACK" toggleGroup="$TCP" />
+                        <RadioButton mnemonicParsing="false" text="ACK" toggleGroup="$TCP_x0" />
                       </children>
                     </HBox>
                     <HBox>
                       <children>
-                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="XMAS" toggleGroup="$TCP" />
-                        <RadioButton mnemonicParsing="false" text="NULL" toggleGroup="$TCP" />
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="XMAS" toggleGroup="$TCP_x0" />
+                        <RadioButton mnemonicParsing="false" text="NULL" toggleGroup="$TCP_x0" />
                       </children>
                       <VBox.margin>
                         <Insets top="12.0" fx:id="x3" />
@@ -73,14 +73,14 @@
                     </HBox>
                     <HBox padding="$x1" VBox.margin="$x3">
                       <children>
-                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="CONNECT" toggleGroup="$TCP" />
-                        <RadioButton mnemonicParsing="false" text="FIN" toggleGroup="$TCP" />
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="CONNECT" toggleGroup="$TCP_x0" />
+                        <RadioButton mnemonicParsing="false" text="FIN" toggleGroup="$TCP_x0" />
                       </children>
                     </HBox>
                     <HBox padding="$x1" VBox.margin="$x3">
                       <children>
-                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="WINDOW" toggleGroup="$TCP" />
-                        <RadioButton mnemonicParsing="false" text="MAIMON" toggleGroup="$TCP" />
+                        <RadioButton minWidth="100.0" mnemonicParsing="false" text="WINDOW" toggleGroup="$TCP_x0" />
+                        <RadioButton mnemonicParsing="false" text="MAIMON" toggleGroup="$TCP_x0" />
                       </children>
                     </HBox>
                   </children>
@@ -118,7 +118,7 @@
                         <RadioButton mnemonicParsing="false" text="ECHO" toggleGroup="$SCTP" />
                       </children>
                       <VBox.margin>
-                        <Insets top="20.0" fx:id="x4" />
+                        <Insets top="20.0" fx:id="z1" />
                       </VBox.margin>
                     </HBox>
                     <HBox>
@@ -144,7 +144,7 @@
                     <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="82.0" text="Protocols" />
                   </children>
                   <VBox.margin>
-                    <Insets top="20.0" fx:id="x4" />
+                    <Insets top="20.0" fx:id="z2" />
                   </VBox.margin>
                 </HBox>
                 <HBox>
@@ -157,7 +157,7 @@
                     <Button mnemonicParsing="false" prefWidth="82.0" text="Ports" />
                   </children>
                   <VBox.margin>
-                    <Insets top="20.0" fx:id="x4" />
+                    <Insets top="20.0" fx:id="z3" />
                   </VBox.margin>
                 </HBox>
               </children>
@@ -169,7 +169,7 @@
         </VBox>
       </children>
       <padding>
-        <Insets fx:id="x1" />
+        <Insets fx:id="z" />
       </padding>
       <BorderPane.margin>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

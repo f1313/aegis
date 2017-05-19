@@ -19,17 +19,17 @@ public class AdvancedSettingsController {
     @FXML
     BorderPane mainBorderPane;
 
-    ArrayList< FXMLLoader > loaderList = new ArrayList <> ( 200 );
+    ArrayList < FXMLLoader > loaderList = new ArrayList <> ( 200 );
 
     private OSDetectionController os = new OSDetectionController ( );
     private ServicesDetectionController sd = new ServicesDetectionController ( );
-    private DNSOptionsController dns = new DNSOptionsController ();
+    private DNSOptionsController dns = new DNSOptionsController ( );
+    private ScanTypesController scanTypes = new ScanTypesController ( );
 
     public void initialize ( ) throws IOException {
         //Protocol Ranges window
         AnchorPane ProtocolRanges = FXMLLoader.load ( getClass ( ).getResource ( "ProtocolRanges.fxml" ) );
 
-        BorderPane AdvancedTarget = FXMLLoader.load ( getClass ( ).getResource ( "ScanTypes.fxml" ) );
 
         //Service Detection
         loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "ServicesDetection.fxml" ) ) );
@@ -45,6 +45,11 @@ public class AdvancedSettingsController {
         loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "DNSOptionsController.fxml" ) ) );
         AnchorPane DNSOptions = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
         dns = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
+
+        //Scan Types
+        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "ScanTypes.fxml" ) ) );
+        BorderPane AdvancedTarget = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
+        scanTypes = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
 
 
         AnchorPane FireWall = FXMLLoader.load ( getClass ( ).getResource ( "Firewall.fxml" ) );
@@ -133,5 +138,9 @@ public class AdvancedSettingsController {
 
     public DNSOptionsController getDns ( ) {
         return dns;
+    }
+
+    public ScanTypesController getScanTypes ( ) {
+        return scanTypes;
     }
 }
