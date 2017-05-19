@@ -47,7 +47,7 @@ public class AegisMainWindowController {
     public static ProgressBar progressBar = new ProgressBar ( 0 );
 
     HashSet < String > runningScans = new HashSet ( 100 );
-
+    HashMap < String, Process > processes = new HashMap <> ( 100 );
     //Popup error when nothing is selected
     Alert NoSelectedAlert = new Alert ( Alert.AlertType.ERROR );
 
@@ -111,9 +111,10 @@ public class AegisMainWindowController {
         MenuItem newGroupMenuItem = new MenuItem ( "New Group" );
         ContextMenu startScan = new ContextMenu ( );
         MenuItem scan = new MenuItem ( "Start Scan" );
+        MenuItem kill = new MenuItem ( "Kill Scan" );
         MenuItem CVEItem = new MenuItem ( "CVEDetails Report" );
         MenuItem advancedOptionsMenuItem = new MenuItem ( "Advanced Scan Options" );
-        startScan.getItems ( ).addAll ( scan, advancedOptionsMenuItem, CVEItem );
+        startScan.getItems ( ).addAll ( scan, advancedOptionsMenuItem, CVEItem,kill );
         projectsContext.getItems ( ).add ( 0, newGroupMenuItem );
         ///
         //Setting a handler for each context menu
@@ -174,6 +175,25 @@ public class AegisMainWindowController {
             scan ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ), command, g );
         } );
 
+        //When a kill request is issued
+        kill.setOnAction ( event -> {
+            Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
+            if ( processes.containsKey ( g.getGroupName ( ) ) ) {
+                processes.get ( g.getGroupName () ).destroyForcibly ();
+                processes.remove ( g.getGroupName () );
+                progressBar.setProgress ( 0 );
+                Alert killed = new Alert ( Alert.AlertType.INFORMATION );
+                killed.setTitle ( "Scan Killed" );
+                killed.setHeaderText ( "Scan Successfully Killed" );
+                killed.show ( );
+            } else {
+                Alert running = new Alert ( Alert.AlertType.ERROR );
+                running.setTitle ( "Scan Not Runnung" );
+                running.setHeaderText ( "This scan has not been initiated yet" );
+                running.show ( );
+            }
+        } );
+
         advancedOptionsMenuItem.setOnAction ( event -> {
             try {
                 openSettings ( );
@@ -206,19 +226,20 @@ public class AegisMainWindowController {
                     TreeItem < String > selectedItem = ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) );
                     if ( isGroup ( selectedItem ) ) {
                         Group g = findGroup ( selectedItem );
-                        File checker = new File ( g.getGroupName ( ) + ".html" );
+                        File checker = new File ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
+                        System.out.println ( "Checker location : " + checker.getPath ( ) );
                         int loc = tabPaneContains ( g.getGroupName ( ) );
                         System.out.println ( "Location is: " + loc );
                         //If the scan is done
                         if ( checker.exists ( ) ) {
                             //If the tab is never opened
-                            if ( loc != - 1 ) {
+                            if ( loc == - 1 ) {
                                 tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
                                 tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
                                 tp.getTabs ( ).get ( tp.getTabs ( ).size ( ) - 1 ).setContent ( g.getView ( ) );
                             } else {
                                 tp.getSelectionModel ( ).select ( loc );
-                                g.getBrowser ( ).loadURL ( g.getOutputLocationFilename ( ) + ".html" );
+                                g.getBrowser ( ).loadURL ( "file:///" + g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
                                 tp.getTabs ( ).get ( loc ).setContent ( g.getView ( ) );
                             }
                         } else {
@@ -557,7 +578,7 @@ public class AegisMainWindowController {
                     @Override
                     protected Integer call ( ) throws Exception {
                         //Code
-
+                        runningScans.add ( group.getGroupName ( ) );
                         try {
 
                             new File ( target + ".xml" ).delete ( );
@@ -569,6 +590,7 @@ public class AegisMainWindowController {
                             }
                             Process p = Runtime.getRuntime ( ).exec ( "sudo " + command + " -oX " + target +
                                     ".xml --stats-every " + interval );
+                            processes.put ( group.getGroupName ( ), p );
                             group.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
                             Percentage percentage = new Percentage ( p );
                             percentage.work ( );
@@ -593,8 +615,10 @@ public class AegisMainWindowController {
                             System.out.println ( ex );
                         }
                         group.getBrowser ( ).loadURL ( "file://" + target + ".html" );
-                        progressBar.setProgress ( 0 );
 
+                        progressBar.setProgress ( 0 );
+                        runningScans.remove ( group.getGroupName ( ) );
+                        processes.remove ( group.getGroupName ( ) );
                         //End Code
                         return null;
                     }
@@ -602,7 +626,15 @@ public class AegisMainWindowController {
             }
         };
 
-        thread.start ( );
+        if ( runningScans.contains ( group.getGroupName ( ) ) ) {
+            Alert running = new Alert ( Alert.AlertType.ERROR );
+            running.setTitle ( "Error" );
+            running.setHeaderText ( "Scan Already Running" );
+            running.setContentText ( "Wait for the scan to finish or stop the scan." );
+            running.show ( );
+        } else {
+            thread.start ( );
+        }
         tp.getSelectionModel ( ).getSelectedItem ( ).setContent ( group.getView ( ) );
     }
 

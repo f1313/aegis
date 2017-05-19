@@ -28,7 +28,7 @@
             <Insets top="20.0" fx:id="x2" />
           </VBox.margin>
         </HBox>
-        <VBox fx:id="ipVBox">
+        <VBox fx:id="ipVBox" disable="true">
           <children>
             <Label text="Network Interfaces">
               <VBox.margin>
