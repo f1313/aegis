@@ -395,6 +395,8 @@ public class AegisMainWindowController {
                 }
                 System.exit ( 0 );
             }
+        } else {
+            System.exit ( 0 );
         }
     }
 

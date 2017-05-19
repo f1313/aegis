@@ -49,6 +49,7 @@ public class CVEdetails {
     public CVEdetails ( ) {
         tree = new TreeView ( root );
         this.stage.setScene ( new Scene ( this.serviceBorderPane ) );
+        this.stage.setTitle ( "CVEDetails Report" );
         setupHB ( );
         root.setExpanded ( true );
         serviceBorderPane.setTop ( hb );
@@ -60,6 +61,9 @@ public class CVEdetails {
 
     public void setupHB ( ) {
         Label l = new Label ( "CVE Details Scan" );
+        l.setMaxWidth ( Double.MAX_VALUE );
+        l.setMaxHeight ( Double.MAX_VALUE );
+        l.setAlignment ( Pos.CENTER );
         hb.setPadding ( new Insets ( 10, 10, 10, 10 ) );
         hb.getChildren ( ).add ( l );
         Label l1 = new Label ( "Min Score" );
@@ -111,9 +115,10 @@ public class CVEdetails {
 
 
         start.setOnMouseClicked ( event -> {
-            if ( ! g.isCveDetailsItemCheck ( ) ) {
+            try {
                 thread.start ( );
-                g.setCveDetailsItemCheck ( true );
+            }catch ( Exception e ){
+
             }
         } );
 
@@ -145,7 +150,6 @@ public class CVEdetails {
             }
         }
 
-        g.setCveDetailsItemCheck ( false );
         System.out.println ( "Parser Done Setting up" );
 
     }
