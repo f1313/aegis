@@ -31,8 +31,8 @@
             </RadioButton>
             <HBox maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" VBox.margin="$x1">
               <children>
-                <RadioButton fx:id="intensityButton" mnemonicParsing="false" onAction="#intensityClick" prefWidth="225.0" text="Set Detection Intensity" toggleGroup="$detection" />
-                <TextField fx:id="intensityText" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" promptText="0-9" />
+                <RadioButton fx:id="intensityButton" mnemonicParsing="false" onAction="#intensityClick" prefWidth="225.0" selected="true" text="Set Detection Intensity" toggleGroup="$detection" />
+                <TextField fx:id="intensityText" disable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="50.0" promptText="0-9" text="4" />
               </children>
             </HBox>
             <CheckBox fx:id="debugOutput" mnemonicParsing="false" onAction="#enableDebugging" text="Version Trace (For Debugging)">

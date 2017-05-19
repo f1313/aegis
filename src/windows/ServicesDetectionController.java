@@ -12,7 +12,7 @@ import javafx.scene.layout.VBox;
  */
 public class ServicesDetectionController {
 
-    String enable = " -sV -T4 ";
+    String enable = " -sV ";
 
     @FXML
     CheckBox enableButton;

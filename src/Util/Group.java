@@ -18,6 +18,8 @@ import Specs.*;
  */
 public class Group {
 
+    boolean isCVEStarted = false;
+
     Browser browser = new Browser ( );
 
     BrowserView view = new BrowserView ( browser );
@@ -161,5 +163,11 @@ public class Group {
         return this.groupName;
     }
 
+    public boolean isCVEStarted ( ) {
+        return isCVEStarted;
+    }
 
+    public void setCVEStarted ( boolean CVEStarted ) {
+        isCVEStarted = CVEStarted;
+    }
 }

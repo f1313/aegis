@@ -181,6 +181,7 @@ public class AegisMainWindowController {
             if ( processes.containsKey ( g.getGroupName ( ) ) ) {
                 processes.get ( g.getGroupName ( ) ).destroyForcibly ( );
                 processes.remove ( g.getGroupName ( ) );
+                runningScans.remove ( g.getGroupName ( ) );
                 progressBar.setProgress ( 0 );
                 Alert killed = new Alert ( Alert.AlertType.INFORMATION );
                 killed.setTitle ( "Scan Killed" );
@@ -247,7 +248,12 @@ public class AegisMainWindowController {
                         } else {
                             if ( loc != - 1 ) {
                                 tp.getSelectionModel ( ).select ( loc );
-                                g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/notStarted.html" );
+                                if ( runningScans.contains ( g.getGroupName ( ) ) ) {
+                                    g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
+
+                                } else {
+                                    g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/notStarted.html" );
+                                }
                                 tp.getTabs ( ).get ( loc ).setContent ( g.getView ( ) );
                             } else {
                                 tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );

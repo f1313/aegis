@@ -111,7 +111,10 @@ public class CVEdetails {
 
 
         start.setOnMouseClicked ( event -> {
-            thread.start ( );
+            if ( ! g.isCveDetailsItemCheck ( ) ) {
+                thread.start ( );
+                g.setCveDetailsItemCheck ( true );
+            }
         } );
 
         tree.setOnMouseClicked ( event -> {
@@ -142,6 +145,7 @@ public class CVEdetails {
             }
         }
 
+        g.setCveDetailsItemCheck ( false );
         System.out.println ( "Parser Done Setting up" );
 
     }
@@ -269,7 +273,7 @@ public class CVEdetails {
                 PrintWriter writer = new PrintWriter ( h );
                 writer.write ( doc.toString ( ) );
                 writer.close ( );
-                prune ( g.getOutputLocationFilename ( ) + "Files/" ,cveTitle + ".html"  );
+                prune ( g.getOutputLocationFilename ( ) + "Files/", cveTitle + ".html" );
                 VBox vb = new VBox ( );
                 Label l = new Label ( cveTitle );
                 vb.getChildren ( ).add ( l );
@@ -353,20 +357,20 @@ public class CVEdetails {
         outFile.delete ( );
     }
 
-    private static void copyFileUsingStream(File source, File dest) throws IOException {
+    private static void copyFileUsingStream ( File source, File dest ) throws IOException {
         InputStream is = null;
         OutputStream os = null;
         try {
-            is = new FileInputStream(source);
-            os = new FileOutputStream(dest);
-            byte[] buffer = new byte[1024];
+            is = new FileInputStream ( source );
+            os = new FileOutputStream ( dest );
+            byte[] buffer = new byte[ 1024 ];
             int length;
-            while ((length = is.read(buffer)) > 0) {
-                os.write(buffer, 0, length);
+            while ( ( length = is.read ( buffer ) ) > 0 ) {
+                os.write ( buffer, 0, length );
             }
         } finally {
-            is.close();
-            os.close();
+            is.close ( );
+            os.close ( );
         }
     }
 
