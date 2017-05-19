@@ -1,11 +1,18 @@
 package windows;
 
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import Specs.*;
+import javafx.scene.layout.VBox;
 
+import javax.xml.soap.Text;
 import java.util.Random;
 
 /**
@@ -38,6 +45,34 @@ public class SpoofingAndChecksumController {
     CheckBox badCheckSum;
     @FXML
     CheckBox oldCheckSum;
+    @FXML
+    ListView interfaceListView;
+    @FXML
+    TextField activeInterface;
+    @FXML
+    VBox ipVBox;
+
+    @FXML
+    private void initialize ( ) {
+        System.out.println ("INIT" );
+        try {
+            Enumeration < NetworkInterface > nets = NetworkInterface.getNetworkInterfaces ( );
+            for ( NetworkInterface netIf : Collections.list ( nets ) ) {
+                interfaceListView.getItems ( ).add ( netIf.getDisplayName ( ) );
+            }
+            if ( interfaceListView.getItems ( ).size ( ) != 0 ) {
+                activeInterface.setText ( interfaceListView.getItems ( ).get ( 0 ).toString ( ) );
+            }
+            interfaceListView.setOnMouseClicked ( e -> {
+                if  (interfaceListView.getSelectionModel ().getSelectedItem () != null){
+                    activeInterface.setText ( interfaceListView.getSelectionModel ().getSelectedItem ().toString () );
+                }
+            } );
+
+        } catch ( SocketException e ) {
+            e.printStackTrace ( );
+        }
+    }
 
     @FXML
     private void macController ( ) {
@@ -72,8 +107,10 @@ public class SpoofingAndChecksumController {
     private void ipController ( ) {
         if ( ipCheck.isSelected ( ) ) {
             ipText.setDisable ( false );
+            ipVBox.setDisable ( false );
         } else {
             ipText.setDisable ( true );
+            ipVBox.setDisable ( true );
         }
     }
 
@@ -92,7 +129,10 @@ public class SpoofingAndChecksumController {
         }
         if ( ipCheck.isSelected ( ) ) {
             if ( spec.validateHostString ( ipText.getText ( ) ) ) {
-                sb.append ( " -S " + ipText.getText ( ) );
+                if (activeInterface.getText ().length () != 0){
+                    sb.append ( " -S " + ipText.getText ( ) +" ");
+                    sb.append ( " -e "+activeInterface.getText () +" ");
+                }
             }
         }
 

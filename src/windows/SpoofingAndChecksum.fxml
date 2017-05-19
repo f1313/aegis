@@ -28,6 +28,26 @@
             <Insets top="20.0" fx:id="x2" />
           </VBox.margin>
         </HBox>
+        <VBox fx:id="ipVBox">
+          <children>
+            <Label text="Network Interfaces">
+              <VBox.margin>
+                <Insets left="22.0" top="10.0" />
+              </VBox.margin>
+            </Label>
+            <ListView fx:id="interfaceListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
+              <VBox.margin>
+                <Insets left="22.0" top="5.0" fx:id="x3" />
+              </VBox.margin>
+            </ListView>
+            <Label text="Active Interface" VBox.margin="$x3" />
+            <TextField fx:id="activeInterface" editable="false" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0">
+              <VBox.margin>
+                <Insets left="22.0" />
+              </VBox.margin>
+            </TextField>
+          </children>
+        </VBox>
         <HBox prefHeight="21.0" prefWidth="412.0" VBox.margin="$x2">
           <children>
             <CheckBox fx:id="macCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#macController" prefWidth="170.0" text="Spoof MAC Address" />
