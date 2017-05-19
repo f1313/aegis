@@ -25,62 +25,22 @@
                 <Insets top="20.0" fx:id="x1" />
               </VBox.margin>
             </RadioButton>
-            <RadioButton fx:id="randomScan" mnemonicParsing="false" onAction="#randomController" text="Random Scan" toggleGroup="$scans" VBox.margin="$x1" />
-            <RadioButton fx:id="ratioScan" mnemonicParsing="false" onAction="#ratioController" text="Scan Higher Than Ratio" toggleGroup="$scans" VBox.margin="$x1" />
-            <VBox fx:id="ratioVBox" disable="true">
+            <RadioButton fx:id="randomScan" mnemonicParsing="false" onAction="#randomController" text="Don't Randomize Scanned Ports" toggleGroup="$scans" VBox.margin="$x1" />
+            <RadioButton fx:id="customScan" mnemonicParsing="false" onAction="#customController" text="Custom Range" toggleGroup="$scans" VBox.margin="$x1" />
+            <VBox fx:id="customVBox" disable="false">
               <children>
-                <HBox>
+                <HBox fx:id="customHBox" disable="true">
                   <children>
-                    <Separator prefWidth="77.0" visible="false" />
-                    <Label text="Ratio" />
-                  </children>
-                </HBox>
-                <Slider maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="16.0" prefWidth="201.0">
-                  <VBox.margin>
-                    <Insets top="4.0" />
-                  </VBox.margin>
-                </Slider>
-                <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="41.0">
-                  <VBox.margin>
-                    <Insets left="77.0" top="4.0" />
-                  </VBox.margin>
-                </TextField>
-                <HBox>
-                  <children>
-                    <CheckBox fx:id="topPortsCheck" mnemonicParsing="false" onAction="#topRatio" text="Scan Top Ports In The Ratio">
+                    <CheckBox fx:id="excludeCheck" disable="false" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exclude" prefWidth="140.0" text="Exclude Range">
                       <HBox.margin>
                         <Insets fx:id="x2" />
                       </HBox.margin>
                     </CheckBox>
-                    <TextField fx:id="topPortsText" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="70.0">
-                      <HBox.margin>
-                        <Insets left="13.0" />
-                      </HBox.margin>
-                    </TextField>
+                    <TextField fx:id="excludeText" disable="true" prefWidth="80.0" />
                   </children>
                   <VBox.margin>
                     <Insets top="15.0" fx:id="x3" />
                   </VBox.margin>
-                </HBox>
-              </children>
-              <VBox.margin>
-                <Insets left="30.0" top="10.0" />
-              </VBox.margin>
-            </VBox>
-            <RadioButton fx:id="customScan" mnemonicParsing="false" onAction="#customController" text="Custom Range" toggleGroup="$scans" VBox.margin="$x1" />
-            <VBox fx:id="customVBox" disable="true">
-              <children>
-                <HBox id="includeChecl" VBox.margin="$x3">
-                  <children>
-                    <CheckBox fx:id="includeCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#include" prefWidth="140.0" text="Include Range" HBox.margin="$x2" />
-                    <TextField fx:id="includeText" disable="true" prefWidth="80.0" />
-                  </children>
-                </HBox>
-                <HBox VBox.margin="$x3">
-                  <children>
-                    <CheckBox fx:id="excludeCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exclude" prefWidth="140.0" text="Exclude Range" HBox.margin="$x2" />
-                    <TextField fx:id="excludeText" disable="true" prefWidth="80.0" />
-                  </children>
                 </HBox>
               </children>
               <VBox.margin>

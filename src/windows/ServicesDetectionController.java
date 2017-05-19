@@ -58,8 +58,6 @@ public class ServicesDetectionController {
         if (enableButton.isSelected ()){
             sb.append ( enable );
         }
-
-
         return sb.toString ();
     }
 

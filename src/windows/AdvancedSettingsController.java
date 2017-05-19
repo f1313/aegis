@@ -25,6 +25,7 @@ public class AdvancedSettingsController {
     private ServicesDetectionController sd = new ServicesDetectionController ( );
     private DNSOptionsController dns = new DNSOptionsController ( );
     private ScanTypesController scanTypes = new ScanTypesController ( );
+    private ScanOptionsController scanOptions = new ScanOptionsController ( );
 
     public void initialize ( ) throws IOException {
         //Protocol Ranges window
@@ -51,11 +52,16 @@ public class AdvancedSettingsController {
         BorderPane AdvancedTarget = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
         scanTypes = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
 
+        //Scan options
+        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "ScanOptions.fxml" ) ) );
+        AnchorPane ScanOptions = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
+        scanOptions = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
+
 
         AnchorPane FireWall = FXMLLoader.load ( getClass ( ).getResource ( "Firewall.fxml" ) );
         AnchorPane Decoys = FXMLLoader.load ( getClass ( ).getResource ( "Decoys.fxml" ) );
         AnchorPane SpoofAndChecksum = FXMLLoader.load ( getClass ( ).getResource ( "SpoofingAndChecksum.fxml" ) );
-        AnchorPane ScanOptions = FXMLLoader.load ( getClass ( ).getResource ( "ScanOptions.fxml" ) );
+
         //Creating the tree
         TreeItem < Hyperlink > root = new TreeItem ( "Settings" );
         root.setExpanded ( true );
@@ -142,5 +148,9 @@ public class AdvancedSettingsController {
 
     public ScanTypesController getScanTypes ( ) {
         return scanTypes;
+    }
+
+    public ScanOptionsController getScanOptions ( ) {
+        return scanOptions;
     }
 }

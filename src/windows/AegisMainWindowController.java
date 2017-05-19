@@ -166,6 +166,8 @@ public class AegisMainWindowController {
             command += g.getAdvancedScan ( ).getSd ( ).getCommand ( );
             command += g.getAdvancedScan ( ).getDns ( ).getCommand ( );
             command += g.getAdvancedScan ( ).getScanTypes ( ).getCommand ( );
+            command += g.getAdvancedScan ( ).getScanOptions ( ).getCommand ( );
+            System.out.println (command );
             scan ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ), command, g );
         } );
 
