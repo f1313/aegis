@@ -13,18 +13,14 @@ import java.io.File;
  */
 public class PayloadController {
 
-    FileChooser fileLoader = new FileChooser();
-    Stage loader = new Stage();
+    FileChooser fileLoader = new FileChooser ( );
+    Stage loader = new Stage ( );
     @FXML
     CheckBox dataCheck;
     @FXML
     RadioButton hexRadio;
     @FXML
     TextArea hexText;
-    @FXML
-    RadioButton binaryRadio;
-    @FXML
-    TextArea binaryText;
     @FXML
     RadioButton asciiRadio;
     @FXML
@@ -44,109 +40,112 @@ public class PayloadController {
     @FXML
     Label hexError;
     @FXML
-    Label binaryError;
-    @FXML
     Label asciiError;
 
-    @FXML private void dataController(){
-        if (dataCheck.isSelected()){
-            dataVBox.setDisable(false);
-        }else {
-            dataVBox.setDisable(true);
+    @FXML
+    private void dataController ( ) {
+        if ( dataCheck.isSelected ( ) ) {
+            dataVBox.setDisable ( false );
+        } else {
+            dataVBox.setDisable ( true );
         }
     }
 
-    @FXML private void hexCtontroller(){
-        if (hexRadio.isSelected()){
-            hexText.setDisable(false);
-            binaryText.setDisable(true);
-            asciiText.setDisable(true);
-            randomText.setDisable(true);
-            loadButton.setDisable(true);
-        }else {
-            hexText.setDisable(true);
+    @FXML
+    private void hexCtontroller ( ) {
+        if ( hexRadio.isSelected ( ) ) {
+            hexText.setDisable ( false );
+            asciiText.setDisable ( true );
+            randomText.setDisable ( true );
+            loadButton.setDisable ( true );
+        } else {
+            hexText.setDisable ( true );
         }
     }
 
-    @FXML private void binaryController(){
-        if (binaryRadio.isSelected()){
-            binaryText.setDisable(false);
-            hexText.setDisable(true);
-            asciiText.setDisable(true);
-            randomText.setDisable(true);
-            loadButton.setDisable(true);
-        }else {
-            binaryText.setDisable(true);
+
+    @FXML
+    private void asciiController ( ) {
+        if ( asciiRadio.isSelected ( ) ) {
+            asciiText.setDisable ( false );
+            hexText.setDisable ( true );
+            randomText.setDisable ( true );
+            loadButton.setDisable ( true );
+        } else {
+            asciiText.setDisable ( true );
         }
     }
 
-    @FXML private void asciiController(){
-        if (asciiRadio.isSelected()){
-            asciiText.setDisable(false);
-            hexText.setDisable(true);
-            binaryText.setDisable(true);
-            randomText.setDisable(true);
-            loadButton.setDisable(true);
-        }else {
-            asciiText.setDisable(true);
+    @FXML
+    private void randomController ( ) {
+        if ( randomRadio.isSelected ( ) ) {
+            randomText.setDisable ( false );
+            hexText.setDisable ( true );
+            asciiText.setDisable ( true );
+            loadButton.setDisable ( true );
+        } else {
+            randomText.setDisable ( true );
         }
     }
 
-    @FXML private void randomController(){
-        if(randomRadio.isSelected()){
-            randomText.setDisable(false);
-            binaryText.setDisable(true);
-            hexText.setDisable(true);
-            asciiText.setDisable(true);
-            loadButton.setDisable(true);
-        }else {
-            randomText.setDisable(true);
+    @FXML
+    private void loadController ( ) {
+        if ( loadRadio.isSelected ( ) ) {
+            loadButton.setDisable ( false );
+            randomText.setDisable ( false );
+            hexText.setDisable ( true );
+            asciiText.setDisable ( true );
+            randomText.setDisable ( true );
+        } else {
+            loadButton.setDisable ( true );
         }
     }
 
-    @FXML private void loadController(){
-        if(loadRadio.isSelected()){
-            loadButton.setDisable(false);
-            randomText.setDisable(false);
-            binaryText.setDisable(true);
-            hexText.setDisable(true);
-            asciiText.setDisable(true);
-            randomText.setDisable(true);
-        }else {
-            loadButton.setDisable(true);
-        }
-    }
-
-    @FXML private void loadButtonController(){
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Payload files (*.payload)", "*.payload");
-        fileLoader.getExtensionFilters().add(extFilter);
-        File temp = fileLoader.showOpenDialog(loader);
-        if (temp != null && temp.getAbsoluteFile() != null && temp.getAbsolutePath().length() != 0) {
+    @FXML
+    private void loadButtonController ( ) {
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter ( "Payload files (*.payload)", "*.payload" );
+        fileLoader.getExtensionFilters ( ).add ( extFilter );
+        File temp = fileLoader.showOpenDialog ( loader );
+        if ( temp != null && temp.getAbsoluteFile ( ) != null && temp.getAbsolutePath ( ).length ( ) != 0 ) {
 
         }
     }
 
-    @FXML private void save(){
-        Stage stage = (Stage) saveButton.getScene().getWindow();
-        if (hexRadio.isSelected()){
-            if (!hexText.getText().matches("((\\\\x)?(([0-9A-Fa-f]{2})+))")){
-                hexError.setText("Invalid Hex Format. (Format: \\xFF or FF)");
-                binaryError.setText("");
+    @FXML
+    private void save ( ) {
+        Stage stage = ( Stage ) saveButton.getScene ( ).getWindow ( );
+        if ( hexRadio.isSelected ( ) ) {
+
+            if ( ! hexText.getText ( ).matches ( "(0x([A-Fa-f0-9]{2})+)" ) &&
+                    ! hexText.getText ( ).matches ( "((\\\\x)(([0-9A-Fa-f]{2})))+" ) ) {
+                hexError.setText ( "Invalid Hex Format. (Format: \\xFF\\xAA or 0xFFAA)" );
                 return;
             }
-
         }
-        else if (binaryRadio.isSelected()){
-            if (!binaryText.getText().matches("(0|1)+")){
-                binaryError.setText("Invalid Binary Format.");
-                hexError.setText("");
-                return;
+
+
+        hexError.setText ( "" );
+        stage.close ( );
+    }
+
+
+    public String getPayload ( ) {
+        String payload = "";
+        if ( dataCheck.isSelected ( ) ) {
+            if ( hexRadio.isSelected ( ) ) {
+                if ( hexError.getText ( ).length ( ) == 0 ) {
+                    payload += " --data ";
+                    payload += hexText.getText ( ) + " ";
+                }
+            } else if ( asciiRadio.isSelected ( ) ) {
+                payload += " --data-string ";
+                payload += asciiText.getText ( ) + " ";
+            } else if ( randomRadio.isSelected ( ) ) {
+                if ( randomText.getText ( ) != null && randomText.getText ( ).length ( ) != 0 ) {
+                    payload += " --data-length " + randomText.getText ( )+" ";
+                }
             }
-
         }
-
-        binaryError.setText("");
-        hexError.setText("");
-        stage.close();
+        return payload;
     }
 }

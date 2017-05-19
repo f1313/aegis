@@ -68,7 +68,7 @@ public class Group {
         } catch ( Exception e ) {
             System.out.println ( e );
         }
-        groupStage.setScene ( new Scene ( settingsWindow, 700, 580 ) );
+        groupStage.setScene ( new Scene ( settingsWindow, 700, 670 ) );
         groupStage.setTitle ( this.getGroupName ( ) + "'s Settings" );
         System.out.println ( );
     }

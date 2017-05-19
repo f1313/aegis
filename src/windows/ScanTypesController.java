@@ -79,10 +79,32 @@ public class ScanTypesController {
     Button udpPayloadButton;
     @FXML
     Button sctpPayloadButton;
+    @FXML
+    RadioButton syn;
+    @FXML
+    RadioButton ack;
+    @FXML
+    RadioButton xmas;
+    @FXML
+    RadioButton NL;
+    @FXML
+    RadioButton connect;
+    @FXML
+    RadioButton fin;
+    @FXML
+    RadioButton window;
+    @FXML
+    RadioButton maimon;
+    @FXML
+    RadioButton init;
+    @FXML
+    RadioButton echo;
+    @FXML
+    CheckBox payloadCheck;
+    @FXML
+    Button payloadButton;
 
-
-    Stage udpPayload;
-    Stage sctpPayload;
+    Stage payloadStage;
     Stage udpPorts;
     Stage sctpPorts;
     Stage tcpPorts;
@@ -90,6 +112,8 @@ public class ScanTypesController {
     PortsSelectionWindowController tcpPortsController = new PortsSelectionWindowController ( );
     PortsSelectionWindowController udpPortsController = new PortsSelectionWindowController ( );
     PortsSelectionWindowController sctpPortsController = new PortsSelectionWindowController ( );
+
+    PayloadController payloadController;
 
     @FXML
     private void tcpCheckBoxController ( ) {
@@ -100,6 +124,16 @@ public class ScanTypesController {
         } else {
             tcpVBox.setDisable ( true );
             TCPPorts.setDisable ( true );
+        }
+    }
+
+
+    @FXML
+    private void payloadClick ( ) {
+        if ( payloadCheck.isSelected ( ) ) {
+            payloadButton.setDisable ( false );
+        } else {
+            payloadButton.setDisable ( true );
         }
     }
 
@@ -182,24 +216,17 @@ public class ScanTypesController {
     }
 
     @FXML
-    private void udpPayload ( ) throws IOException {
-        if ( udpPayload == null ) {
-            udpPayload = new Stage ( );
-            Parent root = FXMLLoader.load ( getClass ( ).getResource ( "Payload.fxml" ) );
-            udpPayload.setScene ( new Scene ( root, 479, 585 ) );
+    private void Payload ( ) throws IOException {
+        if ( payloadStage == null ) {
+            payloadStage = new Stage ( );
+            FXMLLoader loader = new FXMLLoader ( getClass ( ).getResource ( "Payload.fxml" ) );
+            Parent root = loader.load ( );
+            payloadController = loader.getController ( );
+            payloadStage.setScene ( new Scene ( root, 479, 485 ) );
         }
-        udpPayload.showAndWait ( );
+        payloadStage.showAndWait ( );
     }
 
-    @FXML
-    private void sctpPayload ( ) throws IOException {
-        if ( sctpPayload == null ) {
-            sctpPayload = new Stage ( );
-            Parent root = FXMLLoader.load ( getClass ( ).getResource ( "Payload.fxml" ) );
-            sctpPayload.setScene ( new Scene ( root, 479, 585 ) );
-        }
-        sctpPayload.showAndWait ( );
-    }
 
     @FXML
     private void sctpPorts ( ) throws IOException {
@@ -231,9 +258,12 @@ public class ScanTypesController {
 
 
     public String getCommand ( ) {
+        String ports = "";
+        boolean tcp = false, udp = false, sctp = false;
+
         StringBuilder sb = new StringBuilder ( 200 );
+        //Scan type spec
         if ( ListScanButton.isSelected ( ) ) {
-            sb.append ( " -sL " );
         } else {
             if ( NoPortCheck.isSelected ( ) ) {
                 sb.append ( " -sn " );
@@ -241,8 +271,81 @@ public class ScanTypesController {
             if ( NoPingCheck.isSelected ( ) ) {
                 sb.append ( " -Pn " );
             }
-            if ( tcpCheckBox.isSelected ( ) ) {
 
+            //Adding TCP Flags
+            if ( tcpCheckBox.isSelected ( ) ) {
+                if ( syn.isSelected ( ) ) {
+                    sb.append ( " -sS " );
+                } else if ( connect.isSelected ( ) ) {
+                    sb.append ( "-sT " );
+                } else if ( ack.isSelected ( ) ) {
+                    sb.append ( " -sA " );
+                } else if ( window.isSelected ( ) ) {
+                    sb.append ( " -sW " );
+                } else if ( maimon.isSelected ( ) ) {
+                    sb.append ( " sM " );
+                } else if ( NL.isSelected ( ) ) {
+                    sb.append ( " -sN " );
+                } else if ( fin.isSelected ( ) ) {
+                    sb.append ( " -sF " );
+                } else if ( xmas.isSelected ( ) ) {
+                    sb.append ( " -sX " );
+                }
+            }
+
+            //Adding SCTP Flags
+            if ( sctpCheck.isSelected ( ) ) {
+                if ( init.isSelected ( ) ) {
+                    sb.append ( " -sY " );
+                } else if ( echo.isSelected ( ) ) {
+                    sb.append ( " -sZ " );
+                }
+            }
+
+            //Ports Specification
+            //TCP Ports
+
+
+            if ( tcpPortsController != null ) {
+                if ( tcpPortsController.getPorts ( ).length ( ) != 0 ) {
+                    tcp = true;
+                    ports += ( "T:" );
+                    ports += ( tcpPortsController.getPorts ( ) );
+                }
+            }
+
+            //UDP Ports
+            if ( udpPortsController != null ) {
+                if ( udpPortsController.getPorts ( ).length ( ) != 0 ) {
+                    if ( tcp ) {
+                        ports += ( "," );
+                    }
+                    ports += ( "U:" );
+                    ports += ( udpPortsController.getPorts ( ) );
+                    udp = true;
+                }
+            }
+
+            //SCTP Ports
+            if ( sctpPortsController != null ) {
+                if ( sctpPortsController.getPorts ( ).length ( ) != 0 ) {
+                    if ( tcp || udp ) {
+                        ports += ( "," );
+                    }
+                    ports += ( "S:" );
+                    ports += ( sctpPortsController.getPorts ( ) );
+                    sctp = true;
+                }
+            }
+        }
+
+        if ( tcp || udp || sctp ) {
+            sb.append ( " -p " + ports + " " );
+        }
+
+        if ( payloadController != null ) {
+            if ( payloadController.getPayload ( ).length ( ) != 0 ) {
+                sb.append ( payloadController.getPayload ( ) );
             }
         }
         return sb.toString ( );

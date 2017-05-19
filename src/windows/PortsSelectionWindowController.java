@@ -18,7 +18,7 @@ import java.util.Arrays;
  */
 public class PortsSelectionWindowController {
     Stage loader;
-    FileChooser fileLoader = new FileChooser();
+    FileChooser fileLoader = new FileChooser ( );
 
     @FXML
     CheckBox portHelperButton;
@@ -28,66 +28,85 @@ public class PortsSelectionWindowController {
     ListView portsListView;
 
 
-    private PortSpec portObject = new PortSpec();
+    private PortSpec portObject = new PortSpec ( );
 
     @FXML
-    private void addPortButton() throws InterruptedException {
-        String toAdd = portTextField.getText();
+    private void addPortButton ( ) throws InterruptedException {
+        String toAdd = portTextField.getText ( );
 
-        if (toAdd.length() <= 0){
-            portTextField.setStyle("-fx-background-color: #ff9494;");
+        if ( toAdd.length ( ) <= 0 ) {
+            portTextField.setStyle ( "-fx-background-color: #ff9494;" );
 
             return;
         }
-        if (portsListView.getItems().contains(toAdd)){
-            portTextField.setStyle("-fx-background-color: #ff9494;");
+        if ( portsListView.getItems ( ).contains ( toAdd ) ) {
+            portTextField.setStyle ( "-fx-background-color: #ff9494;" );
             return;
         }
-        if (!portObject.validatePortString(toAdd)){
-            portTextField.setStyle("-fx-background-color: #ff9494;");
+        if ( ! portObject.validatePortString ( toAdd ) ) {
+            portTextField.setStyle ( "-fx-background-color: #ff9494;" );
             return;
         }
 
-        portsListView.getItems().add(toAdd);
-        portTextField.setText("");
-        portTextField.setStyle("-fx-background-color: white;");
+        portsListView.getItems ( ).add ( toAdd );
+        portTextField.setText ( "" );
+        portTextField.setStyle ( "-fx-background-color: white;" );
 
     }
 
     @FXML
-    private void removePortButton() {
-        if (portsListView.getSelectionModel().getSelectedIndex() != -1) {
-            portsListView.getItems().remove(portsListView.getSelectionModel().getSelectedIndex());
+    private void removePortButton ( ) {
+        if ( portsListView.getSelectionModel ( ).getSelectedIndex ( ) != - 1 ) {
+            portsListView.getItems ( ).remove ( portsListView.getSelectionModel ( ).getSelectedIndex ( ) );
         }
     }
 
     @FXML
-    private void save() {
-        portObject.setIncludedPortsList((ArrayList<String>) Arrays
-                .asList((String[]) portsListView.getItems().toArray()));
-        portObject.setIsExcludedPortsConfigured(false);
-        portObject.setIsExcludedPortsLoadedFromFile(false);
-        portObject.setIsIncludedPortsConfigured(true);
-        portObject.setIsIncludedPortsLoadedFromFile(false);
-        Stage stage = (Stage) portHelperButton.getScene().getWindow();
-        stage.close();
+    private void save ( ) {
+        portObject.setIncludedPortsList ( ( ArrayList < String > ) Arrays
+                .asList ( ( String[] ) portsListView.getItems ( ).toArray ( ) ) );
+        portObject.setIsExcludedPortsConfigured ( false );
+        portObject.setIsExcludedPortsLoadedFromFile ( false );
+        portObject.setIsIncludedPortsConfigured ( true );
+        portObject.setIsIncludedPortsLoadedFromFile ( false );
+        Stage stage = ( Stage ) portHelperButton.getScene ( ).getWindow ( );
+        stage.close ( );
     }
 
     @FXML
-    private void load(){
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Ports files (*.port)", "*.port");
-        fileLoader.getExtensionFilters().add(extFilter);
-        File temp = fileLoader.showOpenDialog(loader);
-        if (temp != null && temp.getAbsoluteFile() != null && temp.getAbsolutePath().length() != 0) {
+    private void load ( ) {
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter ( "Ports files (*.port)", "*.port" );
+        fileLoader.getExtensionFilters ( ).add ( extFilter );
+        File temp = fileLoader.showOpenDialog ( loader );
+        if ( temp != null && temp.getAbsoluteFile ( ) != null && temp.getAbsolutePath ( ).length ( ) != 0 ) {
 
         }
     }
 
-    public PortSpec getPortObject() {
+    public PortSpec getPortObject ( ) {
         return portObject;
     }
 
-    public void setPortObject(PortSpec portObject) {
+    public void setPortObject ( PortSpec portObject ) {
         this.portObject = portObject;
     }
+
+    public String getPorts ( ) {
+        String res = "";
+        try {
+            if ( portsListView.getItems ( ).size ( ) != 0 ) {
+                for ( Object x : portsListView.getItems ( ) ) {
+                    res += x + ",";
+                }
+                if ( res.length ( ) != 0 ) {
+                    return res.substring ( 0, res.length ( ) - 1 );
+                }
+            }
+        }catch ( Exception e ){
+            return "";
+        }
+        return "";
+    }
+
+
 }

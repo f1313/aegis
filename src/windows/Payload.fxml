@@ -41,19 +41,12 @@
             </TextArea>
             <HBox>
               <children>
-                <RadioButton fx:id="binaryRadio" mnemonicParsing="false" onAction="#binaryController" text="Binary" toggleGroup="$data" />
-                <Label fx:id="binaryError" prefWidth="198.0" text="" textFill="$x5" HBox.margin="$x3" />
+                <RadioButton fx:id="asciiRadio" mnemonicParsing="false" onAction="#asciiController" text="ASCII" toggleGroup="$data" />
+                <Label fx:id="asciiError" text="" HBox.margin="$x3" />
               </children>
               <VBox.margin>
                 <Insets top="10.0" fx:id="x4" />
               </VBox.margin>
-            </HBox>
-            <TextArea fx:id="binaryText" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" wrapText="true" VBox.margin="$x1" />
-            <HBox VBox.margin="$x4">
-              <children>
-                <RadioButton fx:id="asciiRadio" mnemonicParsing="false" onAction="#asciiController" text="ASCII" toggleGroup="$data" />
-                <Label fx:id="asciiError" text="" HBox.margin="$x3" />
-              </children>
             </HBox>
             <TextArea fx:id="asciiText" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" wrapText="true" VBox.margin="$x1" />
             <HBox>

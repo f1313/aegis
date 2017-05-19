@@ -35,14 +35,5 @@ public class ProtocolRangesController {
             IPProtocolList.getItems ( ).remove ( IPProtocolList.getSelectionModel ( ).getSelectedIndex ( ) );
     }
 
-    public String getProtocols ( ) {
-        String res = "";
-        for ( Object x : IPProtocolList.getItems ( ) ) {
-            res += x + ",";
-        }
-        if ( res.length ( ) != 0 ) {
-            return res.substring ( 0, res.length ( ) - 1 );
-        }
-        return "";
-    }
+
 }
