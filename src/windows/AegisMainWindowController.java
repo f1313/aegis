@@ -114,7 +114,7 @@ public class AegisMainWindowController {
         MenuItem kill = new MenuItem ( "Kill Scan" );
         MenuItem CVEItem = new MenuItem ( "CVEDetails Report" );
         MenuItem advancedOptionsMenuItem = new MenuItem ( "Advanced Scan Options" );
-        startScan.getItems ( ).addAll ( scan, advancedOptionsMenuItem, CVEItem,kill );
+        startScan.getItems ( ).addAll ( scan, advancedOptionsMenuItem, CVEItem, kill );
         projectsContext.getItems ( ).add ( 0, newGroupMenuItem );
         ///
         //Setting a handler for each context menu
@@ -179,12 +179,14 @@ public class AegisMainWindowController {
         kill.setOnAction ( event -> {
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
             if ( processes.containsKey ( g.getGroupName ( ) ) ) {
-                processes.get ( g.getGroupName () ).destroyForcibly ();
-                processes.remove ( g.getGroupName () );
+                processes.get ( g.getGroupName ( ) ).destroyForcibly ( );
+                processes.remove ( g.getGroupName ( ) );
                 progressBar.setProgress ( 0 );
                 Alert killed = new Alert ( Alert.AlertType.INFORMATION );
                 killed.setTitle ( "Scan Killed" );
                 killed.setHeaderText ( "Scan Successfully Killed" );
+                g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" )
+                        + "/out/production/Aegis/styles/notStarted.html" );
                 killed.show ( );
             } else {
                 Alert running = new Alert ( Alert.AlertType.ERROR );
@@ -277,6 +279,8 @@ public class AegisMainWindowController {
         } );
 
         aegisMainWindowController = this;
+
+
     }
 
 
@@ -368,7 +372,24 @@ public class AegisMainWindowController {
 
     @FXML
     private void exitProc ( ) {
-        System.exit ( 0 );
+
+        if ( processes.size ( ) != 0 ) {
+            Alert alert = new Alert ( Alert.AlertType.CONFIRMATION );
+            alert.setTitle ( "Scans in progress" );
+            alert.setHeaderText ( "Some scans are still running.\n Are you sure you want to exit?" );
+            String procs = "";
+            for ( String x : processes.keySet ( ) ) {
+                procs += "-" + x + "\n";
+            }
+            alert.setContentText ( "Scans running:\n" + procs );
+            alert.showAndWait ( );
+            if ( alert.getResult ( ) == ButtonType.OK ) {
+                for ( String x : processes.keySet ( ) ) {
+                    processes.get ( x ).destroyForcibly ( );
+                }
+                System.exit ( 0 );
+            }
+        }
     }
 
     public void addGroup ( TreeItem parent ) {
@@ -647,4 +668,7 @@ public class AegisMainWindowController {
         return - 1;
     }
 
+    public HashMap < String, Process > getProcesses ( ) {
+        return processes;
+    }
 }
