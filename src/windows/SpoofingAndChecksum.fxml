@@ -15,9 +15,24 @@
       <children>
         <HBox prefHeight="21.0" prefWidth="412.0">
           <children>
+            <CheckBox id="macCheck" fx:id="portCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#portController" prefWidth="170.0" text="Spoof Port" />
+            <TextField id="macText" fx:id="portsText" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="137.0" text="" />
+          </children>
+        </HBox>
+        <HBox prefHeight="21.0" prefWidth="412.0">
+          <children>
+            <CheckBox id="macCheck" fx:id="ipCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ipController" prefWidth="170.0" text="Spoof IP Address" />
+            <TextField id="macText" fx:id="ipText" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="137.0" text="" />
+          </children>
+          <VBox.margin>
+            <Insets top="20.0" fx:id="x2" />
+          </VBox.margin>
+        </HBox>
+        <HBox prefHeight="21.0" prefWidth="412.0" VBox.margin="$x2">
+          <children>
             <CheckBox fx:id="macCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#macController" prefWidth="170.0" text="Spoof MAC Address" />
             <TextField fx:id="macText" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="137.0" text="" />
-            <Button fx:id="macButton" disable="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="78.0" text="Random">
+            <Button fx:id="macButton" disable="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#randomizeMac" prefWidth="78.0" text="Random">
               <HBox.margin>
                 <Insets left="7.0" fx:id="x1" />
               </HBox.margin>
@@ -33,8 +48,16 @@
             <Insets top="20.0" fx:id="x2" />
           </padding>
         </HBox>
-        <CheckBox mnemonicParsing="false" text="Intentionally Send Bad Checksum" VBox.margin="$x2" />
-        <CheckBox mnemonicParsing="false" text="Use Old adler32 As Checksum (for SCTP)" VBox.margin="$x2" />
+        <CheckBox fx:id="badCheckSum" mnemonicParsing="false" text="Intentionally Send Bad Checksum">
+          <VBox.margin>
+            <Insets top="20.0" fx:id="x2" />
+          </VBox.margin>
+        </CheckBox>
+        <CheckBox fx:id="oldCheckSum" mnemonicParsing="false" text="Use Old adler32 As Checksum (for SCTP)">
+          <VBox.margin>
+            <Insets top="20.0" fx:id="x2" />
+          </VBox.margin>
+        </CheckBox>
       </children>
     </VBox>
   </children>

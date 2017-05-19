@@ -50,6 +50,7 @@ public class CVEdetails {
         tree = new TreeView ( root );
         this.stage.setScene ( new Scene ( this.serviceBorderPane ) );
         setupHB ( );
+        root.setExpanded ( true );
         serviceBorderPane.setTop ( hb );
         serviceBorderPane.setLeft ( tree );
         serviceBorderPane.setMinSize ( 900, 600 );

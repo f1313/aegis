@@ -125,8 +125,7 @@ public class AegisMainWindowController {
         } );
         CVEItem.setOnAction ( event -> {
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
-            if ( g.getAdvancedScan ( ).getSd ( ).isCVESelected ( ) ) {
-
+            if ( g.getAdvancedScan ( ).getSd ( ).isEnabled ( ) ) {
                 final Service thread2 = new Service < Integer > ( ) {
                     @Override
                     public Task createTask ( ) {
@@ -167,7 +166,11 @@ public class AegisMainWindowController {
             command += g.getAdvancedScan ( ).getDns ( ).getCommand ( );
             command += g.getAdvancedScan ( ).getScanTypes ( ).getCommand ( );
             command += g.getAdvancedScan ( ).getScanOptions ( ).getCommand ( );
-            System.out.println (command );
+            command += g.getAdvancedScan ( ).getFirewall ( ).getCommand ( );
+            command += g.getAdvancedScan ( ).getDecoys ( ).getCommand ( );
+            command += g.getAdvancedScan ( ).getSpoofing ( ).getCommand ( );
+
+            System.out.println ( command );
             scan ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ), command, g );
         } );
 
@@ -560,7 +563,12 @@ public class AegisMainWindowController {
                             new File ( target + ".xml" ).delete ( );
                             new File ( target + ".html" ).delete ( );
                             //System.out.println ("sudo "+command+ " -oX " + target+".xml --stats-every 100ms"  );
-                            Process p = Runtime.getRuntime ( ).exec ( "sudo " + command + " -oX " + target + ".xml --stats-every 100ms" );
+                            String interval = "100ms";
+                            if ( command.contains ( "firewalk" ) ) {
+                                interval = "400ms";
+                            }
+                            Process p = Runtime.getRuntime ( ).exec ( "sudo " + command + " -oX " + target +
+                                    ".xml --stats-every " + interval );
                             group.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
                             Percentage percentage = new Percentage ( p );
                             percentage.work ( );

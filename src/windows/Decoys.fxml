@@ -18,8 +18,40 @@
             <Insets />
           </VBox.margin>
         </CheckBox>
-        <VBox fx:id="enableVBox" disable="true">
+        <VBox fx:id="decoysVBox" disable="true">
           <children>
+            <Label fx:id="errorLabel" text="" textFill="#ff3333">
+              <VBox.margin>
+                <Insets top="4.0" />
+              </VBox.margin>
+            </Label>
+            <TextField id="ip" fx:id="ipText" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Decoy IP Address">
+              <VBox.margin>
+                <Insets top="3.0" />
+              </VBox.margin>
+            </TextField>
+            <HBox>
+              <children>
+                <ListView fx:id="decoysList" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
+                <VBox>
+                  <children>
+                    <Button fx:id="addButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#add" prefWidth="33.0" text="+" />
+                    <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#remove" prefWidth="33.0" text="-">
+                      <VBox.margin>
+                        <Insets top="7.0" />
+                      </VBox.margin>
+                    </Button>
+                  </children>
+                  <HBox.margin>
+                    <Insets left="5.0" />
+                  </HBox.margin>
+                </VBox>
+              </children>
+              <VBox.margin>
+                <Insets top="10.0" />
+              </VBox.margin>
+            </HBox>
+            <VBox fx:id="enableVBox" disable="true" />
             <HBox>
               <children>
                 <CheckBox fx:id="randCheck" mnemonicParsing="false" onAction="#randController" text="Use Random Sources" />
@@ -33,17 +65,6 @@
                 <Insets top="20.0" fx:id="x1" />
               </VBox.margin>
             </HBox>
-            <CheckBox mnemonicParsing="false" text="Decoy Should Be Up" VBox.margin="$x1" />
-            <ListView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="213.0">
-              <VBox.margin>
-                <Insets top="25.0" />
-              </VBox.margin>
-            </ListView>
-            <Button mnemonicParsing="false" text="Live Hosts Scan">
-              <VBox.margin>
-                <Insets left="43.0" top="10.0" />
-              </VBox.margin>
-            </Button>
           </children>
         </VBox>
       </children>

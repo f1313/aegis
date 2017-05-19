@@ -17,68 +17,70 @@ public class FirewallController {
     @FXML
     CheckBox enableCheck;
     @FXML
-    CheckBox sourceIPCheck;
-    @FXML
     CheckBox interfaceCheck;
     @FXML
     ListView interfaceListView;
     @FXML
     VBox enableVBox;
     @FXML
-    TextField sourceIPText;
-    @FXML
-    CheckBox sourcePortCheck;
-    @FXML
-    TextField sourcePortText;
-    @FXML
     CheckBox ttlCheck;
     @FXML
     TextField ttlText;
+    @FXML
+    CheckBox fragmentCheck;
+    @FXML
+    CheckBox firewalk;
 
     @FXML
-    private void initialize(){
+    private void initialize ( ) {
 
     }
 
     @FXML
-    private void enableController(){
-        if (enableCheck.isSelected()){
-            enableVBox.setDisable(false);
-        }else {
-            enableVBox.setDisable(true);
+    private void enableController ( ) {
+        if ( enableCheck.isSelected ( ) ) {
+            enableVBox.setDisable ( false );
+        } else {
+            enableVBox.setDisable ( true );
         }
     }
 
+
+
     @FXML
-    private void sourceIP(){
-        if (sourceIPCheck.isSelected()){
-            sourceIPText.setDisable(false);
-        }else {
-            sourceIPText.setDisable(true);
+    private void interfaceController ( ) {
+        if ( interfaceCheck.isSelected ( ) ) {
         }
     }
 
+
     @FXML
-    private void interfaceController(){
-        if(interfaceCheck.isSelected()){
+    private void ttlController ( ) {
+        if ( ttlCheck.isSelected ( ) ) {
+            ttlText.setDisable ( false );
+        } else {
+            ttlText.setDisable ( true );
         }
     }
 
-    @FXML
-    private void sourcePortController(){
-        if (sourcePortCheck.isSelected()){
-            sourcePortText.setDisable(false);
-        }else {
-            sourcePortText.setDisable(true);
-        }
-    }
 
-    @FXML
-    private void ttlController(){
-        if (ttlCheck.isSelected()){
-            ttlText.setDisable(false);
-        }else{
-            ttlText.setDisable(true);
+    public String getCommand ( ) {
+        StringBuilder sb = new StringBuilder ( 200 );
+        if ( enableCheck.isSelected ( ) ) {
+            if (fragmentCheck.isSelected ()){
+                sb.append ( " -f " );
+            }
+            if(firewalk.isSelected ()){
+                sb.append ( " --script=firewalk " );
+            }
+            if(ttlCheck.isSelected ()){
+                if (ttlText.getText ().matches ( "\\d+" )){
+                    sb.append ( " -ttl "+ttlText.getText () );
+                }
+            }
         }
+
+
+        return sb.toString ( );
     }
 }

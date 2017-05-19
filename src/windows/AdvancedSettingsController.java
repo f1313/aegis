@@ -26,6 +26,9 @@ public class AdvancedSettingsController {
     private DNSOptionsController dns = new DNSOptionsController ( );
     private ScanTypesController scanTypes = new ScanTypesController ( );
     private ScanOptionsController scanOptions = new ScanOptionsController ( );
+    private FirewallController firewall = new FirewallController ( );
+    private DecoysController decoys = new DecoysController ( );
+    private SpoofingAndChecksumController spoofing = new SpoofingAndChecksumController ( );
 
     public void initialize ( ) throws IOException {
         //Protocol Ranges window
@@ -57,10 +60,20 @@ public class AdvancedSettingsController {
         AnchorPane ScanOptions = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
         scanOptions = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
 
+        //Firewall Options
+        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "Firewall.fxml" ) ) );
+        AnchorPane FireWall = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
+        firewall = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
 
-        AnchorPane FireWall = FXMLLoader.load ( getClass ( ).getResource ( "Firewall.fxml" ) );
-        AnchorPane Decoys = FXMLLoader.load ( getClass ( ).getResource ( "Decoys.fxml" ) );
-        AnchorPane SpoofAndChecksum = FXMLLoader.load ( getClass ( ).getResource ( "SpoofingAndChecksum.fxml" ) );
+        //Decoys
+        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "Decoys.fxml" ) ) );
+        AnchorPane Decoys = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
+        decoys = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
+
+        //Spoofing and Checksum
+        loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "SpoofingAndChecksum.fxml" ) ) );
+        AnchorPane SpoofAndChecksum = loaderList.get ( loaderList.size ( ) - 1 ).load ( );
+        spoofing = loaderList.get ( loaderList.size ( ) - 1 ).getController ( );
 
         //Creating the tree
         TreeItem < Hyperlink > root = new TreeItem ( "Settings" );
@@ -152,5 +165,17 @@ public class AdvancedSettingsController {
 
     public ScanOptionsController getScanOptions ( ) {
         return scanOptions;
+    }
+
+    public FirewallController getFirewall ( ) {
+        return firewall;
+    }
+
+    public DecoysController getDecoys ( ) {
+        return decoys;
+    }
+
+    public SpoofingAndChecksumController getSpoofing ( ) {
+        return spoofing;
     }
 }

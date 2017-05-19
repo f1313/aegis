@@ -2,7 +2,9 @@ package windows;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 /**
@@ -10,12 +12,10 @@ import javafx.scene.layout.VBox;
  */
 public class ServicesDetectionController {
 
-    String enable = " -sV -T4 -F ";
+    String enable = " -sV -T4 ";
 
     @FXML
     CheckBox enableButton;
-    @FXML
-    CheckBox enableAllPortsButton;
     @FXML
     CheckBox debugOutput;
     @FXML
@@ -23,46 +23,64 @@ public class ServicesDetectionController {
     @FXML
     VBox debugVBox;
     @FXML
-    Slider intensitySlider;
+    RadioButton intensityButton;
     @FXML
-    CheckBox CVECheck;
+    TextField intensityText;
+    @FXML
+    RadioButton enableAllButton;
+    @FXML
+    RadioButton lightButton;
 
     @FXML
-    private void initialize(){
-        System.out.println("IN");
-        intensitySlider.setMajorTickUnit(0.5);
-        intensitySlider.setMinorTickCount(0);
-        intensitySlider.setSnapToTicks(true);
-        System.out.println("OUT");
-    }
-
-    @FXML
-    private void enableServiceDetection(){
-        if(enableButton.isSelected()){
-            serviceDetectionVBox.setDisable(false);
-        }else {
-            serviceDetectionVBox.setDisable(true);
-        }
-    }
-    @FXML
-    private void enableDebugging(){
-        if(debugOutput.isSelected()){
-            debugVBox.setDisable(false);
-        }else {
-            debugVBox.setDisable(true);
+    private void enableServiceDetection ( ) {
+        if ( enableButton.isSelected ( ) ) {
+            serviceDetectionVBox.setDisable ( false );
+        } else {
+            serviceDetectionVBox.setDisable ( true );
         }
     }
 
-    String getCommand(){
+    @FXML
+    private void intensityClick ( ) {
+        if ( intensityButton.isSelected ( ) ) {
+            intensityText.setDisable ( false );
+        } else {
+            intensityText.setDisable ( false );
+
+        }
+    }
+
+    @FXML
+    private void enableDebugging ( ) {
+        if ( debugOutput.isSelected ( ) ) {
+            debugVBox.setDisable ( false );
+        } else {
+            debugVBox.setDisable ( true );
+        }
+    }
+
+    String getCommand ( ) {
         StringBuilder sb = new StringBuilder ( 200 );
-        if (enableButton.isSelected ()){
+        if ( enableButton.isSelected ( ) ) {
             sb.append ( enable );
+            if ( intensityButton.isSelected ( ) ) {
+                if ( intensityText.getText ( ).matches ( "[0-9]" ) ) {
+                    sb.append ( " --version-intensity " + intensityText.getText ( ) + " " );
+                }
+            } else if ( enableAllButton.isSelected ( ) ) {
+                sb.append ( " --version-all " );
+            } else if ( lightButton.isSelected ( ) ) {
+                sb.append ( " --version-light " );
+            }
+            if (debugOutput.isSelected ()){
+                sb.append ( " --version-trace " );
+            }
         }
-        return sb.toString ();
+        return sb.toString ( );
     }
 
-
-    public boolean isCVESelected(){
-        return CVECheck.isSelected ();
+    public boolean isEnabled ( ) {
+        return enableButton.isSelected ( );
     }
+
 }
