@@ -5,14 +5,17 @@ import java.net.*;
 import java.util.*;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import Specs.*;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-import javax.xml.soap.Text;
 import java.util.Random;
 
 /**
@@ -23,6 +26,8 @@ public class SpoofingAndChecksumController {
             "[A-Fa-f0-9]{2}:[A-Fa-f0-9]{2}";
     PortSpec portSpec = new PortSpec ( );
     TargetSpec spec = new TargetSpec ( );
+    Stage proxiesStage;
+    ProxyController proxyController = new ProxyController ();
     @FXML
     CheckBox macCheck;
     @FXML
@@ -31,8 +36,6 @@ public class SpoofingAndChecksumController {
     Button macButton;
     @FXML
     CheckBox proxyCheck;
-    @FXML
-    Button proxyButton;
     @FXML
     CheckBox portCheck;
     @FXML
@@ -51,6 +54,8 @@ public class SpoofingAndChecksumController {
     TextField activeInterface;
     @FXML
     VBox ipVBox;
+    @FXML
+    Button proxyButton;
 
     @FXML
     private void initialize ( ) {
@@ -92,6 +97,21 @@ public class SpoofingAndChecksumController {
         } else {
             proxyButton.setDisable ( true );
         }
+    }
+
+    @FXML
+    private void proxyClick() throws IOException {
+        if ( proxiesStage == null ) {
+            proxiesStage = new Stage ( );
+            proxiesStage.setMaxWidth ( 325 );
+            proxiesStage.setMaxHeight ( 380 );
+            proxiesStage.setTitle ( "TCP Ports" );
+            FXMLLoader loader = new FXMLLoader ( getClass ( ).getResource ( "Proxy.fxml" ) );
+            Parent root = loader.load ( );
+            proxyController = loader.getController ( );
+            proxiesStage.setScene ( new Scene ( root, 479, 585 ) );
+        }
+        proxiesStage.show ( );
     }
 
     @FXML
@@ -141,6 +161,16 @@ public class SpoofingAndChecksumController {
                 sb.append ( " --spoof-mac " + macText.getText ( ) + " " );
             }
         }
+
+        String proxies = "";
+        if (  proxiesStage!= null && proxyCheck.isSelected ()) {
+            if ( proxyController.getProxies ( ).length ( ) != 0 ) {
+                proxies += ( " --proxies " );
+                proxies += ( proxyController.getProxies ( ) +" ");
+            }
+        }
+
+        sb.append ( proxies );
 
         if ( badCheckSum.isSelected ( ) ) {
             sb.append ( " --badsum " );

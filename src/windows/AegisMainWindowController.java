@@ -270,6 +270,7 @@ public class AegisMainWindowController {
         newProjectController projectController;
         FXMLLoader projectLoader = new FXMLLoader ( );
         projectLoader.setLocation ( getClass ( ).getResource ( "newProject.fxml" ) );
+        projectStage.setTitle ( "New Project" );
 
         try {
             projectLoader.load ( );
@@ -423,7 +424,7 @@ public class AegisMainWindowController {
             System.out.println ( exception );
         }
 
-
+        targetSelection.setTitle ( "New Group" );
         targetSelection.setScene ( new Scene ( root, 385, 500 ) );
         targetSelection.showAndWait ( );
 
@@ -630,9 +631,9 @@ public class AegisMainWindowController {
                             }
 
                             group.setComplete ( false );
-                            String interval = "400ms";
+                            String interval = "500ms";
                             if ( command.contains ( "firewalk" ) ) {
-                                interval = "400ms";
+                                interval = "500ms";
                             }
                             Process p = Runtime.getRuntime ( ).exec ( "sudo " + command + " -oX " + target +
                                     ".xml --stats-every " + interval );

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.ProxyController">
+  <children>
+    <VBox AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <children>
+        <Label text="Enter Proxy IP or Hostname:" />
+        <TextField fx:id="proxyText" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" text="">
+          <VBox.margin>
+            <Insets top="7.0" fx:id="x1" />
+          </VBox.margin>
+        </TextField>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+          <children>
+            <ListView fx:id="proxyListView" maxWidth="-Infinity" minHeight="200.0" minWidth="-Infinity" prefWidth="200.0" HBox.margin="$x1" />
+            <VBox>
+              <children>
+                <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#add" prefWidth="38.0" text="+" />
+                <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#remove" prefWidth="38.0" text="-">
+                  <VBox.margin>
+                    <Insets top="5.0" />
+                  </VBox.margin>
+                </Button>
+              </children>
+              <HBox.margin>
+                <Insets left="5.0" top="7.0" />
+              </HBox.margin>
+            </VBox>
+          </children>
+        </HBox>
+        <Label fx:id="errorLabel" text="" textFill="#ff3333">
+          <VBox.margin>
+            <Insets top="7.0" fx:id="x1" />
+          </VBox.margin>
+        </Label>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

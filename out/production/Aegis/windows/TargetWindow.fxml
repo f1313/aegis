@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="289.0" prefHeight="480.0" prefWidth="380.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.TargetWindowController">
+<BorderPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="289.0" prefHeight="498.9999000000025" prefWidth="380.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.TargetWindowController">
   <bottom>
     <VBox prefHeight="372.0">
       <children>
@@ -43,17 +44,17 @@
                 <ListView fx:id="ipList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" />
                 <VBox>
                   <children>
-                    <Button id="addIPButton" fx:id="addIpButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addIP" prefWidth="33.0" text="+">
+                    <Button id="addIPButton" fx:id="addIpButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addIP" prefWidth="38.0" text="+">
                       <VBox.margin>
                         <Insets bottom="7.0" left="7.0" />
                       </VBox.margin>
                     </Button>
-                    <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeButton" prefWidth="33.0" text="-">
+                    <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeButton" prefWidth="38.0" text="-">
                       <VBox.margin>
                         <Insets left="7.0" />
                       </VBox.margin>
                     </Button>
-                    <Button id="removeButton" fx:id="editButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#edit" prefWidth="33.0" text="">
+                    <Button id="removeButton" fx:id="editButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#edit" prefWidth="38.0" text="">
                       <VBox.margin>
                         <Insets left="7.0" top="7.0" />
                       </VBox.margin>
@@ -106,12 +107,12 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
               <children>
-                <Label fx:id="errorLabel" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="286.0" text="" textFill="#ff3333">
+                <Label fx:id="errorLabel" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="280.0" text="" textFill="#ff3333">
                   <HBox.margin>
                     <Insets fx:id="l1" />
                   </HBox.margin>
                 </Label>
-                <Button fx:id="startButton" disable="false" mnemonicParsing="false" onAction="#start" text="Start">
+                <Button fx:id="startButton" disable="false" mnemonicParsing="false" onAction="#start" prefWidth="100.0" text="Start">
                   <HBox.margin>
                     <Insets fx:id="x1" />
                   </HBox.margin>
@@ -132,4 +133,7 @@
       </BorderPane.margin>
     </VBox>
   </bottom>
+  <stylesheets>
+    <URL value="@../../bootstrap.css" />
+  </stylesheets>
 </BorderPane>

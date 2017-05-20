@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
@@ -149,4 +150,7 @@
       </BorderPane.margin>
     </VBox>
   </center>
+  <stylesheets>
+    <URL value="@../../bootstrap.css" />
+  </stylesheets>
 </BorderPane>

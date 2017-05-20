@@ -48,6 +48,7 @@ public class CVEdetails {
     Service thread2;
 
     public CVEdetails ( ) {
+
         tree = new TreeView ( root );
         this.stage.setScene ( new Scene ( this.serviceBorderPane ) );
         this.stage.setTitle ( "CVEDetails Report" );

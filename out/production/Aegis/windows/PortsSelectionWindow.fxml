@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="325.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.PortsSelectionWindowController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="348.0" prefWidth="285.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="windows.PortsSelectionWindowController">
   <center>
     <VBox>
       <children>
@@ -28,18 +29,8 @@
             </ListView>
             <VBox>
               <children>
-                <Button id="addButton" fx:id="addPortButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addPortButton" prefWidth="33.0" text="+" />
-                <Button fx:id="removePortButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removePortButton" prefWidth="33.0" text="-" VBox.margin="$x1" />
-                <Label text="Port Helper">
-                  <VBox.margin>
-                    <Insets top="45.0" />
-                  </VBox.margin>
-                </Label>
-                <CheckBox fx:id="portHelperButton" mnemonicParsing="false" text="" textAlignment="LEFT">
-                  <VBox.margin>
-                    <Insets left="27.0" top="5.0" />
-                  </VBox.margin>
-                </CheckBox>
+                <Button id="addButton" fx:id="addPortButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addPortButton" prefWidth="38.0" text="+" />
+                <Button fx:id="removePortButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removePortButton" prefWidth="38.0" text="-" VBox.margin="$x1" />
               </children>
               <HBox.margin>
                 <Insets left="10.0" top="7.0" />
@@ -61,6 +52,9 @@
       </BorderPane.margin>
     </VBox>
   </center>
+  <stylesheets>
+    <URL value="@../../bootstrap.css" />
+  </stylesheets>
   <top>
     <Label text="Ports Selection">
       <BorderPane.margin>

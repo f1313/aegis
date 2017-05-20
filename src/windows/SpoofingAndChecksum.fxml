@@ -63,7 +63,7 @@
         <HBox>
           <children>
             <CheckBox fx:id="proxyCheck" mnemonicParsing="false" onAction="#proxyController" text="Proxy" />
-            <Button fx:id="proxyButton" disable="true" mnemonicParsing="false" text="Set Proxy" HBox.margin="$x1" />
+            <Button fx:id="proxyButton" disable="true" mnemonicParsing="false" onAction="#proxyClick" text="Set Proxy" HBox.margin="$x1" />
           </children>
           <padding>
             <Insets top="20.0" fx:id="x2" />
