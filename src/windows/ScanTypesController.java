@@ -178,7 +178,11 @@ public class ScanTypesController {
             payloadController = loader.getController ( );
             payloadStage.setScene ( new Scene ( root, 479, 485 ) );
         }
-        payloadStage.showAndWait ( );
+        try {
+            payloadStage.showAndWait ( );
+        } catch ( Exception e ) {
+
+        }
     }
 
 
@@ -191,7 +195,11 @@ public class ScanTypesController {
             sctpPortsController = loader.getController ( );
             sctpPorts.setScene ( new Scene ( root, 328, 354 ) );
         }
-        sctpPorts.showAndWait ( );
+        try {
+            sctpPorts.showAndWait ( );
+        } catch ( Exception e ) {
+
+        }
     }
 
     @FXML
@@ -207,7 +215,11 @@ public class ScanTypesController {
             udpPortsController = loader.getController ( );
             udpPorts.setScene ( new Scene ( root, 328, 354 ) );
         }
-        udpPorts.showAndWait ( );
+        try {
+            udpPorts.showAndWait ( );
+        } catch ( Exception e ) {
+
+        }
     }
 
 

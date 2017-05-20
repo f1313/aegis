@@ -133,32 +133,6 @@
                     <Insets top="20.0" fx:id="x4" />
                   </VBox.margin>
                 </HBox>
-                <HBox>
-                  <children>
-                    <CheckBox maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="190.0" text="IP Protocol Ranges Scan">
-                      <HBox.margin>
-                        <Insets right="12.0" />
-                      </HBox.margin>
-                    </CheckBox>
-                    <Button maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="82.0" text="Protocols" />
-                  </children>
-                  <VBox.margin>
-                    <Insets top="20.0" fx:id="z2" />
-                  </VBox.margin>
-                </HBox>
-                <HBox>
-                  <children>
-                    <CheckBox maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="190.0" text="FTP Bounce Scan">
-                      <HBox.margin>
-                        <Insets right="12.0" />
-                      </HBox.margin>
-                    </CheckBox>
-                    <Button mnemonicParsing="false" prefWidth="82.0" text="Ports" />
-                  </children>
-                  <VBox.margin>
-                    <Insets top="20.0" fx:id="z3" />
-                  </VBox.margin>
-                </HBox>
               </children>
             </VBox>
           </children>

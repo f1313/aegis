@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 public class ServicesDetectionController {
 
     String enable = " -sV ";
-
+    boolean isReady = false;
     @FXML
     CheckBox enableButton;
     @FXML
@@ -83,4 +83,11 @@ public class ServicesDetectionController {
         return enableButton.isSelected ( );
     }
 
+    public boolean isReady ( ) {
+        return isReady;
+    }
+
+    public void setReady ( boolean ready ) {
+        isReady = ready;
+    }
 }

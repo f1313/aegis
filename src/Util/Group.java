@@ -17,6 +17,7 @@ import Specs.*;
  * Created by wintson on 4/18/17.
  */
 public class Group {
+    boolean isComplete = false;
 
     boolean isCVEStarted = false;
 
@@ -169,5 +170,17 @@ public class Group {
 
     public void setCVEStarted ( boolean CVEStarted ) {
         isCVEStarted = CVEStarted;
+    }
+
+    public boolean isComplete ( ) {
+        return isComplete;
+    }
+
+    public void setComplete ( boolean complete ) {
+        isComplete = complete;
+    }
+
+    public void resetCVE(){
+        this.cveDetailsItem = new CVEdetails ();
     }
 }

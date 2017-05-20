@@ -28,6 +28,8 @@ public class newProjectController {
     @FXML
     Label errorLabel;
 
+    String groupName = "";
+
     @FXML
     private void initialize(){
         projectText.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -53,6 +55,7 @@ public class newProjectController {
 
     @FXML
     private void create(){
+        File checker = new File(locationText.getText ()+"/"+projectText.getText ());
         if (projectText.getText()== null || projectText.getText().length()  == 0 ){
             errorLabel.setText("Project Name Can't Be Empty");
             projectText.setStyle("-fx-background-color: #ff9494;");
@@ -60,7 +63,12 @@ public class newProjectController {
         else if (AegisMainWindowController.proExists(projectText.getText())){
             errorLabel.setText("Duplicate Project Name");
             projectText.setStyle("-fx-background-color: #ff9494;");
-        }else{
+        }
+        else if (checker.exists ()){
+            errorLabel.setText("A project with that name already exists");
+            projectText.setStyle("-fx-background-color: #ff9494;");
+        }
+        else{
             AegisMainWindowController.projectClosed = true;
             errorLabel.getScene().getWindow().hide();
         }
@@ -73,4 +81,5 @@ public class newProjectController {
     public TextField getProjectText() {
         return projectText;
     }
+
 }

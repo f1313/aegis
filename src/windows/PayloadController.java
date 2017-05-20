@@ -1,5 +1,6 @@
 package windows;
 
+import Util.input;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -7,6 +8,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  * Created by wintson on 4/8/17.
@@ -15,6 +18,7 @@ public class PayloadController {
 
     FileChooser fileLoader = new FileChooser ( );
     Stage loader = new Stage ( );
+    String payLoadCopied = "";
     @FXML
     CheckBox dataCheck;
     @FXML
@@ -41,6 +45,7 @@ public class PayloadController {
     Label hexError;
     @FXML
     Label asciiError;
+
 
     @FXML
     private void dataController ( ) {
@@ -107,6 +112,16 @@ public class PayloadController {
         fileLoader.getExtensionFilters ( ).add ( extFilter );
         File temp = fileLoader.showOpenDialog ( loader );
         if ( temp != null && temp.getAbsoluteFile ( ) != null && temp.getAbsolutePath ( ).length ( ) != 0 ) {
+            Scanner input = null;
+            try {
+                input  = new Scanner (temp);
+            } catch ( FileNotFoundException e ) {
+                e.printStackTrace ( );
+            }
+
+            while ( input.hasNext ()){
+                payLoadCopied += input.next ();
+            }
 
         }
     }
@@ -142,7 +157,11 @@ public class PayloadController {
                 payload += asciiText.getText ( ) + " ";
             } else if ( randomRadio.isSelected ( ) ) {
                 if ( randomText.getText ( ) != null && randomText.getText ( ).length ( ) != 0 ) {
-                    payload += " --data-length " + randomText.getText ( )+" ";
+                    payload += " --data-length " + randomText.getText ( ) + " ";
+                }
+            } else if ( loadRadio.isSelected ( ) ) {
+                if (payLoadCopied.length () != 0){
+                    payload += " --data-length " + payLoadCopied + " ";
                 }
             }
         }

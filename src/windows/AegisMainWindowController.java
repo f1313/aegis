@@ -75,13 +75,13 @@ public class AegisMainWindowController {
     TreeItem leftRoot = new TreeItem ( "Scans" );
     TreeView leftTree = new TreeView ( leftRoot );
 
+
+
     Browser browser = new Browser ( );
     BrowserView view = new BrowserView ( browser );
 
     @FXML
     public void initialize ( ) {
-        tp.getTabs ( ).add ( new Tab ( "Test" ) );
-        tp.getTabs ( ).get ( 0 ).setContent ( view );
         view.setPadding ( new Insets ( 10, 10, 10, 10 ) );
         mainBorderPane.setCenter ( tp );
         bottomHbox.setStyle ( "-fx-border-color: #c8c8c8" );
@@ -126,7 +126,7 @@ public class AegisMainWindowController {
         } );
         CVEItem.setOnAction ( event -> {
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
-            if ( g.getAdvancedScan ( ).getSd ( ).isEnabled ( ) ) {
+            if ( g.getAdvancedScan ( ).getSd ( ).isReady () && g.isComplete () ) {
                 final Service thread2 = new Service < Integer > ( ) {
                     @Override
                     public Task createTask ( ) {
@@ -160,6 +160,7 @@ public class AegisMainWindowController {
         //Listening for when the scan is started
         scan.setOnAction ( event -> {
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
+            leftClick ( g );
             String command = "nmap " + g.getHostsString ( ) + " ";
 
             command += g.getAdvancedScan ( ).getOs ( ).getCommand ( );
@@ -220,7 +221,6 @@ public class AegisMainWindowController {
                             rootContext.show ( mainBorderPane, event.getScreenX ( ), event.getScreenY ( ) );
                         } else if ( isGroup ( ( TreeItem ) leftTree.getSelectionModel ( ).getSelectedItem ( ) ) ) {
                             startScan.show ( mainBorderPane, event.getScreenX ( ), event.getScreenY ( ) );
-
                         }
                     }
                 } else {
@@ -229,40 +229,7 @@ public class AegisMainWindowController {
                     TreeItem < String > selectedItem = ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) );
                     if ( isGroup ( selectedItem ) ) {
                         Group g = findGroup ( selectedItem );
-                        File checker = new File ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
-                        System.out.println ( "Checker location : " + checker.getPath ( ) );
-                        int loc = tabPaneContains ( g.getGroupName ( ) );
-                        System.out.println ( "Location is: " + loc );
-                        //If the scan is done
-                        if ( checker.exists ( ) ) {
-                            //If the tab is never opened
-                            if ( loc == - 1 ) {
-                                tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
-                                tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
-                                tp.getTabs ( ).get ( tp.getTabs ( ).size ( ) - 1 ).setContent ( g.getView ( ) );
-                            } else {
-                                tp.getSelectionModel ( ).select ( loc );
-                                g.getBrowser ( ).loadURL ( "file:///" + g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
-                                tp.getTabs ( ).get ( loc ).setContent ( g.getView ( ) );
-                            }
-                        } else {
-                            if ( loc != - 1 ) {
-                                tp.getSelectionModel ( ).select ( loc );
-                                if ( runningScans.contains ( g.getGroupName ( ) ) ) {
-                                    g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
-
-                                } else {
-                                    g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/notStarted.html" );
-                                }
-                                tp.getTabs ( ).get ( loc ).setContent ( g.getView ( ) );
-                            } else {
-                                tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
-                                tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
-                                g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/notStarted.html" );
-                                tp.getTabs ( ).get ( tp.getTabs ( ).size ( ) - 1 ).setContent ( g.getView ( ) );
-
-                            }
-                        }
+                        leftClick ( g );
                     }
 
                 }
@@ -288,6 +255,8 @@ public class AegisMainWindowController {
 
 
     }
+
+
 
 
     //Adds a new project to the tree
@@ -374,6 +343,43 @@ public class AegisMainWindowController {
     @FXML
     private void manageGroups ( ) {
 
+    }
+
+    public void leftClick(Group g){
+        File checker = new File ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
+        System.out.println ( "Checker location : " + checker.getPath ( ) );
+        int loc = tabPaneContains ( g.getGroupName ( ) );
+        System.out.println ( "Location is: " + loc );
+        //If the scan is done
+        if ( checker.exists ( ) ) {
+            //If the tab is never opened
+            if ( loc == - 1 ) {
+                tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
+                tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
+                tp.getTabs ( ).get ( tp.getTabs ( ).size ( ) - 1 ).setContent ( g.getView ( ) );
+            } else {
+                tp.getSelectionModel ( ).select ( loc );
+                g.getBrowser ( ).loadURL ( "file:///" + g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
+                tp.getTabs ( ).get ( loc ).setContent ( g.getView ( ) );
+            }
+        } else {
+            if ( loc != - 1 ) {
+                tp.getSelectionModel ( ).select ( loc );
+                if ( runningScans.contains ( g.getGroupName ( ) ) ) {
+                    g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
+
+                } else {
+                    g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/notStarted.html" );
+                }
+                tp.getTabs ( ).get ( loc ).setContent ( g.getView ( ) );
+            } else {
+                tp.getTabs ( ).add ( new Tab ( g.getGroupName ( ) ) );
+                tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
+                g.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/notStarted.html" );
+                tp.getTabs ( ).get ( tp.getTabs ( ).size ( ) - 1 ).setContent ( g.getView ( ) );
+
+            }
+        }
     }
 
     @FXML
@@ -609,10 +615,16 @@ public class AegisMainWindowController {
                         //Code
                         runningScans.add ( group.getGroupName ( ) );
                         try {
-
                             new File ( target + ".xml" ).delete ( );
                             new File ( target + ".html" ).delete ( );
-                            //System.out.println ("sudo "+command+ " -oX " + target+".xml --stats-every 100ms"  );
+                            System.out.println ("sudo "+command+ " -oX " + target+".xml --stats-every 100ms"  );
+                            if (group.getAdvancedScan ().getSd ().isEnabled ()){
+                                group.getAdvancedScan ().getSd ().setReady ( true );
+                            }else {
+                                group.getAdvancedScan ().getSd ().setReady ( false );
+                            }
+
+                            group.setComplete ( false );
                             String interval = "100ms";
                             if ( command.contains ( "firewalk" ) ) {
                                 interval = "400ms";
@@ -625,7 +637,6 @@ public class AegisMainWindowController {
                             percentage.work ( );
                             p.waitFor ( );
                             System.setIn ( p.getInputStream ( ) );
-
                             Scanner input = new Scanner ( System.in );
                             while ( input.hasNextLine ( ) ) {
                                 System.out.println ( input.nextLine ( ) );
@@ -644,7 +655,7 @@ public class AegisMainWindowController {
                             System.out.println ( ex );
                         }
                         group.getBrowser ( ).loadURL ( "file://" + target + ".html" );
-
+                        group.setComplete ( true );
                         progressBar.setProgress ( 0 );
                         runningScans.remove ( group.getGroupName ( ) );
                         processes.remove ( group.getGroupName ( ) );
@@ -662,8 +673,10 @@ public class AegisMainWindowController {
             running.setContentText ( "Wait for the scan to finish or stop the scan." );
             running.show ( );
         } else {
+            group.resetCVE ();
             thread.start ( );
         }
+
         tp.getSelectionModel ( ).getSelectedItem ( ).setContent ( group.getView ( ) );
     }
 

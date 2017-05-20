@@ -9,8 +9,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 
 /**
@@ -79,7 +81,22 @@ public class PortsSelectionWindowController {
         fileLoader.getExtensionFilters ( ).add ( extFilter );
         File temp = fileLoader.showOpenDialog ( loader );
         if ( temp != null && temp.getAbsoluteFile ( ) != null && temp.getAbsolutePath ( ).length ( ) != 0 ) {
-
+            Scanner input = null;
+            String ports = "";
+            try {
+                input = new Scanner ( temp );
+            } catch ( FileNotFoundException e ) {
+                e.printStackTrace ( );
+            }
+            while ( input.hasNext ( ) ) {
+                ports += input.next ( );
+            }
+            String[] arr = ports.split ( "," );
+            for ( String x : arr ) {
+                if (portObject.validatePortString ( x )){
+                    portsListView.getItems ().add ( x );
+                }
+            }
         }
     }
 
@@ -102,7 +119,7 @@ public class PortsSelectionWindowController {
                     return res.substring ( 0, res.length ( ) - 1 );
                 }
             }
-        }catch ( Exception e ){
+        } catch ( Exception e ) {
             return "";
         }
         return "";
