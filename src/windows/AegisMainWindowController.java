@@ -26,6 +26,7 @@ import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.*;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -74,7 +75,6 @@ public class AegisMainWindowController {
     Stage advancedSettingsStage;
     TreeItem leftRoot = new TreeItem ( "Scans" );
     TreeView leftTree = new TreeView ( leftRoot );
-
 
 
     Browser browser = new Browser ( );
@@ -126,7 +126,7 @@ public class AegisMainWindowController {
         } );
         CVEItem.setOnAction ( event -> {
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
-            if ( g.getAdvancedScan ( ).getSd ( ).isReady () && g.isComplete () ) {
+            if ( g.getAdvancedScan ( ).getSd ( ).isReady ( ) && g.isComplete ( ) ) {
                 final Service thread2 = new Service < Integer > ( ) {
                     @Override
                     public Task createTask ( ) {
@@ -153,6 +153,9 @@ public class AegisMainWindowController {
                 alert.showAndWait ( );
             }
         } );
+
+
+
         //Checking for right click
         mainBorderPane.setLeft ( leftTree );
 
@@ -257,8 +260,6 @@ public class AegisMainWindowController {
     }
 
 
-
-
     //Adds a new project to the tree
     private void addProject ( ) {
         Stage projectStage = new Stage ( );
@@ -345,7 +346,7 @@ public class AegisMainWindowController {
 
     }
 
-    public void leftClick(Group g){
+    public void leftClick ( Group g ) {
         File checker = new File ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
         System.out.println ( "Checker location : " + checker.getPath ( ) );
         int loc = tabPaneContains ( g.getGroupName ( ) );
@@ -617,11 +618,11 @@ public class AegisMainWindowController {
                         try {
                             new File ( target + ".xml" ).delete ( );
                             new File ( target + ".html" ).delete ( );
-                            System.out.println ("sudo "+command+ " -oX " + target+".xml --stats-every 100ms"  );
-                            if (group.getAdvancedScan ().getSd ().isEnabled ()){
-                                group.getAdvancedScan ().getSd ().setReady ( true );
-                            }else {
-                                group.getAdvancedScan ().getSd ().setReady ( false );
+                            System.out.println ( "sudo " + command + " -oX " + target + ".xml --stats-every 100ms" );
+                            if ( group.getAdvancedScan ( ).getSd ( ).isEnabled ( ) ) {
+                                group.getAdvancedScan ( ).getSd ( ).setReady ( true );
+                            } else {
+                                group.getAdvancedScan ( ).getSd ( ).setReady ( false );
                             }
 
                             group.setComplete ( false );
@@ -673,7 +674,7 @@ public class AegisMainWindowController {
             running.setContentText ( "Wait for the scan to finish or stop the scan." );
             running.show ( );
         } else {
-            group.resetCVE ();
+            group.resetCVE ( );
             thread.start ( );
         }
 

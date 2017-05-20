@@ -161,7 +161,7 @@ public class PayloadController {
                 }
             } else if ( loadRadio.isSelected ( ) ) {
                 if (payLoadCopied.length () != 0){
-                    payload += " --data-length " + payLoadCopied + " ";
+                    payload += " --data-string " + payLoadCopied + " ";
                 }
             }
         }

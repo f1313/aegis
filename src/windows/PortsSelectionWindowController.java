@@ -83,6 +83,7 @@ public class PortsSelectionWindowController {
         if ( temp != null && temp.getAbsoluteFile ( ) != null && temp.getAbsolutePath ( ).length ( ) != 0 ) {
             Scanner input = null;
             String ports = "";
+
             try {
                 input = new Scanner ( temp );
             } catch ( FileNotFoundException e ) {
@@ -93,10 +94,11 @@ public class PortsSelectionWindowController {
             }
             String[] arr = ports.split ( "," );
             for ( String x : arr ) {
-                if (portObject.validatePortString ( x )){
-                    portsListView.getItems ().add ( x );
+                if ( ! portsListView.getItems ( ).contains ( x ) && portObject.validatePortString ( x ) ) {
+                    portsListView.getItems ( ).add ( x );
                 }
             }
+
         }
     }
 

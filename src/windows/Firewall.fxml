@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
@@ -39,29 +40,6 @@
                 <Insets top="20.0" fx:id="x2" />
               </VBox.margin>
             </HBox>
-            <CheckBox fx:id="interfaceCheck" mnemonicParsing="false" onAction="#interfaceController" text="Specify Interfaces">
-              <VBox.margin>
-                <Insets top="16.0" />
-              </VBox.margin>
-            </CheckBox>
-            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="213.0" prefWidth="332.0">
-              <children>
-                <ListView fx:id="interfaceListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="148.0" prefWidth="157.0">
-                  <VBox.margin>
-                    <Insets top="10.0" fx:id="x1" />
-                  </VBox.margin>
-                </ListView>
-                <Label text="Active Interface" VBox.margin="$x1" />
-                <TextField editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="138.00009999999747">
-                  <VBox.margin>
-                    <Insets top="7.0" />
-                  </VBox.margin>
-                </TextField>
-              </children>
-              <VBox.margin>
-                <Insets top="5.0" />
-              </VBox.margin>
-            </VBox>
           </children>
           <VBox.margin>
             <Insets top="20.0" fx:id="x2" />
@@ -70,4 +48,7 @@
       </children>
     </VBox>
   </children>
+  <stylesheets>
+    <URL value="@../../out/production/Aegis/bootstrap.css" />
+  </stylesheets>
 </AnchorPane>
