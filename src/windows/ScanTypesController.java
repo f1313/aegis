@@ -161,6 +161,7 @@ public class ScanTypesController {
             tcpPorts = new Stage ( );
             tcpPorts.setMaxWidth ( 325 );
             tcpPorts.setMaxHeight ( 380 );
+            tcpPorts.setTitle ( "TCP Ports" );
             FXMLLoader loader = new FXMLLoader ( getClass ( ).getResource ( "PortsSelectionWindow.fxml" ) );
             Parent root = loader.load ( );
             tcpPortsController = loader.getController ( );
@@ -177,6 +178,7 @@ public class ScanTypesController {
             Parent root = loader.load ( );
             payloadController = loader.getController ( );
             payloadStage.setScene ( new Scene ( root, 479, 485 ) );
+            payloadStage.setTitle ( "Payload" );
         }
         try {
             payloadStage.showAndWait ( );
@@ -194,6 +196,7 @@ public class ScanTypesController {
             Parent root = loader.load ( );
             sctpPortsController = loader.getController ( );
             sctpPorts.setScene ( new Scene ( root, 328, 354 ) );
+            sctpPorts.setTitle ( "SCTP Ports" );
         }
         try {
             sctpPorts.showAndWait ( );
@@ -214,6 +217,7 @@ public class ScanTypesController {
             Parent root = loader.load ( );
             udpPortsController = loader.getController ( );
             udpPorts.setScene ( new Scene ( root, 328, 354 ) );
+            udpPorts.setTitle ( "UDP Ports" );
         }
         try {
             udpPorts.showAndWait ( );

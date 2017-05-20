@@ -14,6 +14,7 @@ public class Main extends Application {
 
     @Override
     public void start ( Stage primaryStage ) throws Exception {
+        primaryStage.setTitle ( "Aegis" );
         FXMLLoader loader = new FXMLLoader ( getClass ( ).getResource ( "AegisMainWindow.fxml" ) );
         Parent root = loader.load ( );
         AegisMainWindowController mainController = loader.getController ( );
@@ -39,6 +40,7 @@ public class Main extends Application {
                     for ( String x : mainController.getProcesses ( ).keySet ( ) ) {
                         mainController.getProcesses ( ).get ( x ).destroyForcibly ( );
                     }
+                    System.exit ( 0 );
                 }else {
                     event.consume ();
                 }

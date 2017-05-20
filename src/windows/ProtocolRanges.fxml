@@ -43,8 +43,8 @@
             </ListView>
             <VBox prefHeight="200.0" prefWidth="100.0">
               <children>
-                <Button fx:id="addButton" maxWidth="-Infinity" minHeight="-1.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#addItem" prefWidth="33.0" text="+" />
-                <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeItem" prefWidth="33.0" text="-">
+                <Button fx:id="addButton" maxWidth="-Infinity" minHeight="-1.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#addItem" prefWidth="38.0" text="+" />
+                <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#removeItem" prefWidth="38.0" text="-">
                   <VBox.margin>
                     <Insets top="5.0" />
                   </VBox.margin>

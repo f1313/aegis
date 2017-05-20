@@ -155,14 +155,18 @@ public class AegisMainWindowController {
         } );
 
 
-
         //Checking for right click
         mainBorderPane.setLeft ( leftTree );
 
 
         //Listening for when the scan is started
         scan.setOnAction ( event -> {
+
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
+            if ( runningScans.contains ( g.getGroupName ( ) ) ) {
+                g.getCveDetailsItem ( ).killSearch ( );
+                processes.remove ( g.getGroupName ( ) );
+            }
             leftClick ( g );
             String command = "nmap " + g.getHostsString ( ) + " ";
 
@@ -274,7 +278,7 @@ public class AegisMainWindowController {
         }
 
         Parent projectRoot = projectLoader.getRoot ( );
-        projectStage.setScene ( new Scene ( projectRoot, 406, 150 ) );
+        projectStage.setScene ( new Scene ( projectRoot, 406, 160 ) );
 
         projectStage.showAndWait ( );
         projectController = projectLoader.getController ( );
@@ -420,7 +424,7 @@ public class AegisMainWindowController {
         }
 
 
-        targetSelection.setScene ( new Scene ( root, 385, 485 ) );
+        targetSelection.setScene ( new Scene ( root, 385, 500 ) );
         targetSelection.showAndWait ( );
 
         if ( groupClosed ) {
@@ -618,7 +622,7 @@ public class AegisMainWindowController {
                         try {
                             new File ( target + ".xml" ).delete ( );
                             new File ( target + ".html" ).delete ( );
-                            System.out.println ( "sudo " + command + " -oX " + target + ".xml --stats-every 100ms" );
+//                            System.out.println ( "sudo " + command + " -oX " + target + ".xml --stats-every 100ms" );
                             if ( group.getAdvancedScan ( ).getSd ( ).isEnabled ( ) ) {
                                 group.getAdvancedScan ( ).getSd ( ).setReady ( true );
                             } else {
@@ -626,7 +630,7 @@ public class AegisMainWindowController {
                             }
 
                             group.setComplete ( false );
-                            String interval = "100ms";
+                            String interval = "400ms";
                             if ( command.contains ( "firewalk" ) ) {
                                 interval = "400ms";
                             }

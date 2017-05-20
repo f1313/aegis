@@ -53,7 +53,7 @@
           <children>
             <CheckBox fx:id="macCheck" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#macController" prefWidth="170.0" text="Spoof MAC Address" />
             <TextField fx:id="macText" disable="true" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="137.0" text="" />
-            <Button fx:id="macButton" disable="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#randomizeMac" prefWidth="78.0" text="Random">
+            <Button fx:id="macButton" disable="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#randomizeMac" prefWidth="85.0" text="Random">
               <HBox.margin>
                 <Insets left="7.0" fx:id="x1" />
               </HBox.margin>

@@ -36,8 +36,8 @@
                 <ListView fx:id="decoysList" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
                 <VBox>
                   <children>
-                    <Button fx:id="addButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#add" prefWidth="33.0" text="+" />
-                    <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#remove" prefWidth="33.0" text="-">
+                    <Button fx:id="addButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#add" prefWidth="38.0" text="+" />
+                    <Button fx:id="removeButton" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#remove" prefWidth="38.0" text="-">
                       <VBox.margin>
                         <Insets top="7.0" />
                       </VBox.margin>

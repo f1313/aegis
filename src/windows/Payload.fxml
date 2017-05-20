@@ -78,8 +78,8 @@
             </HBox>
             <HBox>
               <children>
-                <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="365.0" visible="false" />
-                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#save" text="Save" textAlignment="LEFT" />
+                <Separator maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="350.0" visible="false" />
+                <Button fx:id="saveButton" mnemonicParsing="false" onAction="#save" prefWidth="70.0" text="Save" textAlignment="LEFT" />
               </children>
             </HBox>
           </children>

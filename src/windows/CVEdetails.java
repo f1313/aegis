@@ -45,6 +45,7 @@ public class CVEdetails {
     VBox bottom = new VBox ( );
     ProgressIndicator pi = new ProgressIndicator ( );
     Button start = new Button ( "Start" );
+    Service thread2;
 
     public CVEdetails ( ) {
         tree = new TreeView ( root );
@@ -93,6 +94,7 @@ public class CVEdetails {
         pi.setVisible ( false );
     }
 
+
     public void pre ( Group g ) {
         this.g = g;
         final Service thread = new Service < Integer > ( ) {
@@ -116,6 +118,7 @@ public class CVEdetails {
             try {
                 browser.loadURL ( "file:///" + System.getProperty ( "user.dir" ) +
                         "/out/production/Aegis/styles/loadingAnimation.html" );
+                thread2 = thread;
                 thread.start ( );
             } catch ( Exception e ) {
 
@@ -197,7 +200,7 @@ public class CVEdetails {
 
 
         String res = "";
-        String u = "http://www.cvedetails.com/google-search-results.php?q=";
+        String u = "https://www.cvedetails.com/google-search-results.php?q=";
         service = service.replaceAll ( " ", "+" );
         String complete = u + service;
         service = service.replaceAll ( " ", "+" );
@@ -375,6 +378,14 @@ public class CVEdetails {
         } finally {
             is.close ( );
             os.close ( );
+        }
+    }
+
+    public void killSearch ( ) {
+        try {
+            thread2.cancel ( );
+        } catch ( Exception e ) {
+
         }
     }
 
