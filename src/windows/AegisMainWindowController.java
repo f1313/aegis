@@ -43,7 +43,7 @@ public class AegisMainWindowController {
     static boolean groupClosed = false;
     ArrayList < Hyperlink > hyperList = new ArrayList <> ( 30 );
     public static ArrayList < Project > projectsList = new ArrayList ( );
-    public static AegisMainWindowController aegisMainWindowController;
+    public static AegisMainWindowController aegisMainWindowController;//OLD XX
     public static Label progressLabel = new Label ( );
     public static ProgressBar progressBar = new ProgressBar ( 0 );
 
@@ -579,6 +579,7 @@ public class AegisMainWindowController {
                     tp.getTabs ( ).add ( new Tab ( "Quick Scan" ) );
                     tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
                     Group toSend = new Group ( "Quick" );
+                    //TODO: Set to global
                     scan ( "/home/wintson/Desktop/scanThis/meh", "nmap -O " + result.get ( ), toSend );
                 } else {
                     Alert alert = new Alert ( Alert.AlertType.ERROR );
