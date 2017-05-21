@@ -34,8 +34,7 @@ public class AdvancedSettingsController {
     private SpoofingAndChecksumController spoofing = new SpoofingAndChecksumController ( );
 
     public void initialize ( ) throws IOException {
-        //Protocol Ranges window
-        AnchorPane ProtocolRanges = FXMLLoader.load ( getClass ( ).getResource ( "ProtocolRanges.fxml" ) );
+
 
         mainBorderPane.setBottom ( helper );
 
@@ -83,14 +82,10 @@ public class AdvancedSettingsController {
         TreeItem < Hyperlink > root = new TreeItem ( "Settings" );
         root.setExpanded ( true );
         TreeView treeView = new TreeView ( root );
-        //////IP Protocol Range
-        Hyperlink ProtocolRangesLink = new Hyperlink ( "IP Protocols Range" );
-        ProtocolRangesLink.setVisited ( true );
-        TreeItem item = new TreeItem ( ProtocolRangesLink );
-        root.getChildren ( ).add ( item );
+
         //////DNS Options
         Hyperlink DNSOptionsLink = new Hyperlink ( "DNS Options" );
-        item = new TreeItem ( DNSOptionsLink );
+        TreeItem item = new TreeItem ( DNSOptionsLink );
         root.getChildren ( ).add ( item );
         //////Scan
         TreeItem < Hyperlink > ScanItem = new TreeItem ( "Scan" );
@@ -136,11 +131,10 @@ public class AdvancedSettingsController {
 
 
         mainBorderPane.setLeft ( treeView );
-        mainBorderPane.setCenter ( ProtocolRanges );
+        mainBorderPane.setCenter ( DNSOptions );
 
 
         //Controllers
-        ProtocolRangesLink.setOnAction ( event -> mainBorderPane.setCenter ( ProtocolRanges ) );
         DNSOptionsLink.setOnAction ( event -> mainBorderPane.setCenter ( DNSOptions ) );
         ScanTypeLink.setOnAction ( event -> mainBorderPane.setCenter ( AdvancedTarget ) );
         ServicesLink.setOnAction ( event -> mainBorderPane.setCenter ( ServiceDetection ) );

@@ -164,6 +164,7 @@ public class AegisMainWindowController {
         scan.setOnAction ( event -> {
 
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
+            g.getCveDetailsItem ().killSearch ();
             g.setLog ( "" );
             if ( runningScans.contains ( g.getGroupName ( ) ) ) {
                 g.getCveDetailsItem ( ).killSearch ( );
@@ -609,7 +610,8 @@ public class AegisMainWindowController {
                     tp.getSelectionModel ( ).select ( tp.getTabs ( ).size ( ) - 1 );
                     Group toSend = new Group ( "Quick" );
                     //TODO: Set to global
-                    scan ( "/home/wintson/Desktop/scanThis/meh", "nmap -O " + result.get ( ), toSend );
+
+                    scan ( System.getProperty ( "user.dir" )+"quickscan", "nmap -O " + result.get ( ), toSend );
                 } else {
                     Alert alert = new Alert ( Alert.AlertType.ERROR );
                     alert.setTitle ( "Invalid String" );
@@ -701,6 +703,7 @@ public class AegisMainWindowController {
                             group.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/oops.html" );
 
                         }
+                        group.setComplete ( true );
                         progressBar.setProgress ( 0 );
                         runningScans.remove ( group.getGroupName ( ) );
                         processes.remove ( group.getGroupName ( ) );

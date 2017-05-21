@@ -71,12 +71,16 @@ public class Percentage {
         String res = "";
         String error = "";
         String log = "";
+        String sep = "--------------------------------------------";
         try {
             String line;
             while ( ! Thread.currentThread ( ).isInterrupted ( ) && sc.hasNextLine ( ) ) {
                 //SYN Stealth Scan Timing: About 44.57% done; ETC: 18:14 (0:00:40 remaining)
                 line = sc.nextLine ( );
-                res += line + "\n";
+                if ( ! ( line.contains ( "undergoing" ) || line.contains ( "elapsed" ) ) ) {
+
+                    res += line + "\n";
+                }
                 if ( percentagePattern.matcher ( line ).matches ( ) ) {
                     line = firstHalfPattern.matcher ( line ).replaceAll ( "" );
                     line = secondHalfPatter.matcher ( line ).replaceAll ( "" );
@@ -91,9 +95,8 @@ public class Percentage {
             while ( ! Thread.currentThread ( ).isInterrupted ( ) && err.hasNextLine ( ) ) {
                 error += err.nextLine ( );
             }
-
-            error.replace ( "QUITTING!", "" );
-            log = "Output :\n" + res + "\nErrors:\n" + error+"\n";
+            log.replaceAll ( "QUITTING!","" );
+            log = "Output :\n" + res + "\n" + sep + "\nErrors:\n" + error + "\n";
 
 
         } catch ( Exception ex ) {

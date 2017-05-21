@@ -48,6 +48,7 @@ public class CVEdetails {
     ProgressIndicator pi = new ProgressIndicator ( );
     Button start = new Button ( "Start" );
     Service thread2;
+    boolean canceled = false;
 
     public CVEdetails ( ) {
 
@@ -121,8 +122,11 @@ public class CVEdetails {
             try {
                 browser.loadURL ( "file:///" + System.getProperty ( "user.dir" ) +
                         "/out/production/Aegis/styles/loadingAnimation.html" );
-                thread2 = thread;
+                if ( canceled ) {
+                    thread.cancel ( );
+                }
                 thread.start ( );
+                canceled = false;
             } catch ( Exception e ) {
 
             }
@@ -203,8 +207,6 @@ public class CVEdetails {
     }
 
     public ArrayList getLink ( String service, double min, double max ) {
-
-
         String res = "";
         String u = "https://www.cvedetails.com/google-search-results.php?q=";
         service = service.replaceAll ( " ", "+" );
@@ -298,8 +300,6 @@ public class CVEdetails {
                 e.printStackTrace ( );
                 continue;
             }
-
-
         }
     }
 
@@ -388,11 +388,7 @@ public class CVEdetails {
     }
 
     public void killSearch ( ) {
-        try {
-            thread2.cancel ( );
-        } catch ( Exception e ) {
-
-        }
+        canceled = true;
     }
 
 }

@@ -187,6 +187,8 @@ public class Group {
         this.cveDetailsItem = new CVEdetails ();
     }
 
+
+
     public String getLog ( ) {
         return log;
     }
