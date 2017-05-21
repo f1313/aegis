@@ -216,7 +216,7 @@ public class AegisMainWindowController {
                 VBox vb = new VBox ( );
                 TextArea ta = new TextArea ( );
                 ta.setText ( g.getLog ( ) );
-                ta.setMinSize ( 350, 500 );
+                ta.setMinSize ( 450, 550 );
                 logStage.setScene ( new Scene ( ta ) );
                 logStage.show ( );
             } else {
