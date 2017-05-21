@@ -31,10 +31,6 @@ public class FirewallController {
     @FXML
     CheckBox firewalk;
 
-    @FXML
-    private void initialize ( ) {
-
-    }
 
     @FXML
     private void enableController ( ) {

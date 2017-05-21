@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.jsoup.Jsoup;
@@ -31,6 +32,7 @@ import Util.*;
  * Created by wintson on 5/15/17.
  */
 public class CVEdetails {
+    HashSet < String > set = new HashSet ( 200 );
     TreeView < VBox > tree;
     TreeItem < VBox > root = new TreeItem ( "Services" );
     public BorderPane serviceBorderPane = new BorderPane ( );
@@ -146,11 +148,14 @@ public class CVEdetails {
         System.out.println ( "Parser Set up" );
         ArrayList < String > list = parseHTML ( g.getOutputLocationFilename ( ) + "/" + g.getGroupName ( ) + ".html" );
         for ( String s : list ) {
-            ArrayList < CVErecord > links = getLink ( s, min, max );
-            if ( links != null && links.size ( ) != 0 ) {
-                TreeItem < VBox > temp = new TreeItem ( s );
-                root.getChildren ( ).add ( temp );
-                saveHTML ( links, temp );
+            if ( ! set.contains ( s ) ) {
+                ArrayList < CVErecord > links = getLink ( s, min, max );
+                if ( links != null && links.size ( ) != 0 ) {
+                    TreeItem < VBox > temp = new TreeItem ( s );
+                    root.getChildren ( ).add ( temp );
+                    saveHTML ( links, temp );
+                }
+                set.add ( s );
             }
         }
 

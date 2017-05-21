@@ -17,6 +17,9 @@ import Specs.*;
  * Created by wintson on 4/18/17.
  */
 public class Group {
+
+    String log = "";
+
     boolean isComplete = false;
 
     boolean isCVEStarted = false;
@@ -183,4 +186,13 @@ public class Group {
     public void resetCVE(){
         this.cveDetailsItem = new CVEdetails ();
     }
+
+    public String getLog ( ) {
+        return log;
+    }
+
+    public void setLog ( String log ) {
+        this.log = log;
+    }
+
 }

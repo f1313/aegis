@@ -1,5 +1,6 @@
 package windows;
 
+import Specs.Scan;
 import Util.*;
 
 ////
@@ -29,8 +30,7 @@ import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -113,8 +113,9 @@ public class AegisMainWindowController {
         MenuItem scan = new MenuItem ( "Start Scan" );
         MenuItem kill = new MenuItem ( "Kill Scan" );
         MenuItem CVEItem = new MenuItem ( "CVEDetails Report" );
+        MenuItem log = new MenuItem ( "Show Log" );
         MenuItem advancedOptionsMenuItem = new MenuItem ( "Advanced Scan Options" );
-        startScan.getItems ( ).addAll ( scan, advancedOptionsMenuItem, CVEItem, kill );
+        startScan.getItems ( ).addAll ( scan, advancedOptionsMenuItem, CVEItem, kill, log );
         projectsContext.getItems ( ).add ( 0, newGroupMenuItem );
         ///
         //Setting a handler for each context menu
@@ -149,7 +150,7 @@ public class AegisMainWindowController {
                 Alert alert = new Alert ( Alert.AlertType.ERROR );
                 alert.setTitle ( "Scan Not Performed" );
                 alert.setHeaderText ( "No scan started or CVEDetails option not selected." );
-                alert.setContentText ( "Check the 'CVEDetails' option in advanced scan options and start the scan" );
+                alert.setContentText ( "Check the 'CVEDetails' option\n in advanced scan options and start the scan" );
                 alert.showAndWait ( );
             }
         } );
@@ -163,6 +164,7 @@ public class AegisMainWindowController {
         scan.setOnAction ( event -> {
 
             Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
+            g.setLog ( "" );
             if ( runningScans.contains ( g.getGroupName ( ) ) ) {
                 g.getCveDetailsItem ( ).killSearch ( );
                 processes.remove ( g.getGroupName ( ) );
@@ -202,6 +204,33 @@ public class AegisMainWindowController {
                 running.setTitle ( "Scan Not Runnung" );
                 running.setHeaderText ( "This scan has not been initiated yet" );
                 running.show ( );
+            }
+        } );
+
+
+        log.setOnAction ( event -> {
+            Group g = findGroup ( ( TreeItem ) ( leftTree.getSelectionModel ( ).getSelectedItem ( ) ) );
+            if ( g.getLog ( ).length ( ) != 0 ) {
+                Stage logStage = new Stage ( );
+                logStage.setTitle ( g.getGroupName ()+"'s log" );
+                VBox vb = new VBox ( );
+                TextArea ta = new TextArea ( );
+                ta.setText ( g.getLog ( ) );
+                ta.setMinSize ( 350, 500 );
+                logStage.setScene ( new Scene ( ta ) );
+                logStage.show ( );
+            } else {
+                if ( runningScans.contains ( g.getGroupName ( ) ) ) {
+                    Alert alert = new Alert ( Alert.AlertType.ERROR );
+                    alert.setTitle ( "Scan Running" );
+                    alert.setHeaderText ( "This scan is still in progress" );
+                    alert.showAndWait ( );
+                } else {
+                    Alert running = new Alert ( Alert.AlertType.ERROR );
+                    running.setTitle ( "Scan Not Runnung" );
+                    running.setHeaderText ( "This scan has not been initiated yet" );
+                    running.show ( );
+                }
             }
         } );
 
@@ -621,6 +650,7 @@ public class AegisMainWindowController {
                     protected Integer call ( ) throws Exception {
                         //Code
                         runningScans.add ( group.getGroupName ( ) );
+                        Percentage percentage = null;
                         try {
                             new File ( target + ".xml" ).delete ( );
                             new File ( target + ".html" ).delete ( );
@@ -638,16 +668,17 @@ public class AegisMainWindowController {
                             }
                             Process p = Runtime.getRuntime ( ).exec ( "sudo " + command + " -oX " + target +
                                     ".xml --stats-every " + interval );
+
+                            System.out.println ( "sudo " + command + " -oX " + target +
+                                    ".xml --stats-every " + interval );
                             processes.put ( group.getGroupName ( ), p );
                             group.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/loadingAnimation.html" );
-                            Percentage percentage = new Percentage ( p );
+                            percentage = new Percentage ( p, group );
+                            String log = "";
                             percentage.work ( );
                             p.waitFor ( );
                             System.setIn ( p.getInputStream ( ) );
-                            Scanner input = new Scanner ( System.in );
-                            while ( input.hasNextLine ( ) ) {
-                                System.out.println ( input.nextLine ( ) );
-                            }
+                            Scanner input;
                             p = Runtime.getRuntime ( ).exec ( "xsltproc " + target + ".xml" +
                                     " -o " + target + ".html" );
                             p.waitFor ( );
@@ -656,13 +687,20 @@ public class AegisMainWindowController {
                             while ( input.hasNextLine ( ) ) {
                                 System.out.println ( input.nextLine ( ) );
                             }
+
                             //Turns out we don't need this any more
 //                        Thread.currentThread ( ).join ( 700 );
                         } catch ( IOException | InterruptedException ex ) {
                             System.out.println ( ex );
                         }
-                        group.getBrowser ( ).loadURL ( "file://" + target + ".html" );
-                        group.setComplete ( true );
+                        File checker = new File ( target + ".html" );
+
+                        if ( checker.exists ( ) ) {
+                            group.getBrowser ( ).loadURL ( "file://" + target + ".html" );
+                        } else {
+                            group.getBrowser ( ).loadURL ( "file:///" + System.getProperty ( "user.dir" ) + "/out/production/Aegis/styles/oops.html" );
+
+                        }
                         progressBar.setProgress ( 0 );
                         runningScans.remove ( group.getGroupName ( ) );
                         processes.remove ( group.getGroupName ( ) );

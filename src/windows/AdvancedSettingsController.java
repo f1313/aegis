@@ -3,6 +3,7 @@ package windows;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.layout.AnchorPane;
@@ -21,6 +22,8 @@ public class AdvancedSettingsController {
 
     ArrayList < FXMLLoader > loaderList = new ArrayList <> ( 200 );
 
+    Label helper = new Label();
+
     private OSDetectionController os = new OSDetectionController ( );
     private ServicesDetectionController sd = new ServicesDetectionController ( );
     private DNSOptionsController dns = new DNSOptionsController ( );
@@ -34,6 +37,7 @@ public class AdvancedSettingsController {
         //Protocol Ranges window
         AnchorPane ProtocolRanges = FXMLLoader.load ( getClass ( ).getResource ( "ProtocolRanges.fxml" ) );
 
+        mainBorderPane.setBottom ( helper );
 
         //Service Detection
         loaderList.add ( new FXMLLoader ( getClass ( ).getResource ( "ServicesDetection.fxml" ) ) );
@@ -177,5 +181,10 @@ public class AdvancedSettingsController {
 
     public SpoofingAndChecksumController getSpoofing ( ) {
         return spoofing;
+    }
+
+
+    public void setHelper(String s){
+        helper.setText ( s );
     }
 }
